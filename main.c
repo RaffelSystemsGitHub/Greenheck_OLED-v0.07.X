@@ -70,7 +70,7 @@
 #define MOTOR_OUT    DAC1OUT1   //Output to motor control input, may be incorrect definition.
 #define AUX_CONTACT  RA0        //Output to close power relay.
 #define RUN_STATUS   RA1        //Output to close solid-state switch.
-#define POWER_LED    RA6        //Output to POWER_LED
+#define POWER_LED    RA6        //Output to POWER_LED.
 
 #define MODE                0   //Address for mode state (HAND/AUTO/OFF).
 #define HAND_SPEED          1   //Address for hand speed reference.
@@ -114,14 +114,9 @@ volatile int fireman_inc = FIREMAN_SET_TIMEOUT;
 
 bool mode_change_flag = 0;
 bool fireman_set = 0;
-bool fireman_out = 0;
 
-
-volatile bool ext_ref_flag = 0;          //Remote enable status changed, update "Enable/Disable" text.
-volatile bool dry_state = 0;             //Last state of dry input, updated at Timer0 overflow.
-volatile bool wet_state = 0;             //Last state of wet input, updated at Timer0 overflow.
 bool factory_reset_enable = 0;
-bool freeze_mode = 0;
+bool freeze_mode = 0;           //Purpose of this flag? Not used anywhere in main. - Alex L.
 bool press = 0;                 //Button debounce flag.
 static char buttons = 0;               //State of all buttons.
 static char last_buttons = 0;               //State of all buttons.
@@ -136,7 +131,6 @@ unsigned short ext_speed = 0;    //Range from 0-10 volts. (Range 0-1024)
 unsigned char  speedChangeState = 0;
 unsigned int speedChangeTimer = 0;
 unsigned int fireman_set_debounce = FIREMAN_SET_DELAY;
-void clearText(char*);
 
 void clearText(char* textToClear){
     for(int i = 0; i < TEXT_ARRAY_SIZE; i++){
@@ -188,10 +182,8 @@ void main(void)
         //Fireman override loop.
         if(FIREMAN_INPUT == 0)
         {
-            fireman_out = 1;
 
             HEFLASH_readBlock(&frmn_speed, FIREMAN_SPEED, sizeof(frmn_speed)); //Read fireman_speed state from memory.
-
 
             clearText(newTextLine1);
             sprintf(newTextLine1,"FIREMAN");
@@ -243,14 +235,12 @@ void main(void)
                 __delay_ms(1);
             }
         }
-        POWER_LED = 1;
-        fireman_out = 0;
+        POWER_LED = 1; 
 
         clearText(newTextLine1);
         clearText(newTextLine2);
         clearText(newTextLine3);
         clearText(newTextLine4);
-        
         
         //Screen and Output Updates
         switch(mode) 
@@ -395,7 +385,7 @@ void main(void)
                     sprintf(newTextLine2,"Enabled");
                     
                     //Output speed control via DAC1.
-                    DAC1_Load10bitInputData(((float)ext_speed/1.05) /** (1024/1000)*/); //Scaled based on hardware input range of 0-10008.
+                    DAC1_Load10bitInputData((float)ext_speed/1.05); //Scaled based on hardware input range of 0-1000.
                     
                     //Hysteresis added using checks against AUX_HIGH and AUX_LOW to prevent relay chatter near threshold
                     //This is only needed for AUTO_REMOTE because the remote voltage control is analog and may have noise
@@ -628,9 +618,6 @@ void main(void)
             fireman_set = 0;
             fireman_inc = 0;
 
-            ext_ref_flag = 0;          //Remote enable status changed, update "Enable/Disable" text.
-            dry_state = 0;             //Last state of dry input, updated at Timer0 overflow.
-            wet_state = 0;             //Last state of wet input, updated at Timer0 overflow.
             press = 0;                 //Button debounce flag.
 
             mode = 5;        //OFF == 0/HAND == 1/AUTO_LOCAL == 2/AUTO_REMOTE == 3/FACTORY_RESET == 5
@@ -646,21 +633,13 @@ void main(void)
     }
 }
 
-void __interrupt() __ISR(void){   
+void __interrupt() __ISR(void){ //Code currently works well, but I'd like to move more into main to limit interrupt process overhead. - Alex L.   
     
     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
     {
         
         INTCONbits.TMR0IF = 0;  
-
-        //Check to see if remote input changed, change line two text if true.
-        if((WET_INPUT != wet_state)||(DRY_INPUT != dry_state)){
-            ext_ref_flag = 1;
-        }
-        dry_state = DRY_INPUT; //Record new current dry_input.
-        wet_state = WET_INPUT; //Record new current wet_input.
-        
-        
+         
         if(fireman_set){
             if(fireman_inc){
                 fireman_inc--;
@@ -681,7 +660,7 @@ void __interrupt() __ISR(void){
             fireman_set_debounce = FIREMAN_SET_DELAY;
         }
         
-        if(increase_btn_debounce && !(decrease_btn_debounce || mode_btn_debounce)){
+        if(increase_btn_debounce && !(decrease_btn_debounce || mode_btn_debounce)){  
             if(factory_reset_dec){
                 factory_reset_dec--;
             }
