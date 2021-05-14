@@ -30,11 +30,11 @@ void I2C_Init( uint8_t speed )
   Serial Data(SDA)  - RB0
   Configure these pins as Input
   */
-  TRISC |= 0b00011000;
+  TRISC |= 0b00011000; //RC3 and RC4 set as inputs.
   /* Slew Rate Disabled for Standard Speed & Enabled for High Speed */
   if( speed == I2C_HIGH_SPEED )
   {
-    SSP1STAT |= 0x80; //0b1000 0000//0x80
+    SSP1STAT |= 0x80; 
   }
   else
   {
@@ -46,10 +46,9 @@ void I2C_Init( uint8_t speed )
    * SSPEN:1 -> Enables Serial Port & configures the SDA and SCL as serial port pins
    * CKP:0
    * SSPM3:SSPM0:1000 -> I2C Master Mode, clock=FOSC/(4*(SSPADD+1))
-   * FOSC = 48MHZ, and to get a clock of 100Khz => SSPADD = 119u
    */
-  SSP1CON1 = 0b00101000;
-  SSP1ADD = 19u;            /* 100KHz Frequency */
+  SSP1CON1 = 0b00101000; 
+  SSP1ADD = 7u; //If 32MHz Fosc, 1MHz I2C clock.  - Alex L.
   SSP1CON3 &= 0b11110111;
 }
 

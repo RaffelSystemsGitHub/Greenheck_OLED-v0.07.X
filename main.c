@@ -46,7 +46,7 @@
     SOFTWARE.
 */
 
-#include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/mcc.h" //MCC is more headache than it's worth.
 #include <xc.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -58,7 +58,6 @@
 #include "OLED.h"    //
 
 
-
 #define DRY_INPUT       RA3    //Input pin active on continuity.
 #define SPEED_INPUT     AN9    //ADC pin for external auto speed reference.
 #define MODE_BUTTON     (!RB0)    //Input pin to toggle mode.
@@ -68,9 +67,9 @@
 #define FIREMAN_INPUT   RB5    //Input pin photocoupled to 12-120V.
 
 #define MOTOR_OUT    DAC1OUT1   //Output to motor control input, may be incorrect definition.
-#define AUX_CONTACT  RA0        //Output to close power relay.
-#define RUN_STATUS   RA1        //Output to close solid-state switch.
-#define POWER_LED    RA6        //Output to POWER_LED.
+#define AUX_CONTACT  LATA0       //Output to close power relay.
+#define RUN_STATUS   LATA1        //Output to close solid-state switch.
+#define POWER_LED    LATA6       //Output to POWER_LED.
 
 #define MODE                0   //Address for mode state (HAND/AUTO/OFF).
 #define HAND_SPEED          1   //Address for hand speed reference.
@@ -89,7 +88,6 @@
 #define SET_FIREMAN_SPEED       0b0110
 #define FACTORY_RESET           0b0011
 
-
 #define AUX_HIGH                1.9
 #define AUX_THRESHOLD           1.85
 #define AUX_LOW                 1.8
@@ -97,12 +95,11 @@
 #define RUN_STATUS_THRESHOLD    2.0
 #define RUN_STATUS_LOW          1.95
 
-#define FIREMAN_SET_TIMEOUT 30000   //15 sec timeout with TMR0 set for 200us interrupt.
-#define FACTORY_RESET_DELAY 3000    //Button hold time for factory reset.
-#define FIREMAN_SET_DELAY   3000    //button hold time for fireman set
-#define DEBOUNCE_CNT        20   //Tune debounce sensitivity.
-#define SPEED_1_TIME        300
-
+#define FIREMAN_SET_TIMEOUT 50000   //10 sec timeout with TMR0 set for 200us interrupt.
+#define FACTORY_RESET_DELAY 25000    //Button hold time (5 sec) for factory reset.
+#define FIREMAN_SET_DELAY   10000    //button hold time (2 sec)for fireman set
+#define DEBOUNCE_CNT        20      //Tune debounce sensitivity.
+#define SPEED_1_TIME        2000     //Tune increase and decrease change time.
 
 
 volatile int decrement = DEBOUNCE_CNT;
@@ -116,7 +113,6 @@ bool mode_change_flag = 0;
 bool fireman_set = 0;
 
 bool factory_reset_enable = 0;
-bool freeze_mode = 0;           //Purpose of this flag? Not used anywhere in main. - Alex L.
 bool press = 0;                 //Button debounce flag.
 static char buttons = 0;               //State of all buttons.
 static char last_buttons = 0;               //State of all buttons.
@@ -132,6 +128,7 @@ unsigned char  speedChangeState = 0;
 unsigned int speedChangeTimer = 0;
 unsigned int fireman_set_debounce = FIREMAN_SET_DELAY;
 
+
 void clearText(char* textToClear){
     for(int i = 0; i < TEXT_ARRAY_SIZE; i++){
         textToClear[i] = ' ';
@@ -142,7 +139,7 @@ void clearText(char* textToClear){
 void main(void)
 {   
     // initialize the device
-    SYSTEM_Initialize();
+    SYSTEM_Initialize(); 
     
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
@@ -176,7 +173,7 @@ void main(void)
     OLED_Init();
     __delay_ms(100);
     
-    
+        
     while (1)
     {      
         //Fireman override loop.
@@ -542,7 +539,7 @@ void main(void)
                         }
                     } 
                 }
-                if(!decrease_btn_debounce){                                //see increase_button comments
+                if(!decrease_btn_debounce){//see increase_button comments
                     if((FIREMAN_INPUT == 1) && (INCREASE_BUTTON != 1)){
                         if(!speedChangeTimer){
                             if(speedChangeState<4){
@@ -632,9 +629,8 @@ void main(void)
         }
     }
 }
-
-void __interrupt() __ISR(void){ //Code currently works well, but I'd like to move more into main to limit interrupt process overhead. - Alex L.   
     
+void __interrupt() __ISR(void){ 
     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
     {
         
@@ -646,7 +642,7 @@ void __interrupt() __ISR(void){ //Code currently works well, but I'd like to mov
             }
         }
         
-        if(mode_btn_debounce && (!(increase_btn_debounce || decrease_btn_debounce))){
+        if(mode_btn_debounce && !(increase_btn_debounce || decrease_btn_debounce)){
             if(fireman_set_debounce){
                 fireman_set_debounce--;
                 if(!fireman_set_debounce){

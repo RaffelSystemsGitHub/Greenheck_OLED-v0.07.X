@@ -19863,9 +19863,15 @@ void I2C_Init( uint8_t speed )
   {
     SSP1STAT &= ~0x80;
   }
-# 51 "I2C.c"
+
+
+
+
+
+
+
   SSP1CON1 = 0b00101000;
-  SSP1ADD = 19u;
+  SSP1ADD = 7u;
   SSP1CON3 &= 0b11110111;
 }
 

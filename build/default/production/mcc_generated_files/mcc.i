@@ -19848,10 +19848,7 @@ void SYSTEM_Initialize(void)
 void OSCILLATOR_Initialize(void)
 {
 
-
-    OSCCON = 0x7A;
-
-
+    OSCCON = 0xF0;
 
     OSCSTAT = 0x80;
 

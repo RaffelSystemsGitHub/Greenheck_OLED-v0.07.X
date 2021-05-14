@@ -347,7 +347,7 @@ void OLED_Init(void) {
     
     ssd1306_command(SSD1306_DISPLAY_OFF);
     ssd1306_command(SSD1306_SET_DISPLAY_CLOCK_DIV_RATIO);
-    ssd1306_command(0x80); //0x80
+    ssd1306_command(0xF0); //Set internal clock to max freq. (~540kHz). 0x80 Default. 
     ssd1306_command(SSD1306_SET_MULTIPLEX_RATIO);
     ssd1306_command(SSD1306_LCDHEIGHT - 1);
     ssd1306_command(SSD1306_SET_DISPLAY_OFFSET);
@@ -995,7 +995,9 @@ static uint8_t height(void) {
     return retVal;
 }*/
 
-void UpdateScreen(){
+//In the future, may want to break down into modular parts. Utilize char array, 
+//TEXT_ARRAY_SIZE and line number as arguments?
+void UpdateScreen(){ 
     for(int i = 0;i < 16; i++){
         if(textLine1[i]!=newTextLine1[i]){
             OLED_Write(i*(cfont.x_size - 4),0,newTextLine1[i]);
@@ -1003,11 +1005,7 @@ void UpdateScreen(){
             line_1_update_flag = 1;
         }
     }
-    if(line_1_update_flag){
-        OLED_Update_Partial(0);
-        line_1_update_flag = 0;
-    }
-    
+       
     for(int i = 0;i < 16; i++){
         if(textLine2[i]!=newTextLine2[i]){
             OLED_Write(i*(cfont.x_size - 4),16,newTextLine2[i]);
@@ -1015,11 +1013,7 @@ void UpdateScreen(){
             line_2_update_flag = 1;
         }
     }
-    if(line_2_update_flag){
-        OLED_Update_Partial(2);
-        line_2_update_flag = 0;
-    }
-    
+       
     for(int i = 0;i < 16; i++){
         if(textLine3[i]!=newTextLine3[i]){
             OLED_Write(i*(cfont.x_size - 4),32,newTextLine3[i]);
@@ -1027,11 +1021,7 @@ void UpdateScreen(){
             line_3_update_flag = 1;
         }
     }
-    if(line_3_update_flag){
-        OLED_Update_Partial(4);
-        line_3_update_flag = 0;
-    }
-    
+
     for(int i = 0;i < 16; i++){
         if(textLine4[i]!=newTextLine4[i]){
             OLED_Write(i*(cfont.x_size - 4),48,newTextLine4[i]);
@@ -1039,6 +1029,22 @@ void UpdateScreen(){
             line_4_update_flag = 1;
         }
     }
+    
+    if(line_1_update_flag){
+        OLED_Update_Partial(0);
+        line_1_update_flag = 0;
+    }
+    
+    if(line_2_update_flag){
+        OLED_Update_Partial(2);
+        line_2_update_flag = 0;
+    }
+    
+    if(line_3_update_flag){
+        OLED_Update_Partial(4);
+        line_3_update_flag = 0;
+    }
+    
     if(line_4_update_flag){
         OLED_Update_Partial(6);
         line_4_update_flag = 0;

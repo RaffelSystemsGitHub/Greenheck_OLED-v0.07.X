@@ -1850,8 +1850,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 99:     SLRCONB = 0xFF;
 [e = _SLRCONB -> -> 255 `i `uc ]
 "100
-[; ;mcc_generated_files/pin_manager.c: 100:     SLRCONC = 0xFF;
-[e = _SLRCONC -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 100:     SLRCONC = 0b11100111;
+[e = _SLRCONC -> -> 231 `i `uc ]
 "105
 [; ;mcc_generated_files/pin_manager.c: 105:     INLVLA = 0x3F;
 [e = _INLVLA -> -> 63 `i `uc ]

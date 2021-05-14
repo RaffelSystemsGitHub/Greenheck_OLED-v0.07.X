@@ -19512,7 +19512,7 @@ void TMR0_Initialize(void)
 
 
 
-    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xD3 & 0x3F));
+    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0b00010010);
 
 
     TMR0 = 0xC7;

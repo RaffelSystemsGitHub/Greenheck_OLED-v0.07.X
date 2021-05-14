@@ -19446,7 +19446,7 @@ void PIN_MANAGER_Initialize(void)
 
     SLRCONA = 0xFF;
     SLRCONB = 0xFF;
-    SLRCONC = 0xFF;
+    SLRCONC = 0b11100111;
 
 
 

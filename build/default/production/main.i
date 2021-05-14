@@ -20368,24 +20368,18 @@ void OLED_Write( int16_t x, int16_t y, char value );
 
 void UpdateScreen(void);
 # 58 "main.c" 2
-# 108 "main.c"
+# 105 "main.c"
 volatile int decrement = 20;
 volatile int increase_btn_debounce = 20;
 volatile int decrease_btn_debounce = 20;
 volatile int mode_btn_debounce = 20;
-volatile int factory_reset_dec = 3000;
-volatile int fireman_inc = 30000;
+volatile int factory_reset_dec = 25000;
+volatile int fireman_inc = 50000;
 
 _Bool mode_change_flag = 0;
 _Bool fireman_set = 0;
-_Bool fireman_out = 0;
 
-
-volatile _Bool ext_ref_flag = 0;
-volatile _Bool dry_state = 0;
-volatile _Bool wet_state = 0;
 _Bool factory_reset_enable = 0;
-_Bool freeze_mode = 0;
 _Bool press = 0;
 static char buttons = 0;
 static char last_buttons = 0;
@@ -20399,8 +20393,8 @@ unsigned char frmn_speed = 100;
 unsigned short ext_speed = 0;
 unsigned char speedChangeState = 0;
 unsigned int speedChangeTimer = 0;
-unsigned int fireman_set_debounce = 3000;
-void clearText(char*);
+unsigned int fireman_set_debounce = 10000;
+
 
 void clearText(char* textToClear){
     for(int i = 0; i < 16; i++){
@@ -20429,7 +20423,7 @@ void main(void)
 
 
 
-    _delay((unsigned long)((100)*(16000000/4000.0)));
+    _delay((unsigned long)((100)*((32000000)/4000.0)));
     HEFLASH_readBlock(&mode, 0, sizeof(mode));
     HEFLASH_readBlock(&speed, 1, sizeof(speed));
     HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
@@ -20444,7 +20438,7 @@ void main(void)
     }
 
     OLED_Init();
-    _delay((unsigned long)((100)*(16000000/4000.0)));
+    _delay((unsigned long)((100)*((32000000)/4000.0)));
 
 
     while (1)
@@ -20452,10 +20446,8 @@ void main(void)
 
         if(RB5 == 0)
         {
-            fireman_out = 1;
 
             HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
-
 
             clearText(newTextLine1);
             sprintf(newTextLine1,"FIREMAN");
@@ -20473,22 +20465,22 @@ void main(void)
             if((float)frmn_speed/10 > 1.85)
             {
 
-                RA0 = 1;
+                LATA0 = 1;
             }
             else
             {
 
-                RA0 = 0;
+                LATA0 = 0;
             }
             if(frmn_speed/10 >= 2.0)
             {
 
-                RA1 = 1;
+                LATA1 = 1;
             }
             else
             {
 
-                RA1 = 0;
+                LATA1 = 0;
             }
 
             UpdateScreen();
@@ -20500,21 +20492,19 @@ void main(void)
                     power_led_flash_counter = 1000;
                 }
                 if(power_led_flash_counter>500){
-                    RA6 = 0;
+                    LATA6 = 0;
                 }else{
-                    RA6 = 1;
+                    LATA6 = 1;
                 }
-                _delay((unsigned long)((1)*(16000000/4000.0)));
+                _delay((unsigned long)((1)*((32000000)/4000.0)));
             }
         }
-        RA6 = 1;
-        fireman_out = 0;
+        LATA6 = 1;
 
         clearText(newTextLine1);
         clearText(newTextLine2);
         clearText(newTextLine3);
         clearText(newTextLine4);
-
 
 
         switch(mode)
@@ -20529,9 +20519,9 @@ void main(void)
                 DAC1_Load10bitInputData(0);
 
 
-                RA0 = 0;
+                LATA0 = 0;
 
-                RA1 = 0;
+                LATA1 = 0;
 
             break;
 
@@ -20551,23 +20541,23 @@ void main(void)
                 if((float)speed/10 > 1.85)
                 {
 
-                    RA0 = 1;
+                    LATA0 = 1;
                 }
                 else
                 {
 
-                    RA0 = 0;
+                    LATA0 = 0;
                 }
 
                 if(speed/10 >= 2.0)
                 {
 
-                    RA1 = 1;
+                    LATA1 = 1;
                 }
                 else
                 {
 
-                    RA1 = 0;
+                    LATA1 = 0;
                 }
 
             break;
@@ -20593,23 +20583,23 @@ void main(void)
                     if((float)speed/10 > 1.85)
                     {
 
-                        RA0 = 1;
+                        LATA0 = 1;
                     }
                     else
                     {
 
-                        RA0 = 0;
+                        LATA0 = 0;
                     }
 
                     if(speed/10 >= 2.0)
                     {
 
-                        RA1 = 1;
+                        LATA1 = 1;
                     }
                     else
                     {
 
-                        RA1 = 0;
+                        LATA1 = 0;
                     }
                 }
                 else
@@ -20621,9 +20611,9 @@ void main(void)
                     DAC1_Load10bitInputData(0);
 
 
-                    RA0 = 0;
+                    LATA0 = 0;
 
-                    RA1 = 0;
+                    LATA1 = 0;
 
                 }
 
@@ -20659,19 +20649,19 @@ void main(void)
                     sprintf(newTextLine2,"Enabled");
 
 
-                    DAC1_Load10bitInputData(((float)ext_speed/1.05) );
+                    DAC1_Load10bitInputData((float)ext_speed/1.05);
 
 
 
                     if((float)ext_speed/100 > 1.9)
                     {
 
-                        RA0 = 1;
+                        LATA0 = 1;
                     }
                     else if ((float)ext_speed/100 < 1.8)
                     {
 
-                        RA0 = 0;
+                        LATA0 = 0;
                     }
 
 
@@ -20679,12 +20669,12 @@ void main(void)
                     if((float)ext_speed/100 > 2.05)
                     {
 
-                        RA1 = 1;
+                        LATA1 = 1;
                     }
                     else if((float)ext_speed/100 < 1.95)
                     {
 
-                        RA1 = 0;
+                        LATA1 = 0;
                     }
                 }
                 else
@@ -20696,9 +20686,9 @@ void main(void)
                     DAC1_Load10bitInputData(0);
 
 
-                    RA0 = 0;
+                    LATA0 = 0;
 
-                    RA1 = 0;
+                    LATA1 = 0;
                 }
             break;
 
@@ -20716,23 +20706,23 @@ void main(void)
                 if((float)frmn_speed/10 > 1.85)
                 {
 
-                    RA0 = 1;
+                    LATA0 = 1;
                 }
                 else
                 {
 
-                    RA0 = 0;
+                    LATA0 = 0;
                 }
 
                 if(frmn_speed/10 >= 2.0)
                 {
 
-                    RA1 = 1;
+                    LATA1 = 1;
                 }
                 else
                 {
 
-                    RA1 = 0;
+                    LATA1 = 0;
                 }
 
             break;
@@ -20746,9 +20736,9 @@ void main(void)
                 DAC1_Load10bitInputData(0);
 
 
-                RA0 = 0;
+                LATA0 = 0;
 
-                RA1 = 0;
+                LATA1 = 0;
 
             break;
         }
@@ -20794,7 +20784,7 @@ void main(void)
                         if(!speedChangeTimer){
                             if(speedChangeState<4){
                                 speedChangeState++;
-                                speedChangeTimer = 300;
+                                speedChangeTimer = 2000;
                             }
 
                             if(fireman_set){
@@ -20821,7 +20811,7 @@ void main(void)
                         if(!speedChangeTimer){
                             if(speedChangeState<4){
                                 speedChangeState++;
-                                speedChangeTimer = 300;
+                                speedChangeTimer = 2000;
                             }
                             if(fireman_set)
                             {
@@ -20892,9 +20882,6 @@ void main(void)
             fireman_set = 0;
             fireman_inc = 0;
 
-            ext_ref_flag = 0;
-            dry_state = 0;
-            wet_state = 0;
             press = 0;
 
             mode = 5;
@@ -20911,19 +20898,10 @@ void main(void)
 }
 
 void __attribute__((picinterrupt(("")))) __ISR(void){
-
     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
     {
 
         INTCONbits.TMR0IF = 0;
-
-
-        if((RB4 != wet_state)||(RA3 != dry_state)){
-            ext_ref_flag = 1;
-        }
-        dry_state = RA3;
-        wet_state = RB4;
-
 
         if(fireman_set){
             if(fireman_inc){
@@ -20931,18 +20909,18 @@ void __attribute__((picinterrupt(("")))) __ISR(void){
             }
         }
 
-        if(mode_btn_debounce && (!(increase_btn_debounce || decrease_btn_debounce))){
+        if(mode_btn_debounce && !(increase_btn_debounce || decrease_btn_debounce)){
             if(fireman_set_debounce){
                 fireman_set_debounce--;
                 if(!fireman_set_debounce){
-                    fireman_inc = 30000;
+                    fireman_inc = 50000;
                     fireman_set = 1;
                     HEFLASH_writeBlock(0, &mode, sizeof(mode));
                     mode = 4;
                 }
             }
         }else{
-            fireman_set_debounce = 3000;
+            fireman_set_debounce = 10000;
         }
 
         if(increase_btn_debounce && !(decrease_btn_debounce || mode_btn_debounce)){
@@ -20951,7 +20929,7 @@ void __attribute__((picinterrupt(("")))) __ISR(void){
             }
         }
         else{
-            factory_reset_dec = 3000;
+            factory_reset_dec = 25000;
         }
         if(increase_btn_debounce && decrease_btn_debounce && mode_btn_debounce){
             speedChangeTimer = 0;

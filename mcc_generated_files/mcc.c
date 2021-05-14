@@ -61,11 +61,8 @@ void SYSTEM_Initialize(void)
 
 void OSCILLATOR_Initialize(void)
 {
-    // SCS INTOSC; SPLLEN disabled; IRCF 16MHz_HF; 
-    //OSCCON = 0x7A; //1 1110 X 10 
-    OSCCON = 0x7A;//0b11110010;//0x7A;
-    //0b0111 1010
-    //0b1111 0010
+    // SCS FOSC enabled; SPLLEN disabled; IRCF 32MHz_HF (4x PLL); 
+    OSCCON = 0xF0;//1 1110 0 00 //Increased Fosc to 32MHz (4x PLL), attempting to increase buffer transfer speed. - Alex L.
     // SOSCR enabled; 
     OSCSTAT = 0x80;
     // TUN 0; 
