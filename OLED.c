@@ -998,13 +998,25 @@ static uint8_t height(void) {
 //In the future, may want to break down into modular parts. Utilize char array, 
 //TEXT_ARRAY_SIZE and line number as arguments?
 void UpdateScreen(){ 
+    char numSpaces = 0;
     for(int i = 0;i < 16; i++){
-        if(textLine1[i]!=newTextLine1[i]){
-            OLED_Write(i*(cfont.x_size - 4),0,newTextLine1[i]);
+        if((textLine1[i]!=newTextLine1[i]) || line_1_update_flag){
+            OLED_Write((i*(cfont.x_size - 4))-(4*numSpaces),0,newTextLine1[i]);
             textLine1[i] = newTextLine1[i];
             line_1_update_flag = 1;
         }
+        if(newTextLine1[i]==' '){
+            numSpaces++;
+        }
     }
+    
+//    for(int i = 0;i < 16; i++){
+//        if(textLine1[i]!=newTextLine1[i]){
+//            OLED_Write(i*(cfont.x_size - 4),0,newTextLine1[i]);
+//            textLine1[i] = newTextLine1[i];
+//            line_1_update_flag = 1;
+//        }
+//    }
        
     for(int i = 0;i < 16; i++){
         if(textLine2[i]!=newTextLine2[i]){

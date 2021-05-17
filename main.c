@@ -123,7 +123,7 @@ char updateAutoRemoteDelay = 0;
 unsigned char mode = 0;        //OFF == 0/HAND == 1/AUTO_LOCAL == 2/AUTO_REMOTE == 3.
 unsigned char speed = 50;       //Range from 0-10 volts. (DAC range 0-100)
 unsigned char frmn_speed = 100;   //Range from 0-10 volts. (DAC range 0-100)
-unsigned short ext_speed = 0;    //Range from 0-10 volts. (Range 0-1024)
+float ext_speed = 0;    //Range from 0-10 volts. (Range 0-1024)
 unsigned char  speedChangeState = 0;
 unsigned int speedChangeTimer = 0;
 unsigned int fireman_set_debounce = FIREMAN_SET_DELAY;
@@ -353,12 +353,11 @@ void main(void)
             break;    
             
             case AUTO_REMOTE :
-                ext_speed = (((unsigned int)ADRESH<<8) + (unsigned int)ADRESL);  //For right-justified setting. Hardware range limited from 0-1000.
-                ext_speed = (float)ext_speed*1.05;
-                unsigned int integer = ext_speed*10/1000;
-                unsigned int decimal = ((unsigned long)ext_speed*100/1000) % 10;  
-                
-                //LINE 1
+                ext_speed = (float)((ADRESH<<8) + ADRESL);  //For right-justified setting. Hardware range limited from 0-1000.
+                unsigned int integer = (ext_speed*10/1000);
+                unsigned int decimal = ((unsigned long)(ext_speed*100/1000)) % 10;  
+                  
+                //LINE 1                                                                
                 sprintf(newTextLine1,"AUTO REMOTE");                     
                 
                 //LINE 3
@@ -368,7 +367,7 @@ void main(void)
                 //only update displayed voltage periodically to prevent frequent screen updates from interfering with button press timing.
                 if(!updateAutoRemoteDelay){ 
                     updateAutoRemoteDelay = DEBOUNCE_CNT; 
-                    sprintf(newTextLine4,"READ:%d.%dV", (unsigned int)integer, (unsigned int)decimal);
+                    sprintf(newTextLine4,"READ:%d.%dV", integer, decimal);
                 }else{
                     //Keep previous text if text is not being updated
                     for(int i = 0; i < TEXT_ARRAY_SIZE;i++){
@@ -382,7 +381,7 @@ void main(void)
                     sprintf(newTextLine2,"Enabled");
                     
                     //Output speed control via DAC1.
-                    DAC1_Load10bitInputData((float)ext_speed/1.05); //Scaled based on hardware input range of 0-1000.
+                    DAC1_Load10bitInputData(ext_speed); //Scaled based on hardware input range of 0-1000.
                     
                     //Hysteresis added using checks against AUX_HIGH and AUX_LOW to prevent relay chatter near threshold
                     //This is only needed for AUTO_REMOTE because the remote voltage control is analog and may have noise
