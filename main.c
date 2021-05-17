@@ -101,6 +101,8 @@
 #define DEBOUNCE_CNT        20      //Tune debounce sensitivity.
 #define SPEED_1_TIME        2000     //Tune increase and decrease change time.
 
+#define FILTER_SAMPLE_SIZE 50
+#define FILTER_ARRAY_INDEX (FILTER_SAMPLE_SIZE-1)
 
 volatile int decrement = DEBOUNCE_CNT;
 volatile int increase_btn_debounce = DEBOUNCE_CNT;
@@ -354,9 +356,36 @@ void main(void)
             
             case AUTO_REMOTE :
                 ext_speed = (float)((ADRESH<<8) + ADRESL);  //For right-justified setting. Hardware range limited from 0-1000.
-                unsigned int integer = (ext_speed*10/1000);
-                unsigned int decimal = ((unsigned long)(ext_speed*100/1000)) % 10;  
-                  
+                
+                static unsigned int index = 0;
+                static float arr[FILTER_SAMPLE_SIZE];
+                
+                //Rolling averaging filter.
+                if(index < FILTER_ARRAY_INDEX){
+                    
+                    arr[index] = ext_speed;
+                    index++;
+                    
+                }
+                else{
+                    
+                    arr[index] = ext_speed;
+                    index = 0;
+                    
+                }    
+                
+                //Reset average every new sample.
+                float avg = 0;
+                for(unsigned int i =0; i<FILTER_SAMPLE_SIZE; i++){
+                    avg += arr[i];
+                    if(i == FILTER_ARRAY_INDEX){
+                        avg = avg/FILTER_SAMPLE_SIZE;
+                    }
+                }
+                
+                unsigned int integer = (avg*10/1000);
+                unsigned int decimal = ((unsigned long)(avg*100/1000)) % 10;  
+                
                 //LINE 1                                                                
                 sprintf(newTextLine1,"AUTO REMOTE");                     
                 

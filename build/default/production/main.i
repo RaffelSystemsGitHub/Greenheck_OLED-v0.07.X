@@ -20374,7 +20374,7 @@ void OLED_Write( int16_t x, int16_t y, char value );
 
 void UpdateScreen(void);
 # 58 "main.c" 2
-# 105 "main.c"
+# 107 "main.c"
 volatile int decrement = 20;
 volatile int increase_btn_debounce = 20;
 volatile int decrease_btn_debounce = 20;
@@ -20626,10 +20626,36 @@ void main(void)
             break;
 
             case 3 :
-                 ext_speed = (float)((ADRESH<<8) + ADRESL);
+                ext_speed = (float)((ADRESH<<8) + ADRESL);
 
-                unsigned int integer = (ext_speed*10/1000);
-                unsigned int decimal = ((unsigned long)(ext_speed*100/1000)) % 10;
+                static unsigned int index = 0;
+                static float arr[50];
+
+
+                if(index < (50 -1)){
+
+                    arr[index] = ext_speed;
+                    index++;
+
+                }
+                else{
+
+                    arr[index] = ext_speed;
+                    index = 0;
+
+                }
+
+
+                float avg = 0;
+                for(unsigned int i =0; i<50; i++){
+                    avg += arr[i];
+                    if(i == (50 -1)){
+                        avg = avg/50;
+                    }
+                }
+
+                unsigned int integer = (avg*10/1000);
+                unsigned int decimal = ((unsigned long)(avg*100/1000)) % 10;
 
 
                 sprintf(newTextLine1,"AUTO REMOTE");
