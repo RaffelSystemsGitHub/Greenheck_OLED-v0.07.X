@@ -16,8 +16,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "326 OLED.c
 [; ;OLED.c: 326: static void ssd1306_command(uint8_t command);
 [v _ssd1306_command `(v ~T0 @X0 0 sf1`uc ]
-"131 ./OLED.h
-[; ;./OLED.h: 131: void OLED_SetFont( const uint8_t *font);
+"132 ./OLED.h
+[; ;./OLED.h: 132: void OLED_SetFont( const uint8_t *font);
 [v _OLED_SetFont `(v ~T0 @X0 0 ef1`*Cuc ]
 "125
 [; ;./OLED.h: 125: void OLED_Update( void );
@@ -5918,8 +5918,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;OLED.c: 375:     ssd1306_command(0x81);
 [e ( _ssd1306_command (1 -> -> 129 `i `uc ]
 "377
-[; ;OLED.c: 377:     ssd1306_command(0xCF);
-[e ( _ssd1306_command (1 -> -> 207 `i `uc ]
+[; ;OLED.c: 377:     ssd1306_command(0xFF);
+[e ( _ssd1306_command (1 -> -> 255 `i `uc ]
 "380
 [; ;OLED.c: 380:     ssd1306_command(0xD9);
 [e ( _ssd1306_command (1 -> -> 217 `i `uc ]
@@ -6886,4 +6886,95 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1064
 [; ;OLED.c: 1064: }
 [e :UE 1805 ]
+}
+"1067
+[; ;OLED.c: 1067: void DisplaySettingRefresh(void){
+[v _DisplaySettingRefresh `(v ~T0 @X0 1 ef ]
+{
+[e :U _DisplaySettingRefresh ]
+[f ]
+"1069
+[; ;OLED.c: 1069:     ssd1306_command(0xAE);
+[e ( _ssd1306_command (1 -> -> 174 `i `uc ]
+"1070
+[; ;OLED.c: 1070:     ssd1306_command(0xD5);
+[e ( _ssd1306_command (1 -> -> 213 `i `uc ]
+"1071
+[; ;OLED.c: 1071:     ssd1306_command(0xF0);
+[e ( _ssd1306_command (1 -> -> 240 `i `uc ]
+"1072
+[; ;OLED.c: 1072:     ssd1306_command(0xA8);
+[e ( _ssd1306_command (1 -> -> 168 `i `uc ]
+"1073
+[; ;OLED.c: 1073:     ssd1306_command(64 - 1);
+[e ( _ssd1306_command (1 -> - -> 64 `i -> 1 `i `uc ]
+"1074
+[; ;OLED.c: 1074:     ssd1306_command(0xD3);
+[e ( _ssd1306_command (1 -> -> 211 `i `uc ]
+"1075
+[; ;OLED.c: 1075:     ssd1306_command(0x00);
+[e ( _ssd1306_command (1 -> -> 0 `i `uc ]
+"1076
+[; ;OLED.c: 1076:     ssd1306_command(0x40 | 0x00);
+[e ( _ssd1306_command (1 -> | -> 64 `i -> 0 `i `uc ]
+"1077
+[; ;OLED.c: 1077:     ssd1306_command(0x8D);
+[e ( _ssd1306_command (1 -> -> 141 `i `uc ]
+"1080
+[; ;OLED.c: 1080:     ssd1306_command(0x14);
+[e ( _ssd1306_command (1 -> -> 20 `i `uc ]
+"1081
+[; ;OLED.c: 1081:     ssd1306_command(0x20);
+[e ( _ssd1306_command (1 -> -> 32 `i `uc ]
+"1082
+[; ;OLED.c: 1082:     ssd1306_command(0x00);
+[e ( _ssd1306_command (1 -> -> 0 `i `uc ]
+"1083
+[; ;OLED.c: 1083:     ssd1306_command(0xA0 | 0x01);
+[e ( _ssd1306_command (1 -> | -> 160 `i -> 1 `i `uc ]
+"1084
+[; ;OLED.c: 1084:     ssd1306_command(0xC8);
+[e ( _ssd1306_command (1 -> -> 200 `i `uc ]
+"1094
+[; ;OLED.c: 1094:     ssd1306_command(0xDA);
+[e ( _ssd1306_command (1 -> -> 218 `i `uc ]
+"1095
+[; ;OLED.c: 1095:     ssd1306_command(0x12);
+[e ( _ssd1306_command (1 -> -> 18 `i `uc ]
+"1096
+[; ;OLED.c: 1096:     ssd1306_command(0x81);
+[e ( _ssd1306_command (1 -> -> 129 `i `uc ]
+"1098
+[; ;OLED.c: 1098:     ssd1306_command(0xFF);
+[e ( _ssd1306_command (1 -> -> 255 `i `uc ]
+"1101
+[; ;OLED.c: 1101:     ssd1306_command(0xD9);
+[e ( _ssd1306_command (1 -> -> 217 `i `uc ]
+"1103
+[; ;OLED.c: 1103:     ssd1306_command(0xF1);
+[e ( _ssd1306_command (1 -> -> 241 `i `uc ]
+"1104
+[; ;OLED.c: 1104:     ssd1306_command(0xDB);
+[e ( _ssd1306_command (1 -> -> 219 `i `uc ]
+"1105
+[; ;OLED.c: 1105:     ssd1306_command(0x40);
+[e ( _ssd1306_command (1 -> -> 64 `i `uc ]
+"1106
+[; ;OLED.c: 1106:     ssd1306_command(0xA4);
+[e ( _ssd1306_command (1 -> -> 164 `i `uc ]
+"1107
+[; ;OLED.c: 1107:     ssd1306_command(0xA6);
+[e ( _ssd1306_command (1 -> -> 166 `i `uc ]
+"1108
+[; ;OLED.c: 1108:     ssd1306_command(0x2E);
+[e ( _ssd1306_command (1 -> -> 46 `i `uc ]
+"1109
+[; ;OLED.c: 1109:     ssd1306_command(0xAF);
+[e ( _ssd1306_command (1 -> -> 175 `i `uc ]
+"1113
+[; ;OLED.c: 1113:     OLED_SetFont(BIG_FONTS);
+[e ( _OLED_SetFont (1 &U _BIG_FONTS ]
+"1115
+[; ;OLED.c: 1115: }
+[e :UE 1827 ]
 }

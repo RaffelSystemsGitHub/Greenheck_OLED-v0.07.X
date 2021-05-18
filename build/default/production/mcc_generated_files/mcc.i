@@ -19841,11 +19841,10 @@ void WDT_Initialize(void);
 
 void SYSTEM_Initialize(void)
 {
-
+    WDT_Initialize();
     I2C_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-    WDT_Initialize();
     ADC_Initialize();
     DAC1_Initialize();
     TMR0_Initialize();
@@ -19866,5 +19865,5 @@ void OSCILLATOR_Initialize(void)
 void WDT_Initialize(void)
 {
 
-    WDTCON = 0x16;
+    WDTCON = 0x25;
 }

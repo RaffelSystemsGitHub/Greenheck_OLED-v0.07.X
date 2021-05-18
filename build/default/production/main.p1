@@ -1,4 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"2294 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f1778.h
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f1778.h: 2294: extern volatile unsigned char WDTCON __attribute__((address(0x099)));
+[v _WDTCON `Vuc ~T0 @X0 0 e@153 ]
 [p mainexit ]
 "75 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 75: void SYSTEM_Initialize(void);
@@ -45,8 +48,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40588
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f1778.h: 40588: extern volatile __bit LATA1 __attribute__((address(0x861)));
 [v _LATA1 `Vb ~T0 @X0 0 e@2145 ]
-"143 ./OLED.h
-[; ;./OLED.h: 143: void UpdateScreen(void);
+"144 ./OLED.h
+[; ;./OLED.h: 144: void UpdateScreen(void);
 [v _UpdateScreen `(v ~T0 @X0 0 ef ]
 "40603 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f1778.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f1778.h: 40603: extern volatile __bit LATA6 __attribute__((address(0x866)));
@@ -63,7 +66,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11322
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f1778.h: 11322: extern volatile unsigned char ADRESL __attribute__((address(0x48E)));
 [v _ADRESL `Vuc ~T0 @X0 0 e@1166 ]
-"43081
+"127 ./OLED.h
+[; ;./OLED.h: 127: void OLED_SetContrast( uint8_t contrast );
+[v _OLED_SetContrast `(v ~T0 @X0 0 ef1`uc ]
+"43081 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f1778.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f1778.h: 43081: extern volatile __bit RB1 __attribute__((address(0x69)));
 [v _RB1 `Vb ~T0 @X0 0 e@105 ]
 "43084
@@ -72,6 +78,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "43078
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f1778.h: 43078: extern volatile __bit RB0 __attribute__((address(0x68)));
 [v _RB0 `Vb ~T0 @X0 0 e@104 ]
+"145 ./OLED.h
+[; ;./OLED.h: 145: void DisplaySettingRefresh(void);
+[v _DisplaySettingRefresh `(v ~T0 @X0 0 ef ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "55 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f1778.h
@@ -1816,141 +1825,159 @@ Version 4.0 HI-TECH Software Intermediate Code
 "119
 [; ;./OLED.h: 119: char line_4_update_flag;
 [v _line_4_update_flag `uc ~T0 @X0 1 e ]
-"107 main.c
-[; ;main.c: 107: volatile int decrement = 20;
+"112 main.c
+[; ;main.c: 112: volatile int decrement = 20;
 [v _decrement `Vi ~T0 @X0 1 e ]
 [i _decrement
 -> 20 `i
 ]
-"108
-[; ;main.c: 108: volatile int increase_btn_debounce = 20;
+"113
+[; ;main.c: 113: volatile int increase_btn_debounce = 20;
 [v _increase_btn_debounce `Vi ~T0 @X0 1 e ]
 [i _increase_btn_debounce
 -> 20 `i
 ]
-"109
-[; ;main.c: 109: volatile int decrease_btn_debounce = 20;
+"114
+[; ;main.c: 114: volatile int decrease_btn_debounce = 20;
 [v _decrease_btn_debounce `Vi ~T0 @X0 1 e ]
 [i _decrease_btn_debounce
 -> 20 `i
 ]
-"110
-[; ;main.c: 110: volatile int mode_btn_debounce = 20;
+"115
+[; ;main.c: 115: volatile int mode_btn_debounce = 20;
 [v _mode_btn_debounce `Vi ~T0 @X0 1 e ]
 [i _mode_btn_debounce
 -> 20 `i
 ]
-"111
-[; ;main.c: 111: volatile int factory_reset_dec = 25000;
+"116
+[; ;main.c: 116: volatile int factory_reset_dec = 25000;
 [v _factory_reset_dec `Vi ~T0 @X0 1 e ]
 [i _factory_reset_dec
 -> 25000 `i
 ]
-"112
-[; ;main.c: 112: volatile int fireman_inc = 50000;
+"117
+[; ;main.c: 117: volatile int fireman_inc = 50000;
 [v _fireman_inc `Vi ~T0 @X0 1 e ]
 [i _fireman_inc
 -> -> 50000 `l `i
 ]
-"114
-[; ;main.c: 114: _Bool mode_change_flag = 0;
+"118
+[; ;main.c: 118: volatile int bright_screen_timer = 50000;
+[v _bright_screen_timer `Vi ~T0 @X0 1 e ]
+[i _bright_screen_timer
+-> -> 50000 `l `i
+]
+"119
+[; ;main.c: 119: volatile long setting_refresh_timer = 1280000;
+[v _setting_refresh_timer `Vl ~T0 @X0 1 e ]
+[i _setting_refresh_timer
+-> 1280000 `l
+]
+"121
+[; ;main.c: 121: _Bool mode_change_flag = 0;
 [v _mode_change_flag `a ~T0 @X0 1 e ]
 [i _mode_change_flag
 -> -> 0 `i `a
 ]
-"115
-[; ;main.c: 115: _Bool fireman_set = 0;
+"122
+[; ;main.c: 122: _Bool fireman_set = 0;
 [v _fireman_set `a ~T0 @X0 1 e ]
 [i _fireman_set
 -> -> 0 `i `a
 ]
-"117
-[; ;main.c: 117: _Bool factory_reset_enable = 0;
+"123
+[; ;main.c: 123: _Bool factory_reset_enable = 0;
 [v _factory_reset_enable `a ~T0 @X0 1 e ]
 [i _factory_reset_enable
 -> -> 0 `i `a
 ]
-"118
-[; ;main.c: 118: _Bool press = 0;
+"124
+[; ;main.c: 124: _Bool press = 0;
 [v _press `a ~T0 @X0 1 e ]
 [i _press
 -> -> 0 `i `a
 ]
-"119
-[; ;main.c: 119: static char buttons = 0;
+"125
+[; ;main.c: 125: _Bool setting_refresh_flag = 0;
+[v _setting_refresh_flag `a ~T0 @X0 1 e ]
+[i _setting_refresh_flag
+-> -> 0 `i `a
+]
+"127
+[; ;main.c: 127: static char buttons = 0;
 [v _buttons `uc ~T0 @X0 1 s ]
 [i _buttons
 -> -> 0 `i `uc
 ]
-"120
-[; ;main.c: 120: static char last_buttons = 0;
+"128
+[; ;main.c: 128: static char last_buttons = 0;
 [v _last_buttons `uc ~T0 @X0 1 s ]
 [i _last_buttons
 -> -> 0 `i `uc
 ]
-"122
-[; ;main.c: 122: char btn_count = 0;
+"130
+[; ;main.c: 130: char btn_count = 0;
 [v _btn_count `uc ~T0 @X0 1 e ]
 [i _btn_count
 -> -> 0 `i `uc
 ]
-"123
-[; ;main.c: 123: char updateAutoRemoteDelay = 0;
+"131
+[; ;main.c: 131: char updateAutoRemoteDelay = 0;
 [v _updateAutoRemoteDelay `uc ~T0 @X0 1 e ]
 [i _updateAutoRemoteDelay
 -> -> 0 `i `uc
 ]
-"125
-[; ;main.c: 125: unsigned char mode = 0;
+"133
+[; ;main.c: 133: unsigned char mode = 0;
 [v _mode `uc ~T0 @X0 1 e ]
 [i _mode
 -> -> 0 `i `uc
 ]
-"126
-[; ;main.c: 126: unsigned char speed = 50;
+"134
+[; ;main.c: 134: unsigned char speed = 50;
 [v _speed `uc ~T0 @X0 1 e ]
 [i _speed
 -> -> 50 `i `uc
 ]
-"127
-[; ;main.c: 127: unsigned char frmn_speed = 100;
+"135
+[; ;main.c: 135: unsigned char frmn_speed = 100;
 [v _frmn_speed `uc ~T0 @X0 1 e ]
 [i _frmn_speed
 -> -> 100 `i `uc
 ]
-"128
-[; ;main.c: 128: float ext_speed = 0;
+"136
+[; ;main.c: 136: float ext_speed = 0;
 [v _ext_speed `f ~T0 @X0 1 e ]
 [i _ext_speed
 -> -> 0 `i `f
 ]
-"129
-[; ;main.c: 129: unsigned char speedChangeState = 0;
+"137
+[; ;main.c: 137: unsigned char speedChangeState = 0;
 [v _speedChangeState `uc ~T0 @X0 1 e ]
 [i _speedChangeState
 -> -> 0 `i `uc
 ]
-"130
-[; ;main.c: 130: unsigned int speedChangeTimer = 0;
+"138
+[; ;main.c: 138: unsigned int speedChangeTimer = 0;
 [v _speedChangeTimer `ui ~T0 @X0 1 e ]
 [i _speedChangeTimer
 -> -> 0 `i `ui
 ]
-"131
-[; ;main.c: 131: unsigned int fireman_set_debounce = 10000;
+"139
+[; ;main.c: 139: unsigned int fireman_set_debounce = 10000;
 [v _fireman_set_debounce `ui ~T0 @X0 1 e ]
 [i _fireman_set_debounce
 -> -> 10000 `i `ui
 ]
-"134
-[; ;main.c: 134: void clearText(char* textToClear){
-[v _clearText `(v ~T0 @X0 1 ef1`*uc ]
+"142
+[; ;main.c: 142: void ClearText(char* textToClear){
+[v _ClearText `(v ~T0 @X0 1 ef1`*uc ]
 {
-[e :U _clearText ]
+[e :U _ClearText ]
 [v _textToClear `*uc ~T0 @X0 1 r1 ]
 [f ]
-"135
-[; ;main.c: 135:     for(int i = 0; i < 16; i++){
+"143
+[; ;main.c: 143:     for(int i = 0; i < 16; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1958,1440 +1985,1537 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1738  ]
 [e :U 1737 ]
 {
-"136
-[; ;main.c: 136:         textToClear[i] = ' ';
+"144
+[; ;main.c: 144:         textToClear[i] = ' ';
 [e = *U + _textToClear * -> _i `x -> -> # *U _textToClear `i `x -> -> 32 `ui `uc ]
-"137
-[; ;main.c: 137:     }
+"145
+[; ;main.c: 145:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 16 `i 1737  ]
 [e :U 1738 ]
 }
-"138
-[; ;main.c: 138: }
+"146
+[; ;main.c: 146: }
 [e :UE 1736 ]
 }
+"149
+[; ;main.c: 149: void WDTclear(void){
+[v _WDTclear `(v ~T0 @X0 1 ef ]
+{
+[e :U _WDTclear ]
+[f ]
+"150
+[; ;main.c: 150:     __asm("CLRWDT");
+[; <" CLRWDT ;# ">
+"151
+[; ;main.c: 151:     WDTCON = 0x25;
+[e = _WDTCON -> -> 37 `i `uc ]
+"152
+[; ;main.c: 152: }
+[e :UE 1740 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"141
-[; ;main.c: 141: void main(void)
+"155
+[; ;main.c: 155: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"142
-[; ;main.c: 142: {
+"156
+[; ;main.c: 156: {
 {
 [e :U _main ]
 [f ]
-"144
-[; ;main.c: 144:     SYSTEM_Initialize();
+"158
+[; ;main.c: 158:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"150
-[; ;main.c: 150:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"153
-[; ;main.c: 153:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"161
-[; ;main.c: 161:     _delay((unsigned long)((100)*((32000000)/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"162
-[; ;main.c: 162:     HEFLASH_readBlock(&mode, 0, sizeof(mode));
-[e ( _HEFLASH_readBlock (3 , , -> &U _mode `*uc -> -> 0 `i `uc -> -> # _mode `ui `uc ]
-"163
-[; ;main.c: 163:     HEFLASH_readBlock(&speed, 1, sizeof(speed));
-[e ( _HEFLASH_readBlock (3 , , -> &U _speed `*uc -> -> 1 `i `uc -> -> # _speed `ui `uc ]
 "164
-[; ;main.c: 164:     HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
-[e ( _HEFLASH_readBlock (3 , , -> &U _frmn_speed `*uc -> -> 2 `i `uc -> -> # _frmn_speed `ui `uc ]
-"165
-[; ;main.c: 165:     if(speed > 100){
-[e $ ! > -> _speed `i -> 100 `i 1741  ]
-{
-"166
-[; ;main.c: 166:         speed = 50;
-[e = _speed -> -> 50 `i `uc ]
+[; ;main.c: 164:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "167
-[; ;main.c: 167:         HEFLASH_writeBlock(1, &speed, sizeof(speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 1 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
-"168
-[; ;main.c: 168:         HEFLASH_writeBlock(3, &speed, sizeof(speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 3 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
-"169
-[; ;main.c: 169:     }
-}
-[e :U 1741 ]
-"170
-[; ;main.c: 170:     if(frmn_speed > 100){
-[e $ ! > -> _frmn_speed `i -> 100 `i 1742  ]
+[; ;main.c: 167:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"175
+[; ;main.c: 175:     _delay((unsigned long)((100)*((32000000)/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"176
+[; ;main.c: 176:     HEFLASH_readBlock(&mode, 0, sizeof(mode));
+[e ( _HEFLASH_readBlock (3 , , -> &U _mode `*uc -> -> 0 `i `uc -> -> # _mode `ui `uc ]
+"177
+[; ;main.c: 177:     HEFLASH_readBlock(&speed, 1, sizeof(speed));
+[e ( _HEFLASH_readBlock (3 , , -> &U _speed `*uc -> -> 1 `i `uc -> -> # _speed `ui `uc ]
+"178
+[; ;main.c: 178:     HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
+[e ( _HEFLASH_readBlock (3 , , -> &U _frmn_speed `*uc -> -> 2 `i `uc -> -> # _frmn_speed `ui `uc ]
+"179
+[; ;main.c: 179:     if(speed > 100){
+[e $ ! > -> _speed `i -> 100 `i 1742  ]
 {
-"171
-[; ;main.c: 171:         frmn_speed = 100;
-[e = _frmn_speed -> -> 100 `i `uc ]
-"172
-[; ;main.c: 172:         HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 2 `i `uc -> &U _frmn_speed `*uc -> -> # _frmn_speed `ui `uc ]
-"173
-[; ;main.c: 173:     }
+"180
+[; ;main.c: 180:         speed = 50;
+[e = _speed -> -> 50 `i `uc ]
+"181
+[; ;main.c: 181:         HEFLASH_writeBlock(1, &speed, sizeof(speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 1 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
+"182
+[; ;main.c: 182:         HEFLASH_writeBlock(3, &speed, sizeof(speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 3 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
+"183
+[; ;main.c: 183:     }
 }
 [e :U 1742 ]
-"175
-[; ;main.c: 175:     OLED_Init();
-[e ( _OLED_Init ..  ]
-"176
-[; ;main.c: 176:     _delay((unsigned long)((100)*((32000000)/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"179
-[; ;main.c: 179:     while (1)
-[e :U 1744 ]
-"180
-[; ;main.c: 180:     {
-{
-"182
-[; ;main.c: 182:         if(RB5 == 0)
-[e $ ! == -> _RB5 `i -> 0 `i 1746  ]
-"183
-[; ;main.c: 183:         {
+"184
+[; ;main.c: 184:     if(frmn_speed > 100){
+[e $ ! > -> _frmn_speed `i -> 100 `i 1743  ]
 {
 "185
-[; ;main.c: 185:             HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
-[e ( _HEFLASH_readBlock (3 , , -> &U _frmn_speed `*uc -> -> 2 `i `uc -> -> # _frmn_speed `ui `uc ]
+[; ;main.c: 185:         frmn_speed = 100;
+[e = _frmn_speed -> -> 100 `i `uc ]
+"186
+[; ;main.c: 186:         HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 2 `i `uc -> &U _frmn_speed `*uc -> -> # _frmn_speed `ui `uc ]
 "187
-[; ;main.c: 187:             clearText(newTextLine1);
-[e ( _clearText (1 &U _newTextLine1 ]
-"188
-[; ;main.c: 188:             sprintf(newTextLine1,"FIREMAN");
-[e ( _sprintf (1 , &U _newTextLine1 :s 1C ]
+[; ;main.c: 187:     }
+}
+[e :U 1743 ]
+"189
+[; ;main.c: 189:     OLED_Init();
+[e ( _OLED_Init ..  ]
 "190
-[; ;main.c: 190:             clearText(newTextLine2);
-[e ( _clearText (1 &U _newTextLine2 ]
-"192
-[; ;main.c: 192:             clearText(newTextLine3);
-[e ( _clearText (1 &U _newTextLine3 ]
+[; ;main.c: 190:     _delay((unsigned long)((100)*((32000000)/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"193
+[; ;main.c: 193:     while (1)
+[e :U 1745 ]
 "194
-[; ;main.c: 194:             clearText(newTextLine4);
-[e ( _clearText (1 &U _newTextLine4 ]
-"195
-[; ;main.c: 195:             sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
-[e ( _sprintf (1 , , (. , &U _newTextLine4 :s 2C / -> _frmn_speed `i -> 10 `i % -> _frmn_speed `i -> 10 `i ]
-"198
-[; ;main.c: 198:             DAC1_Load10bitInputData((float)frmn_speed *((float)1000/104));
-[e ( _DAC1_Load10bitInputData (1 -> * -> _frmn_speed `f / -> -> 1000 `i `f -> -> 104 `i `f `us ]
+[; ;main.c: 194:     {
+{
+"196
+[; ;main.c: 196:         WDTclear();
+[e ( _WDTclear ..  ]
+"199
+[; ;main.c: 199:         if(RB5 == 0)
+[e $ ! == -> _RB5 `i -> 0 `i 1747  ]
 "200
-[; ;main.c: 200:             if((float)frmn_speed/10 > 1.85)
-[e $ ! > -> / -> _frmn_speed `f -> -> 10 `i `f `d .1.85 1747  ]
-"201
-[; ;main.c: 201:             {
+[; ;main.c: 200:         {
 {
-"203
-[; ;main.c: 203:                 LATA0 = 1;
-[e = _LATA0 -> -> 1 `i `b ]
+"202
+[; ;main.c: 202:             HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
+[e ( _HEFLASH_readBlock (3 , , -> &U _frmn_speed `*uc -> -> 2 `i `uc -> -> # _frmn_speed `ui `uc ]
 "204
-[; ;main.c: 204:             }
-}
-[e $U 1748  ]
+[; ;main.c: 204:             ClearText(newTextLine1);
+[e ( _ClearText (1 &U _newTextLine1 ]
 "205
-[; ;main.c: 205:             else
-[e :U 1747 ]
-"206
-[; ;main.c: 206:             {
-{
-"208
-[; ;main.c: 208:                 LATA0 = 0;
-[e = _LATA0 -> -> 0 `i `b ]
+[; ;main.c: 205:             sprintf(newTextLine1,"FIREMAN");
+[e ( _sprintf (1 , &U _newTextLine1 :s 1C ]
+"207
+[; ;main.c: 207:             ClearText(newTextLine2);
+[e ( _ClearText (1 &U _newTextLine2 ]
 "209
-[; ;main.c: 209:             }
-}
-[e :U 1748 ]
-"210
-[; ;main.c: 210:             if(frmn_speed/10 >= 2.0)
-[e $ ! >= -> / -> _frmn_speed `i -> 10 `i `d .2.0 1749  ]
+[; ;main.c: 209:             ClearText(newTextLine3);
+[e ( _ClearText (1 &U _newTextLine3 ]
 "211
-[; ;main.c: 211:             {
-{
-"213
-[; ;main.c: 213:                 LATA1 = 1;
-[e = _LATA1 -> -> 1 `i `b ]
-"214
-[; ;main.c: 214:             }
-}
-[e $U 1750  ]
+[; ;main.c: 211:             ClearText(newTextLine4);
+[e ( _ClearText (1 &U _newTextLine4 ]
+"212
+[; ;main.c: 212:             sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
+[e ( _sprintf (1 , , (. , &U _newTextLine4 :s 2C / -> _frmn_speed `i -> 10 `i % -> _frmn_speed `i -> 10 `i ]
 "215
-[; ;main.c: 215:             else
-[e :U 1749 ]
-"216
-[; ;main.c: 216:             {
-{
+[; ;main.c: 215:             DAC1_Load10bitInputData((float)frmn_speed *((float)1000/104));
+[e ( _DAC1_Load10bitInputData (1 -> * -> _frmn_speed `f / -> -> 1000 `i `f -> -> 104 `i `f `us ]
+"217
+[; ;main.c: 217:             if((float)frmn_speed/10 > 1.85)
+[e $ ! > -> / -> _frmn_speed `f -> -> 10 `i `f `d .1.85 1748  ]
 "218
-[; ;main.c: 218:                 LATA1 = 0;
-[e = _LATA1 -> -> 0 `i `b ]
-"219
-[; ;main.c: 219:             }
-}
-[e :U 1750 ]
-"221
-[; ;main.c: 221:             UpdateScreen();
-[e ( _UpdateScreen ..  ]
-"222
-[; ;main.c: 222:             unsigned int power_led_flash_counter = 0;
-[v _power_led_flash_counter `ui ~T0 @X0 1 a ]
-[e = _power_led_flash_counter -> -> 0 `i `ui ]
-"223
-[; ;main.c: 223:             while(RB5 == 0){
-[e $U 1751  ]
-[e :U 1752 ]
+[; ;main.c: 218:             {
 {
-"224
-[; ;main.c: 224:                 if(power_led_flash_counter){
-[e $ ! != _power_led_flash_counter -> -> 0 `i `ui 1754  ]
+"220
+[; ;main.c: 220:                 LATA0 = 1;
+[e = _LATA0 -> -> 1 `i `b ]
+"221
+[; ;main.c: 221:             }
+}
+[e $U 1749  ]
+"222
+[; ;main.c: 222:             else
+[e :U 1748 ]
+"223
+[; ;main.c: 223:             {
 {
 "225
-[; ;main.c: 225:                     power_led_flash_counter--;
-[e -- _power_led_flash_counter -> -> 1 `i `ui ]
+[; ;main.c: 225:                 LATA0 = 0;
+[e = _LATA0 -> -> 0 `i `b ]
 "226
-[; ;main.c: 226:                 }else{
+[; ;main.c: 226:             }
 }
-[e $U 1755  ]
-[e :U 1754 ]
-{
+[e :U 1749 ]
 "227
-[; ;main.c: 227:                     power_led_flash_counter = 1000;
-[e = _power_led_flash_counter -> -> 1000 `i `ui ]
+[; ;main.c: 227:             if(frmn_speed/10 >= 2.0)
+[e $ ! >= -> / -> _frmn_speed `i -> 10 `i `d .2.0 1750  ]
 "228
-[; ;main.c: 228:                 }
-}
-[e :U 1755 ]
-"229
-[; ;main.c: 229:                 if(power_led_flash_counter>500){
-[e $ ! > _power_led_flash_counter -> -> 500 `i `ui 1756  ]
+[; ;main.c: 228:             {
 {
 "230
-[; ;main.c: 230:                     LATA6 = 0;
-[e = _LATA6 -> -> 0 `i `b ]
+[; ;main.c: 230:                 LATA1 = 1;
+[e = _LATA1 -> -> 1 `i `b ]
 "231
-[; ;main.c: 231:                 }else{
+[; ;main.c: 231:             }
 }
-[e $U 1757  ]
-[e :U 1756 ]
-{
+[e $U 1751  ]
 "232
-[; ;main.c: 232:                     LATA6 = 1;
-[e = _LATA6 -> -> 1 `i `b ]
+[; ;main.c: 232:             else
+[e :U 1750 ]
 "233
-[; ;main.c: 233:                 }
-}
-[e :U 1757 ]
-"234
-[; ;main.c: 234:                 _delay((unsigned long)((1)*((32000000)/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 233:             {
+{
 "235
-[; ;main.c: 235:             }
+[; ;main.c: 235:                 LATA1 = 0;
+[e = _LATA1 -> -> 0 `i `b ]
+"236
+[; ;main.c: 236:             }
 }
 [e :U 1751 ]
-"223
-[; ;main.c: 223:             while(RB5 == 0){
-[e $ == -> _RB5 `i -> 0 `i 1752  ]
-[e :U 1753 ]
-"236
-[; ;main.c: 236:         }
-}
-[e :U 1746 ]
-"237
-[; ;main.c: 237:         LATA6 = 1;
-[e = _LATA6 -> -> 1 `i `b ]
 "239
-[; ;main.c: 239:         clearText(newTextLine1);
-[e ( _clearText (1 &U _newTextLine1 ]
-"240
-[; ;main.c: 240:         clearText(newTextLine2);
-[e ( _clearText (1 &U _newTextLine2 ]
+[; ;main.c: 239:             UpdateScreen();
+[e ( _UpdateScreen ..  ]
 "241
-[; ;main.c: 241:         clearText(newTextLine3);
-[e ( _clearText (1 &U _newTextLine3 ]
+[; ;main.c: 241:             unsigned int power_led_flash_counter = 0;
+[v _power_led_flash_counter `ui ~T0 @X0 1 a ]
+[e = _power_led_flash_counter -> -> 0 `i `ui ]
 "242
-[; ;main.c: 242:         clearText(newTextLine4);
-[e ( _clearText (1 &U _newTextLine4 ]
+[; ;main.c: 242:             while(RB5 == 0){
+[e $U 1752  ]
+[e :U 1753 ]
+{
+"243
+[; ;main.c: 243:                 if(power_led_flash_counter){
+[e $ ! != _power_led_flash_counter -> -> 0 `i `ui 1755  ]
+{
+"244
+[; ;main.c: 244:                     power_led_flash_counter--;
+[e -- _power_led_flash_counter -> -> 1 `i `ui ]
 "245
-[; ;main.c: 245:         switch(mode)
-[e $U 1759  ]
+[; ;main.c: 245:                 }else{
+}
+[e $U 1756  ]
+[e :U 1755 ]
+{
 "246
-[; ;main.c: 246:         {
-{
+[; ;main.c: 246:                     power_led_flash_counter = 1000;
+[e = _power_led_flash_counter -> -> 1000 `i `ui ]
 "247
-[; ;main.c: 247:             case 1 :
-[e :U 1760 ]
+[; ;main.c: 247:                 }
+}
+[e :U 1756 ]
+"248
+[; ;main.c: 248:                 if(power_led_flash_counter>500){
+[e $ ! > _power_led_flash_counter -> -> 500 `i `ui 1757  ]
+{
+"249
+[; ;main.c: 249:                     LATA6 = 0;
+[e = _LATA6 -> -> 0 `i `b ]
+"250
+[; ;main.c: 250:                 }else{
+}
+[e $U 1758  ]
+[e :U 1757 ]
+{
 "251
-[; ;main.c: 251:                 sprintf(newTextLine1,"OFF");
-[e ( _sprintf (1 , &U _newTextLine1 :s 3C ]
-"254
-[; ;main.c: 254:                 DAC1_Load10bitInputData(0);
-[e ( _DAC1_Load10bitInputData (1 -> -> 0 `i `us ]
+[; ;main.c: 251:                     LATA6 = 1;
+[e = _LATA6 -> -> 1 `i `b ]
+"252
+[; ;main.c: 252:                 }
+}
+[e :U 1758 ]
+"253
+[; ;main.c: 253:                 _delay((unsigned long)((1)*((32000000)/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"256
+[; ;main.c: 256:                 WDTclear();
+[e ( _WDTclear ..  ]
 "257
-[; ;main.c: 257:                 LATA0 = 0;
-[e = _LATA0 -> -> 0 `i `b ]
+[; ;main.c: 257:             }
+}
+[e :U 1752 ]
+"242
+[; ;main.c: 242:             while(RB5 == 0){
+[e $ == -> _RB5 `i -> 0 `i 1753  ]
+[e :U 1754 ]
+"258
+[; ;main.c: 258:         }
+}
+[e :U 1747 ]
 "259
-[; ;main.c: 259:                 LATA1 = 0;
-[e = _LATA1 -> -> 0 `i `b ]
+[; ;main.c: 259:         LATA6 = 1;
+[e = _LATA6 -> -> 1 `i `b ]
 "261
-[; ;main.c: 261:             break;
-[e $U 1758  ]
+[; ;main.c: 261:         ClearText(newTextLine1);
+[e ( _ClearText (1 &U _newTextLine1 ]
+"262
+[; ;main.c: 262:         ClearText(newTextLine2);
+[e ( _ClearText (1 &U _newTextLine2 ]
 "263
-[; ;main.c: 263:             case 0 :
-[e :U 1761 ]
-"265
-[; ;main.c: 265:                 HEFLASH_readBlock(&speed, 1, sizeof(speed));
-[e ( _HEFLASH_readBlock (3 , , -> &U _speed `*uc -> -> 1 `i `uc -> -> # _speed `ui `uc ]
+[; ;main.c: 263:         ClearText(newTextLine3);
+[e ( _ClearText (1 &U _newTextLine3 ]
+"264
+[; ;main.c: 264:         ClearText(newTextLine4);
+[e ( _ClearText (1 &U _newTextLine4 ]
+"267
+[; ;main.c: 267:         switch(mode)
+[e $U 1760  ]
 "268
-[; ;main.c: 268:                 sprintf(newTextLine1,"HAND");
-[e ( _sprintf (1 , &U _newTextLine1 :s 4C ]
-"271
-[; ;main.c: 271:                 sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
-[e ( _sprintf (1 , , (. , &U _newTextLine4 :s 5C / -> _speed `i -> 10 `i % -> _speed `i -> 10 `i ]
-"274
-[; ;main.c: 274:                 DAC1_Load10bitInputData((float)speed *((float)1000/104));
-[e ( _DAC1_Load10bitInputData (1 -> * -> _speed `f / -> -> 1000 `i `f -> -> 104 `i `f `us ]
+[; ;main.c: 268:         {
+{
+"269
+[; ;main.c: 269:             case 1 :
+[e :U 1761 ]
+"273
+[; ;main.c: 273:                 sprintf(newTextLine1,"OFF");
+[e ( _sprintf (1 , &U _newTextLine1 :s 3C ]
 "276
-[; ;main.c: 276:                 if((float)speed/10 > 1.85)
-[e $ ! > -> / -> _speed `f -> -> 10 `i `f `d .1.85 1762  ]
-"277
-[; ;main.c: 277:                 {
-{
+[; ;main.c: 276:                 DAC1_Load10bitInputData(0);
+[e ( _DAC1_Load10bitInputData (1 -> -> 0 `i `us ]
 "279
-[; ;main.c: 279:                     LATA0 = 1;
-[e = _LATA0 -> -> 1 `i `b ]
-"280
-[; ;main.c: 280:                 }
-}
-[e $U 1763  ]
-"281
-[; ;main.c: 281:                 else
-[e :U 1762 ]
-"282
-[; ;main.c: 282:                 {
-{
-"284
-[; ;main.c: 284:                     LATA0 = 0;
+[; ;main.c: 279:                 LATA0 = 0;
 [e = _LATA0 -> -> 0 `i `b ]
-"285
-[; ;main.c: 285:                 }
-}
-[e :U 1763 ]
-"287
-[; ;main.c: 287:                 if(speed/10 >= 2.0)
-[e $ ! >= -> / -> _speed `i -> 10 `i `d .2.0 1764  ]
-"288
-[; ;main.c: 288:                 {
-{
-"290
-[; ;main.c: 290:                     LATA1 = 1;
-[e = _LATA1 -> -> 1 `i `b ]
-"291
-[; ;main.c: 291:                 }
-}
-[e $U 1765  ]
-"292
-[; ;main.c: 292:                 else
-[e :U 1764 ]
-"293
-[; ;main.c: 293:                 {
-{
-"295
-[; ;main.c: 295:                     LATA1 = 0;
+"281
+[; ;main.c: 281:                 LATA1 = 0;
 [e = _LATA1 -> -> 0 `i `b ]
+"283
+[; ;main.c: 283:             break;
+[e $U 1759  ]
+"285
+[; ;main.c: 285:             case 0 :
+[e :U 1762 ]
+"287
+[; ;main.c: 287:                 HEFLASH_readBlock(&speed, 1, sizeof(speed));
+[e ( _HEFLASH_readBlock (3 , , -> &U _speed `*uc -> -> 1 `i `uc -> -> # _speed `ui `uc ]
+"290
+[; ;main.c: 290:                 sprintf(newTextLine1,"HAND");
+[e ( _sprintf (1 , &U _newTextLine1 :s 4C ]
+"293
+[; ;main.c: 293:                 sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
+[e ( _sprintf (1 , , (. , &U _newTextLine4 :s 5C / -> _speed `i -> 10 `i % -> _speed `i -> 10 `i ]
 "296
-[; ;main.c: 296:                 }
-}
-[e :U 1765 ]
+[; ;main.c: 296:                 DAC1_Load10bitInputData((float)speed *((float)1000/104));
+[e ( _DAC1_Load10bitInputData (1 -> * -> _speed `f / -> -> 1000 `i `f -> -> 104 `i `f `us ]
 "298
-[; ;main.c: 298:             break;
-[e $U 1758  ]
-"300
-[; ;main.c: 300:             case 2 :
-[e :U 1766 ]
+[; ;main.c: 298:                 if((float)speed/10 > 1.85)
+[e $ ! > -> / -> _speed `f -> -> 10 `i `f `d .1.85 1763  ]
+"299
+[; ;main.c: 299:                 {
+{
+"301
+[; ;main.c: 301:                     LATA0 = 1;
+[e = _LATA0 -> -> 1 `i `b ]
 "302
-[; ;main.c: 302:                 HEFLASH_readBlock(&speed, 3, sizeof(speed));
-[e ( _HEFLASH_readBlock (3 , , -> &U _speed `*uc -> -> 3 `i `uc -> -> # _speed `ui `uc ]
+[; ;main.c: 302:                 }
+}
+[e $U 1764  ]
+"303
+[; ;main.c: 303:                 else
+[e :U 1763 ]
 "304
-[; ;main.c: 304:                 sprintf(newTextLine1,"AUTO LOCAL");
-[e ( _sprintf (1 , &U _newTextLine1 :s 6C ]
+[; ;main.c: 304:                 {
+{
+"306
+[; ;main.c: 306:                     LATA0 = 0;
+[e = _LATA0 -> -> 0 `i `b ]
 "307
-[; ;main.c: 307:                 sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
-[e ( _sprintf (1 , , (. , &U _newTextLine4 :s 7C / -> _speed `i -> 10 `i % -> _speed `i -> 10 `i ]
+[; ;main.c: 307:                 }
+}
+[e :U 1764 ]
 "309
-[; ;main.c: 309:                 if( (RB4 == 0) || (RA3 == 1) )
-[e $ ! || == -> _RB4 `i -> 0 `i == -> _RA3 `i -> 1 `i 1767  ]
+[; ;main.c: 309:                 if(speed/10 >= 2.0)
+[e $ ! >= -> / -> _speed `i -> 10 `i `d .2.0 1765  ]
 "310
 [; ;main.c: 310:                 {
 {
-"313
-[; ;main.c: 313:                     sprintf(newTextLine2,"Enabled");
-[e ( _sprintf (1 , &U _newTextLine2 :s 8C ]
-"316
-[; ;main.c: 316:                     DAC1_Load10bitInputData((float)speed *((float)1000/104));
-[e ( _DAC1_Load10bitInputData (1 -> * -> _speed `f / -> -> 1000 `i `f -> -> 104 `i `f `us ]
-"318
-[; ;main.c: 318:                     if((float)speed/10 > 1.85)
-[e $ ! > -> / -> _speed `f -> -> 10 `i `f `d .1.85 1768  ]
-"319
-[; ;main.c: 319:                     {
-{
-"321
-[; ;main.c: 321:                         LATA0 = 1;
-[e = _LATA0 -> -> 1 `i `b ]
-"322
-[; ;main.c: 322:                     }
-}
-[e $U 1769  ]
-"323
-[; ;main.c: 323:                     else
-[e :U 1768 ]
-"324
-[; ;main.c: 324:                     {
-{
-"326
-[; ;main.c: 326:                         LATA0 = 0;
-[e = _LATA0 -> -> 0 `i `b ]
-"327
-[; ;main.c: 327:                     }
-}
-[e :U 1769 ]
-"329
-[; ;main.c: 329:                     if(speed/10 >= 2.0)
-[e $ ! >= -> / -> _speed `i -> 10 `i `d .2.0 1770  ]
-"330
-[; ;main.c: 330:                     {
-{
-"332
-[; ;main.c: 332:                         LATA1 = 1;
+"312
+[; ;main.c: 312:                     LATA1 = 1;
 [e = _LATA1 -> -> 1 `i `b ]
-"333
-[; ;main.c: 333:                     }
+"313
+[; ;main.c: 313:                 }
 }
-[e $U 1771  ]
-"334
-[; ;main.c: 334:                     else
-[e :U 1770 ]
-"335
-[; ;main.c: 335:                     {
+[e $U 1766  ]
+"314
+[; ;main.c: 314:                 else
+[e :U 1765 ]
+"315
+[; ;main.c: 315:                 {
 {
-"337
-[; ;main.c: 337:                         LATA1 = 0;
+"317
+[; ;main.c: 317:                     LATA1 = 0;
 [e = _LATA1 -> -> 0 `i `b ]
-"338
-[; ;main.c: 338:                     }
+"318
+[; ;main.c: 318:                 }
 }
-[e :U 1771 ]
-"339
-[; ;main.c: 339:                 }
-}
-[e $U 1772  ]
-"340
-[; ;main.c: 340:                 else
+[e :U 1766 ]
+"320
+[; ;main.c: 320:             break;
+[e $U 1759  ]
+"322
+[; ;main.c: 322:             case 2 :
 [e :U 1767 ]
+"324
+[; ;main.c: 324:                 HEFLASH_readBlock(&speed, 3, sizeof(speed));
+[e ( _HEFLASH_readBlock (3 , , -> &U _speed `*uc -> -> 3 `i `uc -> -> # _speed `ui `uc ]
+"326
+[; ;main.c: 326:                 sprintf(newTextLine1,"AUTO LOCAL");
+[e ( _sprintf (1 , &U _newTextLine1 :s 6C ]
+"329
+[; ;main.c: 329:                 sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
+[e ( _sprintf (1 , , (. , &U _newTextLine4 :s 7C / -> _speed `i -> 10 `i % -> _speed `i -> 10 `i ]
+"331
+[; ;main.c: 331:                 if( (RB4 == 0) || (RA3 == 1) )
+[e $ ! || == -> _RB4 `i -> 0 `i == -> _RA3 `i -> 1 `i 1768  ]
+"332
+[; ;main.c: 332:                 {
+{
+"335
+[; ;main.c: 335:                     sprintf(newTextLine2,"Enabled");
+[e ( _sprintf (1 , &U _newTextLine2 :s 8C ]
+"338
+[; ;main.c: 338:                     DAC1_Load10bitInputData((float)speed *((float)1000/104));
+[e ( _DAC1_Load10bitInputData (1 -> * -> _speed `f / -> -> 1000 `i `f -> -> 104 `i `f `us ]
+"340
+[; ;main.c: 340:                     if((float)speed/10 > 1.85)
+[e $ ! > -> / -> _speed `f -> -> 10 `i `f `d .1.85 1769  ]
 "341
-[; ;main.c: 341:                 {
+[; ;main.c: 341:                     {
 {
 "343
-[; ;main.c: 343:                     sprintf(newTextLine2,"Disabled");
-[e ( _sprintf (1 , &U _newTextLine2 :s 9C ]
+[; ;main.c: 343:                         LATA0 = 1;
+[e = _LATA0 -> -> 1 `i `b ]
+"344
+[; ;main.c: 344:                     }
+}
+[e $U 1770  ]
+"345
+[; ;main.c: 345:                     else
+[e :U 1769 ]
 "346
-[; ;main.c: 346:                     DAC1_Load10bitInputData(0);
-[e ( _DAC1_Load10bitInputData (1 -> -> 0 `i `us ]
-"349
-[; ;main.c: 349:                     LATA0 = 0;
+[; ;main.c: 346:                     {
+{
+"348
+[; ;main.c: 348:                         LATA0 = 0;
 [e = _LATA0 -> -> 0 `i `b ]
+"349
+[; ;main.c: 349:                     }
+}
+[e :U 1770 ]
 "351
-[; ;main.c: 351:                     LATA1 = 0;
+[; ;main.c: 351:                     if(speed/10 >= 2.0)
+[e $ ! >= -> / -> _speed `i -> 10 `i `d .2.0 1771  ]
+"352
+[; ;main.c: 352:                     {
+{
+"354
+[; ;main.c: 354:                         LATA1 = 1;
+[e = _LATA1 -> -> 1 `i `b ]
+"355
+[; ;main.c: 355:                     }
+}
+[e $U 1772  ]
+"356
+[; ;main.c: 356:                     else
+[e :U 1771 ]
+"357
+[; ;main.c: 357:                     {
+{
+"359
+[; ;main.c: 359:                         LATA1 = 0;
 [e = _LATA1 -> -> 0 `i `b ]
-"353
-[; ;main.c: 353:                 }
+"360
+[; ;main.c: 360:                     }
 }
 [e :U 1772 ]
-"355
-[; ;main.c: 355:             break;
-[e $U 1758  ]
-"357
-[; ;main.c: 357:             case 3 :
-[e :U 1773 ]
-"358
-[; ;main.c: 358:                 ext_speed = (float)((ADRESH<<8) + ADRESL);
-[e = _ext_speed -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `f ]
-"360
-[; ;main.c: 360:                 static unsigned int index = 0;
-[v F13198 `ui ~T0 @X0 1 s index ]
-[i F13198
--> -> 0 `i `ui
-]
 "361
-[; ;main.c: 361:                 static float arr[50];
-[v F13199 `f ~T0 @X0 -> 50 `i s arr ]
-"364
-[; ;main.c: 364:                 if(index < (50 -1)){
-[e $ ! < F13198 -> - -> 50 `i -> 1 `i `ui 1774  ]
-{
-"366
-[; ;main.c: 366:                     arr[index] = ext_speed;
-[e = *U + &U F13199 * -> F13198 `ux -> -> # *U &U F13199 `ui `ux _ext_speed ]
-"367
-[; ;main.c: 367:                     index++;
-[e ++ F13198 -> -> 1 `i `ui ]
-"369
-[; ;main.c: 369:                 }
+[; ;main.c: 361:                 }
 }
-[e $U 1775  ]
-"370
-[; ;main.c: 370:                 else{
-[e :U 1774 ]
+[e $U 1773  ]
+"362
+[; ;main.c: 362:                 else
+[e :U 1768 ]
+"363
+[; ;main.c: 363:                 {
 {
-"372
-[; ;main.c: 372:                     arr[index] = ext_speed;
-[e = *U + &U F13199 * -> F13198 `ux -> -> # *U &U F13199 `ui `ux _ext_speed ]
+"365
+[; ;main.c: 365:                     sprintf(newTextLine2,"Disabled");
+[e ( _sprintf (1 , &U _newTextLine2 :s 9C ]
+"368
+[; ;main.c: 368:                     DAC1_Load10bitInputData(0);
+[e ( _DAC1_Load10bitInputData (1 -> -> 0 `i `us ]
+"371
+[; ;main.c: 371:                     LATA0 = 0;
+[e = _LATA0 -> -> 0 `i `b ]
 "373
-[; ;main.c: 373:                     index = 0;
-[e = F13198 -> -> 0 `i `ui ]
+[; ;main.c: 373:                     LATA1 = 0;
+[e = _LATA1 -> -> 0 `i `b ]
 "375
 [; ;main.c: 375:                 }
 }
+[e :U 1773 ]
+"377
+[; ;main.c: 377:             break;
+[e $U 1759  ]
+"379
+[; ;main.c: 379:             case 3 :
+[e :U 1774 ]
+"380
+[; ;main.c: 380:                 ext_speed = (float)((ADRESH<<8) + ADRESL);
+[e = _ext_speed -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `f ]
+"382
+[; ;main.c: 382:                 static unsigned int index = 0;
+[v F13205 `ui ~T0 @X0 1 s index ]
+[i F13205
+-> -> 0 `i `ui
+]
+"383
+[; ;main.c: 383:                 static float arr[50];
+[v F13206 `f ~T0 @X0 -> 50 `i s arr ]
+"386
+[; ;main.c: 386:                 if(index < (50 -1)){
+[e $ ! < F13205 -> - -> 50 `i -> 1 `i `ui 1775  ]
+{
+"388
+[; ;main.c: 388:                     arr[index] = ext_speed;
+[e = *U + &U F13206 * -> F13205 `ux -> -> # *U &U F13206 `ui `ux _ext_speed ]
+"389
+[; ;main.c: 389:                     index++;
+[e ++ F13205 -> -> 1 `i `ui ]
+"391
+[; ;main.c: 391:                 }
+}
+[e $U 1776  ]
+"392
+[; ;main.c: 392:                 else{
 [e :U 1775 ]
-"378
-[; ;main.c: 378:                 float avg = 0;
+{
+"394
+[; ;main.c: 394:                     arr[index] = ext_speed;
+[e = *U + &U F13206 * -> F13205 `ux -> -> # *U &U F13206 `ui `ux _ext_speed ]
+"395
+[; ;main.c: 395:                     index = 0;
+[e = F13205 -> -> 0 `i `ui ]
+"397
+[; ;main.c: 397:                 }
+}
+[e :U 1776 ]
+"400
+[; ;main.c: 400:                 float avg = 0;
 [v _avg `f ~T0 @X0 1 a ]
 [e = _avg -> -> 0 `i `f ]
-"379
-[; ;main.c: 379:                 for(unsigned int i =0; i<50; i++){
+"401
+[; ;main.c: 401:                 for(unsigned int i =0; i<50; i++){
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
-[e $ < _i -> -> 50 `i `ui 1776  ]
-[e $U 1777  ]
-[e :U 1776 ]
-{
-"380
-[; ;main.c: 380:                     avg += arr[i];
-[e =+ _avg *U + &U F13199 * -> _i `ux -> -> # *U &U F13199 `ui `ux ]
-"381
-[; ;main.c: 381:                     if(i == (50 -1)){
-[e $ ! == _i -> - -> 50 `i -> 1 `i `ui 1779  ]
-{
-"382
-[; ;main.c: 382:                         avg = avg/50;
-[e = _avg / _avg -> -> 50 `i `f ]
-"383
-[; ;main.c: 383:                     }
-}
-[e :U 1779 ]
-"384
-[; ;main.c: 384:                 }
-}
-[e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 50 `i `ui 1776  ]
+[e $ < _i -> -> 50 `i `ui 1777  ]
+[e $U 1778  ]
 [e :U 1777 ]
-}
-"386
-[; ;main.c: 386:                 unsigned int integer = (avg*10/1000);
-[v _integer `ui ~T0 @X0 1 a ]
-[e = _integer -> / * _avg -> -> 10 `i `f -> -> 1000 `i `f `ui ]
-"387
-[; ;main.c: 387:                 unsigned int decimal = ((unsigned long)(avg*100/1000)) % 10;
-[v _decimal `ui ~T0 @X0 1 a ]
-[e = _decimal -> % -> / * _avg -> -> 100 `i `f -> -> 1000 `i `f `ul -> -> -> 10 `i `l `ul `ui ]
-"390
-[; ;main.c: 390:                 sprintf(newTextLine1,"AUTO REMOTE");
-[e ( _sprintf (1 , &U _newTextLine1 :s 10C ]
-"393
-[; ;main.c: 393:                 sprintf(newTextLine3," ");
-[e ( _sprintf (1 , &U _newTextLine3 :s 11C ]
-"397
-[; ;main.c: 397:                 if(!updateAutoRemoteDelay){
-[e $ ! ! != -> _updateAutoRemoteDelay `i -> 0 `i 1780  ]
-{
-"398
-[; ;main.c: 398:                     updateAutoRemoteDelay = 20;
-[e = _updateAutoRemoteDelay -> -> 20 `i `uc ]
-"399
-[; ;main.c: 399:                     sprintf(newTextLine4,"READ:%d.%dV", integer, decimal);
-[e ( _sprintf (1 , , (. , &U _newTextLine4 :s 12C _integer _decimal ]
-"400
-[; ;main.c: 400:                 }else{
-}
-[e $U 1781  ]
-[e :U 1780 ]
 {
 "402
-[; ;main.c: 402:                     for(int i = 0; i < 16;i++){
+[; ;main.c: 402:                     avg += arr[i];
+[e =+ _avg *U + &U F13206 * -> _i `ux -> -> # *U &U F13206 `ui `ux ]
+"403
+[; ;main.c: 403:                     if(i == (50 -1)){
+[e $ ! == _i -> - -> 50 `i -> 1 `i `ui 1780  ]
+{
+"404
+[; ;main.c: 404:                         avg = avg/50;
+[e = _avg / _avg -> -> 50 `i `f ]
+"405
+[; ;main.c: 405:                     }
+}
+[e :U 1780 ]
+"406
+[; ;main.c: 406:                 }
+}
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 50 `i `ui 1777  ]
+[e :U 1778 ]
+}
+"408
+[; ;main.c: 408:                 unsigned int integer = (avg*10/1000);
+[v _integer `ui ~T0 @X0 1 a ]
+[e = _integer -> / * _avg -> -> 10 `i `f -> -> 1000 `i `f `ui ]
+"409
+[; ;main.c: 409:                 unsigned int decimal = ((unsigned long)(avg*100/1000)) % 10;
+[v _decimal `ui ~T0 @X0 1 a ]
+[e = _decimal -> % -> / * _avg -> -> 100 `i `f -> -> 1000 `i `f `ul -> -> -> 10 `i `l `ul `ui ]
+"412
+[; ;main.c: 412:                 sprintf(newTextLine1,"AUTO REMOTE");
+[e ( _sprintf (1 , &U _newTextLine1 :s 10C ]
+"415
+[; ;main.c: 415:                 sprintf(newTextLine3," ");
+[e ( _sprintf (1 , &U _newTextLine3 :s 11C ]
+"419
+[; ;main.c: 419:                 if(!updateAutoRemoteDelay){
+[e $ ! ! != -> _updateAutoRemoteDelay `i -> 0 `i 1781  ]
+{
+"420
+[; ;main.c: 420:                     updateAutoRemoteDelay = 20;
+[e = _updateAutoRemoteDelay -> -> 20 `i `uc ]
+"421
+[; ;main.c: 421:                     sprintf(newTextLine4,"READ:%d.%dV", integer, decimal);
+[e ( _sprintf (1 , , (. , &U _newTextLine4 :s 12C _integer _decimal ]
+"422
+[; ;main.c: 422:                 }else{
+}
+[e $U 1782  ]
+[e :U 1781 ]
+{
+"424
+[; ;main.c: 424:                     for(int i = 0; i < 16;i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 16 `i 1782  ]
-[e $U 1783  ]
-[e :U 1782 ]
-{
-"403
-[; ;main.c: 403:                         newTextLine4[i] = textLine4[i];
-[e = *U + &U _newTextLine4 * -> -> _i `ui `ux -> -> # *U &U _newTextLine4 `ui `ux *U + &U _textLine4 * -> -> _i `ui `ux -> -> # *U &U _textLine4 `ui `ux ]
-"404
-[; ;main.c: 404:                     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 16 `i 1782  ]
+[e $ < _i -> 16 `i 1783  ]
+[e $U 1784  ]
 [e :U 1783 ]
-}
-"405
-[; ;main.c: 405:                 }
-}
-[e :U 1781 ]
-"407
-[; ;main.c: 407:                 if( (RB4 == 0) || (RA3 == 1) ){
-[e $ ! || == -> _RB4 `i -> 0 `i == -> _RA3 `i -> 1 `i 1785  ]
-{
-"410
-[; ;main.c: 410:                     sprintf(newTextLine2,"Enabled");
-[e ( _sprintf (1 , &U _newTextLine2 :s 13C ]
-"413
-[; ;main.c: 413:                     DAC1_Load10bitInputData(ext_speed);
-[e ( _DAC1_Load10bitInputData (1 -> _ext_speed `us ]
-"417
-[; ;main.c: 417:                     if((float)ext_speed/100 > 1.9)
-[e $ ! > -> / _ext_speed -> -> 100 `i `f `d .1.9 1786  ]
-"418
-[; ;main.c: 418:                     {
-{
-"420
-[; ;main.c: 420:                         LATA0 = 1;
-[e = _LATA0 -> -> 1 `i `b ]
-"421
-[; ;main.c: 421:                     }
-}
-[e $U 1787  ]
-"422
-[; ;main.c: 422:                     else if ((float)ext_speed/100 < 1.8)
-[e :U 1786 ]
-[e $ ! < -> / _ext_speed -> -> 100 `i `f `d .1.8 1788  ]
-"423
-[; ;main.c: 423:                     {
 {
 "425
-[; ;main.c: 425:                         LATA0 = 0;
-[e = _LATA0 -> -> 0 `i `b ]
+[; ;main.c: 425:                         newTextLine4[i] = textLine4[i];
+[e = *U + &U _newTextLine4 * -> -> _i `ui `ux -> -> # *U &U _newTextLine4 `ui `ux *U + &U _textLine4 * -> -> _i `ui `ux -> -> # *U &U _textLine4 `ui `ux ]
 "426
 [; ;main.c: 426:                     }
 }
-[e :U 1788 ]
-[e :U 1787 ]
-"430
-[; ;main.c: 430:                     if((float)ext_speed/100 > 2.05)
-[e $ ! > -> / _ext_speed -> -> 100 `i `f `d .2.05 1789  ]
-"431
-[; ;main.c: 431:                     {
-{
-"433
-[; ;main.c: 433:                         LATA1 = 1;
-[e = _LATA1 -> -> 1 `i `b ]
-"434
-[; ;main.c: 434:                     }
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 16 `i 1783  ]
+[e :U 1784 ]
 }
-[e $U 1790  ]
+"427
+[; ;main.c: 427:                 }
+}
+[e :U 1782 ]
+"429
+[; ;main.c: 429:                 if( (RB4 == 0) || (RA3 == 1) ){
+[e $ ! || == -> _RB4 `i -> 0 `i == -> _RA3 `i -> 1 `i 1786  ]
+{
+"432
+[; ;main.c: 432:                     sprintf(newTextLine2,"Enabled");
+[e ( _sprintf (1 , &U _newTextLine2 :s 13C ]
 "435
-[; ;main.c: 435:                     else if((float)ext_speed/100 < 1.95)
-[e :U 1789 ]
-[e $ ! < -> / _ext_speed -> -> 100 `i `f `d .1.95 1791  ]
-"436
-[; ;main.c: 436:                     {
-{
-"438
-[; ;main.c: 438:                         LATA1 = 0;
-[e = _LATA1 -> -> 0 `i `b ]
+[; ;main.c: 435:                     DAC1_Load10bitInputData(ext_speed);
+[e ( _DAC1_Load10bitInputData (1 -> _ext_speed `us ]
 "439
-[; ;main.c: 439:                     }
-}
-[e :U 1791 ]
-[e :U 1790 ]
+[; ;main.c: 439:                     if((float)ext_speed/100 > 1.9)
+[e $ ! > -> / _ext_speed -> -> 100 `i `f `d .1.9 1787  ]
 "440
-[; ;main.c: 440:                 }
-}
-[e $U 1792  ]
-"441
-[; ;main.c: 441:                 else
-[e :U 1785 ]
-"442
-[; ;main.c: 442:                 {
+[; ;main.c: 440:                     {
 {
+"442
+[; ;main.c: 442:                         LATA0 = 1;
+[e = _LATA0 -> -> 1 `i `b ]
+"443
+[; ;main.c: 443:                     }
+}
+[e $U 1788  ]
 "444
-[; ;main.c: 444:                     sprintf(newTextLine2,"Disabled");
-[e ( _sprintf (1 , &U _newTextLine2 :s 14C ]
+[; ;main.c: 444:                     else if ((float)ext_speed/100 < 1.8)
+[e :U 1787 ]
+[e $ ! < -> / _ext_speed -> -> 100 `i `f `d .1.8 1789  ]
+"445
+[; ;main.c: 445:                     {
+{
 "447
-[; ;main.c: 447:                     DAC1_Load10bitInputData(0);
-[e ( _DAC1_Load10bitInputData (1 -> -> 0 `i `us ]
-"450
-[; ;main.c: 450:                     LATA0 = 0;
+[; ;main.c: 447:                         LATA0 = 0;
 [e = _LATA0 -> -> 0 `i `b ]
+"448
+[; ;main.c: 448:                     }
+}
+[e :U 1789 ]
+[e :U 1788 ]
 "452
-[; ;main.c: 452:                     LATA1 = 0;
-[e = _LATA1 -> -> 0 `i `b ]
+[; ;main.c: 452:                     if((float)ext_speed/100 > 2.05)
+[e $ ! > -> / _ext_speed -> -> 100 `i `f `d .2.05 1790  ]
 "453
-[; ;main.c: 453:                 }
+[; ;main.c: 453:                     {
+{
+"455
+[; ;main.c: 455:                         LATA1 = 1;
+[e = _LATA1 -> -> 1 `i `b ]
+"456
+[; ;main.c: 456:                     }
+}
+[e $U 1791  ]
+"457
+[; ;main.c: 457:                     else if((float)ext_speed/100 < 1.95)
+[e :U 1790 ]
+[e $ ! < -> / _ext_speed -> -> 100 `i `f `d .1.95 1792  ]
+"458
+[; ;main.c: 458:                     {
+{
+"460
+[; ;main.c: 460:                         LATA1 = 0;
+[e = _LATA1 -> -> 0 `i `b ]
+"461
+[; ;main.c: 461:                     }
 }
 [e :U 1792 ]
-"454
-[; ;main.c: 454:             break;
-[e $U 1758  ]
-"456
-[; ;main.c: 456:             case 4 :
-[e :U 1793 ]
-"458
-[; ;main.c: 458:                 HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
-[e ( _HEFLASH_readBlock (3 , , -> &U _frmn_speed `*uc -> -> 2 `i `uc -> -> # _frmn_speed `ui `uc ]
-"460
-[; ;main.c: 460:                 sprintf(newTextLine1,"FIREMANSET");
-[e ( _sprintf (1 , &U _newTextLine1 :s 15C ]
+[e :U 1791 ]
 "462
-[; ;main.c: 462:                 sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
-[e ( _sprintf (1 , , (. , &U _newTextLine4 :s 16C / -> _frmn_speed `i -> 10 `i % -> _frmn_speed `i -> 10 `i ]
-"465
-[; ;main.c: 465:                 DAC1_Load10bitInputData((float)frmn_speed *((float)1000/104));
-[e ( _DAC1_Load10bitInputData (1 -> * -> _frmn_speed `f / -> -> 1000 `i `f -> -> 104 `i `f `us ]
-"467
-[; ;main.c: 467:                 if((float)frmn_speed/10 > 1.85)
-[e $ ! > -> / -> _frmn_speed `f -> -> 10 `i `f `d .1.85 1794  ]
-"468
-[; ;main.c: 468:                 {
-{
-"470
-[; ;main.c: 470:                     LATA0 = 1;
-[e = _LATA0 -> -> 1 `i `b ]
-"471
-[; ;main.c: 471:                 }
+[; ;main.c: 462:                 }
 }
-[e $U 1795  ]
-"472
-[; ;main.c: 472:                 else
-[e :U 1794 ]
-"473
-[; ;main.c: 473:                 {
+[e $U 1793  ]
+"463
+[; ;main.c: 463:                 else
+[e :U 1786 ]
+"464
+[; ;main.c: 464:                 {
 {
-"475
-[; ;main.c: 475:                     LATA0 = 0;
-[e = _LATA0 -> -> 0 `i `b ]
-"476
-[; ;main.c: 476:                 }
-}
-[e :U 1795 ]
-"478
-[; ;main.c: 478:                 if(frmn_speed/10 >= 2.0)
-[e $ ! >= -> / -> _frmn_speed `i -> 10 `i `d .2.0 1796  ]
-"479
-[; ;main.c: 479:                 {
-{
-"481
-[; ;main.c: 481:                     LATA1 = 1;
-[e = _LATA1 -> -> 1 `i `b ]
-"482
-[; ;main.c: 482:                 }
-}
-[e $U 1797  ]
-"483
-[; ;main.c: 483:                 else
-[e :U 1796 ]
-"484
-[; ;main.c: 484:                 {
-{
-"486
-[; ;main.c: 486:                     LATA1 = 0;
-[e = _LATA1 -> -> 0 `i `b ]
-"487
-[; ;main.c: 487:                 }
-}
-[e :U 1797 ]
-"489
-[; ;main.c: 489:             break;
-[e $U 1758  ]
-"491
-[; ;main.c: 491:             default :
-[e :U 1798 ]
-"494
-[; ;main.c: 494:                 sprintf(newTextLine1,"Press Mode");
-[e ( _sprintf (1 , &U _newTextLine1 :s 17C ]
-"497
-[; ;main.c: 497:                 DAC1_Load10bitInputData(0);
+"466
+[; ;main.c: 466:                     sprintf(newTextLine2,"Disabled");
+[e ( _sprintf (1 , &U _newTextLine2 :s 14C ]
+"469
+[; ;main.c: 469:                     DAC1_Load10bitInputData(0);
 [e ( _DAC1_Load10bitInputData (1 -> -> 0 `i `us ]
-"500
-[; ;main.c: 500:                 LATA0 = 0;
+"472
+[; ;main.c: 472:                     LATA0 = 0;
 [e = _LATA0 -> -> 0 `i `b ]
-"502
-[; ;main.c: 502:                 LATA1 = 0;
+"474
+[; ;main.c: 474:                     LATA1 = 0;
 [e = _LATA1 -> -> 0 `i `b ]
+"475
+[; ;main.c: 475:                 }
+}
+[e :U 1793 ]
+"476
+[; ;main.c: 476:             break;
+[e $U 1759  ]
+"478
+[; ;main.c: 478:             case 4 :
+[e :U 1794 ]
+"480
+[; ;main.c: 480:                 HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
+[e ( _HEFLASH_readBlock (3 , , -> &U _frmn_speed `*uc -> -> 2 `i `uc -> -> # _frmn_speed `ui `uc ]
+"482
+[; ;main.c: 482:                 sprintf(newTextLine1,"FIREMANSET");
+[e ( _sprintf (1 , &U _newTextLine1 :s 15C ]
+"484
+[; ;main.c: 484:                 sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
+[e ( _sprintf (1 , , (. , &U _newTextLine4 :s 16C / -> _frmn_speed `i -> 10 `i % -> _frmn_speed `i -> 10 `i ]
+"487
+[; ;main.c: 487:                 DAC1_Load10bitInputData((float)frmn_speed *((float)1000/104));
+[e ( _DAC1_Load10bitInputData (1 -> * -> _frmn_speed `f / -> -> 1000 `i `f -> -> 104 `i `f `us ]
+"489
+[; ;main.c: 489:                 if((float)frmn_speed/10 > 1.85)
+[e $ ! > -> / -> _frmn_speed `f -> -> 10 `i `f `d .1.85 1795  ]
+"490
+[; ;main.c: 490:                 {
+{
+"492
+[; ;main.c: 492:                     LATA0 = 1;
+[e = _LATA0 -> -> 1 `i `b ]
+"493
+[; ;main.c: 493:                 }
+}
+[e $U 1796  ]
+"494
+[; ;main.c: 494:                 else
+[e :U 1795 ]
+"495
+[; ;main.c: 495:                 {
+{
+"497
+[; ;main.c: 497:                     LATA0 = 0;
+[e = _LATA0 -> -> 0 `i `b ]
+"498
+[; ;main.c: 498:                 }
+}
+[e :U 1796 ]
+"500
+[; ;main.c: 500:                 if(frmn_speed/10 >= 2.0)
+[e $ ! >= -> / -> _frmn_speed `i -> 10 `i `d .2.0 1797  ]
+"501
+[; ;main.c: 501:                 {
+{
+"503
+[; ;main.c: 503:                     LATA1 = 1;
+[e = _LATA1 -> -> 1 `i `b ]
 "504
-[; ;main.c: 504:             break;
-[e $U 1758  ]
+[; ;main.c: 504:                 }
+}
+[e $U 1798  ]
 "505
-[; ;main.c: 505:         }
-}
-[e $U 1758  ]
-[e :U 1759 ]
-[e [\ -> _mode `i , $ -> 1 `i 1760
- , $ -> 0 `i 1761
- , $ -> 2 `i 1766
- , $ -> 3 `i 1773
- , $ -> 4 `i 1793
- 1798 ]
-[e :U 1758 ]
-"507
-[; ;main.c: 507:         UpdateScreen();
-[e ( _UpdateScreen ..  ]
+[; ;main.c: 505:                 else
+[e :U 1797 ]
+"506
+[; ;main.c: 506:                 {
+{
+"508
+[; ;main.c: 508:                     LATA1 = 0;
+[e = _LATA1 -> -> 0 `i `b ]
 "509
-[; ;main.c: 509:         btn_count = 0;
-[e = _btn_count -> -> 0 `i `uc ]
-"511
-[; ;main.c: 511:         if((!RB1)){
-[e $ ! ! _RB1 1799  ]
-{
-"512
-[; ;main.c: 512:             btn_count++;
-[e ++ _btn_count -> -> 1 `i `uc ]
-"513
-[; ;main.c: 513:             if(increase_btn_debounce){
-[e $ ! != _increase_btn_debounce -> 0 `i 1800  ]
-{
-"514
-[; ;main.c: 514:                 increase_btn_debounce--;
-[e -- _increase_btn_debounce -> -> 1 `i `Vi ]
-"515
-[; ;main.c: 515:             }
+[; ;main.c: 509:                 }
 }
-[e :U 1800 ]
+[e :U 1798 ]
+"511
+[; ;main.c: 511:             break;
+[e $U 1759  ]
+"513
+[; ;main.c: 513:             default :
+[e :U 1799 ]
 "516
-[; ;main.c: 516:         }else{
+[; ;main.c: 516:                 sprintf(newTextLine1,"Press Mode");
+[e ( _sprintf (1 , &U _newTextLine1 :s 17C ]
+"519
+[; ;main.c: 519:                 DAC1_Load10bitInputData(0);
+[e ( _DAC1_Load10bitInputData (1 -> -> 0 `i `us ]
+"522
+[; ;main.c: 522:                 LATA0 = 0;
+[e = _LATA0 -> -> 0 `i `b ]
+"524
+[; ;main.c: 524:                 LATA1 = 0;
+[e = _LATA1 -> -> 0 `i `b ]
+"526
+[; ;main.c: 526:             break;
+[e $U 1759  ]
+"527
+[; ;main.c: 527:         }
+}
+[e $U 1759  ]
+[e :U 1760 ]
+[e [\ -> _mode `i , $ -> 1 `i 1761
+ , $ -> 0 `i 1762
+ , $ -> 2 `i 1767
+ , $ -> 3 `i 1774
+ , $ -> 4 `i 1794
+ 1799 ]
+[e :U 1759 ]
+"530
+[; ;main.c: 530:         if(bright_screen_timer){
+[e $ ! != _bright_screen_timer -> 0 `i 1800  ]
+{
+"531
+[; ;main.c: 531:             OLED_SetContrast(0xFF);
+[e ( _OLED_SetContrast (1 -> -> 255 `i `uc ]
+"532
+[; ;main.c: 532:         }
 }
 [e $U 1801  ]
-[e :U 1799 ]
+"533
+[; ;main.c: 533:         else{
+[e :U 1800 ]
 {
-"517
-[; ;main.c: 517:             increase_btn_debounce = 20;
-[e = _increase_btn_debounce -> 20 `i ]
-"518
-[; ;main.c: 518:         }
+"534
+[; ;main.c: 534:              OLED_SetContrast(0x00);
+[e ( _OLED_SetContrast (1 -> -> 0 `i `uc ]
+"535
+[; ;main.c: 535:         }
 }
 [e :U 1801 ]
-"520
-[; ;main.c: 520:         if((!RB2)){
-[e $ ! ! _RB2 1802  ]
+"538
+[; ;main.c: 538:         UpdateScreen();
+[e ( _UpdateScreen ..  ]
+"541
+[; ;main.c: 541:         btn_count = 0;
+[e = _btn_count -> -> 0 `i `uc ]
+"543
+[; ;main.c: 543:         if((!RB1)){
+[e $ ! ! _RB1 1802  ]
 {
-"521
-[; ;main.c: 521:             btn_count++;
+"544
+[; ;main.c: 544:             btn_count++;
 [e ++ _btn_count -> -> 1 `i `uc ]
-"522
-[; ;main.c: 522:             if(decrease_btn_debounce){
-[e $ ! != _decrease_btn_debounce -> 0 `i 1803  ]
+"545
+[; ;main.c: 545:             if(increase_btn_debounce){
+[e $ ! != _increase_btn_debounce -> 0 `i 1803  ]
 {
-"523
-[; ;main.c: 523:                 decrease_btn_debounce--;
-[e -- _decrease_btn_debounce -> -> 1 `i `Vi ]
-"524
-[; ;main.c: 524:             }
+"546
+[; ;main.c: 546:                 increase_btn_debounce--;
+[e -- _increase_btn_debounce -> -> 1 `i `Vi ]
+"547
+[; ;main.c: 547:             }
 }
 [e :U 1803 ]
-"525
-[; ;main.c: 525:         }else{
+"548
+[; ;main.c: 548:         }else{
 }
 [e $U 1804  ]
 [e :U 1802 ]
 {
-"526
-[; ;main.c: 526:             decrease_btn_debounce = 20;
-[e = _decrease_btn_debounce -> 20 `i ]
-"527
-[; ;main.c: 527:         }
+"549
+[; ;main.c: 549:             increase_btn_debounce = 20;
+[e = _increase_btn_debounce -> 20 `i ]
+"550
+[; ;main.c: 550:         }
 }
 [e :U 1804 ]
-"529
-[; ;main.c: 529:         if((!RB0)){
-[e $ ! ! _RB0 1805  ]
+"552
+[; ;main.c: 552:         if((!RB2)){
+[e $ ! ! _RB2 1805  ]
 {
-"530
-[; ;main.c: 530:             btn_count++;
+"553
+[; ;main.c: 553:             btn_count++;
 [e ++ _btn_count -> -> 1 `i `uc ]
-"531
-[; ;main.c: 531:             if(mode_btn_debounce){
-[e $ ! != _mode_btn_debounce -> 0 `i 1806  ]
+"554
+[; ;main.c: 554:             if(decrease_btn_debounce){
+[e $ ! != _decrease_btn_debounce -> 0 `i 1806  ]
 {
-"532
-[; ;main.c: 532:                 mode_btn_debounce--;
-[e -- _mode_btn_debounce -> -> 1 `i `Vi ]
-"533
-[; ;main.c: 533:             }
+"555
+[; ;main.c: 555:                 decrease_btn_debounce--;
+[e -- _decrease_btn_debounce -> -> 1 `i `Vi ]
+"556
+[; ;main.c: 556:             }
 }
 [e :U 1806 ]
-"534
-[; ;main.c: 534:         }else{
+"557
+[; ;main.c: 557:         }else{
 }
 [e $U 1807  ]
 [e :U 1805 ]
 {
-"535
-[; ;main.c: 535:             mode_btn_debounce = 20;
-[e = _mode_btn_debounce -> 20 `i ]
-"536
-[; ;main.c: 536:         }
+"558
+[; ;main.c: 558:             decrease_btn_debounce = 20;
+[e = _decrease_btn_debounce -> 20 `i ]
+"559
+[; ;main.c: 559:         }
 }
 [e :U 1807 ]
-"539
-[; ;main.c: 539:         if(btn_count==1){
-[e $ ! == -> _btn_count `i -> 1 `i 1808  ]
-{
-"540
-[; ;main.c: 540:             if(decrement){
-[e $ ! != _decrement -> 0 `i 1809  ]
-{
-"541
-[; ;main.c: 541:                 decrement--;
-[e -- _decrement -> -> 1 `i `Vi ]
-"542
-[; ;main.c: 542:             }else{
-}
-[e $U 1810  ]
-[e :U 1809 ]
-{
-"543
-[; ;main.c: 543:                 if(!increase_btn_debounce){
-[e $ ! ! != _increase_btn_debounce -> 0 `i 1811  ]
-{
-"544
-[; ;main.c: 544:                     if((RB5 == 1) && ((!RB2) != 1)){
-[e $ ! && == -> _RB5 `i -> 1 `i != -> ! _RB2 `i -> 1 `i 1812  ]
-{
-"545
-[; ;main.c: 545:                         if(!speedChangeTimer){
-[e $ ! ! != _speedChangeTimer -> -> 0 `i `ui 1813  ]
-{
-"546
-[; ;main.c: 546:                             if(speedChangeState<4){
-[e $ ! < -> _speedChangeState `i -> 4 `i 1814  ]
-{
-"547
-[; ;main.c: 547:                                 speedChangeState++;
-[e ++ _speedChangeState -> -> 1 `i `uc ]
-"548
-[; ;main.c: 548:                                 speedChangeTimer = 2000;
-[e = _speedChangeTimer -> -> 2000 `i `ui ]
-"549
-[; ;main.c: 549:                             }
-}
-[e :U 1814 ]
-"551
-[; ;main.c: 551:                             if(fireman_set){
-[e $ ! != -> _fireman_set `i -> 0 `i 1815  ]
-{
-"552
-[; ;main.c: 552:                                 if(frmn_speed < 100){
-[e $ ! < -> _frmn_speed `i -> 100 `i 1816  ]
-{
-"553
-[; ;main.c: 553:                                     frmn_speed += 1;
-[e =+ _frmn_speed -> -> 1 `i `uc ]
-"554
-[; ;main.c: 554:                                     HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 2 `i `uc -> &U _frmn_speed `*uc -> -> # _frmn_speed `ui `uc ]
-"555
-[; ;main.c: 555:                                 }
-}
-[e :U 1816 ]
-"556
-[; ;main.c: 556:                             }else{
-}
-[e $U 1817  ]
-[e :U 1815 ]
-{
-"557
-[; ;main.c: 557:                                 if((speed < 100)){
-[e $ ! < -> _speed `i -> 100 `i 1818  ]
-{
-"558
-[; ;main.c: 558:                                     if(mode == 0){
-[e $ ! == -> _mode `i -> 0 `i 1819  ]
-{
-"559
-[; ;main.c: 559:                                         speed += 1;
-[e =+ _speed -> -> 1 `i `uc ]
-"560
-[; ;main.c: 560:                                         HEFLASH_writeBlock(1, &speed, sizeof(speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 1 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
 "561
-[; ;main.c: 561:                                     }else if(mode==2){
-}
-[e $U 1820  ]
-[e :U 1819 ]
-[e $ ! == -> _mode `i -> 2 `i 1821  ]
+[; ;main.c: 561:         if((!RB0)){
+[e $ ! ! _RB0 1808  ]
 {
 "562
-[; ;main.c: 562:                                         speed += 1;
-[e =+ _speed -> -> 1 `i `uc ]
+[; ;main.c: 562:             btn_count++;
+[e ++ _btn_count -> -> 1 `i `uc ]
 "563
-[; ;main.c: 563:                                         HEFLASH_writeBlock(3, &speed, sizeof(speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 3 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
-"564
-[; ;main.c: 564:                                     }
-}
-[e :U 1821 ]
-[e :U 1820 ]
-"565
-[; ;main.c: 565:                                 }
-}
-[e :U 1818 ]
-"566
-[; ;main.c: 566:                             }
-}
-[e :U 1817 ]
-"567
-[; ;main.c: 567:                         }
-}
-[e :U 1813 ]
-"568
-[; ;main.c: 568:                     }
-}
-[e :U 1812 ]
-"569
-[; ;main.c: 569:                 }
-}
-[e :U 1811 ]
-"570
-[; ;main.c: 570:                 if(!decrease_btn_debounce){
-[e $ ! ! != _decrease_btn_debounce -> 0 `i 1822  ]
+[; ;main.c: 563:             if(mode_btn_debounce){
+[e $ ! != _mode_btn_debounce -> 0 `i 1809  ]
 {
+"564
+[; ;main.c: 564:                 mode_btn_debounce--;
+[e -- _mode_btn_debounce -> -> 1 `i `Vi ]
+"565
+[; ;main.c: 565:             }
+}
+[e :U 1809 ]
+"566
+[; ;main.c: 566:         }else{
+}
+[e $U 1810  ]
+[e :U 1808 ]
+{
+"567
+[; ;main.c: 567:             mode_btn_debounce = 20;
+[e = _mode_btn_debounce -> 20 `i ]
+"568
+[; ;main.c: 568:         }
+}
+[e :U 1810 ]
 "571
-[; ;main.c: 571:                     if((RB5 == 1) && ((!RB1) != 1)){
-[e $ ! && == -> _RB5 `i -> 1 `i != -> ! _RB1 `i -> 1 `i 1823  ]
+[; ;main.c: 571:         if(btn_count==1){
+[e $ ! == -> _btn_count `i -> 1 `i 1811  ]
 {
 "572
-[; ;main.c: 572:                         if(!speedChangeTimer){
-[e $ ! ! != _speedChangeTimer -> -> 0 `i `ui 1824  ]
+[; ;main.c: 572:             if(decrement){
+[e $ ! != _decrement -> 0 `i 1812  ]
 {
 "573
-[; ;main.c: 573:                             if(speedChangeState<4){
-[e $ ! < -> _speedChangeState `i -> 4 `i 1825  ]
-{
+[; ;main.c: 573:                 decrement--;
+[e -- _decrement -> -> 1 `i `Vi ]
 "574
-[; ;main.c: 574:                                 speedChangeState++;
-[e ++ _speedChangeState -> -> 1 `i `uc ]
-"575
-[; ;main.c: 575:                                 speedChangeTimer = 2000;
-[e = _speedChangeTimer -> -> 2000 `i `ui ]
-"576
-[; ;main.c: 576:                             }
+[; ;main.c: 574:             }else{
 }
-[e :U 1825 ]
-"577
-[; ;main.c: 577:                             if(fireman_set)
-[e $ ! != -> _fireman_set `i -> 0 `i 1826  ]
+[e $U 1813  ]
+[e :U 1812 ]
+{
+"576
+[; ;main.c: 576:                 bright_screen_timer = 50000;
+[e = _bright_screen_timer -> -> 50000 `l `i ]
 "578
-[; ;main.c: 578:                             {
+[; ;main.c: 578:                 if(!increase_btn_debounce){
+[e $ ! ! != _increase_btn_debounce -> 0 `i 1814  ]
 {
 "579
-[; ;main.c: 579:                                 if(frmn_speed > 0)
-[e $ ! > -> _frmn_speed `i -> 0 `i 1827  ]
+[; ;main.c: 579:                     if((RB5 == 1) && ((!RB2) != 1)){
+[e $ ! && == -> _RB5 `i -> 1 `i != -> ! _RB2 `i -> 1 `i 1815  ]
+{
 "580
-[; ;main.c: 580:                                 {
+[; ;main.c: 580:                         if(!speedChangeTimer){
+[e $ ! ! != _speedChangeTimer -> -> 0 `i `ui 1816  ]
 {
 "581
-[; ;main.c: 581:                                     frmn_speed -= 1;
-[e =- _frmn_speed -> -> 1 `i `uc ]
+[; ;main.c: 581:                             if(speedChangeState<4){
+[e $ ! < -> _speedChangeState `i -> 4 `i 1817  ]
+{
 "582
-[; ;main.c: 582:                                     HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 2 `i `uc -> &U _frmn_speed `*uc -> -> # _frmn_speed `ui `uc ]
+[; ;main.c: 582:                                 speedChangeState++;
+[e ++ _speedChangeState -> -> 1 `i `uc ]
 "583
-[; ;main.c: 583:                                 }
-}
-[e :U 1827 ]
+[; ;main.c: 583:                                 speedChangeTimer = 2000;
+[e = _speedChangeTimer -> -> 2000 `i `ui ]
 "584
 [; ;main.c: 584:                             }
 }
-[e $U 1828  ]
-"585
-[; ;main.c: 585:                             else
-[e :U 1826 ]
+[e :U 1817 ]
 "586
-[; ;main.c: 586:                             {
+[; ;main.c: 586:                             if(fireman_set){
+[e $ ! != -> _fireman_set `i -> 0 `i 1818  ]
 {
 "587
-[; ;main.c: 587:                                 if((speed > 0)){
-[e $ ! > -> _speed `i -> 0 `i 1829  ]
+[; ;main.c: 587:                                 if(frmn_speed < 100){
+[e $ ! < -> _frmn_speed `i -> 100 `i 1819  ]
 {
 "588
-[; ;main.c: 588:                                     if(mode == 0){
-[e $ ! == -> _mode `i -> 0 `i 1830  ]
-{
+[; ;main.c: 588:                                     frmn_speed += 1;
+[e =+ _frmn_speed -> -> 1 `i `uc ]
 "589
-[; ;main.c: 589:                                         speed -= 1;
-[e =- _speed -> -> 1 `i `uc ]
+[; ;main.c: 589:                                     HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 2 `i `uc -> &U _frmn_speed `*uc -> -> # _frmn_speed `ui `uc ]
 "590
-[; ;main.c: 590:                                         HEFLASH_writeBlock(1, &speed, sizeof(speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 1 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
-"591
-[; ;main.c: 591:                                     }else if(mode==2){
+[; ;main.c: 590:                                 }
 }
-[e $U 1831  ]
-[e :U 1830 ]
-[e $ ! == -> _mode `i -> 2 `i 1832  ]
+[e :U 1819 ]
+"591
+[; ;main.c: 591:                             }else{
+}
+[e $U 1820  ]
+[e :U 1818 ]
 {
 "592
-[; ;main.c: 592:                                         speed -= 1;
-[e =- _speed -> -> 1 `i `uc ]
+[; ;main.c: 592:                                 if((speed < 100)){
+[e $ ! < -> _speed `i -> 100 `i 1821  ]
+{
 "593
-[; ;main.c: 593:                                         HEFLASH_writeBlock(3, &speed, sizeof(speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 3 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
+[; ;main.c: 593:                                     if(mode == 0){
+[e $ ! == -> _mode `i -> 0 `i 1822  ]
+{
 "594
-[; ;main.c: 594:                                     }
-}
-[e :U 1832 ]
-[e :U 1831 ]
+[; ;main.c: 594:                                         speed += 1;
+[e =+ _speed -> -> 1 `i `uc ]
 "595
-[; ;main.c: 595:                                 }
-}
-[e :U 1829 ]
+[; ;main.c: 595:                                         HEFLASH_writeBlock(1, &speed, sizeof(speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 1 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
 "596
-[; ;main.c: 596:                             }
+[; ;main.c: 596:                                     }else if(mode==2){
 }
-[e :U 1828 ]
+[e $U 1823  ]
+[e :U 1822 ]
+[e $ ! == -> _mode `i -> 2 `i 1824  ]
+{
 "597
-[; ;main.c: 597:                         }
+[; ;main.c: 597:                                         speed += 1;
+[e =+ _speed -> -> 1 `i `uc ]
+"598
+[; ;main.c: 598:                                         HEFLASH_writeBlock(3, &speed, sizeof(speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 3 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
+"599
+[; ;main.c: 599:                                     }
 }
 [e :U 1824 ]
-"598
-[; ;main.c: 598:                     }
-}
 [e :U 1823 ]
-"599
-[; ;main.c: 599:                 }
-}
-[e :U 1822 ]
 "600
-[; ;main.c: 600:                 if(!mode_btn_debounce){
-[e $ ! ! != _mode_btn_debounce -> 0 `i 1833  ]
-{
-"601
-[; ;main.c: 601:                     if(!mode_change_flag){
-[e $ ! ! != -> _mode_change_flag `i -> 0 `i 1834  ]
-{
-"602
-[; ;main.c: 602:                         mode_change_flag = 1;
-[e = _mode_change_flag -> -> 1 `i `a ]
-"603
-[; ;main.c: 603:                         if(fireman_set){
-[e $ ! != -> _fireman_set `i -> 0 `i 1835  ]
-{
-"604
-[; ;main.c: 604:                             fireman_inc = 0;
-[e = _fireman_inc -> 0 `i ]
-"605
-[; ;main.c: 605:                         }else{
+[; ;main.c: 600:                                 }
 }
-[e $U 1836  ]
-[e :U 1835 ]
+[e :U 1821 ]
+"601
+[; ;main.c: 601:                             }
+}
+[e :U 1820 ]
+"602
+[; ;main.c: 602:                         }
+}
+[e :U 1816 ]
+"603
+[; ;main.c: 603:                     }
+}
+[e :U 1815 ]
+"604
+[; ;main.c: 604:                 }
+}
+[e :U 1814 ]
+"605
+[; ;main.c: 605:                 if(!decrease_btn_debounce){
+[e $ ! ! != _decrease_btn_debounce -> 0 `i 1825  ]
 {
 "606
-[; ;main.c: 606:                             if(((!RB1) != 1) && ((!RB2) != 1)){
-[e $ ! && != -> ! _RB1 `i -> 1 `i != -> ! _RB2 `i -> 1 `i 1837  ]
+[; ;main.c: 606:                     if((RB5 == 1) && ((!RB1) != 1)){
+[e $ ! && == -> _RB5 `i -> 1 `i != -> ! _RB1 `i -> 1 `i 1826  ]
+{
+"607
+[; ;main.c: 607:                         if(!speedChangeTimer){
+[e $ ! ! != _speedChangeTimer -> -> 0 `i `ui 1827  ]
 {
 "608
-[; ;main.c: 608:                                 if(mode == 4){
-[e $ ! == -> _mode `i -> 4 `i 1838  ]
+[; ;main.c: 608:                             if(speedChangeState<4){
+[e $ ! < -> _speedChangeState `i -> 4 `i 1828  ]
 {
+"609
+[; ;main.c: 609:                                 speedChangeState++;
+[e ++ _speedChangeState -> -> 1 `i `uc ]
 "610
-[; ;main.c: 610:                                     fireman_set = 0;
-[e = _fireman_set -> -> 0 `i `a ]
+[; ;main.c: 610:                                 speedChangeTimer = 2000;
+[e = _speedChangeTimer -> -> 2000 `i `ui ]
 "611
-[; ;main.c: 611:                                     HEFLASH_readBlock(&mode, 0, sizeof(mode));
-[e ( _HEFLASH_readBlock (3 , , -> &U _mode `*uc -> -> 0 `i `uc -> -> # _mode `ui `uc ]
+[; ;main.c: 611:                             }
+}
+[e :U 1828 ]
 "612
-[; ;main.c: 612:                                 }
-}
-[e :U 1838 ]
+[; ;main.c: 612:                             if(fireman_set)
+[e $ ! != -> _fireman_set `i -> 0 `i 1829  ]
 "613
-[; ;main.c: 613:                                 if(mode < 3)
-[e $ ! < -> _mode `i -> 3 `i 1839  ]
+[; ;main.c: 613:                             {
+{
 "614
-[; ;main.c: 614:                                 {
-{
+[; ;main.c: 614:                                 if(frmn_speed > 0)
+[e $ ! > -> _frmn_speed `i -> 0 `i 1830  ]
 "615
-[; ;main.c: 615:                                     mode++;
-[e ++ _mode -> -> 1 `i `uc ]
+[; ;main.c: 615:                                 {
+{
 "616
-[; ;main.c: 616:                                     HEFLASH_writeBlock(0, &mode, sizeof(mode));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 0 `i `uc -> &U _mode `*uc -> -> # _mode `ui `uc ]
+[; ;main.c: 616:                                     frmn_speed -= 1;
+[e =- _frmn_speed -> -> 1 `i `uc ]
 "617
-[; ;main.c: 617:                                 }
-}
-[e $U 1840  ]
+[; ;main.c: 617:                                     HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 2 `i `uc -> &U _frmn_speed `*uc -> -> # _frmn_speed `ui `uc ]
 "618
-[; ;main.c: 618:                                 else
-[e :U 1839 ]
+[; ;main.c: 618:                                 }
+}
+[e :U 1830 ]
 "619
-[; ;main.c: 619:                                 {
-{
+[; ;main.c: 619:                             }
+}
+[e $U 1831  ]
 "620
-[; ;main.c: 620:                                     mode = 0;
-[e = _mode -> -> 0 `i `uc ]
+[; ;main.c: 620:                             else
+[e :U 1829 ]
 "621
-[; ;main.c: 621:                                     HEFLASH_writeBlock(0, &mode, sizeof(mode));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 0 `i `uc -> &U _mode `*uc -> -> # _mode `ui `uc ]
+[; ;main.c: 621:                             {
+{
 "622
-[; ;main.c: 622:                                 }
-}
-[e :U 1840 ]
+[; ;main.c: 622:                                 if((speed > 0)){
+[e $ ! > -> _speed `i -> 0 `i 1832  ]
+{
 "623
-[; ;main.c: 623:                             }
-}
-[e :U 1837 ]
+[; ;main.c: 623:                                     if(mode == 0){
+[e $ ! == -> _mode `i -> 0 `i 1833  ]
+{
 "624
-[; ;main.c: 624:                         }
-}
-[e :U 1836 ]
+[; ;main.c: 624:                                         speed -= 1;
+[e =- _speed -> -> 1 `i `uc ]
 "625
-[; ;main.c: 625:                     }
-}
-[e :U 1834 ]
+[; ;main.c: 625:                                         HEFLASH_writeBlock(1, &speed, sizeof(speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 1 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
 "626
-[; ;main.c: 626:                 }
+[; ;main.c: 626:                                     }else if(mode==2){
 }
+[e $U 1834  ]
 [e :U 1833 ]
+[e $ ! == -> _mode `i -> 2 `i 1835  ]
+{
 "627
-[; ;main.c: 627:             }
-}
-[e :U 1810 ]
+[; ;main.c: 627:                                         speed -= 1;
+[e =- _speed -> -> 1 `i `uc ]
 "628
-[; ;main.c: 628:         }else{
-}
-[e $U 1841  ]
-[e :U 1808 ]
-{
+[; ;main.c: 628:                                         HEFLASH_writeBlock(3, &speed, sizeof(speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 3 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
 "629
-[; ;main.c: 629:             decrement = 20;
-[e = _decrement -> 20 `i ]
+[; ;main.c: 629:                                     }
+}
+[e :U 1835 ]
+[e :U 1834 ]
 "630
-[; ;main.c: 630:         }
+[; ;main.c: 630:                                 }
 }
-[e :U 1841 ]
+[e :U 1832 ]
+"631
+[; ;main.c: 631:                             }
+}
+[e :U 1831 ]
 "632
-[; ;main.c: 632:         if(updateAutoRemoteDelay){
-[e $ ! != -> _updateAutoRemoteDelay `i -> 0 `i 1842  ]
-{
+[; ;main.c: 632:                         }
+}
+[e :U 1827 ]
 "633
-[; ;main.c: 633:             updateAutoRemoteDelay--;
-[e -- _updateAutoRemoteDelay -> -> 1 `i `uc ]
+[; ;main.c: 633:                     }
+}
+[e :U 1826 ]
 "634
-[; ;main.c: 634:         }
+[; ;main.c: 634:                 }
 }
-[e :U 1842 ]
-"636
-[; ;main.c: 636:         if(!fireman_inc){
-[e $ ! ! != _fireman_inc -> 0 `i 1843  ]
+[e :U 1825 ]
+"635
+[; ;main.c: 635:                 if(!mode_btn_debounce){
+[e $ ! ! != _mode_btn_debounce -> 0 `i 1836  ]
 {
+"636
+[; ;main.c: 636:                     if(!mode_change_flag){
+[e $ ! ! != -> _mode_change_flag `i -> 0 `i 1837  ]
+{
+"637
+[; ;main.c: 637:                         mode_change_flag = 1;
+[e = _mode_change_flag -> -> 1 `i `a ]
 "638
-[; ;main.c: 638:             fireman_set = 0;
-[e = _fireman_set -> -> 0 `i `a ]
+[; ;main.c: 638:                         if(fireman_set){
+[e $ ! != -> _fireman_set `i -> 0 `i 1838  ]
+{
 "639
-[; ;main.c: 639:             HEFLASH_readBlock(&mode, 0, sizeof(mode));
-[e ( _HEFLASH_readBlock (3 , , -> &U _mode `*uc -> -> 0 `i `uc -> -> # _mode `ui `uc ]
+[; ;main.c: 639:                             fireman_inc = 0;
+[e = _fireman_inc -> 0 `i ]
 "640
-[; ;main.c: 640:         }
+[; ;main.c: 640:                         }else{
 }
-[e :U 1843 ]
-"642
-[; ;main.c: 642:         if(!factory_reset_dec){
-[e $ ! ! != _factory_reset_dec -> 0 `i 1844  ]
+[e $U 1839  ]
+[e :U 1838 ]
+{
+"641
+[; ;main.c: 641:                             if(((!RB1) != 1) && ((!RB2) != 1)){
+[e $ ! && != -> ! _RB1 `i -> 1 `i != -> ! _RB2 `i -> 1 `i 1840  ]
 {
 "643
-[; ;main.c: 643:             fireman_set = 0;
+[; ;main.c: 643:                                 if(mode == 4){
+[e $ ! == -> _mode `i -> 4 `i 1841  ]
+{
+"645
+[; ;main.c: 645:                                     fireman_set = 0;
 [e = _fireman_set -> -> 0 `i `a ]
-"644
-[; ;main.c: 644:             fireman_inc = 0;
-[e = _fireman_inc -> 0 `i ]
 "646
-[; ;main.c: 646:             press = 0;
-[e = _press -> -> 0 `i `a ]
+[; ;main.c: 646:                                     HEFLASH_readBlock(&mode, 0, sizeof(mode));
+[e ( _HEFLASH_readBlock (3 , , -> &U _mode `*uc -> -> 0 `i `uc -> -> # _mode `ui `uc ]
+"647
+[; ;main.c: 647:                                 }
+}
+[e :U 1841 ]
 "648
-[; ;main.c: 648:             mode = 5;
-[e = _mode -> -> 5 `i `uc ]
+[; ;main.c: 648:                                 if(mode < 3)
+[e $ ! < -> _mode `i -> 3 `i 1842  ]
 "649
-[; ;main.c: 649:             speed = 50;
-[e = _speed -> -> 50 `i `uc ]
+[; ;main.c: 649:                                 {
+{
 "650
-[; ;main.c: 650:             frmn_speed = 100;
-[e = _frmn_speed -> -> 100 `i `uc ]
+[; ;main.c: 650:                                     mode++;
+[e ++ _mode -> -> 1 `i `uc ]
 "651
-[; ;main.c: 651:             ext_speed = 0;
-[e = _ext_speed -> -> 0 `i `f ]
-"653
-[; ;main.c: 653:             HEFLASH_writeBlock(0, &mode, sizeof(mode));
+[; ;main.c: 651:                                     HEFLASH_writeBlock(0, &mode, sizeof(mode));
 [e ( _HEFLASH_writeBlock (3 , , -> -> 0 `i `uc -> &U _mode `*uc -> -> # _mode `ui `uc ]
+"652
+[; ;main.c: 652:                                 }
+}
+[e $U 1843  ]
+"653
+[; ;main.c: 653:                                 else
+[e :U 1842 ]
 "654
-[; ;main.c: 654:             HEFLASH_writeBlock(1, &speed, sizeof(speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 1 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
+[; ;main.c: 654:                                 {
+{
 "655
-[; ;main.c: 655:             HEFLASH_writeBlock(3, &speed, sizeof(speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 3 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
+[; ;main.c: 655:                                     mode = 0;
+[e = _mode -> -> 0 `i `uc ]
 "656
-[; ;main.c: 656:             HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 2 `i `uc -> &U _frmn_speed `*uc -> -> # _frmn_speed `ui `uc ]
+[; ;main.c: 656:                                     HEFLASH_writeBlock(0, &mode, sizeof(mode));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 0 `i `uc -> &U _mode `*uc -> -> # _mode `ui `uc ]
 "657
-[; ;main.c: 657:         }
+[; ;main.c: 657:                                 }
+}
+[e :U 1843 ]
+"658
+[; ;main.c: 658:                             }
+}
+[e :U 1840 ]
+"659
+[; ;main.c: 659:                         }
+}
+[e :U 1839 ]
+"660
+[; ;main.c: 660:                     }
+}
+[e :U 1837 ]
+"661
+[; ;main.c: 661:                 }
+}
+[e :U 1836 ]
+"662
+[; ;main.c: 662:             }
+}
+[e :U 1813 ]
+"663
+[; ;main.c: 663:         }else{
+}
+[e $U 1844  ]
+[e :U 1811 ]
+{
+"664
+[; ;main.c: 664:             decrement = 20;
+[e = _decrement -> 20 `i ]
+"665
+[; ;main.c: 665:         }
 }
 [e :U 1844 ]
-"658
-[; ;main.c: 658:     }
+"667
+[; ;main.c: 667:         if(updateAutoRemoteDelay){
+[e $ ! != -> _updateAutoRemoteDelay `i -> 0 `i 1845  ]
+{
+"668
+[; ;main.c: 668:             updateAutoRemoteDelay--;
+[e -- _updateAutoRemoteDelay -> -> 1 `i `uc ]
+"669
+[; ;main.c: 669:         }
 }
-[e :U 1743 ]
-[e $U 1744  ]
-[e :U 1745 ]
-"659
-[; ;main.c: 659: }
-[e :UE 1740 ]
+[e :U 1845 ]
+"671
+[; ;main.c: 671:         if(!fireman_inc){
+[e $ ! ! != _fireman_inc -> 0 `i 1846  ]
+{
+"673
+[; ;main.c: 673:             fireman_set = 0;
+[e = _fireman_set -> -> 0 `i `a ]
+"674
+[; ;main.c: 674:             HEFLASH_readBlock(&mode, 0, sizeof(mode));
+[e ( _HEFLASH_readBlock (3 , , -> &U _mode `*uc -> -> 0 `i `uc -> -> # _mode `ui `uc ]
+"675
+[; ;main.c: 675:         }
+}
+[e :U 1846 ]
+"677
+[; ;main.c: 677:         if(!factory_reset_dec){
+[e $ ! ! != _factory_reset_dec -> 0 `i 1847  ]
+{
+"678
+[; ;main.c: 678:             fireman_set = 0;
+[e = _fireman_set -> -> 0 `i `a ]
+"679
+[; ;main.c: 679:             fireman_inc = 0;
+[e = _fireman_inc -> 0 `i ]
+"681
+[; ;main.c: 681:             press = 0;
+[e = _press -> -> 0 `i `a ]
+"683
+[; ;main.c: 683:             mode = 5;
+[e = _mode -> -> 5 `i `uc ]
+"684
+[; ;main.c: 684:             speed = 50;
+[e = _speed -> -> 50 `i `uc ]
+"685
+[; ;main.c: 685:             frmn_speed = 100;
+[e = _frmn_speed -> -> 100 `i `uc ]
+"686
+[; ;main.c: 686:             ext_speed = 0;
+[e = _ext_speed -> -> 0 `i `f ]
+"688
+[; ;main.c: 688:             HEFLASH_writeBlock(0, &mode, sizeof(mode));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 0 `i `uc -> &U _mode `*uc -> -> # _mode `ui `uc ]
+"689
+[; ;main.c: 689:             HEFLASH_writeBlock(1, &speed, sizeof(speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 1 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
+"690
+[; ;main.c: 690:             HEFLASH_writeBlock(3, &speed, sizeof(speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 3 `i `uc -> &U _speed `*uc -> -> # _speed `ui `uc ]
+"691
+[; ;main.c: 691:             HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 2 `i `uc -> &U _frmn_speed `*uc -> -> # _frmn_speed `ui `uc ]
+"692
+[; ;main.c: 692:         }
+}
+[e :U 1847 ]
+"693
+[; ;main.c: 693:     }
+}
+[e :U 1744 ]
+[e $U 1745  ]
+[e :U 1746 ]
+"696
+[; ;main.c: 696:     if(setting_refresh_flag){
+[e $ ! != -> _setting_refresh_flag `i -> 0 `i 1848  ]
+{
+"697
+[; ;main.c: 697:        DisplaySettingRefresh();
+[e ( _DisplaySettingRefresh ..  ]
+"698
+[; ;main.c: 698:        setting_refresh_flag = 0;
+[e = _setting_refresh_flag -> -> 0 `i `a ]
+"699
+[; ;main.c: 699:        setting_refresh_timer = 1280000;
+[e = _setting_refresh_timer -> 1280000 `l ]
+"700
+[; ;main.c: 700:     }
+}
+[e :U 1848 ]
+"701
+[; ;main.c: 701: }
+[e :UE 1741 ]
 }
 [v $root$___ISR `(v ~T0 @X0 0 e ]
-"661
-[; ;main.c: 661: void __attribute__((picinterrupt(("")))) __ISR(void){
+"703
+[; ;main.c: 703: void __attribute__((picinterrupt(("")))) __ISR(void){
 [v ___ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U ___ISR ]
 [f ]
-"662
-[; ;main.c: 662:     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
-[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 1846  ]
-"663
-[; ;main.c: 663:     {
+"704
+[; ;main.c: 704:     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 1850  ]
+"705
+[; ;main.c: 705:     {
 {
-"665
-[; ;main.c: 665:         INTCONbits.TMR0IF = 0;
+"707
+[; ;main.c: 707:         INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"667
-[; ;main.c: 667:         if(fireman_set){
-[e $ ! != -> _fireman_set `i -> 0 `i 1847  ]
+"709
+[; ;main.c: 709:         if(fireman_set){
+[e $ ! != -> _fireman_set `i -> 0 `i 1851  ]
 {
-"668
-[; ;main.c: 668:             if(fireman_inc){
-[e $ ! != _fireman_inc -> 0 `i 1848  ]
+"710
+[; ;main.c: 710:             if(fireman_inc){
+[e $ ! != _fireman_inc -> 0 `i 1852  ]
 {
-"669
-[; ;main.c: 669:                 fireman_inc--;
+"711
+[; ;main.c: 711:                 fireman_inc--;
 [e -- _fireman_inc -> -> 1 `i `Vi ]
-"670
-[; ;main.c: 670:             }
-}
-[e :U 1848 ]
-"671
-[; ;main.c: 671:         }
-}
-[e :U 1847 ]
-"673
-[; ;main.c: 673:         if(mode_btn_debounce && !(increase_btn_debounce || decrease_btn_debounce)){
-[e $ ! && != _mode_btn_debounce -> 0 `i ! || != _increase_btn_debounce -> 0 `i != _decrease_btn_debounce -> 0 `i 1849  ]
-{
-"674
-[; ;main.c: 674:             if(fireman_set_debounce){
-[e $ ! != _fireman_set_debounce -> -> 0 `i `ui 1850  ]
-{
-"675
-[; ;main.c: 675:                 fireman_set_debounce--;
-[e -- _fireman_set_debounce -> -> 1 `i `ui ]
-"676
-[; ;main.c: 676:                 if(!fireman_set_debounce){
-[e $ ! ! != _fireman_set_debounce -> -> 0 `i `ui 1851  ]
-{
-"677
-[; ;main.c: 677:                     fireman_inc = 50000;
-[e = _fireman_inc -> -> 50000 `l `i ]
-"678
-[; ;main.c: 678:                     fireman_set = 1;
-[e = _fireman_set -> -> 1 `i `a ]
-"679
-[; ;main.c: 679:                     HEFLASH_writeBlock(0, &mode, sizeof(mode));
-[e ( _HEFLASH_writeBlock (3 , , -> -> 0 `i `uc -> &U _mode `*uc -> -> # _mode `ui `uc ]
-"680
-[; ;main.c: 680:                     mode = 4;
-[e = _mode -> -> 4 `i `uc ]
-"681
-[; ;main.c: 681:                 }
-}
-[e :U 1851 ]
-"682
-[; ;main.c: 682:             }
-}
-[e :U 1850 ]
-"683
-[; ;main.c: 683:         }else{
-}
-[e $U 1852  ]
-[e :U 1849 ]
-{
-"684
-[; ;main.c: 684:             fireman_set_debounce = 10000;
-[e = _fireman_set_debounce -> -> 10000 `i `ui ]
-"685
-[; ;main.c: 685:         }
+"712
+[; ;main.c: 712:             }
 }
 [e :U 1852 ]
-"687
-[; ;main.c: 687:         if(increase_btn_debounce && !(decrease_btn_debounce || mode_btn_debounce)){
-[e $ ! && != _increase_btn_debounce -> 0 `i ! || != _decrease_btn_debounce -> 0 `i != _mode_btn_debounce -> 0 `i 1853  ]
-{
-"688
-[; ;main.c: 688:             if(factory_reset_dec){
-[e $ ! != _factory_reset_dec -> 0 `i 1854  ]
-{
-"689
-[; ;main.c: 689:                 factory_reset_dec--;
-[e -- _factory_reset_dec -> -> 1 `i `Vi ]
-"690
-[; ;main.c: 690:             }
+"713
+[; ;main.c: 713:         }
 }
-[e :U 1854 ]
-"691
-[; ;main.c: 691:         }
-}
-[e $U 1855  ]
-"692
-[; ;main.c: 692:         else{
-[e :U 1853 ]
+[e :U 1851 ]
+"715
+[; ;main.c: 715:         if(mode_btn_debounce && !(increase_btn_debounce || decrease_btn_debounce)){
+[e $ ! && != _mode_btn_debounce -> 0 `i ! || != _increase_btn_debounce -> 0 `i != _decrease_btn_debounce -> 0 `i 1853  ]
 {
-"693
-[; ;main.c: 693:             factory_reset_dec = 25000;
-[e = _factory_reset_dec -> 25000 `i ]
-"694
-[; ;main.c: 694:         }
+"716
+[; ;main.c: 716:             if(fireman_set_debounce){
+[e $ ! != _fireman_set_debounce -> -> 0 `i `ui 1854  ]
+{
+"717
+[; ;main.c: 717:                 fireman_set_debounce--;
+[e -- _fireman_set_debounce -> -> 1 `i `ui ]
+"718
+[; ;main.c: 718:                 if(!fireman_set_debounce){
+[e $ ! ! != _fireman_set_debounce -> -> 0 `i `ui 1855  ]
+{
+"719
+[; ;main.c: 719:                     fireman_inc = 50000;
+[e = _fireman_inc -> -> 50000 `l `i ]
+"720
+[; ;main.c: 720:                     fireman_set = 1;
+[e = _fireman_set -> -> 1 `i `a ]
+"721
+[; ;main.c: 721:                     HEFLASH_writeBlock(0, &mode, sizeof(mode));
+[e ( _HEFLASH_writeBlock (3 , , -> -> 0 `i `uc -> &U _mode `*uc -> -> # _mode `ui `uc ]
+"722
+[; ;main.c: 722:                     mode = 4;
+[e = _mode -> -> 4 `i `uc ]
+"723
+[; ;main.c: 723:                 }
 }
 [e :U 1855 ]
-"695
-[; ;main.c: 695:         if(increase_btn_debounce && decrease_btn_debounce && mode_btn_debounce){
-[e $ ! && && != _increase_btn_debounce -> 0 `i != _decrease_btn_debounce -> 0 `i != _mode_btn_debounce -> 0 `i 1856  ]
+"724
+[; ;main.c: 724:             }
+}
+[e :U 1854 ]
+"725
+[; ;main.c: 725:         }else{
+}
+[e $U 1856  ]
+[e :U 1853 ]
 {
-"696
-[; ;main.c: 696:             speedChangeTimer = 0;
-[e = _speedChangeTimer -> -> 0 `i `ui ]
-"697
-[; ;main.c: 697:             speedChangeState = 0;
-[e = _speedChangeState -> -> 0 `i `uc ]
-"698
-[; ;main.c: 698:             mode_change_flag = 0;
-[e = _mode_change_flag -> -> 0 `i `a ]
-"699
-[; ;main.c: 699:         }
+"726
+[; ;main.c: 726:             fireman_set_debounce = 10000;
+[e = _fireman_set_debounce -> -> 10000 `i `ui ]
+"727
+[; ;main.c: 727:         }
 }
 [e :U 1856 ]
-"701
-[; ;main.c: 701:         if(speedChangeTimer){
-[e $ ! != _speedChangeTimer -> -> 0 `i `ui 1857  ]
+"729
+[; ;main.c: 729:         if(increase_btn_debounce && !(decrease_btn_debounce || mode_btn_debounce)){
+[e $ ! && != _increase_btn_debounce -> 0 `i ! || != _decrease_btn_debounce -> 0 `i != _mode_btn_debounce -> 0 `i 1857  ]
 {
-"702
-[; ;main.c: 702:             speedChangeTimer--;
-[e -- _speedChangeTimer -> -> 1 `i `ui ]
-"703
-[; ;main.c: 703:         }
+"730
+[; ;main.c: 730:             if(factory_reset_dec){
+[e $ ! != _factory_reset_dec -> 0 `i 1858  ]
+{
+"731
+[; ;main.c: 731:                 factory_reset_dec--;
+[e -- _factory_reset_dec -> -> 1 `i `Vi ]
+"732
+[; ;main.c: 732:             }
 }
+[e :U 1858 ]
+"733
+[; ;main.c: 733:         }
+}
+[e $U 1859  ]
+"734
+[; ;main.c: 734:         else{
 [e :U 1857 ]
-"704
-[; ;main.c: 704:     }
+{
+"735
+[; ;main.c: 735:             factory_reset_dec = 25000;
+[e = _factory_reset_dec -> 25000 `i ]
+"736
+[; ;main.c: 736:         }
 }
-[e :U 1846 ]
-"705
-[; ;main.c: 705: }
-[e :UE 1845 ]
+[e :U 1859 ]
+"738
+[; ;main.c: 738:         if(increase_btn_debounce && decrease_btn_debounce && mode_btn_debounce){
+[e $ ! && && != _increase_btn_debounce -> 0 `i != _decrease_btn_debounce -> 0 `i != _mode_btn_debounce -> 0 `i 1860  ]
+{
+"739
+[; ;main.c: 739:             speedChangeTimer = 0;
+[e = _speedChangeTimer -> -> 0 `i `ui ]
+"740
+[; ;main.c: 740:             speedChangeState = 0;
+[e = _speedChangeState -> -> 0 `i `uc ]
+"741
+[; ;main.c: 741:             mode_change_flag = 0;
+[e = _mode_change_flag -> -> 0 `i `a ]
+"742
+[; ;main.c: 742:         }
+}
+[e :U 1860 ]
+"744
+[; ;main.c: 744:         if(speedChangeTimer){
+[e $ ! != _speedChangeTimer -> -> 0 `i `ui 1861  ]
+{
+"745
+[; ;main.c: 745:             speedChangeTimer--;
+[e -- _speedChangeTimer -> -> 1 `i `ui ]
+"746
+[; ;main.c: 746:         }
+}
+[e :U 1861 ]
+"748
+[; ;main.c: 748:         if(bright_screen_timer){
+[e $ ! != _bright_screen_timer -> 0 `i 1862  ]
+{
+"749
+[; ;main.c: 749:             bright_screen_timer--;
+[e -- _bright_screen_timer -> -> 1 `i `Vi ]
+"750
+[; ;main.c: 750:         }
+}
+[e :U 1862 ]
+"752
+[; ;main.c: 752:         if(setting_refresh_timer){
+[e $ ! != _setting_refresh_timer -> -> 0 `i `l 1863  ]
+{
+"753
+[; ;main.c: 753:             setting_refresh_timer--;
+[e -- _setting_refresh_timer -> -> 1 `i `Vl ]
+"754
+[; ;main.c: 754:         }
+}
+[e $U 1864  ]
+"755
+[; ;main.c: 755:         else{
+[e :U 1863 ]
+{
+"756
+[; ;main.c: 756:             setting_refresh_flag = 1;
+[e = _setting_refresh_flag -> -> 1 `i `a ]
+"757
+[; ;main.c: 757:         }
+}
+[e :U 1864 ]
+"758
+[; ;main.c: 758:     }
+}
+[e :U 1850 ]
+"759
+[; ;main.c: 759: }
+[e :UE 1849 ]
 }
 [p f _sprintf 8388736 ]
 [a 17C 80 114 101 115 115 32 77 111 100 101 0 ]

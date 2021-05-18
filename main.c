@@ -95,11 +95,16 @@
 #define RUN_STATUS_THRESHOLD    2.0
 #define RUN_STATUS_LOW          1.95
 
-#define FIREMAN_SET_TIMEOUT 50000   //10 sec timeout with TMR0 set for 200us interrupt.
-#define FACTORY_RESET_DELAY 25000    //Button hold time (5 sec) for factory reset.
-#define FIREMAN_SET_DELAY   10000    //button hold time (2 sec)for fireman set
-#define DEBOUNCE_CNT        20      //Tune debounce sensitivity.
-#define SPEED_1_TIME        2000     //Tune increase and decrease change time.
+#define FIREMAN_SET_TIMEOUT     50000       //10 sec timeout with TMR0 set for 200us interrupt.
+#define FACTORY_RESET_DELAY     25000       //Button hold time (5 sec) for factory reset.
+#define FIREMAN_SET_DELAY       10000       //button hold time (2 sec)for fireman set
+#define DEBOUNCE_CNT            20          //Tune debounce sensitivity.
+#define SPEED_1_TIME            2000        //Tune increase and decrease change time.
+#define BRIGHT_SCREEN_TIMEOUT   50000       //Set time screen is bright after input.
+#define SETTING_REFRESH         1280000     //256 sec refresh rate for display setting.
+
+#define DIM 0x00                
+#define BRIGHT 0xFF //Contrast brightness control values range from 0-255,.
 
 #define FILTER_SAMPLE_SIZE 50
 #define FILTER_ARRAY_INDEX (FILTER_SAMPLE_SIZE-1)
@@ -110,12 +115,15 @@ volatile int decrease_btn_debounce = DEBOUNCE_CNT;
 volatile int mode_btn_debounce = DEBOUNCE_CNT;
 volatile int factory_reset_dec = FACTORY_RESET_DELAY;
 volatile int fireman_inc = FIREMAN_SET_TIMEOUT;
+volatile int bright_screen_timer = BRIGHT_SCREEN_TIMEOUT;
+volatile long setting_refresh_timer = SETTING_REFRESH;
 
 bool mode_change_flag = 0;
 bool fireman_set = 0;
-
 bool factory_reset_enable = 0;
 bool press = 0;                 //Button debounce flag.
+bool setting_refresh_flag = 0;
+
 static char buttons = 0;               //State of all buttons.
 static char last_buttons = 0;               //State of all buttons.
 
@@ -126,15 +134,21 @@ unsigned char mode = 0;        //OFF == 0/HAND == 1/AUTO_LOCAL == 2/AUTO_REMOTE 
 unsigned char speed = 50;       //Range from 0-10 volts. (DAC range 0-100)
 unsigned char frmn_speed = 100;   //Range from 0-10 volts. (DAC range 0-100)
 float ext_speed = 0;    //Range from 0-10 volts. (Range 0-1024)
-unsigned char  speedChangeState = 0;
+unsigned char speedChangeState = 0;
 unsigned int speedChangeTimer = 0;
 unsigned int fireman_set_debounce = FIREMAN_SET_DELAY;
 
 
-void clearText(char* textToClear){
+void ClearText(char* textToClear){
     for(int i = 0; i < TEXT_ARRAY_SIZE; i++){
         textToClear[i] = ' ';
     }
+}
+
+//Used in two branches.
+void WDTclear(void){
+    __asm("CLRWDT");
+    WDTCON = 0x25;
 }
 
 
@@ -177,21 +191,24 @@ void main(void)
     
         
     while (1)
-    {      
+    {     
+        //Main loop WDT clear.
+        WDTclear();
+         
         //Fireman override loop.
         if(FIREMAN_INPUT == 0)
         {
 
             HEFLASH_readBlock(&frmn_speed, FIREMAN_SPEED, sizeof(frmn_speed)); //Read fireman_speed state from memory.
 
-            clearText(newTextLine1);
+            ClearText(newTextLine1);
             sprintf(newTextLine1,"FIREMAN");
 
-            clearText(newTextLine2);
+            ClearText(newTextLine2);
 
-            clearText(newTextLine3);
+            ClearText(newTextLine3);
 
-            clearText(newTextLine4);
+            ClearText(newTextLine4);
             sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
 
             //Output speed control via DAC1.
@@ -218,7 +235,9 @@ void main(void)
                 RUN_STATUS = 0;
             }
             
+            //Fireman mode screen update.
             UpdateScreen();
+            
             unsigned int power_led_flash_counter = 0;
             while(FIREMAN_INPUT == 0){  //wait until FIREMAN mode turned off
                 if(power_led_flash_counter){
@@ -232,14 +251,17 @@ void main(void)
                     POWER_LED = 1;
                 }
                 __delay_ms(1);
+                
+                //Clear WDT while in Fireman's mode.
+                WDTclear();
             }
         }
         POWER_LED = 1; 
 
-        clearText(newTextLine1);
-        clearText(newTextLine2);
-        clearText(newTextLine3);
-        clearText(newTextLine4);
+        ClearText(newTextLine1);
+        ClearText(newTextLine2);
+        ClearText(newTextLine3);
+        ClearText(newTextLine4);
         
         //Screen and Output Updates
         switch(mode) 
@@ -504,8 +526,18 @@ void main(void)
             break;
         } 
         
-        UpdateScreen();
+        //Dim timeout feature.
+        if(bright_screen_timer){
+            OLED_SetContrast(BRIGHT);  
+        }
+        else{
+             OLED_SetContrast(DIM);
+        }
         
+        //Normal operation screen update.
+        UpdateScreen();
+ 
+        //Single button recognition section.
         btn_count = 0;
         
         if(INCREASE_BUTTON){
@@ -540,6 +572,9 @@ void main(void)
             if(decrement){
                 decrement--;
             }else{
+                
+                bright_screen_timer = BRIGHT_SCREEN_TIMEOUT;
+                
                 if(!increase_btn_debounce){                             //if increase button is pressed
                     if((FIREMAN_INPUT == 1) && (DECREASE_BUTTON != 1)){ //ignore press if fireman input or decrease button are active
                         if(!speedChangeTimer){                          //check whether speed is ready to increment
@@ -656,6 +691,13 @@ void main(void)
             HEFLASH_writeBlock(FIREMAN_SPEED, &frmn_speed, sizeof(frmn_speed)); //Initialize speed in memory.
         }
     }
+
+    //Display setting refresh.
+    if(setting_refresh_flag){
+       DisplaySettingRefresh();
+       setting_refresh_flag = 0;
+       setting_refresh_timer = SETTING_REFRESH;
+    }   
 }
     
 void __interrupt() __ISR(void){ 
@@ -692,6 +734,7 @@ void __interrupt() __ISR(void){
         else{
             factory_reset_dec = FACTORY_RESET_DELAY;
         }
+        
         if(increase_btn_debounce && decrease_btn_debounce && mode_btn_debounce){
             speedChangeTimer = 0;
             speedChangeState = 0;
@@ -700,6 +743,17 @@ void __interrupt() __ISR(void){
         
         if(speedChangeTimer){
             speedChangeTimer--;
+        }
+        
+        if(bright_screen_timer){
+            bright_screen_timer--;
+        }
+        
+        if(setting_refresh_timer){
+            setting_refresh_timer--; 
+        }
+        else{
+            setting_refresh_flag = 1;
         }
     }
 }

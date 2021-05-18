@@ -20363,30 +20363,35 @@ void OLED_Init( void );
 uint8_t OLED_Width( void );
 uint8_t OLED_Height( void );
 void OLED_Update( void );
+void OLED_Update_Partial(char page);
 void OLED_SetContrast( uint8_t contrast );
 void OLED_ClearDisplay( void );
 void OLED_FillDisplay( void );
 void OLED_DrawPixel( int16_t x, int16_t y, uint8_t color );
 void OLED_InvertDisplay( uint8_t value );
 void OLED_SetFont( const uint8_t *font);
-# 141 "./OLED.h"
+# 142 "./OLED.h"
 void OLED_Write( int16_t x, int16_t y, char value );
 
 void UpdateScreen(void);
+void DisplaySettingRefresh(void);
 # 58 "main.c" 2
-# 107 "main.c"
+# 112 "main.c"
 volatile int decrement = 20;
 volatile int increase_btn_debounce = 20;
 volatile int decrease_btn_debounce = 20;
 volatile int mode_btn_debounce = 20;
 volatile int factory_reset_dec = 25000;
 volatile int fireman_inc = 50000;
+volatile int bright_screen_timer = 50000;
+volatile long setting_refresh_timer = 1280000;
 
 _Bool mode_change_flag = 0;
 _Bool fireman_set = 0;
-
 _Bool factory_reset_enable = 0;
 _Bool press = 0;
+_Bool setting_refresh_flag = 0;
+
 static char buttons = 0;
 static char last_buttons = 0;
 
@@ -20402,10 +20407,16 @@ unsigned int speedChangeTimer = 0;
 unsigned int fireman_set_debounce = 10000;
 
 
-void clearText(char* textToClear){
+void ClearText(char* textToClear){
     for(int i = 0; i < 16; i++){
         textToClear[i] = ' ';
     }
+}
+
+
+void WDTclear(void){
+    __asm("CLRWDT");
+    WDTCON = 0x25;
 }
 
 
@@ -20450,19 +20461,22 @@ void main(void)
     while (1)
     {
 
+        WDTclear();
+
+
         if(RB5 == 0)
         {
 
             HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
 
-            clearText(newTextLine1);
+            ClearText(newTextLine1);
             sprintf(newTextLine1,"FIREMAN");
 
-            clearText(newTextLine2);
+            ClearText(newTextLine2);
 
-            clearText(newTextLine3);
+            ClearText(newTextLine3);
 
-            clearText(newTextLine4);
+            ClearText(newTextLine4);
             sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
 
 
@@ -20489,7 +20503,9 @@ void main(void)
                 LATA1 = 0;
             }
 
+
             UpdateScreen();
+
             unsigned int power_led_flash_counter = 0;
             while(RB5 == 0){
                 if(power_led_flash_counter){
@@ -20503,14 +20519,17 @@ void main(void)
                     LATA6 = 1;
                 }
                 _delay((unsigned long)((1)*((32000000)/4000.0)));
+
+
+                WDTclear();
             }
         }
         LATA6 = 1;
 
-        clearText(newTextLine1);
-        clearText(newTextLine2);
-        clearText(newTextLine3);
-        clearText(newTextLine4);
+        ClearText(newTextLine1);
+        ClearText(newTextLine2);
+        ClearText(newTextLine3);
+        ClearText(newTextLine4);
 
 
         switch(mode)
@@ -20775,7 +20794,17 @@ void main(void)
             break;
         }
 
+
+        if(bright_screen_timer){
+            OLED_SetContrast(0xFF);
+        }
+        else{
+             OLED_SetContrast(0x00);
+        }
+
+
         UpdateScreen();
+
 
         btn_count = 0;
 
@@ -20811,6 +20840,9 @@ void main(void)
             if(decrement){
                 decrement--;
             }else{
+
+                bright_screen_timer = 50000;
+
                 if(!increase_btn_debounce){
                     if((RB5 == 1) && ((!RB2) != 1)){
                         if(!speedChangeTimer){
@@ -20927,6 +20959,13 @@ void main(void)
             HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
         }
     }
+
+
+    if(setting_refresh_flag){
+       DisplaySettingRefresh();
+       setting_refresh_flag = 0;
+       setting_refresh_timer = 1280000;
+    }
 }
 
 void __attribute__((picinterrupt(("")))) __ISR(void){
@@ -20963,6 +21002,7 @@ void __attribute__((picinterrupt(("")))) __ISR(void){
         else{
             factory_reset_dec = 25000;
         }
+
         if(increase_btn_debounce && decrease_btn_debounce && mode_btn_debounce){
             speedChangeTimer = 0;
             speedChangeState = 0;
@@ -20971,6 +21011,17 @@ void __attribute__((picinterrupt(("")))) __ISR(void){
 
         if(speedChangeTimer){
             speedChangeTimer--;
+        }
+
+        if(bright_screen_timer){
+            bright_screen_timer--;
+        }
+
+        if(setting_refresh_timer){
+            setting_refresh_timer--;
+        }
+        else{
+            setting_refresh_flag = 1;
         }
     }
 }

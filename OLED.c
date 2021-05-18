@@ -329,7 +329,7 @@ static uint8_t width(void);
 static uint8_t height(void);
 //static void swap_num(uint16_t *a, uint16_t *b);
 
-void OLED_Update_Partial(char page);
+
 //static int16_t abs(int16_t);
 
 
@@ -374,7 +374,7 @@ void OLED_Init(void) {
     ssd1306_command(0x12);
     ssd1306_command(SSD1306_SET_CONTRAST_CONTROL);
     // ssd1306_command(0x9F);  Use with External VCC
-    ssd1306_command(0xCF);
+    ssd1306_command(0xFF);
 #endif
 
     ssd1306_command(SSD1306_SET_PRECHARGE_PERIOD);
@@ -1062,3 +1062,55 @@ void UpdateScreen(){
         line_4_update_flag = 0;
     }
 }
+
+//Refresh display settings. Useful for noisy environments or extended periods without power cycles. 
+void DisplaySettingRefresh(void){
+    
+    ssd1306_command(SSD1306_DISPLAY_OFF);
+    ssd1306_command(SSD1306_SET_DISPLAY_CLOCK_DIV_RATIO);
+    ssd1306_command(0xF0); //Set internal clock to max freq. (~540kHz). 0x80 Default. 
+    ssd1306_command(SSD1306_SET_MULTIPLEX_RATIO);
+    ssd1306_command(SSD1306_LCDHEIGHT - 1);
+    ssd1306_command(SSD1306_SET_DISPLAY_OFFSET);
+    ssd1306_command(0x00);
+    ssd1306_command(SSD1306_SET_START_LINE | 0x00); // Line: 0
+    ssd1306_command(SSD1306_CHARGE_PUMP);
+    //ssd1306_command(0x10); This will be used with External VCC
+    
+    ssd1306_command(0x14);
+    ssd1306_command(SSD1306_MEMORY_ADDR_MODE);
+    ssd1306_command(0x00); //Horizontal Addressing Mode is Used
+    ssd1306_command(SSD1306_SET_SEGMENT_REMAP | 0x01);
+    ssd1306_command(SSD1306_COM_SCAN_DIR_DEC);
+
+    
+#if defined SSD1306_128_32
+    ssd1306_command(SSD1306_SET_COM_PINS);
+    ssd1306_command(0x02);
+    ssd1306_command(SSD1306_SET_CONTRAST_CONTROL);
+    ssd1306_command(0x8F);
+
+#elif defined SSD1306_128_64
+    ssd1306_command(SSD1306_SET_COM_PINS);
+    ssd1306_command(0x12);
+    ssd1306_command(SSD1306_SET_CONTRAST_CONTROL);
+    // ssd1306_command(0x9F);  Use with External VCC
+    ssd1306_command(0xFF);
+#endif
+
+    ssd1306_command(SSD1306_SET_PRECHARGE_PERIOD);
+    // ssd1306_command( 0x22 ); Use with External VCC
+    ssd1306_command(0xF1);
+    ssd1306_command(SSD1306_SET_VCOM_DESELECT);
+    ssd1306_command(0x40);
+    ssd1306_command(SSD1306_DISPLAY_ALL_ON_RESUME);
+    ssd1306_command(SSD1306_NORMAL_DISPLAY);
+    ssd1306_command(SSD1306_DEACTIVATE_SCROLL);
+    ssd1306_command(SSD1306_DISPLAY_ON);
+
+    //OLED_SetFont( TINY_FONTS );
+    //OLED_SetFont( SMALL_FONTS );
+    OLED_SetFont(BIG_FONTS);
+    
+}
+

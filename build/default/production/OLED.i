@@ -19534,16 +19534,18 @@ void OLED_Init( void );
 uint8_t OLED_Width( void );
 uint8_t OLED_Height( void );
 void OLED_Update( void );
+void OLED_Update_Partial(char page);
 void OLED_SetContrast( uint8_t contrast );
 void OLED_ClearDisplay( void );
 void OLED_FillDisplay( void );
 void OLED_DrawPixel( int16_t x, int16_t y, uint8_t color );
 void OLED_InvertDisplay( uint8_t value );
 void OLED_SetFont( const uint8_t *font);
-# 141 "./OLED.h"
+# 142 "./OLED.h"
 void OLED_Write( int16_t x, int16_t y, char value );
 
 void UpdateScreen(void);
+void DisplaySettingRefresh(void);
 # 10 "OLED.c" 2
 
 
@@ -19796,9 +19798,6 @@ static void ssd1306_command(uint8_t command);
 static void ssd1306_data(uint8_t value);
 static uint8_t width(void);
 static uint8_t height(void);
-
-
-void OLED_Update_Partial(char page);
 # 343 "OLED.c"
 void OLED_Init(void) {
     I2C_Init(1u);
@@ -19826,7 +19825,7 @@ void OLED_Init(void) {
     ssd1306_command(0x12);
     ssd1306_command(0x81);
 
-    ssd1306_command(0xCF);
+    ssd1306_command(0xFF);
 
 
     ssd1306_command(0xD9);
@@ -20134,4 +20133,47 @@ void UpdateScreen(){
         OLED_Update_Partial(6);
         line_4_update_flag = 0;
     }
+}
+
+
+void DisplaySettingRefresh(void){
+
+    ssd1306_command(0xAE);
+    ssd1306_command(0xD5);
+    ssd1306_command(0xF0);
+    ssd1306_command(0xA8);
+    ssd1306_command(64 - 1);
+    ssd1306_command(0xD3);
+    ssd1306_command(0x00);
+    ssd1306_command(0x40 | 0x00);
+    ssd1306_command(0x8D);
+
+
+    ssd1306_command(0x14);
+    ssd1306_command(0x20);
+    ssd1306_command(0x00);
+    ssd1306_command(0xA0 | 0x01);
+    ssd1306_command(0xC8);
+# 1094 "OLED.c"
+    ssd1306_command(0xDA);
+    ssd1306_command(0x12);
+    ssd1306_command(0x81);
+
+    ssd1306_command(0xFF);
+
+
+    ssd1306_command(0xD9);
+
+    ssd1306_command(0xF1);
+    ssd1306_command(0xDB);
+    ssd1306_command(0x40);
+    ssd1306_command(0xA4);
+    ssd1306_command(0xA6);
+    ssd1306_command(0x2E);
+    ssd1306_command(0xAF);
+
+
+
+    OLED_SetFont(BIG_FONTS);
+
 }
