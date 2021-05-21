@@ -68,7 +68,7 @@
 void DAC1_Initialize(void)
 {
     // DAC1FM right justified; DACEN enabled; DACNSS VSS; DACPSS VDD; DACOE1 enabled; DACOE2 disabled; 
-    DAC1CON0 = 0xA8;
+    DAC1CON0 = 0xA0;
     //0b1010 1000
     // 
     DAC1REFH = 0x03;

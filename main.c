@@ -106,6 +106,14 @@
 #define DIM 0x00                
 #define BRIGHT 0xFF //Contrast brightness control values range from 0-255,.
 
+//10V max scaled down 2.5 by hardware to 4V. Vref+ = 5V (Vdd) requires scaling down by ~0.8.
+//Incremented value stored ranges from 0-100 and must be converted from 0-1023 for DAC.
+#define INTERNAL_SPEED_SCALER (0.8*1023/100)
+
+//Vref+ = 5V (Vdd). 5V/1024 ~ 0.00488V is the approx. ADC voltage steps. 
+//Scaling 0.00488 up by 2.5 for hardware gives 0.0122V.
+#define EXTERNAL_SPEED_SCALER (2.5*5/1024)
+
 #define FILTER_SAMPLE_SIZE 50
 #define FILTER_ARRAY_INDEX (FILTER_SAMPLE_SIZE-1)
 
@@ -145,10 +153,10 @@ void ClearText(char* textToClear){
     }
 }
 
-//Used in two branches.
+//Used in main and fireman branches.
 void WDTclear(void){
     __asm("CLRWDT");
-    WDTCON = 0x25;
+    WDTCON = 0x25; //00 10010 1
 }
 
 
@@ -194,7 +202,7 @@ void main(void)
     {     
         //Main loop WDT clear.
         WDTclear();
-         
+        
         //Fireman override loop.
         if(FIREMAN_INPUT == 0)
         {
@@ -212,7 +220,7 @@ void main(void)
             sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
 
             //Output speed control via DAC1.
-            DAC1_Load10bitInputData((float)frmn_speed *((float)1000/104)); //Scaled based on variable range of 0-100.
+            DAC1_Load10bitInputData(frmn_speed*INTERNAL_SPEED_SCALER); //Scaled based on variable range of 0-100.
             
             if((float)frmn_speed/10 > AUX_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
             {
@@ -293,7 +301,7 @@ void main(void)
                 sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
                 
                 //Output speed control via DAC1.
-                DAC1_Load10bitInputData((float)speed *((float)1000/104)); //Scaled based on variable range of 0-100.
+                DAC1_Load10bitInputData(speed*INTERNAL_SPEED_SCALER); //Scaled based on variable range of 0-100.
                 
                 if((float)speed/10 > AUX_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
                 {
@@ -335,7 +343,7 @@ void main(void)
                     sprintf(newTextLine2,"Enabled");   
 
                     //Output speed control via DAC1.
-                    DAC1_Load10bitInputData((float)speed  *((float)1000/104)); //Scaled based on variable range of 0-100.
+                    DAC1_Load10bitInputData(speed*INTERNAL_SPEED_SCALER); //Scaled based on variable range of 0-100.
 
                     if((float)speed/10 > AUX_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
                     {
@@ -377,8 +385,8 @@ void main(void)
             break;    
             
             case AUTO_REMOTE :
-                ext_speed = (float)((ADRESH<<8) + ADRESL);  //For right-justified setting. Hardware range limited from 0-1000.
-                
+                ext_speed = (float)((uint16_t)(ADRESH<<8) + (uint16_t)ADRESL);  //For right-justified setting. Hardware range limited from 0-1000.
+
                 static unsigned int index = 0;
                 static float arr[FILTER_SAMPLE_SIZE];
                 
@@ -405,9 +413,9 @@ void main(void)
                     }
                 }
                 
-                unsigned int integer = (avg*10/1000);
-                unsigned int decimal = ((unsigned long)(avg*100/1000)) % 10;  
-                
+                unsigned int integer = (avg*EXTERNAL_SPEED_SCALER);               
+                unsigned int decimal = (unsigned long)(avg*EXTERNAL_SPEED_SCALER*10) % 10;  
+                        
                 //LINE 1                                                                
                 sprintf(newTextLine1,"AUTO REMOTE");                     
                 
@@ -419,6 +427,7 @@ void main(void)
                 if(!updateAutoRemoteDelay){ 
                     updateAutoRemoteDelay = DEBOUNCE_CNT; 
                     sprintf(newTextLine4,"READ:%d.%dV", integer, decimal);
+
                 }else{
                     //Keep previous text if text is not being updated
                     for(int i = 0; i < TEXT_ARRAY_SIZE;i++){
@@ -436,12 +445,12 @@ void main(void)
                     
                     //Hysteresis added using checks against AUX_HIGH and AUX_LOW to prevent relay chatter near threshold
                     //This is only needed for AUTO_REMOTE because the remote voltage control is analog and may have noise
-                    if((float)ext_speed/100 > AUX_HIGH) //ext_speed range: 0-1023 / speed range : 0-100 
+                    if((float)(avg*EXTERNAL_SPEED_SCALER) > AUX_HIGH) //ext_speed range: 0-1023 / speed range : 0-100 
                     {
                         //AUX_CONTACT closes, set ports.
                         AUX_CONTACT = 1;
                     }
-                    else if ((float)ext_speed/100 < AUX_LOW)//ext_speed range: 0-1023 / speed range : 0-100 
+                    else if ((float)(avg*EXTERNAL_SPEED_SCALER) < AUX_LOW)//ext_speed range: 0-1023 / speed range : 0-100 
                     {
                         //AUX_CONTACT opens, set ports.
                         AUX_CONTACT = 0;
@@ -449,12 +458,12 @@ void main(void)
                
                     //Hysteresis added using checks against HIGH and LOW thresholds to prevent OPTO from turning on and off repeatedly near threshold
                     //This is only needed for AUTO_REMOTE because the remote voltage control is analog and may have noise
-                    if((float)ext_speed/100 > RUN_STATUS_HIGH) //ext_speed range: 0-1023 / speed range : 0-100 
+                    if((float)(avg*EXTERNAL_SPEED_SCALER) > RUN_STATUS_HIGH) //ext_speed range: 0-1023 / speed range : 0-100 
                     {
                         //RUN_STATUS provides continuity, set ports.
                         RUN_STATUS = 1;
                     }
-                    else if((float)ext_speed/100 < RUN_STATUS_LOW) //ext_speed range: 0-1023 / speed range : 0-100 
+                    else if((float)(avg*EXTERNAL_SPEED_SCALER) < RUN_STATUS_LOW) //ext_speed range: 0-1023 / speed range : 0-100 
                     {
                         //RUN_STATUS provides continuity, set ports.
                         RUN_STATUS = 0;
@@ -484,8 +493,8 @@ void main(void)
                 sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
                 
                 //Output speed control via DAC1.
-                DAC1_Load10bitInputData((float)frmn_speed *((float)1000/104)); //Scaled based on variable range of 0-100.
-
+                DAC1_Load10bitInputData(frmn_speed*INTERNAL_SPEED_SCALER); //Scaled based on variable range of 0-100.
+                                                                                                                                                          
                 if((float)frmn_speed/10 > AUX_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
                 {
                     //AUX_CONTACT closes, set ports.

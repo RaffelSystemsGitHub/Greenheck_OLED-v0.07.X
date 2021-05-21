@@ -66,13 +66,10 @@ void (*ADC_InterruptHandler)(void);
 
 void ADC_Initialize(void)
 {   
-    FVRCON = 0b11001111; //Setup 4.096V FVR for ADC reference.
+    FVRCON = 0b11001111; //Setup Vdd for ADC reference.
     
-    // set the ADC to the options selected in the User Interface
-    
-    // ADFM right; ADNREF VSS; ADPREF FVR; ADCS FOSC/16;   
-    ADCON1 = 0xD3; //0b 1101 0000
-    //0b1101 0011
+    // ADFM right; ADNREF VSS; ADPREF VDD; ADCS FOSC/64;   
+    ADCON1 = 0xE0;//0b1 110 0 0 00
     // TRIGSEL TMR0_overflow; 
     ADCON2 = 0x02;
     
