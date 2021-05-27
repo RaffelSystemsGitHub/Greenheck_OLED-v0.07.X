@@ -1770,47 +1770,187 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1778.h: 37740: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "108 ./OLED.h
-[; ;./OLED.h: 108: char textLine1[16];
+[; ;./OLED.h: 108: char textLine1[16] = {"................"};
 [v _textLine1 `uc ~T0 @X0 -> 16 `i e ]
+[i _textLine1
+:U ..
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+..
+]
 "109
-[; ;./OLED.h: 109: char textLine2[16];
+[; ;./OLED.h: 109: char textLine2[16] = {"................"};
 [v _textLine2 `uc ~T0 @X0 -> 16 `i e ]
+[i _textLine2
+:U ..
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+..
+]
 "110
-[; ;./OLED.h: 110: char textLine3[16];
+[; ;./OLED.h: 110: char textLine3[16] = {"................"};
 [v _textLine3 `uc ~T0 @X0 -> 16 `i e ]
+[i _textLine3
+:U ..
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+..
+]
 "111
-[; ;./OLED.h: 111: char textLine4[16];
+[; ;./OLED.h: 111: char textLine4[16] = {"................"};
 [v _textLine4 `uc ~T0 @X0 -> 16 `i e ]
+[i _textLine4
+:U ..
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+..
+]
 "112
-[; ;./OLED.h: 112: char newTextLine1[16] = {'................'};
+[; ;./OLED.h: 112: char newTextLine1[16] = {"................"};
 [v _newTextLine1 `uc ~T0 @X0 -> 16 `i e ]
 [i _newTextLine1
 :U ..
--> -> 11822 `ui `uc
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
 ..
 ]
 "113
-[; ;./OLED.h: 113: char newTextLine2[16] = {'................'};
+[; ;./OLED.h: 113: char newTextLine2[16] = {"................"};
 [v _newTextLine2 `uc ~T0 @X0 -> 16 `i e ]
 [i _newTextLine2
 :U ..
--> -> 11822 `ui `uc
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
 ..
 ]
 "114
-[; ;./OLED.h: 114: char newTextLine3[16] = {'................'};
+[; ;./OLED.h: 114: char newTextLine3[16] = {"................"};
 [v _newTextLine3 `uc ~T0 @X0 -> 16 `i e ]
 [i _newTextLine3
 :U ..
--> -> 11822 `ui `uc
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
 ..
 ]
 "115
-[; ;./OLED.h: 115: char newTextLine4[16] = {'................'};
+[; ;./OLED.h: 115: char newTextLine4[16] = {"................"};
 [v _newTextLine4 `uc ~T0 @X0 -> 16 `i e ]
 [i _newTextLine4
 :U ..
--> -> 11822 `ui `uc
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
 ..
 ]
 "116

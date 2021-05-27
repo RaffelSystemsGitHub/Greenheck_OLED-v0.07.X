@@ -107,7 +107,7 @@
 #define BRIGHT 0xFF //Contrast brightness control values range from 0-255,.
 
 //10V max scaled down 2.5 by hardware to 4V. Vref+ = 5V (Vdd) requires scaling down by ~0.8.
-//Incremented value stored ranges from 0-100 and must be converted from 0-1023 for DAC.
+//Incremented value stored ranges from 0-100 and must be converted to 0-1023 for DAC.
 #define INTERNAL_SPEED_SCALER (0.8*1023/100)
 
 //Vref+ = 5V (Vdd). 5V/1024 ~ 0.00488V is the approx. ADC voltage steps. 
@@ -162,6 +162,7 @@ void WDTclear(void){
 
 void main(void)
 {   
+    
     // initialize the device
     SYSTEM_Initialize(); 
     
@@ -244,7 +245,11 @@ void main(void)
             }
             
             //Fireman mode screen update.
-            UpdateScreen();
+            UpdateScreen_Line(1);
+            UpdateScreen_Line(2);
+            UpdateScreen_Line(3);
+            UpdateScreen_Line(4);
+            //UpdateScreen();
             
             unsigned int power_led_flash_counter = 0;
             while(FIREMAN_INPUT == 0){  //wait until FIREMAN mode turned off
@@ -544,7 +549,11 @@ void main(void)
         }
         
         //Normal operation screen update.
-        UpdateScreen();
+        UpdateScreen_Line(1);
+        UpdateScreen_Line(2);
+        UpdateScreen_Line(3);
+        UpdateScreen_Line(4);
+        //UpdateScreen();
  
         //Single button recognition section.
         btn_count = 0;

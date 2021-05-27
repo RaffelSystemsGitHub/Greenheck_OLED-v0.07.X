@@ -1,4 +1,4 @@
-# 1 "OLED.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,22 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "OLED.c" 2
-
-
-
-
-
-
-
-
-# 1 "./mcc_generated_files/device_config.h" 1
-# 9 "OLED.c" 2
-
-# 1 "./OLED.h" 1
-# 13 "./OLED.h"
-# 1 "./I2C.h" 1
-# 13 "./I2C.h"
+# 1 "main.c" 2
+# 49 "main.c"
+# 1 "./mcc_generated_files/mcc.h" 1
+# 49 "./mcc_generated_files/mcc.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -19397,7 +19385,17 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
-# 13 "./I2C.h" 2
+# 49 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 487 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 499 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 51 "./mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
@@ -19484,63 +19482,354 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
-# 14 "./I2C.h" 2
-# 24 "./I2C.h"
-void I2C_Init( uint8_t speed );
-void I2C_Start( void );
-void I2C_Restart( void );
-void I2C_Stop( void );
-void I2C_Wait( void );
-void I2C_Send( uint8_t data );
-uint8_t I2C_Read ( void );
-# 13 "./OLED.h" 2
-# 94 "./OLED.h"
-extern const uint8_t SMALL_FONTS[];
-extern const uint8_t TINY_FONTS[];
-extern const uint8_t BIG_FONTS[];
+# 52 "./mcc_generated_files/mcc.h" 2
 
-typedef struct _Current_Font_s
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
+# 53 "./mcc_generated_files/mcc.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
+
+# 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\__null.h" 1 3
+# 9 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/i2c_master.h" 1
+# 54 "./mcc_generated_files/i2c_master.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 54 "./mcc_generated_files/i2c_master.h" 2
+
+
+
+
+typedef enum {
+    I2C_NOERR,
+    I2C_BUSY,
+    I2C_FAIL
+
+
+} i2c_error_t;
+
+typedef enum
 {
-  const uint8_t *font;
-  uint8_t x_size;
-  uint8_t y_size;
-  uint8_t offset;
-  uint8_t numchars;
-  uint8_t inverted;
-} Current_Font_s;
+    I2C_STOP=1,
+    I2C_RESTART_READ,
+    I2C_RESTART_WRITE,
+    I2C_CONTINUE,
+    I2C_RESET_LINK
+} i2c_operations_t;
 
-char textLine1[16];
-char textLine2[16];
-char textLine3[16];
-char textLine4[16];
-char newTextLine1[16] = {'................'};
-char newTextLine2[16] = {'................'};
-char newTextLine3[16] = {'................'};
-char newTextLine4[16] = {'................'};
-char line_1_update_flag;
-char line_2_update_flag;
-char line_3_update_flag;
-char line_4_update_flag;
+typedef uint8_t i2c_address_t;
+typedef i2c_operations_t (*i2c_callback_t)(void *funPtr);
 
 
-void OLED_Init( void );
-uint8_t OLED_Width( void );
-uint8_t OLED_Height( void );
-void OLED_Update( void );
-void OLED_Update_Partial(char line);
-void OLED_SetContrast( uint8_t contrast );
-void OLED_ClearDisplay( void );
-void OLED_FillDisplay( void );
-void OLED_DrawPixel( int16_t x, int16_t y, uint8_t color );
-void OLED_InvertDisplay( uint8_t value );
-void OLED_SetFont( const uint8_t *font);
-# 142 "./OLED.h"
-void OLED_Write( int16_t x, int16_t y, char value );
+i2c_operations_t I2C_CallbackReturnStop(void *funPtr);
+i2c_operations_t I2C_CallbackReturnReset(void *funPtr);
+i2c_operations_t I2C_CallbackRestartWrite(void *funPtr);
+i2c_operations_t I2C_CallbackRestartRead(void *funPtr);
 
-void UpdateScreen(void);
-void UpdateScreen_Line(char line_number);
-void DisplaySettingRefresh(void);
-# 10 "OLED.c" 2
+
+
+
+
+
+void I2C_Initialize(void);
+# 101 "./mcc_generated_files/i2c_master.h"
+i2c_error_t I2C_Open(i2c_address_t address);
+# 111 "./mcc_generated_files/i2c_master.h"
+i2c_error_t I2C_Close(void);
+# 123 "./mcc_generated_files/i2c_master.h"
+i2c_error_t I2C_MasterOperation(_Bool read);
+
+
+
+
+i2c_error_t I2C_MasterWrite(void);
+
+
+
+
+i2c_error_t I2C_MasterRead(void);
+# 142 "./mcc_generated_files/i2c_master.h"
+void I2C_SetTimeout(uint8_t timeOut);
+# 152 "./mcc_generated_files/i2c_master.h"
+void I2C_SetBuffer(void *buffer, size_t bufferSize);
+# 164 "./mcc_generated_files/i2c_master.h"
+void I2C_SetDataCompleteCallback(i2c_callback_t cb, void *ptr);
+# 174 "./mcc_generated_files/i2c_master.h"
+void I2C_SetWriteCollisionCallback(i2c_callback_t cb, void *ptr);
+# 184 "./mcc_generated_files/i2c_master.h"
+void I2C_SetAddressNackCallback(i2c_callback_t cb, void *ptr);
+# 194 "./mcc_generated_files/i2c_master.h"
+void I2C_SetDataNackCallback(i2c_callback_t cb, void *ptr);
+# 204 "./mcc_generated_files/i2c_master.h"
+void I2C_SetTimeoutCallback(i2c_callback_t cb, void *ptr);
+# 56 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/dac1.h" 1
+# 94 "./mcc_generated_files/dac1.h"
+void DAC1_Initialize(void);
+# 125 "./mcc_generated_files/dac1.h"
+void DAC1_Load16bitInputData(uint16_t input16BitData);
+# 156 "./mcc_generated_files/dac1.h"
+void DAC1_Load10bitInputData(uint16_t input10BitData);
+# 187 "./mcc_generated_files/dac1.h"
+void DAC1_Load8bitInputData(uint8_t input8BitData);
+# 215 "./mcc_generated_files/dac1.h"
+uint16_t DAC1_Read10BitInputData(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 98 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 168 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 204 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 219 "./mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 238 "./mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 256 "./mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 274 "./mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 58 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/adc.h" 1
+# 72 "./mcc_generated_files/adc.h"
+typedef uint16_t adc_result_t;
+
+
+
+
+typedef struct
+{
+    adc_result_t adcResult1;
+    adc_result_t adcResult2;
+} adc_sync_double_result_t;
+# 95 "./mcc_generated_files/adc.h"
+typedef enum
+{
+    channel_AN0 = 0x00,
+    channel_AN2 = 0x02,
+    channel_AN9 = 0x09,
+    channel_Switched_AN1 = 0x21,
+    channel_Switched_AN10 = 0x2A,
+    channel_Switched_AN18 = 0x32,
+    channel_DAC7_Output = 0x37,
+    channel_DAC5_Output = 0x39,
+    channel_DAC4_Output = 0x3A,
+    channel_DAC3_Output = 0x3B,
+    channel_DAC2_Output = 0x3C,
+    channel_Temp = 0x3D,
+    channel_DAC1_Output = 0x3E,
+    channel_FVRBuffer1 = 0x3F
+} adc_channel_t;
+# 146 "./mcc_generated_files/adc.h"
+void ADC_Initialize(void);
+# 176 "./mcc_generated_files/adc.h"
+void ADC_SelectChannel(adc_channel_t channel);
+# 203 "./mcc_generated_files/adc.h"
+void ADC_StartConversion(void);
+# 235 "./mcc_generated_files/adc.h"
+_Bool ADC_IsConversionDone(void);
+# 268 "./mcc_generated_files/adc.h"
+adc_result_t ADC_GetConversionResult(void);
+# 298 "./mcc_generated_files/adc.h"
+adc_result_t ADC_GetConversion(adc_channel_t channel);
+# 326 "./mcc_generated_files/adc.h"
+void ADC_TemperatureAcquisitionDelay(void);
+# 59 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/drivers/i2c_simple_master.h" 1
+# 37 "./mcc_generated_files/drivers/i2c_simple_master.h"
+uint8_t i2c_read1ByteRegister(i2c_address_t address, uint8_t reg);
+uint16_t i2c_read2ByteRegister(i2c_address_t address, uint8_t reg);
+void i2c_write1ByteRegister(i2c_address_t address, uint8_t reg, uint8_t data);
+void i2c_write2ByteRegister(i2c_address_t address, uint8_t reg, uint16_t data);
+
+void i2c_writeNBytes(i2c_address_t address, void* data, size_t len);
+void i2c_readDataBlock(i2c_address_t address, uint8_t reg, void *data, size_t len);
+void i2c_readNBytes(i2c_address_t address, void *data, size_t len);
+# 60 "./mcc_generated_files/mcc.h" 2
+# 75 "./mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 88 "./mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 100 "./mcc_generated_files/mcc.h"
+void WDT_Initialize(void);
+# 49 "main.c" 2
+
+
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 1 3
@@ -19598,595 +19887,1144 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "OLED.c" 2
-# 138 "OLED.c"
-const uint8_t BIG_FONTS[] = {
-    0x10, 0x10, 0x20, 0x5F,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0xF8, 0xFC, 0xFC, 0xFC, 0xF8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x73, 0x73, 0x73, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x1E, 0x3E, 0x3E, 0x00, 0x00, 0x00, 0x3E, 0x3E, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x30, 0x30, 0x30, 0xFE, 0xFE, 0x30, 0x30, 0x30, 0x30, 0xFE, 0xFE, 0x30, 0x30, 0x30, 0x00, 0x00, 0x0C, 0x0C, 0x0C, 0x7F, 0x7F, 0x0C, 0x0C, 0x0C, 0x0C, 0x7F, 0x7F, 0x0C, 0x0C, 0x0C, 0x00,
-    0x00, 0x00, 0x00, 0xF0, 0xF8, 0x98, 0xFE, 0x98, 0x98, 0xFE, 0x98, 0x98, 0x18, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x18, 0x19, 0x19, 0x7F, 0x19, 0x19, 0x7F, 0x19, 0x1F, 0x0F, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x38, 0x38, 0x38, 0x80, 0xC0, 0xE0, 0x70, 0x38, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1C, 0x0E, 0x07, 0x03, 0x01, 0x1C, 0x1C, 0x1C, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x38, 0xFC, 0xC4, 0xC4, 0xFC, 0x38, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1E, 0x3F, 0x21, 0x21, 0x33, 0x3F, 0x1E, 0x1E, 0x37, 0x23, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x20, 0x3C, 0x3C, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0xC0, 0xE0, 0xF0, 0x38, 0x1C, 0x0C, 0x04, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x07, 0x0F, 0x1C, 0x38, 0x30, 0x20, 0x20, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x04, 0x04, 0x0C, 0x1C, 0x38, 0xF0, 0xE0, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x20, 0x30, 0x38, 0x1C, 0x0F, 0x07, 0x03, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x80, 0x88, 0x90, 0xE0, 0xE0, 0xFC, 0xFC, 0xE0, 0xE0, 0x90, 0x88, 0x80, 0x00, 0x00, 0x00, 0x00, 0x01, 0x11, 0x09, 0x07, 0x07, 0x3F, 0x3F, 0x07, 0x07, 0x09, 0x11, 0x01, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x80, 0x80, 0x80, 0xF0, 0xF0, 0x80, 0x80, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x01, 0x0F, 0x0F, 0x01, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x78, 0x78, 0x38, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x38, 0x38, 0x38, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xC0, 0xE0, 0x70, 0x38, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x20, 0x30, 0x38, 0x1C, 0x0E, 0x07, 0x03, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00,
-
-    0x00, 0x00, 0x00, 0xF8, 0xFC, 0xFC, 0x04, 0x84, 0xE4, 0x74, 0xFC, 0xFC, 0xF8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x3F, 0x3F, 0x2E, 0x27, 0x21, 0x20, 0x3F, 0x3F, 0x1F, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x60, 0x60, 0x60, 0xF0, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x20, 0x20, 0x3F, 0x3F, 0x3F, 0x20, 0x20, 0x20, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x18, 0x1C, 0x1C, 0x04, 0x04, 0x84, 0xCC, 0xFC, 0x78, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x38, 0x3C, 0x2E, 0x27, 0x23, 0x21, 0x38, 0x38, 0x38, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x18, 0x1C, 0x1C, 0x84, 0x84, 0x84, 0xCC, 0x7C, 0x78, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x18, 0x38, 0x38, 0x21, 0x21, 0x21, 0x33, 0x3E, 0x1E, 0x0C, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x80, 0xC0, 0x60, 0x30, 0x18, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x03, 0x03, 0x23, 0x23, 0x3F, 0x3F, 0x3F, 0x23, 0x23, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xFC, 0xFC, 0xFC, 0x84, 0x84, 0x84, 0x84, 0x84, 0x04, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x19, 0x39, 0x39, 0x21, 0x21, 0x21, 0x33, 0x3F, 0x1F, 0x0E, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xE0, 0xF0, 0xF8, 0x9C, 0x8C, 0x84, 0x84, 0x84, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x3F, 0x3F, 0x21, 0x21, 0x21, 0x21, 0x3F, 0x3F, 0x1F, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x3C, 0x3C, 0x3C, 0x04, 0x04, 0x04, 0x04, 0x84, 0xFC, 0xFC, 0x7C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x38, 0x3C, 0x3E, 0x07, 0x03, 0x01, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x78, 0x7C, 0xFC, 0xC4, 0xC4, 0x84, 0x84, 0xFC, 0x7C, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1E, 0x3E, 0x3F, 0x21, 0x21, 0x23, 0x23, 0x3F, 0x3E, 0x1E, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xF8, 0xFC, 0xFC, 0x84, 0x84, 0x84, 0x84, 0xFC, 0xFC, 0xF8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x21, 0x21, 0x21, 0x31, 0x39, 0x1F, 0x0F, 0x07, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x70, 0x70, 0x70, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0E, 0x0E, 0x0E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x70, 0x70, 0x70, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x1E, 0x1E, 0x0E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x80, 0xC0, 0xE0, 0x70, 0x38, 0x1C, 0x0E, 0x06, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x03, 0x07, 0x0E, 0x1C, 0x38, 0x70, 0x60, 0x40, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x00, 0x00, 0x00, 0x00, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x02, 0x06, 0x0E, 0x1C, 0x38, 0x70, 0xE0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x60, 0x70, 0x38, 0x1C, 0x0E, 0x07, 0x03, 0x01, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x18, 0x1C, 0x0C, 0x0E, 0x06, 0x86, 0xCE, 0xFC, 0x7C, 0x38, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x73, 0x73, 0x73, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-
-    0x00, 0x00, 0x00, 0xFC, 0xFE, 0xFE, 0x02, 0x02, 0xC2, 0xC2, 0xC2, 0xFE, 0xFE, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0x3F, 0x7F, 0x60, 0x60, 0x63, 0x63, 0x63, 0x63, 0x43, 0x03, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xE0, 0xF0, 0xF8, 0x1C, 0x0C, 0x0C, 0x1C, 0xF8, 0xF0, 0xE0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0x3F, 0x3F, 0x02, 0x02, 0x02, 0x02, 0x3F, 0x3F, 0x3F, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x04, 0xFC, 0xFC, 0xFC, 0x84, 0x84, 0x84, 0xFC, 0xFC, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x3F, 0x3F, 0x21, 0x21, 0x21, 0x3F, 0x3F, 0x1E, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xF0, 0xF8, 0xFC, 0x0C, 0x04, 0x04, 0x04, 0x1C, 0x1C, 0x18, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0F, 0x1F, 0x3F, 0x30, 0x20, 0x20, 0x20, 0x38, 0x38, 0x18, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x04, 0xFC, 0xFC, 0xFC, 0x04, 0x04, 0x0C, 0xFC, 0xF8, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x3F, 0x3F, 0x20, 0x20, 0x30, 0x3F, 0x1F, 0x0F, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x04, 0xFC, 0xFC, 0xFC, 0x84, 0x84, 0x84, 0xC4, 0xCC, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x3F, 0x3F, 0x21, 0x21, 0x21, 0x23, 0x33, 0x38, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x04, 0xFC, 0xFC, 0xFC, 0x84, 0x84, 0x84, 0xC4, 0xCC, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x3F, 0x3F, 0x21, 0x01, 0x01, 0x03, 0x03, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xF0, 0xF8, 0xFC, 0x0C, 0x04, 0x04, 0x04, 0x3C, 0x3C, 0x38, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0F, 0x1F, 0x3F, 0x30, 0x20, 0x22, 0x22, 0x3E, 0x3E, 0x3E, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xFC, 0xFC, 0xFC, 0x80, 0x80, 0x80, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0x3F, 0x3F, 0x01, 0x01, 0x01, 0x3F, 0x3F, 0x3F, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x04, 0x04, 0xFC, 0xFC, 0xFC, 0x04, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x20, 0x3F, 0x3F, 0x3F, 0x20, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x04, 0xFC, 0xFC, 0xFC, 0x04, 0x04, 0x00, 0x00, 0x00, 0x00, 0x1E, 0x1E, 0x3E, 0x20, 0x20, 0x20, 0x20, 0x3F, 0x3F, 0x1F, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x04, 0xFC, 0xFC, 0xFC, 0xC0, 0xE0, 0x70, 0x3C, 0x1C, 0x0C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x3F, 0x3F, 0x03, 0x07, 0x0E, 0x3C, 0x38, 0x30, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x04, 0xFC, 0xFC, 0xFC, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x3F, 0x3F, 0x20, 0x20, 0x20, 0x30, 0x38, 0x3C, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xFC, 0xFC, 0xFC, 0x78, 0xF0, 0xE0, 0xF0, 0x78, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0x3F, 0x3F, 0x00, 0x00, 0x01, 0x00, 0x00, 0x3F, 0x3F, 0x3F, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xFC, 0xFC, 0xFC, 0x70, 0xE0, 0xC0, 0x80, 0x00, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0x3F, 0x3F, 0x00, 0x00, 0x01, 0x03, 0x07, 0x3F, 0x3F, 0x3F, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xE0, 0xF0, 0xF8, 0x1C, 0x0C, 0x0C, 0x0C, 0x1C, 0xF8, 0xF0, 0xE0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x0F, 0x1F, 0x38, 0x30, 0x30, 0x30, 0x38, 0x1F, 0x0F, 0x07, 0x00, 0x00,
-
-    0x00, 0x00, 0x00, 0x04, 0xFC, 0xFC, 0xFC, 0x84, 0x84, 0x84, 0xFC, 0xFC, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x3F, 0x3F, 0x21, 0x01, 0x01, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xE0, 0xF8, 0xF8, 0x1C, 0x0C, 0x04, 0x0C, 0x1C, 0xF8, 0xF8, 0xE0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x1F, 0x1F, 0x18, 0x18, 0x5C, 0x5E, 0x7E, 0x7F, 0x7F, 0x47, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x04, 0xFC, 0xFC, 0xFC, 0x84, 0x84, 0x84, 0xFC, 0xFC, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x3F, 0x3F, 0x01, 0x01, 0x03, 0x3F, 0x3F, 0x3C, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x78, 0xFC, 0xFC, 0x84, 0x84, 0x84, 0x84, 0xBC, 0x3C, 0x38, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1C, 0x3C, 0x3D, 0x21, 0x21, 0x21, 0x21, 0x3F, 0x3F, 0x1E, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x1C, 0x0C, 0x04, 0x04, 0xFC, 0xFC, 0xFC, 0x04, 0x04, 0x0C, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x20, 0x3F, 0x3F, 0x3F, 0x20, 0x20, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x3F, 0x3F, 0x20, 0x20, 0x20, 0x3F, 0x3F, 0x1F, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x0F, 0x1F, 0x38, 0x30, 0x38, 0x1F, 0x0F, 0x07, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x80, 0x00, 0x00, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x0F, 0x3F, 0x3C, 0x3C, 0x0F, 0x3C, 0x3C, 0x3F, 0x0F, 0x03, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x1C, 0x3C, 0x7C, 0xE0, 0xC0, 0xE0, 0x7C, 0x3C, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x38, 0x3C, 0x3E, 0x07, 0x03, 0x07, 0x3E, 0x3C, 0x38, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x7C, 0xFC, 0xFC, 0x80, 0x00, 0x80, 0xFC, 0xFC, 0x7C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x21, 0x3F, 0x3F, 0x3F, 0x21, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x3C, 0x1C, 0x0C, 0x04, 0x84, 0xC4, 0xE4, 0x7C, 0x3C, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x38, 0x3C, 0x3E, 0x27, 0x23, 0x21, 0x20, 0x30, 0x38, 0x3C, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0xFC, 0xFC, 0xFC, 0x04, 0x04, 0x04, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0x3F, 0x3F, 0x20, 0x20, 0x20, 0x20, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x1C, 0x38, 0x70, 0xE0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x03, 0x07, 0x0E, 0x1C, 0x18, 0x30, 0x20, 0x20,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x04, 0x04, 0x04, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x20, 0x20, 0x20, 0x3F, 0x3F, 0x3F, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x20, 0x30, 0x38, 0x1C, 0x0E, 0x0E, 0x1C, 0x38, 0x30, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0,
-
-    0x00, 0x00, 0x00, 0x0C, 0x0C, 0x3C, 0x30, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x40, 0x40, 0x40, 0x40, 0x40, 0xC0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1C, 0x3E, 0x3E, 0x22, 0x22, 0x22, 0x3F, 0x1F, 0x3F, 0x20, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x04, 0xFC, 0xFC, 0xFC, 0x40, 0x40, 0x40, 0xC0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x1F, 0x3F, 0x20, 0x20, 0x20, 0x3F, 0x3F, 0x1F, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x80, 0xC0, 0xC0, 0x40, 0x40, 0x40, 0xC0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x3F, 0x3F, 0x20, 0x20, 0x20, 0x39, 0x39, 0x19, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x80, 0xC0, 0xC0, 0x40, 0x40, 0x44, 0xFC, 0xFC, 0xFC, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x3F, 0x3F, 0x20, 0x20, 0x20, 0x3F, 0x1F, 0x3F, 0x20, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x80, 0xC0, 0xC0, 0x40, 0x40, 0x40, 0xC0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x3F, 0x3F, 0x22, 0x22, 0x22, 0x3B, 0x3B, 0x1B, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x80, 0x80, 0xF8, 0xFC, 0xFC, 0x84, 0x9C, 0x9C, 0x18, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x21, 0x21, 0x3F, 0x3F, 0x3F, 0x21, 0x21, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x80, 0xC0, 0xC0, 0x40, 0x40, 0x40, 0xC0, 0x80, 0xC0, 0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x47, 0xCF, 0xDF, 0x98, 0x98, 0x98, 0xFF, 0xFF, 0x7F, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x04, 0xFC, 0xFC, 0xFC, 0x80, 0x40, 0x40, 0xC0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x3F, 0x3F, 0x01, 0x00, 0x00, 0x3F, 0x3F, 0x3F, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x40, 0x40, 0x40, 0xDC, 0xDC, 0xDC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x20, 0x20, 0x3F, 0x3F, 0x3F, 0x20, 0x20, 0x20, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x40, 0x40, 0xDC, 0xDC, 0xDC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x60, 0xE0, 0x80, 0x80, 0xC0, 0xFF, 0xFF, 0x7F, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x04, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x80, 0xC0, 0xC0, 0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x3F, 0x3F, 0x02, 0x07, 0x0F, 0x3D, 0x38, 0x30, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x04, 0x04, 0x04, 0xFC, 0xFC, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x20, 0x20, 0x3F, 0x3F, 0x3F, 0x20, 0x20, 0x20, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x40, 0x40, 0xC0, 0x40, 0x40, 0xC0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0x3F, 0x3F, 0x00, 0x00, 0x3F, 0x00, 0x00, 0x3F, 0x3F, 0x3F, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x40, 0x40, 0x40, 0xC0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0x3F, 0x3F, 0x00, 0x00, 0x00, 0x3F, 0x3F, 0x3F, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x80, 0xC0, 0xC0, 0x40, 0x40, 0x40, 0xC0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x3F, 0x3F, 0x20, 0x20, 0x20, 0x3F, 0x3F, 0x1F, 0x00, 0x00, 0x00, 0x00,
-
-    0x00, 0x00, 0x00, 0x40, 0xC0, 0x80, 0xC0, 0x40, 0x40, 0x40, 0xC0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xFF, 0xFF, 0xFF, 0x90, 0x10, 0x10, 0x1F, 0x1F, 0x0F, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x80, 0xC0, 0xC0, 0x40, 0x40, 0x40, 0xC0, 0x80, 0xC0, 0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0F, 0x1F, 0x1F, 0x10, 0x10, 0x90, 0xFF, 0xFF, 0xFF, 0x80, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x40, 0xC0, 0xC0, 0xC0, 0x80, 0xC0, 0xC0, 0xC0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x3F, 0x3F, 0x3F, 0x21, 0x00, 0x00, 0x01, 0x01, 0x01, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x80, 0xC0, 0xC0, 0x40, 0x40, 0x40, 0x40, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x19, 0x3B, 0x23, 0x26, 0x26, 0x26, 0x3C, 0x3D, 0x19, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x40, 0x40, 0xE0, 0xF0, 0xF8, 0x40, 0x40, 0x40, 0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x3F, 0x3F, 0x20, 0x38, 0x38, 0x18, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x3F, 0x3F, 0x20, 0x20, 0x20, 0x3F, 0x1F, 0x3F, 0x20, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x0F, 0x1F, 0x38, 0x30, 0x38, 0x1F, 0x0F, 0x07, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x0F, 0x3F, 0x38, 0x38, 0x0E, 0x38, 0x38, 0x3F, 0x0F, 0x07, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x39, 0x3F, 0x0F, 0x0F, 0x3F, 0x39, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x00, 0x00, 0x00, 0xC0, 0xC0, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x87, 0x8F, 0x9F, 0xD8, 0xF8, 0x78, 0x3F, 0x0F, 0x07, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0xC0, 0xC0, 0x40, 0x40, 0x40, 0xC0, 0xC0, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x31, 0x38, 0x3C, 0x2E, 0x27, 0x23, 0x31, 0x38, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x80, 0x80, 0xC0, 0x78, 0x7C, 0x3C, 0x04, 0x04, 0x04, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x03, 0x1E, 0x3E, 0x3C, 0x20, 0x20, 0x20, 0x20, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFE, 0xFE, 0xFE, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7F, 0x7F, 0x7F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x04, 0x04, 0x04, 0x04, 0x3C, 0x7C, 0x78, 0xC0, 0x80, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x20, 0x20, 0x20, 0x3C, 0x3E, 0x1E, 0x03, 0x01, 0x01, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x38, 0x3C, 0x3C, 0x04, 0x0C, 0x1C, 0x38, 0x30, 0x20, 0x3C, 0x3C, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-};
+# 53 "main.c" 2
 
 
-static Current_Font_s cfont;
-
-
-static uint8_t buffer[256 ] ={
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-# 321 "OLED.c"
-};
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\math.h" 1 3
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\math.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef float float_t;
 
 
 
 
-static void ssd1306_command(uint8_t command);
-static void ssd1306_data(uint8_t value);
-static uint8_t width(void);
-static uint8_t height(void);
-# 343 "OLED.c"
-void OLED_Init(void) {
-    I2C_Init(1u);
-    I2C_Stop();
+typedef double double_t;
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\math.h" 2 3
+# 42 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\math.h" 3
+int __fpclassifyf(float);
+
+
+
+
+
+
+
+int __signbitf(float);
+# 59 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\math.h" 3
+double acos(double);
+float acosf(float);
+long double acosl(long double);
+
+
+
+double acosh(double);
+float acoshf(float);
+long double acoshl(long double);
+
+
+
+double asin(double);
+float asinf(float);
+long double asinl(long double);
+
+
+
+double asinh(double);
+float asinhf(float);
+long double asinhl(long double);
+
+
+
+double atan(double);
+float atanf(float);
+long double atanl(long double);
+
+
+
+double atan2(double, double);
+float atan2f(float, float);
+long double atan2l(long double, long double);
+
+
+
+double atanh(double);
+float atanhf(float);
+long double atanhl(long double);
+
+
+
+double cbrt(double);
+float cbrtf(float);
+long double cbrtl(long double);
+
+
+
+double ceil(double);
+float ceilf(float);
+long double ceill(long double);
+
+
+
+double copysign(double, double);
+float copysignf(float, float);
+long double copysignl(long double, long double);
+
+
+
+double cos(double);
+float cosf(float);
+long double cosl(long double);
+
+
+
+double cosh(double);
+float coshf(float);
+long double coshl(long double);
+
+
+
+double erf(double);
+float erff(float);
+long double erfl(long double);
+
+
+
+double erfc(double);
+float erfcf(float);
+long double erfcl(long double);
+
+
+
+double exp(double);
+float expf(float);
+long double expl(long double);
+
+
+
+double exp2(double);
+float exp2f(float);
+long double exp2l(long double);
+
+
+
+double expm1(double);
+float expm1f(float);
+long double expm1l(long double);
+
+
+
+double fabs(double);
+float fabsf(float);
+long double fabsl(long double);
+
+
+
+double fdim(double, double);
+float fdimf(float, float);
+long double fdiml(long double, long double);
+
+
+
+double floor(double);
+float floorf(float);
+long double floorl(long double);
+
+
+
+double fma(double, double, double);
+float fmaf(float, float, float);
+long double fmal(long double, long double, long double);
+
+
+
+double fmax(double, double);
+float fmaxf(float, float);
+long double fmaxl(long double, long double);
+
+
+
+double fmin(double, double);
+float fminf(float, float);
+long double fminl(long double, long double);
+
+
+
+double fmod(double, double);
+float fmodf(float, float);
+long double fmodl(long double, long double);
+
+
+
+double frexp(double, int *);
+float frexpf(float, int *);
+long double frexpl(long double, int *);
+
+
+
+double hypot(double, double);
+float hypotf(float, float);
+long double hypotl(long double, long double);
+
+
+
+int ilogb(double);
+int ilogbf(float);
+int ilogbl(long double);
+
+
+
+double ldexp(double, int);
+float ldexpf(float, int);
+long double ldexpl(long double, int);
+
+
+
+double lgamma(double);
+float lgammaf(float);
+long double lgammal(long double);
+
+
+
+long long llrint(double);
+long long llrintf(float);
+long long llrintl(long double);
+
+
+
+long long llround(double);
+long long llroundf(float);
+long long llroundl(long double);
+
+
+
+double log(double);
+float logf(float);
+long double logl(long double);
+
+
+
+double log10(double);
+float log10f(float);
+long double log10l(long double);
+
+
+
+double log1p(double);
+float log1pf(float);
+long double log1pl(long double);
+
+
+
+double log2(double);
+float log2f(float);
+long double log2l(long double);
+
+
+
+double logb(double);
+float logbf(float);
+long double logbl(long double);
+
+
+
+long lrint(double);
+long lrintf(float);
+long lrintl(long double);
+
+
+
+long lround(double);
+long lroundf(float);
+long lroundl(long double);
+
+
+
+double modf(double, double *);
+float modff(float, float *);
+long double modfl(long double, long double *);
+
+
+
+double nan(const char *);
+float nanf(const char *);
+long double nanl(const char *);
+
+
+
+double nearbyint(double);
+float nearbyintf(float);
+long double nearbyintl(long double);
+
+
+
+double nextafter(double, double);
+float nextafterf(float, float);
+long double nextafterl(long double, long double);
+
+
+
+double nexttoward(double, long double);
+float nexttowardf(float, long double);
+long double nexttowardl(long double, long double);
+
+
+
+
+double pow(double, double);
+__attribute__((nonreentrant)) float powf(float, float);
+long double powl(long double, long double);
+
+
+
+double remainder(double, double);
+float remainderf(float, float);
+long double remainderl(long double, long double);
+
+
+
+double remquo(double, double, int *);
+float remquof(float, float, int *);
+long double remquol(long double, long double, int *);
+
+
+
+double rint(double);
+float rintf(float);
+long double rintl(long double);
+
+
+
+double round(double);
+float roundf(float);
+long double roundl(long double);
+
+
+
+double scalbln(double, long);
+float scalblnf(float, long);
+long double scalblnl(long double, long);
+
+
+
+double scalbn(double, int);
+float scalbnf(float, int);
+long double scalbnl(long double, int);
+
+
+
+double sin(double);
+float sinf(float);
+long double sinl(long double);
+
+
+
+double sinh(double);
+float sinhf(float);
+long double sinhl(long double);
+
+
+
+double sqrt(double);
+float sqrtf(float);
+long double sqrtl(long double);
+
+
+
+double tan(double);
+float tanf(float);
+long double tanl(long double);
+
+
+
+double tanh(double);
+float tanhf(float);
+long double tanhl(long double);
+
+
+
+double tgamma(double);
+float tgammaf(float);
+long double tgammal(long double);
+
+
+
+double trunc(double);
+float truncf(float);
+long double truncl(long double);
+# 423 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\math.h" 3
+extern int signgam;
+
+double j0(double);
+double j1(double);
+double jn(int, double);
+
+double y0(double);
+double y1(double);
+double yn(int, double);
+# 55 "main.c" 2
+
+# 1 "./HEFlash.h" 1
+
+
+
+
+# 1 "./Flash.h" 1
+# 48 "./Flash.h"
+unsigned FLASH_read (unsigned address);
+
+
+
+
+
+
+unsigned FLASH_readConfig (unsigned address);
+
+
+
+
+
+
+
+void FLASH_readBlock (unsigned* buffer, unsigned address, char count);
+# 72 "./Flash.h"
+void FLASH_write (unsigned address, unsigned data, char latch);
+
+
+
+
+
+void FLASH_erase (unsigned address);
+# 5 "./HEFlash.h" 2
+# 22 "./HEFlash.h"
+char HEFLASH_writeBlock (char radd, char* buffer, char count);
+# 31 "./HEFlash.h"
+char HEFLASH_readBlock (char* buffer, char radd, char count);
+
+
+
+
+
+
+
+char HEFLASH_readByte (char radd, char offset);
+# 56 "main.c" 2
+
+# 1 "./I2C.h" 1
+# 24 "./I2C.h"
+void I2C_Init( uint8_t speed );
+void I2C_Start( void );
+void I2C_Restart( void );
+void I2C_Stop( void );
+void I2C_Wait( void );
+void I2C_Send( uint8_t data );
+uint8_t I2C_Read ( void );
+# 57 "main.c" 2
+
+# 1 "./OLED.h" 1
+# 94 "./OLED.h"
+extern const uint8_t SMALL_FONTS[];
+extern const uint8_t TINY_FONTS[];
+extern const uint8_t BIG_FONTS[];
+
+typedef struct _Current_Font_s
+{
+  const uint8_t *font;
+  uint8_t x_size;
+  uint8_t y_size;
+  uint8_t offset;
+  uint8_t numchars;
+  uint8_t inverted;
+} Current_Font_s;
+
+char textLine1[16] = {"................"};
+char textLine2[16] = {"................"};
+char textLine3[16] = {"................"};
+char textLine4[16] = {"................"};
+char newTextLine1[16] = {"................"};
+char newTextLine2[16] = {"................"};
+char newTextLine3[16] = {"................"};
+char newTextLine4[16] = {"................"};
+char line_1_update_flag;
+char line_2_update_flag;
+char line_3_update_flag;
+char line_4_update_flag;
+
+
+void OLED_Init( void );
+uint8_t OLED_Width( void );
+uint8_t OLED_Height( void );
+void OLED_Update( void );
+void OLED_Update_Partial(char line);
+void OLED_SetContrast( uint8_t contrast );
+void OLED_ClearDisplay( void );
+void OLED_FillDisplay( void );
+void OLED_DrawPixel( int16_t x, int16_t y, uint8_t color );
+void OLED_InvertDisplay( uint8_t value );
+void OLED_SetFont( const uint8_t *font);
+# 142 "./OLED.h"
+void OLED_Write( int16_t x, int16_t y, char value );
+
+void UpdateScreen(void);
+void UpdateScreen_Line(char line_number);
+void DisplaySettingRefresh(void);
+# 58 "main.c" 2
+# 120 "main.c"
+volatile int decrement = 20;
+volatile int increase_btn_debounce = 20;
+volatile int decrease_btn_debounce = 20;
+volatile int mode_btn_debounce = 20;
+volatile int factory_reset_dec = 25000;
+volatile int fireman_inc = 50000;
+volatile int bright_screen_timer = 50000;
+volatile long setting_refresh_timer = 1280000;
+
+_Bool mode_change_flag = 0;
+_Bool fireman_set = 0;
+_Bool factory_reset_enable = 0;
+_Bool press = 0;
+_Bool setting_refresh_flag = 0;
+
+static char buttons = 0;
+static char last_buttons = 0;
+
+char btn_count = 0;
+char updateAutoRemoteDelay = 0;
+
+unsigned char mode = 0;
+unsigned char speed = 50;
+unsigned char frmn_speed = 100;
+float ext_speed = 0;
+unsigned char speedChangeState = 0;
+unsigned int speedChangeTimer = 0;
+unsigned int fireman_set_debounce = 10000;
+
+
+void ClearText(char* textToClear){
+    for(int i = 0; i < 16; i++){
+        textToClear[i] = ' ';
+    }
+}
+
+
+void WDTclear(void){
+    __asm("CLRWDT");
+    WDTCON = 0x25;
+}
+
+
+void main(void)
+{
+
+
+    SYSTEM_Initialize();
+
+
+
+
+
+    (INTCONbits.GIE = 1);
+
+
+    (INTCONbits.PEIE = 1);
+
+
+
+
+
+
+
+    _delay((unsigned long)((100)*((32000000)/4000.0)));
+    HEFLASH_readBlock(&mode, 0, sizeof(mode));
+    HEFLASH_readBlock(&speed, 1, sizeof(speed));
+    HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
+    if(speed > 100){
+        speed = 50;
+        HEFLASH_writeBlock(1, &speed, sizeof(speed));
+        HEFLASH_writeBlock(3, &speed, sizeof(speed));
+    }
+    if(frmn_speed > 100){
+        frmn_speed = 100;
+        HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
+    }
+
+    OLED_Init();
     _delay((unsigned long)((100)*((32000000)/4000.0)));
 
-    ssd1306_command(0xAE);
-    ssd1306_command(0xD5);
-    ssd1306_command(0xF0);
-    ssd1306_command(0xA8);
-    ssd1306_command(64 - 1);
-    ssd1306_command(0xD3);
-    ssd1306_command(0x00);
-    ssd1306_command(0x40 | 0x00);
-    ssd1306_command(0x8D);
+
+    while (1)
+    {
+
+        WDTclear();
 
 
-    ssd1306_command(0x14);
-    ssd1306_command(0x20);
-    ssd1306_command(0x00);
-    ssd1306_command(0xA0 | 0x01);
-    ssd1306_command(0xC8);
-# 373 "OLED.c"
-    ssd1306_command(0xDA);
-    ssd1306_command(0x12);
-    ssd1306_command(0x81);
+        if(RB5 == 0)
+        {
 
-    ssd1306_command(0xFF);
+            HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
 
+            ClearText(newTextLine1);
+            sprintf(newTextLine1,"FIREMAN");
 
-    ssd1306_command(0xD9);
+            ClearText(newTextLine2);
 
-    ssd1306_command(0xF1);
-    ssd1306_command(0xDB);
-    ssd1306_command(0x40);
-    ssd1306_command(0xA4);
-    ssd1306_command(0xA6);
-    ssd1306_command(0x2E);
-    ssd1306_command(0xAF);
+            ClearText(newTextLine3);
+
+            ClearText(newTextLine4);
+            sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
 
 
+            DAC1_Load10bitInputData(frmn_speed*(0.8*1023/100));
 
-    OLED_SetFont(BIG_FONTS);
-    _delay((unsigned long)((100)*((32000000)/4000.0)));
-    OLED_Update();
-}
-# 422 "OLED.c"
-void OLED_SetFont(const uint8_t *font) {
-    cfont.font = font;
-    cfont.x_size = *(font + 0);
-    cfont.y_size = *(font + 1);
-    cfont.offset = *(font + 2);
-    cfont.numchars = *(font + 3);
-    cfont.inverted = 0;
-}
-# 449 "OLED.c"
-void OLED_Update(void) {
-    uint16_t i = 0;
-    uint8_t x = 0;
-    ssd1306_command(0x21);
-    ssd1306_command(0);
-    ssd1306_command(128 - 1);
-
-    ssd1306_command(0x22);
-    ssd1306_command(0);
-
-    ssd1306_command(7);
-# 468 "OLED.c"
-    I2C_Start();
-    I2C_Send(0x3C << 1);
-    I2C_Send(0x40);
-    for (i = 0; i < (128 * 64 / 8); i++) {
-
-        for (x = 0; x < 16; x++) {
-            I2C_Send(buffer[i]);
-            i++;
-        }
-        i--;
-    }
-
-    I2C_Stop();
-}
-# 523 "OLED.c"
-void OLED_Update_Partial(char line) {
-    line = (line-1)*2;
-    uint16_t i = 0;
-    uint8_t x = 0;
-    ssd1306_command(0x21);
-    ssd1306_command(0);
-    ssd1306_command(128 - 1);
-
-    ssd1306_command(0x22);
-    ssd1306_command(line);
-
-    ssd1306_command(line + 1);
-# 543 "OLED.c"
-    I2C_Start();
-    I2C_Send(0x3C << 1);
-    I2C_Send(0x40);
-    for (i = 0; i < 256; ) {
-
-        for (x = 0; x < 16; x++) {
-            I2C_Send(buffer[i]);
-            i++;
-        }
-
-    }
-
-    I2C_Stop();
-}
-
-
-
-
-
-
-
-void OLED_SetContrast(uint8_t contrast) {
-    ssd1306_command(0x81);
-    ssd1306_command(contrast);
-}
-
-
-
-
-
-
-void OLED_ClearDisplay(void) {
-    memset(buffer, 0, (128 * 64 / 8));
-}
-# 609 "OLED.c"
-void OLED_DrawPixel(int16_t x, int16_t y, uint8_t color) {
-    if ((x < 0) || (x >= width()) || (y < 0) || (y >= height()))
-        return;
-
-    switch (color) {
-        case 1: buffer[x + (y / 8) * 128] |= (1 << (y & 7));
-            break;
-        case 0: buffer[x + (y / 8) * 128] &= ~(1 << (y & 7));
-            break;
-        case 2: buffer[x + (y / 8) * 128] ^= (1 << (y & 7));
-            break;
-    }
-}
-# 871 "OLED.c"
-void OLED_Write(int16_t x, int16_t y, char value) {
-    uint16_t font_idx = 0;
-    uint16_t rowcnt = 0;
-    uint16_t cnt = 0;
-    uint8_t b;
-    uint16_t temp = 0;
-
-    int16_t cbyte, cx, cy;
-    int16_t cbit;
-
-    if (cfont.y_size % 8 == 0) {
-        font_idx = ((value - cfont.offset)*(cfont.x_size * (cfont.y_size / 8))) + 4;
-        for (rowcnt = 0; rowcnt < (cfont.y_size / 8); rowcnt++) {
-            for (cnt = 2; cnt < cfont.x_size-2 ; cnt++)
+            if((float)frmn_speed/10 > 1.85)
             {
-                temp = *(cfont.font + font_idx + cnt + (rowcnt * cfont.x_size));
-                for (b = 0; b < 8; b++) {
-                    if (temp & (1 << b)) {
-                        if (cfont.inverted == 0){
-                            OLED_DrawPixel(x + cnt - 2, y + (rowcnt * 8) + b, 1);
+
+                LATA0 = 1;
+            }
+            else
+            {
+
+                LATA0 = 0;
+            }
+            if(frmn_speed/10 >= 2.0)
+            {
+
+                LATA1 = 1;
+            }
+            else
+            {
+
+                LATA1 = 0;
+            }
+
+
+            UpdateScreen_Line(1);
+            UpdateScreen_Line(2);
+            UpdateScreen_Line(3);
+            UpdateScreen_Line(4);
+
+
+            unsigned int power_led_flash_counter = 0;
+            while(RB5 == 0){
+                if(power_led_flash_counter){
+                    power_led_flash_counter--;
+                }else{
+                    power_led_flash_counter = 1000;
+                }
+                if(power_led_flash_counter>500){
+                    LATA6 = 0;
+                }else{
+                    LATA6 = 1;
+                }
+                _delay((unsigned long)((1)*((32000000)/4000.0)));
+
+
+                WDTclear();
+            }
+        }
+        LATA6 = 1;
+
+        ClearText(newTextLine1);
+        ClearText(newTextLine2);
+        ClearText(newTextLine3);
+        ClearText(newTextLine4);
+
+
+        switch(mode)
+        {
+            case 1 :
+
+
+
+                sprintf(newTextLine1,"OFF");
+
+
+                DAC1_Load10bitInputData(0);
+
+
+                LATA0 = 0;
+
+                LATA1 = 0;
+
+            break;
+
+            case 0 :
+
+                HEFLASH_readBlock(&speed, 1, sizeof(speed));
+
+
+                sprintf(newTextLine1,"HAND");
+
+
+                sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
+
+
+                DAC1_Load10bitInputData(speed*(0.8*1023/100));
+
+                if((float)speed/10 > 1.85)
+                {
+
+                    LATA0 = 1;
+                }
+                else
+                {
+
+                    LATA0 = 0;
+                }
+
+                if(speed/10 >= 2.0)
+                {
+
+                    LATA1 = 1;
+                }
+                else
+                {
+
+                    LATA1 = 0;
+                }
+
+            break;
+
+            case 2 :
+
+                HEFLASH_readBlock(&speed, 3, sizeof(speed));
+
+                sprintf(newTextLine1,"AUTO LOCAL");
+
+
+                sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
+
+                if( (RB4 == 0) || (RA3 == 1) )
+                {
+
+
+                    sprintf(newTextLine2,"Enabled");
+
+
+                    DAC1_Load10bitInputData(speed*(0.8*1023/100));
+
+                    if((float)speed/10 > 1.85)
+                    {
+
+                        LATA0 = 1;
+                    }
+                    else
+                    {
+
+                        LATA0 = 0;
+                    }
+
+                    if(speed/10 >= 2.0)
+                    {
+
+                        LATA1 = 1;
+                    }
+                    else
+                    {
+
+                        LATA1 = 0;
+                    }
+                }
+                else
+                {
+
+                    sprintf(newTextLine2,"Disabled");
+
+
+                    DAC1_Load10bitInputData(0);
+
+
+                    LATA0 = 0;
+
+                    LATA1 = 0;
+
+                }
+
+            break;
+
+            case 3 :
+                ext_speed = (float)((uint16_t)(ADRESH<<8) + (uint16_t)ADRESL);
+
+                static unsigned int index = 0;
+                static float arr[50];
+
+
+                if(index < (50 -1)){
+
+                    arr[index] = ext_speed;
+                    index++;
+
+                }
+                else{
+
+                    arr[index] = ext_speed;
+                    index = 0;
+
+                }
+
+
+                float avg = 0;
+                for(unsigned int i =0; i<50; i++){
+                    avg += arr[i];
+                    if(i == (50 -1)){
+                        avg = avg/50;
+                    }
+                }
+
+                unsigned int integer = (avg*(2.5*5/1024));
+                unsigned int decimal = (unsigned long)(avg*(2.5*5/1024)*10) % 10;
+
+
+                sprintf(newTextLine1,"AUTO REMOTE");
+
+
+                sprintf(newTextLine3," ");
+
+
+
+                if(!updateAutoRemoteDelay){
+                    updateAutoRemoteDelay = 20;
+                    sprintf(newTextLine4,"READ:%d.%dV", integer, decimal);
+
+                }else{
+
+                    for(int i = 0; i < 16;i++){
+                        newTextLine4[i] = textLine4[i];
+                    }
+                }
+
+                if( (RB4 == 0) || (RA3 == 1) ){
+
+
+                    sprintf(newTextLine2,"Enabled");
+
+
+                    DAC1_Load10bitInputData(ext_speed);
+
+
+
+                    if((float)(avg*(2.5*5/1024)) > 1.9)
+                    {
+
+                        LATA0 = 1;
+                    }
+                    else if ((float)(avg*(2.5*5/1024)) < 1.8)
+                    {
+
+                        LATA0 = 0;
+                    }
+
+
+
+                    if((float)(avg*(2.5*5/1024)) > 2.05)
+                    {
+
+                        LATA1 = 1;
+                    }
+                    else if((float)(avg*(2.5*5/1024)) < 1.95)
+                    {
+
+                        LATA1 = 0;
+                    }
+                }
+                else
+                {
+
+                    sprintf(newTextLine2,"Disabled");
+
+
+                    DAC1_Load10bitInputData(0);
+
+
+                    LATA0 = 0;
+
+                    LATA1 = 0;
+                }
+            break;
+
+            case 4 :
+
+                HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
+
+                sprintf(newTextLine1,"FIREMANSET");
+
+                sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
+
+
+                DAC1_Load10bitInputData(frmn_speed*(0.8*1023/100));
+
+                if((float)frmn_speed/10 > 1.85)
+                {
+
+                    LATA0 = 1;
+                }
+                else
+                {
+
+                    LATA0 = 0;
+                }
+
+                if(frmn_speed/10 >= 2.0)
+                {
+
+                    LATA1 = 1;
+                }
+                else
+                {
+
+                    LATA1 = 0;
+                }
+
+            break;
+
+            default :
+
+
+                sprintf(newTextLine1,"Press Mode");
+
+
+                DAC1_Load10bitInputData(0);
+
+
+                LATA0 = 0;
+
+                LATA1 = 0;
+
+            break;
+        }
+
+
+        if(bright_screen_timer){
+            OLED_SetContrast(0xFF);
+        }
+        else{
+             OLED_SetContrast(0x00);
+        }
+
+
+        UpdateScreen_Line(1);
+        UpdateScreen_Line(2);
+        UpdateScreen_Line(3);
+        UpdateScreen_Line(4);
+
+
+
+        btn_count = 0;
+
+        if((!RB1)){
+            btn_count++;
+            if(increase_btn_debounce){
+                increase_btn_debounce--;
+            }
+        }else{
+            increase_btn_debounce = 20;
+        }
+
+        if((!RB2)){
+            btn_count++;
+            if(decrease_btn_debounce){
+                decrease_btn_debounce--;
+            }
+        }else{
+            decrease_btn_debounce = 20;
+        }
+
+        if((!RB0)){
+            btn_count++;
+            if(mode_btn_debounce){
+                mode_btn_debounce--;
+            }
+        }else{
+            mode_btn_debounce = 20;
+        }
+
+
+        if(btn_count==1){
+            if(decrement){
+                decrement--;
+            }else{
+
+                bright_screen_timer = 50000;
+
+                if(!increase_btn_debounce){
+                    if((RB5 == 1) && ((!RB2) != 1)){
+                        if(!speedChangeTimer){
+                            if(speedChangeState<4){
+                                speedChangeState++;
+                                speedChangeTimer = 2000;
+                            }
+
+                            if(fireman_set){
+                                if(frmn_speed < 100){
+                                    frmn_speed += 1;
+                                    HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
+                                }
+                            }else{
+                                if((speed < 100)){
+                                    if(mode == 0){
+                                        speed += 1;
+                                        HEFLASH_writeBlock(1, &speed, sizeof(speed));
+                                    }else if(mode==2){
+                                        speed += 1;
+                                        HEFLASH_writeBlock(3, &speed, sizeof(speed));
+                                    }
+                                }
+                            }
                         }
-                        else{
-                            OLED_DrawPixel(x + cnt - 2, y + (rowcnt * 8) + b, 0);
+                    }
+                }
+                if(!decrease_btn_debounce){
+                    if((RB5 == 1) && ((!RB1) != 1)){
+                        if(!speedChangeTimer){
+                            if(speedChangeState<4){
+                                speedChangeState++;
+                                speedChangeTimer = 2000;
+                            }
+                            if(fireman_set)
+                            {
+                                if(frmn_speed > 0)
+                                {
+                                    frmn_speed -= 1;
+                                    HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
+                                }
+                            }
+                            else
+                            {
+                                if((speed > 0)){
+                                    if(mode == 0){
+                                        speed -= 1;
+                                        HEFLASH_writeBlock(1, &speed, sizeof(speed));
+                                    }else if(mode==2){
+                                        speed -= 1;
+                                        HEFLASH_writeBlock(3, &speed, sizeof(speed));
+                                    }
+                                }
+                            }
                         }
-                    } else {
-                        if (cfont.inverted == 0){
-                            OLED_DrawPixel(x + cnt - 2, y + (rowcnt * 8) + b, 0);
+                    }
+                }
+                if(!mode_btn_debounce){
+                    if(!mode_change_flag){
+                        mode_change_flag = 1;
+                        if(fireman_set){
+                            fireman_inc = 0;
+                        }else{
+                            if(((!RB1) != 1) && ((!RB2) != 1)){
+
+                                if(mode == 4){
+
+                                    fireman_set = 0;
+                                    HEFLASH_readBlock(&mode, 0, sizeof(mode));
+                                }
+                                if(mode < 3)
+                                {
+                                    mode++;
+                                    HEFLASH_writeBlock(0, &mode, sizeof(mode));
+                                }
+                                else
+                                {
+                                    mode = 0;
+                                    HEFLASH_writeBlock(0, &mode, sizeof(mode));
+                                }
+                            }
                         }
-                        else{
-                            OLED_DrawPixel(x + cnt - 2 , y + (rowcnt * 8) + b, 1);
-                        }
                     }
                 }
             }
+        }else{
+            decrement = 20;
         }
-    } else {
-        font_idx = ((value - cfont.offset)*((cfont.x_size * cfont.y_size) / 8)) + 4;
-        cbyte = *(cfont.font + font_idx);
-        cbit = 7;
-        for (cx = 0; cx < cfont.x_size; cx++) {
-            for (cy = 0; cy < cfont.y_size; cy++) {
-                if ((cbyte & (1 << cbit)) != 0) {
-                    if (cfont.inverted == 0){
-                        OLED_DrawPixel(x + cx, y + cy, 1);
-                    }
-                    else{
-                        OLED_DrawPixel(x + cx, y + cy, 0);
-                    }
-                } else {
-                    if (cfont.inverted == 0){
-                        OLED_DrawPixel(x + cx, y + cy, 0);
-                    }
-                    else{
-                        OLED_DrawPixel(x + cx, y + cy, 1);
-                    }
-                }
-                cbit--;
-                if (cbit < 0) {
-                    cbit = 7;
-                    font_idx++;
-                    cbyte = *(cfont.font + font_idx);
-                }
+
+        if(updateAutoRemoteDelay){
+            updateAutoRemoteDelay--;
+        }
+
+        if(!fireman_inc){
+
+            fireman_set = 0;
+            HEFLASH_readBlock(&mode, 0, sizeof(mode));
+        }
+
+        if(!factory_reset_dec){
+            fireman_set = 0;
+            fireman_inc = 0;
+
+            press = 0;
+
+            mode = 5;
+            speed = 50;
+            frmn_speed = 100;
+            ext_speed = 0;
+
+            HEFLASH_writeBlock(0, &mode, sizeof(mode));
+            HEFLASH_writeBlock(1, &speed, sizeof(speed));
+            HEFLASH_writeBlock(3, &speed, sizeof(speed));
+            HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
+        }
+    }
+
+
+    if(setting_refresh_flag){
+       DisplaySettingRefresh();
+       setting_refresh_flag = 0;
+       setting_refresh_timer = 1280000;
+    }
+}
+
+void __attribute__((picinterrupt(("")))) __ISR(void){
+    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    {
+
+        INTCONbits.TMR0IF = 0;
+
+        if(fireman_set){
+            if(fireman_inc){
+                fireman_inc--;
             }
         }
-    }
-}
-# 947 "OLED.c"
-void OLED_Write_Text(int16_t x, int16_t y, char *text) {
-    uint8_t cnt;
-    uint8_t length;
 
-    length = strlen((const char*) text);
-    if (x == 254){
-        x = 128 - (length * cfont.x_size);
-    }
-    if (x == 255){
-        x = (128 - (length * cfont.x_size)) / 2;
-    }
-    for (cnt = 0; cnt < length; cnt++){
-        OLED_Write(x + ((cnt%16) * (cfont.x_size - 4)), y + ((cnt/16)*16), *text++);
-    }
-}
-
-
-
-
-
-
-static void ssd1306_command(uint8_t command) {
-    uint8_t control = 0x00;
-    I2C_Start();
-    I2C_Send(0x3C << 1);
-    I2C_Send(control);
-    I2C_Send(command);
-    I2C_Stop();
-}
-
-
-
-
-
-
-static void ssd1306_data(uint8_t value) {
-    uint8_t control = 0x40;
-    I2C_Start();
-    I2C_Send(0x3C << 1);
-    I2C_Send(control);
-    I2C_Send(value);
-    I2C_Stop();
-}
-
-
-
-
-
-
-static uint8_t width(void) {
-    return 128;
-}
-
-
-
-
-
-
-static uint8_t height(void) {
-    return 64;
-}
-# 1035 "OLED.c"
-void UpdateScreen(void){
-    char numSpaces = 0;
-    for(int i = 0;i < 16; i++){
-        if((textLine1[i]!=newTextLine1[i]) || line_1_update_flag){
-            OLED_Write((i*(cfont.x_size - 4))-(4*numSpaces),0,newTextLine1[i]);
-            textLine1[i] = newTextLine1[i];
-            line_1_update_flag = 1;
-        }
-        if(newTextLine1[i]==' '){
-            numSpaces++;
-        }
-    }
-# 1056 "OLED.c"
-    for(int i = 0;i < 16; i++){
-        if(textLine2[i]!=newTextLine2[i]){
-            OLED_Write(i*(cfont.x_size - 4),16,newTextLine2[i]);
-            textLine2[i] = newTextLine2[i];
-            line_2_update_flag = 1;
-        }
-    }
-
-    for(int i = 0;i < 16; i++){
-        if(textLine3[i]!=newTextLine3[i]){
-            OLED_Write(i*(cfont.x_size - 4),32,newTextLine3[i]);
-            textLine3[i] = newTextLine3[i];
-            line_3_update_flag = 1;
-        }
-    }
-
-    for(int i = 0;i < 16; i++){
-        if(textLine4[i]!=newTextLine4[i]){
-            OLED_Write(i*(cfont.x_size - 4),48,newTextLine4[i]);
-            textLine4[i] = newTextLine4[i];
-            line_4_update_flag = 1;
-        }
-    }
-
-    if(line_1_update_flag){
-        OLED_Update_Partial(1);
-        line_1_update_flag = 0;
-    }
-
-    if(line_2_update_flag){
-        OLED_Update_Partial(2);
-        line_2_update_flag = 0;
-    }
-
-    if(line_3_update_flag){
-        OLED_Update_Partial(3);
-        line_3_update_flag = 0;
-    }
-
-    if(line_4_update_flag){
-        OLED_Update_Partial(4);
-        line_4_update_flag = 0;
-    }
-}
-
-void UpdateScreen_Line(char line_number){
-    char numSpaces = 0;
-
-    switch(line_number){
-
-        case 1:
-# 1119 "OLED.c"
-            for(int i = 0;i < 16; i++){
-                if(textLine1[i]!=newTextLine1[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine1[i]);
-                    textLine1[i] = newTextLine1[i];
-                    line_1_update_flag = 1;
+        if(mode_btn_debounce && !(increase_btn_debounce || decrease_btn_debounce)){
+            if(fireman_set_debounce){
+                fireman_set_debounce--;
+                if(!fireman_set_debounce){
+                    fireman_inc = 50000;
+                    fireman_set = 1;
+                    HEFLASH_writeBlock(0, &mode, sizeof(mode));
+                    mode = 4;
                 }
             }
+        }else{
+            fireman_set_debounce = 10000;
+        }
 
-            if(line_1_update_flag){
-                OLED_Update_Partial(line_number);
-                line_1_update_flag = 0;
+        if(increase_btn_debounce && !(decrease_btn_debounce || mode_btn_debounce)){
+            if(factory_reset_dec){
+                factory_reset_dec--;
             }
+        }
+        else{
+            factory_reset_dec = 25000;
+        }
 
-        break;
+        if(increase_btn_debounce && decrease_btn_debounce && mode_btn_debounce){
+            speedChangeTimer = 0;
+            speedChangeState = 0;
+            mode_change_flag = 0;
+        }
 
-        case 2:
+        if(speedChangeTimer){
+            speedChangeTimer--;
+        }
 
-            for(int i = 0;i < 16; i++){
-                if(textLine2[i]!=newTextLine2[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine2[i]);
-                    textLine2[i] = newTextLine2[i];
-                    line_2_update_flag = 1;
-                }
-            }
+        if(bright_screen_timer){
+            bright_screen_timer--;
+        }
 
-            if(line_2_update_flag){
-                OLED_Update_Partial(line_number);
-                line_2_update_flag = 0;
-            }
-
-        break;
-
-        case 3:
-
-            for(int i = 0;i < 16; i++){
-                if(textLine3[i]!=newTextLine3[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine3[i]);
-                    textLine3[i] = newTextLine3[i];
-                    line_3_update_flag = 1;
-                }
-            }
-
-            if(line_3_update_flag){
-                OLED_Update_Partial(line_number);
-                line_3_update_flag = 0;
-            }
-
-        break;
-
-        case 4:
-
-            for(int i = 0;i < 16; i++){
-                if(textLine4[i]!=newTextLine4[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine4[i]);
-                    textLine4[i] = newTextLine4[i];
-                    line_4_update_flag = 1;
-                }
-            }
-
-            if(line_4_update_flag){
-                OLED_Update_Partial(line_number);
-                line_4_update_flag = 0;
-            }
-        break;
-
-        default:
-
-        break;
+        if(setting_refresh_timer){
+            setting_refresh_timer--;
+        }
+        else{
+            setting_refresh_flag = 1;
+        }
     }
-}
-
-
-
-void DisplaySettingRefresh(void){
-
-    ssd1306_command(0xAE);
-    ssd1306_command(0xD5);
-    ssd1306_command(0xF0);
-    ssd1306_command(0xA8);
-    ssd1306_command(64 - 1);
-    ssd1306_command(0xD3);
-    ssd1306_command(0x00);
-    ssd1306_command(0x40 | 0x00);
-    ssd1306_command(0x8D);
-
-
-    ssd1306_command(0x14);
-    ssd1306_command(0x20);
-    ssd1306_command(0x00);
-    ssd1306_command(0xA0 | 0x01);
-    ssd1306_command(0xC8);
-# 1219 "OLED.c"
-    ssd1306_command(0xDA);
-    ssd1306_command(0x12);
-    ssd1306_command(0x81);
-
-    ssd1306_command(0xFF);
-
-
-    ssd1306_command(0xD9);
-
-    ssd1306_command(0xF1);
-    ssd1306_command(0xDB);
-    ssd1306_command(0x40);
-    ssd1306_command(0xA4);
-    ssd1306_command(0xA6);
-    ssd1306_command(0x2E);
-    ssd1306_command(0xAF);
-
-
-
-    OLED_SetFont(BIG_FONTS);
-
 }

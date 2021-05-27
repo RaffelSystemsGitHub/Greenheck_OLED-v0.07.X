@@ -19509,14 +19509,14 @@ typedef struct _Current_Font_s
   uint8_t inverted;
 } Current_Font_s;
 
-char textLine1[16];
-char textLine2[16];
-char textLine3[16];
-char textLine4[16];
-char newTextLine1[16] = {'................'};
-char newTextLine2[16] = {'................'};
-char newTextLine3[16] = {'................'};
-char newTextLine4[16] = {'................'};
+char textLine1[16] = {"................"};
+char textLine2[16] = {"................"};
+char textLine3[16] = {"................"};
+char textLine4[16] = {"................"};
+char newTextLine1[16] = {"................"};
+char newTextLine2[16] = {"................"};
+char newTextLine3[16] = {"................"};
+char newTextLine4[16] = {"................"};
 char line_1_update_flag;
 char line_2_update_flag;
 char line_3_update_flag;

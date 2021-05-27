@@ -20355,7 +20355,7 @@ void OLED_Init( void );
 uint8_t OLED_Width( void );
 uint8_t OLED_Height( void );
 void OLED_Update( void );
-void OLED_Update_Partial(char page);
+void OLED_Update_Partial(char line);
 void OLED_SetContrast( uint8_t contrast );
 void OLED_ClearDisplay( void );
 void OLED_FillDisplay( void );
@@ -20366,6 +20366,7 @@ void OLED_SetFont( const uint8_t *font);
 void OLED_Write( int16_t x, int16_t y, char value );
 
 void UpdateScreen(void);
+void UpdateScreen_Line(char line_number);
 void DisplaySettingRefresh(void);
 # 58 "main.c" 2
 # 120 "main.c"
@@ -20414,6 +20415,7 @@ void WDTclear(void){
 
 void main(void)
 {
+
 
     SYSTEM_Initialize();
 
@@ -20496,7 +20498,11 @@ void main(void)
             }
 
 
-            UpdateScreen();
+            UpdateScreen_Line(1);
+            UpdateScreen_Line(2);
+            UpdateScreen_Line(3);
+            UpdateScreen_Line(4);
+
 
             unsigned int power_led_flash_counter = 0;
             while(RB5 == 0){
@@ -20796,7 +20802,11 @@ void main(void)
         }
 
 
-        UpdateScreen();
+        UpdateScreen_Line(1);
+        UpdateScreen_Line(2);
+        UpdateScreen_Line(3);
+        UpdateScreen_Line(4);
+
 
 
         btn_count = 0;
