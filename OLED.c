@@ -948,7 +948,7 @@ void OLED_Write_Text(int16_t x, int16_t y, char *text) {
     uint8_t cnt;
     uint8_t length;
 
-    length = strlen((const char*) text);
+    length = TEXT_ARRAY_SIZE;//strlen((const char*) text);
     if (x == RIGHT){
         x = 128 - (length * cfont.x_size);
     }
@@ -1115,16 +1115,22 @@ void UpdateScreen_Line(char line_number){
 //                    numSpaces++;
 //                }
 //            }
-
-            for(int i = 0;i < TEXT_ARRAY_SIZE; i++){
-                if(textLine1[i]!=newTextLine1[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine1[i]);
-                    textLine1[i] = newTextLine1[i];
+            //Check if line text string changed from previous update.
+            for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
+                if(*(textLine1+i) != *(newTextLine1+i)){
                     line_1_update_flag = 1;
+                    break;
                 }
             }
-
+            
             if(line_1_update_flag){
+                
+                OLED_Write_Text(0,0,newTextLine1);
+                
+                for(int i=0;i<TEXT_ARRAY_SIZE;i++){
+                    *(textLine1+i) = *(newTextLine1+i);
+                }
+                
                 OLED_Update_Partial(line_number);
                 line_1_update_flag = 0;
             }
@@ -1133,15 +1139,21 @@ void UpdateScreen_Line(char line_number){
         
         case 2:
             
-            for(int i = 0;i < TEXT_ARRAY_SIZE; i++){
-                if(textLine2[i]!=newTextLine2[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine2[i]);
-                    textLine2[i] = newTextLine2[i];
+            for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
+                if(*(textLine2+i) != *(newTextLine2+i)){
                     line_2_update_flag = 1;
+                    break;
                 }
             }
             
             if(line_2_update_flag){
+                
+                OLED_Write_Text(0,0,newTextLine2);
+                
+                for(int i=0;i<TEXT_ARRAY_SIZE;i++){
+                    *(textLine2+i) = *(newTextLine2+i);
+                }
+                
                 OLED_Update_Partial(line_number);
                 line_2_update_flag = 0;
             }
@@ -1150,15 +1162,21 @@ void UpdateScreen_Line(char line_number){
 
         case 3:
             
-            for(int i = 0;i < TEXT_ARRAY_SIZE; i++){
-                if(textLine3[i]!=newTextLine3[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine3[i]);
-                    textLine3[i] = newTextLine3[i];
+            for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
+                if(*(textLine3+i) != *(newTextLine3+i)){
                     line_3_update_flag = 1;
+                    break;
                 }
             }
-
+            
             if(line_3_update_flag){
+                
+                OLED_Write_Text(0,0,newTextLine3);
+                
+                for(int i=0;i<TEXT_ARRAY_SIZE;i++){
+                    *(textLine3+i) = *(newTextLine3+i);
+                }
+                
                 OLED_Update_Partial(line_number);
                 line_3_update_flag = 0;
             }
@@ -1167,18 +1185,25 @@ void UpdateScreen_Line(char line_number){
 
         case 4:
             
-            for(int i = 0;i < TEXT_ARRAY_SIZE; i++){
-                if(textLine4[i]!=newTextLine4[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine4[i]);
-                    textLine4[i] = newTextLine4[i];
+             for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
+                if(*(textLine4+i) != *(newTextLine4+i)){
                     line_4_update_flag = 1;
+                    break;
                 }
             }
-
+            
             if(line_4_update_flag){
+                
+                OLED_Write_Text(0,0,newTextLine4);
+                
+                for(int i=0;i<TEXT_ARRAY_SIZE;i++){
+                    *(textLine4+i) = *(newTextLine4+i);
+                }
+                
                 OLED_Update_Partial(line_number);
                 line_4_update_flag = 0;
             }
+             
         break;
 
         default:

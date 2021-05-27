@@ -40,6 +40,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\string.h: 54: size_t strlen (const char *);
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
+"31 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\pic.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1778.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1778.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1727,7 +1730,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1778.h: 37740: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "108 ./OLED.h
-[; ;./OLED.h: 108: char textLine1[16] = {"................"};
+[; ;./OLED.h: 108: char textLine1[16] = {"...............\0"};
 [v _textLine1 `uc ~T0 @X0 -> 16 `i e ]
 [i _textLine1
 :U ..
@@ -1746,11 +1749,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 46 `c
 -> 46 `c
 -> 46 `c
--> 46 `c
+-> 0 `c
 ..
 ]
 "109
-[; ;./OLED.h: 109: char textLine2[16] = {"................"};
+[; ;./OLED.h: 109: char textLine2[16] = {"...............\0"};
 [v _textLine2 `uc ~T0 @X0 -> 16 `i e ]
 [i _textLine2
 :U ..
@@ -1769,11 +1772,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 46 `c
 -> 46 `c
 -> 46 `c
--> 46 `c
+-> 0 `c
 ..
 ]
 "110
-[; ;./OLED.h: 110: char textLine3[16] = {"................"};
+[; ;./OLED.h: 110: char textLine3[16] = {"...............\0"};
 [v _textLine3 `uc ~T0 @X0 -> 16 `i e ]
 [i _textLine3
 :U ..
@@ -1792,11 +1795,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 46 `c
 -> 46 `c
 -> 46 `c
--> 46 `c
+-> 0 `c
 ..
 ]
 "111
-[; ;./OLED.h: 111: char textLine4[16] = {"................"};
+[; ;./OLED.h: 111: char textLine4[16] = {"...............\0"};
 [v _textLine4 `uc ~T0 @X0 -> 16 `i e ]
 [i _textLine4
 :U ..
@@ -1815,11 +1818,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 46 `c
 -> 46 `c
 -> 46 `c
--> 46 `c
+-> 0 `c
 ..
 ]
 "112
-[; ;./OLED.h: 112: char newTextLine1[16] = {"................"};
+[; ;./OLED.h: 112: char newTextLine1[16] = {"...............\0"};
 [v _newTextLine1 `uc ~T0 @X0 -> 16 `i e ]
 [i _newTextLine1
 :U ..
@@ -1838,11 +1841,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 46 `c
 -> 46 `c
 -> 46 `c
--> 46 `c
+-> 0 `c
 ..
 ]
 "113
-[; ;./OLED.h: 113: char newTextLine2[16] = {"................"};
+[; ;./OLED.h: 113: char newTextLine2[16] = {"...............\0"};
 [v _newTextLine2 `uc ~T0 @X0 -> 16 `i e ]
 [i _newTextLine2
 :U ..
@@ -1861,11 +1864,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 46 `c
 -> 46 `c
 -> 46 `c
--> 46 `c
+-> 0 `c
 ..
 ]
 "114
-[; ;./OLED.h: 114: char newTextLine3[16] = {"................"};
+[; ;./OLED.h: 114: char newTextLine3[16] = {"...............\0"};
 [v _newTextLine3 `uc ~T0 @X0 -> 16 `i e ]
 [i _newTextLine3
 :U ..
@@ -1884,11 +1887,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 46 `c
 -> 46 `c
 -> 46 `c
--> 46 `c
+-> 0 `c
 ..
 ]
 "115
-[; ;./OLED.h: 115: char newTextLine4[16] = {"................"};
+[; ;./OLED.h: 115: char newTextLine4[16] = {"...............\0"};
 [v _newTextLine4 `uc ~T0 @X0 -> 16 `i e ]
 [i _newTextLine4
 :U ..
@@ -1907,7 +1910,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 46 `c
 -> 46 `c
 -> 46 `c
--> 46 `c
+-> 0 `c
 ..
 ]
 "116
@@ -6297,7 +6300,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;OLED.c: 1106:         case 1:
 [e :U 1829 ]
 "1119
-[; ;OLED.c: 1119:             for(int i = 0;i < 16; i++){
+[; ;OLED.c: 1119:             for(int i = 0;i<16;i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -6306,51 +6309,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1830 ]
 {
 "1120
-[; ;OLED.c: 1120:                 if(textLine1[i]!=newTextLine1[i]){
-[e $ ! != -> *U + &U _textLine1 * -> -> _i `ui `ux -> -> # *U &U _textLine1 `ui `ux `i -> *U + &U _newTextLine1 * -> -> _i `ui `ux -> -> # *U &U _newTextLine1 `ui `ux `i 1833  ]
+[; ;OLED.c: 1120:                 if(*(textLine1+i) == *(newTextLine1+i)){
+[e $ ! == -> *U + &U _textLine1 * -> _i `x -> -> # *U &U _textLine1 `i `x `i -> *U + &U _newTextLine1 * -> _i `x -> -> # *U &U _newTextLine1 `i `x `i 1833  ]
 {
 "1121
-[; ;OLED.c: 1121:                     OLED_Write(i*(cfont.x_size - 4),0,newTextLine1[i]);
-[e ( _OLED_Write (3 , , -> * _i - -> . _cfont 1 `i -> 4 `i `s -> -> 0 `i `s *U + &U _newTextLine1 * -> -> _i `ui `ux -> -> # *U &U _newTextLine1 `ui `ux ]
+[; ;OLED.c: 1121:                     __nop();
+[e ( ___nop ..  ]
 "1122
-[; ;OLED.c: 1122:                     textLine1[i] = newTextLine1[i];
-[e = *U + &U _textLine1 * -> -> _i `ui `ux -> -> # *U &U _textLine1 `ui `ux *U + &U _newTextLine1 * -> -> _i `ui `ux -> -> # *U &U _newTextLine1 `ui `ux ]
-"1123
-[; ;OLED.c: 1123:                     line_1_update_flag = 1;
-[e = _line_1_update_flag -> -> 1 `i `uc ]
-"1124
-[; ;OLED.c: 1124:                 }
+[; ;OLED.c: 1122:                 }
 }
+[e $U 1834  ]
+"1123
+[; ;OLED.c: 1123:                 else{
 [e :U 1833 ]
+{
+"1124
+[; ;OLED.c: 1124:                     line_1_update_flag = 1;
+[e = _line_1_update_flag -> -> 1 `i `uc ]
 "1125
-[; ;OLED.c: 1125:             }
+[; ;OLED.c: 1125:                     break;
+[e $U 1831  ]
+"1126
+[; ;OLED.c: 1126:                 }
+}
+[e :U 1834 ]
+"1127
+[; ;OLED.c: 1127:             }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 16 `i 1830  ]
 [e :U 1831 ]
 }
-"1127
-[; ;OLED.c: 1127:             if(line_1_update_flag){
-[e $ ! != -> _line_1_update_flag `i -> 0 `i 1834  ]
-{
-"1128
-[; ;OLED.c: 1128:                 OLED_Update_Partial(line_number);
-[e ( _OLED_Update_Partial (1 _line_number ]
 "1129
-[; ;OLED.c: 1129:                 line_1_update_flag = 0;
-[e = _line_1_update_flag -> -> 0 `i `uc ]
-"1130
-[; ;OLED.c: 1130:             }
-}
-[e :U 1834 ]
-"1132
-[; ;OLED.c: 1132:         break;
-[e $U 1827  ]
-"1134
-[; ;OLED.c: 1134:         case 2:
-[e :U 1835 ]
-"1136
-[; ;OLED.c: 1136:             for(int i = 0;i < 16; i++){
+[; ;OLED.c: 1129:             if(line_1_update_flag){
+[e $ ! != -> _line_1_update_flag `i -> 0 `i 1835  ]
+{
+"1131
+[; ;OLED.c: 1131:                 OLED_Write_Text(0,0,newTextLine1);
+[e ( _OLED_Write_Text (3 , , -> -> 0 `i `s -> -> 0 `i `s &U _newTextLine1 ]
+"1133
+[; ;OLED.c: 1133:                 for(int i=0;i<16;i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -6358,262 +6356,378 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1837  ]
 [e :U 1836 ]
 {
-"1137
-[; ;OLED.c: 1137:                 if(textLine2[i]!=newTextLine2[i]){
-[e $ ! != -> *U + &U _textLine2 * -> -> _i `ui `ux -> -> # *U &U _textLine2 `ui `ux `i -> *U + &U _newTextLine2 * -> -> _i `ui `ux -> -> # *U &U _newTextLine2 `ui `ux `i 1839  ]
-{
-"1138
-[; ;OLED.c: 1138:                     OLED_Write(i*(cfont.x_size - 4),0,newTextLine2[i]);
-[e ( _OLED_Write (3 , , -> * _i - -> . _cfont 1 `i -> 4 `i `s -> -> 0 `i `s *U + &U _newTextLine2 * -> -> _i `ui `ux -> -> # *U &U _newTextLine2 `ui `ux ]
-"1139
-[; ;OLED.c: 1139:                     textLine2[i] = newTextLine2[i];
-[e = *U + &U _textLine2 * -> -> _i `ui `ux -> -> # *U &U _textLine2 `ui `ux *U + &U _newTextLine2 * -> -> _i `ui `ux -> -> # *U &U _newTextLine2 `ui `ux ]
-"1140
-[; ;OLED.c: 1140:                     line_2_update_flag = 1;
-[e = _line_2_update_flag -> -> 1 `i `uc ]
-"1141
-[; ;OLED.c: 1141:                 }
-}
-[e :U 1839 ]
-"1142
-[; ;OLED.c: 1142:             }
+"1134
+[; ;OLED.c: 1134:                     *(textLine1+i) = *(newTextLine1+i);
+[e = *U + &U _textLine1 * -> _i `x -> -> # *U &U _textLine1 `i `x *U + &U _newTextLine1 * -> _i `x -> -> # *U &U _newTextLine1 `i `x ]
+"1135
+[; ;OLED.c: 1135:                 }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 16 `i 1836  ]
 [e :U 1837 ]
 }
-"1144
-[; ;OLED.c: 1144:             if(line_2_update_flag){
-[e $ ! != -> _line_2_update_flag `i -> 0 `i 1840  ]
-{
-"1145
-[; ;OLED.c: 1145:                 OLED_Update_Partial(line_number);
+"1137
+[; ;OLED.c: 1137:                 OLED_Update_Partial(line_number);
 [e ( _OLED_Update_Partial (1 _line_number ]
-"1146
-[; ;OLED.c: 1146:                 line_2_update_flag = 0;
-[e = _line_2_update_flag -> -> 0 `i `uc ]
-"1147
-[; ;OLED.c: 1147:             }
+"1138
+[; ;OLED.c: 1138:                 line_1_update_flag = 0;
+[e = _line_1_update_flag -> -> 0 `i `uc ]
+"1139
+[; ;OLED.c: 1139:             }
 }
-[e :U 1840 ]
-"1149
-[; ;OLED.c: 1149:         break;
+[e :U 1835 ]
+"1141
+[; ;OLED.c: 1141:         break;
 [e $U 1827  ]
-"1151
-[; ;OLED.c: 1151:         case 3:
-[e :U 1841 ]
-"1153
-[; ;OLED.c: 1153:             for(int i = 0;i < 16; i++){
+"1143
+[; ;OLED.c: 1143:         case 2:
+[e :U 1839 ]
+"1145
+[; ;OLED.c: 1145:             for(int i = 0;i<16;i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 16 `i 1842  ]
-[e $U 1843  ]
-[e :U 1842 ]
+[e $ < _i -> 16 `i 1840  ]
+[e $U 1841  ]
+[e :U 1840 ]
 {
-"1154
-[; ;OLED.c: 1154:                 if(textLine3[i]!=newTextLine3[i]){
-[e $ ! != -> *U + &U _textLine3 * -> -> _i `ui `ux -> -> # *U &U _textLine3 `ui `ux `i -> *U + &U _newTextLine3 * -> -> _i `ui `ux -> -> # *U &U _newTextLine3 `ui `ux `i 1845  ]
+"1146
+[; ;OLED.c: 1146:                 if(*(textLine2+i) == *(newTextLine2+i)){
+[e $ ! == -> *U + &U _textLine2 * -> _i `x -> -> # *U &U _textLine2 `i `x `i -> *U + &U _newTextLine2 * -> _i `x -> -> # *U &U _newTextLine2 `i `x `i 1843  ]
 {
+"1148
+[; ;OLED.c: 1148:                 }
+}
+[e $U 1844  ]
+"1149
+[; ;OLED.c: 1149:                 else{
+[e :U 1843 ]
+{
+"1150
+[; ;OLED.c: 1150:                     line_2_update_flag = 1;
+[e = _line_2_update_flag -> -> 1 `i `uc ]
+"1151
+[; ;OLED.c: 1151:                     break;
+[e $U 1841  ]
+"1152
+[; ;OLED.c: 1152:                 }
+}
+[e :U 1844 ]
+"1153
+[; ;OLED.c: 1153:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 16 `i 1840  ]
+[e :U 1841 ]
+}
 "1155
-[; ;OLED.c: 1155:                     OLED_Write(i*(cfont.x_size - 4),0,newTextLine3[i]);
-[e ( _OLED_Write (3 , , -> * _i - -> . _cfont 1 `i -> 4 `i `s -> -> 0 `i `s *U + &U _newTextLine3 * -> -> _i `ui `ux -> -> # *U &U _newTextLine3 `ui `ux ]
-"1156
-[; ;OLED.c: 1156:                     textLine3[i] = newTextLine3[i];
-[e = *U + &U _textLine3 * -> -> _i `ui `ux -> -> # *U &U _textLine3 `ui `ux *U + &U _newTextLine3 * -> -> _i `ui `ux -> -> # *U &U _newTextLine3 `ui `ux ]
+[; ;OLED.c: 1155:             if(line_2_update_flag){
+[e $ ! != -> _line_2_update_flag `i -> 0 `i 1845  ]
+{
 "1157
-[; ;OLED.c: 1157:                     line_3_update_flag = 1;
-[e = _line_3_update_flag -> -> 1 `i `uc ]
-"1158
-[; ;OLED.c: 1158:                 }
+[; ;OLED.c: 1157:                 OLED_Write_Text(0,0,newTextLine2);
+[e ( _OLED_Write_Text (3 , , -> -> 0 `i `s -> -> 0 `i `s &U _newTextLine2 ]
+"1159
+[; ;OLED.c: 1159:                 for(int i=0;i<16;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 16 `i 1846  ]
+[e $U 1847  ]
+[e :U 1846 ]
+{
+"1160
+[; ;OLED.c: 1160:                     *(textLine2+i) = *(newTextLine2+i);
+[e = *U + &U _textLine2 * -> _i `x -> -> # *U &U _textLine2 `i `x *U + &U _newTextLine2 * -> _i `x -> -> # *U &U _newTextLine2 `i `x ]
+"1161
+[; ;OLED.c: 1161:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 16 `i 1846  ]
+[e :U 1847 ]
+}
+"1163
+[; ;OLED.c: 1163:                 OLED_Update_Partial(line_number);
+[e ( _OLED_Update_Partial (1 _line_number ]
+"1164
+[; ;OLED.c: 1164:                 line_2_update_flag = 0;
+[e = _line_2_update_flag -> -> 0 `i `uc ]
+"1165
+[; ;OLED.c: 1165:             }
 }
 [e :U 1845 ]
-"1159
-[; ;OLED.c: 1159:             }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 16 `i 1842  ]
-[e :U 1843 ]
-}
-"1161
-[; ;OLED.c: 1161:             if(line_3_update_flag){
-[e $ ! != -> _line_3_update_flag `i -> 0 `i 1846  ]
-{
-"1162
-[; ;OLED.c: 1162:                 OLED_Update_Partial(line_number);
-[e ( _OLED_Update_Partial (1 _line_number ]
-"1163
-[; ;OLED.c: 1163:                 line_3_update_flag = 0;
-[e = _line_3_update_flag -> -> 0 `i `uc ]
-"1164
-[; ;OLED.c: 1164:             }
-}
-[e :U 1846 ]
-"1166
-[; ;OLED.c: 1166:         break;
+"1167
+[; ;OLED.c: 1167:         break;
 [e $U 1827  ]
-"1168
-[; ;OLED.c: 1168:         case 4:
-[e :U 1847 ]
-"1170
-[; ;OLED.c: 1170:             for(int i = 0;i < 16; i++){
+"1169
+[; ;OLED.c: 1169:         case 3:
+[e :U 1849 ]
+"1171
+[; ;OLED.c: 1171:             for(int i = 0;i<16;i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 16 `i 1848  ]
-[e $U 1849  ]
-[e :U 1848 ]
-{
-"1171
-[; ;OLED.c: 1171:                 if(textLine4[i]!=newTextLine4[i]){
-[e $ ! != -> *U + &U _textLine4 * -> -> _i `ui `ux -> -> # *U &U _textLine4 `ui `ux `i -> *U + &U _newTextLine4 * -> -> _i `ui `ux -> -> # *U &U _newTextLine4 `ui `ux `i 1851  ]
+[e $ < _i -> 16 `i 1850  ]
+[e $U 1851  ]
+[e :U 1850 ]
 {
 "1172
-[; ;OLED.c: 1172:                     OLED_Write(i*(cfont.x_size - 4),0,newTextLine4[i]);
-[e ( _OLED_Write (3 , , -> * _i - -> . _cfont 1 `i -> 4 `i `s -> -> 0 `i `s *U + &U _newTextLine4 * -> -> _i `ui `ux -> -> # *U &U _newTextLine4 `ui `ux ]
-"1173
-[; ;OLED.c: 1173:                     textLine4[i] = newTextLine4[i];
-[e = *U + &U _textLine4 * -> -> _i `ui `ux -> -> # *U &U _textLine4 `ui `ux *U + &U _newTextLine4 * -> -> _i `ui `ux -> -> # *U &U _newTextLine4 `ui `ux ]
+[; ;OLED.c: 1172:                 if(*(textLine3+i) == *(newTextLine3+i)){
+[e $ ! == -> *U + &U _textLine3 * -> _i `x -> -> # *U &U _textLine3 `i `x `i -> *U + &U _newTextLine3 * -> _i `x -> -> # *U &U _newTextLine3 `i `x `i 1853  ]
+{
 "1174
-[; ;OLED.c: 1174:                     line_4_update_flag = 1;
-[e = _line_4_update_flag -> -> 1 `i `uc ]
-"1175
-[; ;OLED.c: 1175:                 }
+[; ;OLED.c: 1174:                 }
 }
-[e :U 1851 ]
+[e $U 1854  ]
+"1175
+[; ;OLED.c: 1175:                 else{
+[e :U 1853 ]
+{
 "1176
-[; ;OLED.c: 1176:             }
+[; ;OLED.c: 1176:                     line_3_update_flag = 1;
+[e = _line_3_update_flag -> -> 1 `i `uc ]
+"1177
+[; ;OLED.c: 1177:                     break;
+[e $U 1851  ]
+"1178
+[; ;OLED.c: 1178:                 }
+}
+[e :U 1854 ]
+"1179
+[; ;OLED.c: 1179:             }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 16 `i 1848  ]
-[e :U 1849 ]
+[e $ < _i -> 16 `i 1850  ]
+[e :U 1851 ]
 }
-"1178
-[; ;OLED.c: 1178:             if(line_4_update_flag){
-[e $ ! != -> _line_4_update_flag `i -> 0 `i 1852  ]
-{
-"1179
-[; ;OLED.c: 1179:                 OLED_Update_Partial(line_number);
-[e ( _OLED_Update_Partial (1 _line_number ]
-"1180
-[; ;OLED.c: 1180:                 line_4_update_flag = 0;
-[e = _line_4_update_flag -> -> 0 `i `uc ]
 "1181
-[; ;OLED.c: 1181:             }
-}
-[e :U 1852 ]
-"1182
-[; ;OLED.c: 1182:         break;
-[e $U 1827  ]
-"1184
-[; ;OLED.c: 1184:         default:
-[e :U 1853 ]
+[; ;OLED.c: 1181:             if(line_3_update_flag){
+[e $ ! != -> _line_3_update_flag `i -> 0 `i 1855  ]
+{
+"1183
+[; ;OLED.c: 1183:                 OLED_Write_Text(0,0,newTextLine3);
+[e ( _OLED_Write_Text (3 , , -> -> 0 `i `s -> -> 0 `i `s &U _newTextLine3 ]
+"1185
+[; ;OLED.c: 1185:                 for(int i=0;i<16;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 16 `i 1856  ]
+[e $U 1857  ]
+[e :U 1856 ]
+{
 "1186
-[; ;OLED.c: 1186:         break;
-[e $U 1827  ]
+[; ;OLED.c: 1186:                     *(textLine3+i) = *(newTextLine3+i);
+[e = *U + &U _textLine3 * -> _i `x -> -> # *U &U _textLine3 `i `x *U + &U _newTextLine3 * -> _i `x -> -> # *U &U _newTextLine3 `i `x ]
 "1187
-[; ;OLED.c: 1187:     }
+[; ;OLED.c: 1187:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 16 `i 1856  ]
+[e :U 1857 ]
+}
+"1189
+[; ;OLED.c: 1189:                 OLED_Update_Partial(line_number);
+[e ( _OLED_Update_Partial (1 _line_number ]
+"1190
+[; ;OLED.c: 1190:                 line_3_update_flag = 0;
+[e = _line_3_update_flag -> -> 0 `i `uc ]
+"1191
+[; ;OLED.c: 1191:             }
+}
+[e :U 1855 ]
+"1193
+[; ;OLED.c: 1193:         break;
+[e $U 1827  ]
+"1195
+[; ;OLED.c: 1195:         case 4:
+[e :U 1859 ]
+"1197
+[; ;OLED.c: 1197:              for(int i = 0;i<16;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 16 `i 1860  ]
+[e $U 1861  ]
+[e :U 1860 ]
+{
+"1198
+[; ;OLED.c: 1198:                 if(*(textLine4+i) == *(newTextLine4+i)){
+[e $ ! == -> *U + &U _textLine4 * -> _i `x -> -> # *U &U _textLine4 `i `x `i -> *U + &U _newTextLine4 * -> _i `x -> -> # *U &U _newTextLine4 `i `x `i 1863  ]
+{
+"1200
+[; ;OLED.c: 1200:                 }
+}
+[e $U 1864  ]
+"1201
+[; ;OLED.c: 1201:                 else{
+[e :U 1863 ]
+{
+"1202
+[; ;OLED.c: 1202:                     line_4_update_flag = 1;
+[e = _line_4_update_flag -> -> 1 `i `uc ]
+"1203
+[; ;OLED.c: 1203:                     break;
+[e $U 1861  ]
+"1204
+[; ;OLED.c: 1204:                 }
+}
+[e :U 1864 ]
+"1205
+[; ;OLED.c: 1205:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 16 `i 1860  ]
+[e :U 1861 ]
+}
+"1207
+[; ;OLED.c: 1207:             if(line_4_update_flag){
+[e $ ! != -> _line_4_update_flag `i -> 0 `i 1865  ]
+{
+"1209
+[; ;OLED.c: 1209:                 OLED_Write_Text(0,0,newTextLine4);
+[e ( _OLED_Write_Text (3 , , -> -> 0 `i `s -> -> 0 `i `s &U _newTextLine4 ]
+"1211
+[; ;OLED.c: 1211:                 for(int i=0;i<16;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 16 `i 1866  ]
+[e $U 1867  ]
+[e :U 1866 ]
+{
+"1212
+[; ;OLED.c: 1212:                     *(textLine4+i) = *(newTextLine4+i);
+[e = *U + &U _textLine4 * -> _i `x -> -> # *U &U _textLine4 `i `x *U + &U _newTextLine4 * -> _i `x -> -> # *U &U _newTextLine4 `i `x ]
+"1213
+[; ;OLED.c: 1213:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 16 `i 1866  ]
+[e :U 1867 ]
+}
+"1215
+[; ;OLED.c: 1215:                 OLED_Update_Partial(line_number);
+[e ( _OLED_Update_Partial (1 _line_number ]
+"1216
+[; ;OLED.c: 1216:                 line_4_update_flag = 0;
+[e = _line_4_update_flag -> -> 0 `i `uc ]
+"1217
+[; ;OLED.c: 1217:             }
+}
+[e :U 1865 ]
+"1219
+[; ;OLED.c: 1219:         break;
+[e $U 1827  ]
+"1221
+[; ;OLED.c: 1221:         default:
+[e :U 1869 ]
+"1223
+[; ;OLED.c: 1223:         break;
+[e $U 1827  ]
+"1224
+[; ;OLED.c: 1224:     }
 }
 [e $U 1827  ]
 [e :U 1828 ]
 [e [\ -> _line_number `i , $ -> 1 `i 1829
- , $ -> 2 `i 1835
- , $ -> 3 `i 1841
- , $ -> 4 `i 1847
- 1853 ]
+ , $ -> 2 `i 1839
+ , $ -> 3 `i 1849
+ , $ -> 4 `i 1859
+ 1869 ]
 [e :U 1827 ]
-"1188
-[; ;OLED.c: 1188: }
+"1225
+[; ;OLED.c: 1225: }
 [e :UE 1826 ]
 }
-"1192
-[; ;OLED.c: 1192: void DisplaySettingRefresh(void){
+"1229
+[; ;OLED.c: 1229: void DisplaySettingRefresh(void){
 [v _DisplaySettingRefresh `(v ~T0 @X0 1 ef ]
 {
 [e :U _DisplaySettingRefresh ]
 [f ]
-"1194
-[; ;OLED.c: 1194:     ssd1306_command(0xAE);
-[e ( _ssd1306_command (1 -> -> 174 `i `uc ]
-"1195
-[; ;OLED.c: 1195:     ssd1306_command(0xD5);
-[e ( _ssd1306_command (1 -> -> 213 `i `uc ]
-"1196
-[; ;OLED.c: 1196:     ssd1306_command(0xF0);
-[e ( _ssd1306_command (1 -> -> 240 `i `uc ]
-"1197
-[; ;OLED.c: 1197:     ssd1306_command(0xA8);
-[e ( _ssd1306_command (1 -> -> 168 `i `uc ]
-"1198
-[; ;OLED.c: 1198:     ssd1306_command(64 - 1);
-[e ( _ssd1306_command (1 -> - -> 64 `i -> 1 `i `uc ]
-"1199
-[; ;OLED.c: 1199:     ssd1306_command(0xD3);
-[e ( _ssd1306_command (1 -> -> 211 `i `uc ]
-"1200
-[; ;OLED.c: 1200:     ssd1306_command(0x00);
-[e ( _ssd1306_command (1 -> -> 0 `i `uc ]
-"1201
-[; ;OLED.c: 1201:     ssd1306_command(0x40 | 0x00);
-[e ( _ssd1306_command (1 -> | -> 64 `i -> 0 `i `uc ]
-"1202
-[; ;OLED.c: 1202:     ssd1306_command(0x8D);
-[e ( _ssd1306_command (1 -> -> 141 `i `uc ]
-"1205
-[; ;OLED.c: 1205:     ssd1306_command(0x14);
-[e ( _ssd1306_command (1 -> -> 20 `i `uc ]
-"1206
-[; ;OLED.c: 1206:     ssd1306_command(0x20);
-[e ( _ssd1306_command (1 -> -> 32 `i `uc ]
-"1207
-[; ;OLED.c: 1207:     ssd1306_command(0x00);
-[e ( _ssd1306_command (1 -> -> 0 `i `uc ]
-"1208
-[; ;OLED.c: 1208:     ssd1306_command(0xA0 | 0x01);
-[e ( _ssd1306_command (1 -> | -> 160 `i -> 1 `i `uc ]
-"1209
-[; ;OLED.c: 1209:     ssd1306_command(0xC8);
-[e ( _ssd1306_command (1 -> -> 200 `i `uc ]
-"1219
-[; ;OLED.c: 1219:     ssd1306_command(0xDA);
-[e ( _ssd1306_command (1 -> -> 218 `i `uc ]
-"1220
-[; ;OLED.c: 1220:     ssd1306_command(0x12);
-[e ( _ssd1306_command (1 -> -> 18 `i `uc ]
-"1221
-[; ;OLED.c: 1221:     ssd1306_command(0x81);
-[e ( _ssd1306_command (1 -> -> 129 `i `uc ]
-"1223
-[; ;OLED.c: 1223:     ssd1306_command(0xFF);
-[e ( _ssd1306_command (1 -> -> 255 `i `uc ]
-"1226
-[; ;OLED.c: 1226:     ssd1306_command(0xD9);
-[e ( _ssd1306_command (1 -> -> 217 `i `uc ]
-"1228
-[; ;OLED.c: 1228:     ssd1306_command(0xF1);
-[e ( _ssd1306_command (1 -> -> 241 `i `uc ]
-"1229
-[; ;OLED.c: 1229:     ssd1306_command(0xDB);
-[e ( _ssd1306_command (1 -> -> 219 `i `uc ]
-"1230
-[; ;OLED.c: 1230:     ssd1306_command(0x40);
-[e ( _ssd1306_command (1 -> -> 64 `i `uc ]
 "1231
-[; ;OLED.c: 1231:     ssd1306_command(0xA4);
-[e ( _ssd1306_command (1 -> -> 164 `i `uc ]
+[; ;OLED.c: 1231:     ssd1306_command(0xAE);
+[e ( _ssd1306_command (1 -> -> 174 `i `uc ]
 "1232
-[; ;OLED.c: 1232:     ssd1306_command(0xA6);
-[e ( _ssd1306_command (1 -> -> 166 `i `uc ]
+[; ;OLED.c: 1232:     ssd1306_command(0xD5);
+[e ( _ssd1306_command (1 -> -> 213 `i `uc ]
 "1233
-[; ;OLED.c: 1233:     ssd1306_command(0x2E);
-[e ( _ssd1306_command (1 -> -> 46 `i `uc ]
+[; ;OLED.c: 1233:     ssd1306_command(0xF0);
+[e ( _ssd1306_command (1 -> -> 240 `i `uc ]
 "1234
-[; ;OLED.c: 1234:     ssd1306_command(0xAF);
-[e ( _ssd1306_command (1 -> -> 175 `i `uc ]
+[; ;OLED.c: 1234:     ssd1306_command(0xA8);
+[e ( _ssd1306_command (1 -> -> 168 `i `uc ]
+"1235
+[; ;OLED.c: 1235:     ssd1306_command(64 - 1);
+[e ( _ssd1306_command (1 -> - -> 64 `i -> 1 `i `uc ]
+"1236
+[; ;OLED.c: 1236:     ssd1306_command(0xD3);
+[e ( _ssd1306_command (1 -> -> 211 `i `uc ]
+"1237
+[; ;OLED.c: 1237:     ssd1306_command(0x00);
+[e ( _ssd1306_command (1 -> -> 0 `i `uc ]
 "1238
-[; ;OLED.c: 1238:     OLED_SetFont(BIG_FONTS);
+[; ;OLED.c: 1238:     ssd1306_command(0x40 | 0x00);
+[e ( _ssd1306_command (1 -> | -> 64 `i -> 0 `i `uc ]
+"1239
+[; ;OLED.c: 1239:     ssd1306_command(0x8D);
+[e ( _ssd1306_command (1 -> -> 141 `i `uc ]
+"1242
+[; ;OLED.c: 1242:     ssd1306_command(0x14);
+[e ( _ssd1306_command (1 -> -> 20 `i `uc ]
+"1243
+[; ;OLED.c: 1243:     ssd1306_command(0x20);
+[e ( _ssd1306_command (1 -> -> 32 `i `uc ]
+"1244
+[; ;OLED.c: 1244:     ssd1306_command(0x00);
+[e ( _ssd1306_command (1 -> -> 0 `i `uc ]
+"1245
+[; ;OLED.c: 1245:     ssd1306_command(0xA0 | 0x01);
+[e ( _ssd1306_command (1 -> | -> 160 `i -> 1 `i `uc ]
+"1246
+[; ;OLED.c: 1246:     ssd1306_command(0xC8);
+[e ( _ssd1306_command (1 -> -> 200 `i `uc ]
+"1256
+[; ;OLED.c: 1256:     ssd1306_command(0xDA);
+[e ( _ssd1306_command (1 -> -> 218 `i `uc ]
+"1257
+[; ;OLED.c: 1257:     ssd1306_command(0x12);
+[e ( _ssd1306_command (1 -> -> 18 `i `uc ]
+"1258
+[; ;OLED.c: 1258:     ssd1306_command(0x81);
+[e ( _ssd1306_command (1 -> -> 129 `i `uc ]
+"1260
+[; ;OLED.c: 1260:     ssd1306_command(0xFF);
+[e ( _ssd1306_command (1 -> -> 255 `i `uc ]
+"1263
+[; ;OLED.c: 1263:     ssd1306_command(0xD9);
+[e ( _ssd1306_command (1 -> -> 217 `i `uc ]
+"1265
+[; ;OLED.c: 1265:     ssd1306_command(0xF1);
+[e ( _ssd1306_command (1 -> -> 241 `i `uc ]
+"1266
+[; ;OLED.c: 1266:     ssd1306_command(0xDB);
+[e ( _ssd1306_command (1 -> -> 219 `i `uc ]
+"1267
+[; ;OLED.c: 1267:     ssd1306_command(0x40);
+[e ( _ssd1306_command (1 -> -> 64 `i `uc ]
+"1268
+[; ;OLED.c: 1268:     ssd1306_command(0xA4);
+[e ( _ssd1306_command (1 -> -> 164 `i `uc ]
+"1269
+[; ;OLED.c: 1269:     ssd1306_command(0xA6);
+[e ( _ssd1306_command (1 -> -> 166 `i `uc ]
+"1270
+[; ;OLED.c: 1270:     ssd1306_command(0x2E);
+[e ( _ssd1306_command (1 -> -> 46 `i `uc ]
+"1271
+[; ;OLED.c: 1271:     ssd1306_command(0xAF);
+[e ( _ssd1306_command (1 -> -> 175 `i `uc ]
+"1275
+[; ;OLED.c: 1275:     OLED_SetFont(BIG_FONTS);
 [e ( _OLED_SetFont (1 &U _BIG_FONTS ]
-"1240
-[; ;OLED.c: 1240: }
-[e :UE 1854 ]
+"1277
+[; ;OLED.c: 1277: }
+[e :UE 1870 ]
 }

@@ -19509,14 +19509,14 @@ typedef struct _Current_Font_s
   uint8_t inverted;
 } Current_Font_s;
 
-char textLine1[16];
-char textLine2[16];
-char textLine3[16];
-char textLine4[16];
-char newTextLine1[16] = {'................'};
-char newTextLine2[16] = {'................'};
-char newTextLine3[16] = {'................'};
-char newTextLine4[16] = {'................'};
+char textLine1[16] = {"...............\0"};
+char textLine2[16] = {"...............\0"};
+char textLine3[16] = {"...............\0"};
+char textLine4[16] = {"...............\0"};
+char newTextLine1[16] = {"...............\0"};
+char newTextLine2[16] = {"...............\0"};
+char newTextLine3[16] = {"...............\0"};
+char newTextLine4[16] = {"...............\0"};
 char line_1_update_flag;
 char line_2_update_flag;
 char line_3_update_flag;
@@ -19536,7 +19536,7 @@ void OLED_InvertDisplay( uint8_t value );
 void OLED_SetFont( const uint8_t *font);
 # 142 "./OLED.h"
 void OLED_Write( int16_t x, int16_t y, char value );
-
+void OLED_Write_Text( int16_t x, int16_t y, char *text);
 void UpdateScreen(void);
 void UpdateScreen_Line(char line_number);
 void DisplaySettingRefresh(void);
@@ -19953,7 +19953,7 @@ void OLED_Write_Text(int16_t x, int16_t y, char *text) {
     uint8_t cnt;
     uint8_t length;
 
-    length = strlen((const char*) text);
+    length = 16;
     if (x == 254){
         x = 128 - (length * cfont.x_size);
     }
@@ -20076,15 +20076,21 @@ void UpdateScreen_Line(char line_number){
 
         case 1:
 # 1119 "OLED.c"
-            for(int i = 0;i < 16; i++){
-                if(textLine1[i]!=newTextLine1[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine1[i]);
-                    textLine1[i] = newTextLine1[i];
+            for(int i = 0;i<16;i++){
+                if(*(textLine1+i) != *(newTextLine1+i)){
                     line_1_update_flag = 1;
+                    break;
                 }
             }
 
             if(line_1_update_flag){
+
+                OLED_Write_Text(0,0,newTextLine1);
+
+                for(int i=0;i<16;i++){
+                    *(textLine1+i) = *(newTextLine1+i);
+                }
+
                 OLED_Update_Partial(line_number);
                 line_1_update_flag = 0;
             }
@@ -20093,15 +20099,21 @@ void UpdateScreen_Line(char line_number){
 
         case 2:
 
-            for(int i = 0;i < 16; i++){
-                if(textLine2[i]!=newTextLine2[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine2[i]);
-                    textLine2[i] = newTextLine2[i];
+            for(int i = 0;i<16;i++){
+                if(*(textLine2+i) != *(newTextLine2+i)){
                     line_2_update_flag = 1;
+                    break;
                 }
             }
 
             if(line_2_update_flag){
+
+                OLED_Write_Text(0,0,newTextLine2);
+
+                for(int i=0;i<16;i++){
+                    *(textLine2+i) = *(newTextLine2+i);
+                }
+
                 OLED_Update_Partial(line_number);
                 line_2_update_flag = 0;
             }
@@ -20110,15 +20122,21 @@ void UpdateScreen_Line(char line_number){
 
         case 3:
 
-            for(int i = 0;i < 16; i++){
-                if(textLine3[i]!=newTextLine3[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine3[i]);
-                    textLine3[i] = newTextLine3[i];
+            for(int i = 0;i<16;i++){
+                if(*(textLine3+i) != *(newTextLine3+i)){
                     line_3_update_flag = 1;
+                    break;
                 }
             }
 
             if(line_3_update_flag){
+
+                OLED_Write_Text(0,0,newTextLine3);
+
+                for(int i=0;i<16;i++){
+                    *(textLine3+i) = *(newTextLine3+i);
+                }
+
                 OLED_Update_Partial(line_number);
                 line_3_update_flag = 0;
             }
@@ -20127,18 +20145,25 @@ void UpdateScreen_Line(char line_number){
 
         case 4:
 
-            for(int i = 0;i < 16; i++){
-                if(textLine4[i]!=newTextLine4[i]){
-                    OLED_Write(i*(cfont.x_size - 4),0,newTextLine4[i]);
-                    textLine4[i] = newTextLine4[i];
+             for(int i = 0;i<16;i++){
+                if(*(textLine4+i) != *(newTextLine4+i)){
                     line_4_update_flag = 1;
+                    break;
                 }
             }
 
             if(line_4_update_flag){
+
+                OLED_Write_Text(0,0,newTextLine4);
+
+                for(int i=0;i<16;i++){
+                    *(textLine4+i) = *(newTextLine4+i);
+                }
+
                 OLED_Update_Partial(line_number);
                 line_4_update_flag = 0;
             }
+
         break;
 
         default:
@@ -20167,7 +20192,7 @@ void DisplaySettingRefresh(void){
     ssd1306_command(0x00);
     ssd1306_command(0xA0 | 0x01);
     ssd1306_command(0xC8);
-# 1219 "OLED.c"
+# 1244 "OLED.c"
     ssd1306_command(0xDA);
     ssd1306_command(0x12);
     ssd1306_command(0x81);

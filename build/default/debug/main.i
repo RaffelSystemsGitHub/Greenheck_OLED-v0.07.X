@@ -20337,14 +20337,14 @@ typedef struct _Current_Font_s
   uint8_t inverted;
 } Current_Font_s;
 
-char textLine1[16] = {"................"};
-char textLine2[16] = {"................"};
-char textLine3[16] = {"................"};
-char textLine4[16] = {"................"};
-char newTextLine1[16] = {"................"};
-char newTextLine2[16] = {"................"};
-char newTextLine3[16] = {"................"};
-char newTextLine4[16] = {"................"};
+char textLine1[16] = {"...............\0"};
+char textLine2[16] = {"...............\0"};
+char textLine3[16] = {"...............\0"};
+char textLine4[16] = {"...............\0"};
+char newTextLine1[16] = {"...............\0"};
+char newTextLine2[16] = {"...............\0"};
+char newTextLine3[16] = {"...............\0"};
+char newTextLine4[16] = {"...............\0"};
 char line_1_update_flag;
 char line_2_update_flag;
 char line_3_update_flag;
@@ -20364,7 +20364,7 @@ void OLED_InvertDisplay( uint8_t value );
 void OLED_SetFont( const uint8_t *font);
 # 142 "./OLED.h"
 void OLED_Write( int16_t x, int16_t y, char value );
-
+void OLED_Write_Text( int16_t x, int16_t y, char *text);
 void UpdateScreen(void);
 void UpdateScreen_Line(char line_number);
 void DisplaySettingRefresh(void);
