@@ -105,14 +105,14 @@ typedef struct _Current_Font_s
   uint8_t inverted;
 } Current_Font_s;
 
-char textLine1[TEXT_ARRAY_SIZE] =    {"...............\0"};
-char textLine2[TEXT_ARRAY_SIZE] =    {"...............\0"};
-char textLine3[TEXT_ARRAY_SIZE] =    {"...............\0"};
-char textLine4[TEXT_ARRAY_SIZE] =    {"...............\0"};
-char newTextLine1[TEXT_ARRAY_SIZE] = {"...............\0"};
-char newTextLine2[TEXT_ARRAY_SIZE] = {"...............\0"};
-char newTextLine3[TEXT_ARRAY_SIZE] = {"...............\0"};
-char newTextLine4[TEXT_ARRAY_SIZE] = {"...............\0"};
+char textLine1[TEXT_ARRAY_SIZE] = "...............\0";
+char textLine2[TEXT_ARRAY_SIZE] = "...............\0";
+char textLine3[TEXT_ARRAY_SIZE] = "...............\0";
+char textLine4[TEXT_ARRAY_SIZE] = "...............\0";
+char newTextLine1[TEXT_ARRAY_SIZE] = "...............\0";
+char newTextLine2[TEXT_ARRAY_SIZE] = "...............\0";
+char newTextLine3[TEXT_ARRAY_SIZE] = "...............\0";
+char newTextLine4[TEXT_ARRAY_SIZE] = "...............\0";
 char line_1_update_flag;
 char line_2_update_flag; 
 char line_3_update_flag;
@@ -142,7 +142,8 @@ void OLED_SetFont( const uint8_t *font);
 void OLED_Write( int16_t x, int16_t y, char value );
 void OLED_Write_Text( int16_t x, int16_t y, char *text);
 void UpdateScreen(void);
-void UpdateScreen_Line(char line_number);
+void Update_Line_Text(void);
+void Update_Display_Line(char line_number);
 void DisplaySettingRefresh(void);
 
 

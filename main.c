@@ -95,13 +95,16 @@
 #define RUN_STATUS_THRESHOLD    2.0
 #define RUN_STATUS_LOW          1.95
 
-#define FIREMAN_SET_TIMEOUT     50000       //10 sec timeout with TMR0 set for 200us interrupt.
-#define FACTORY_RESET_DELAY     25000       //Button hold time (5 sec) for factory reset.
-#define FIREMAN_SET_DELAY       10000       //button hold time (2 sec)for fireman set
-#define DEBOUNCE_CNT            20          //Tune debounce sensitivity.
-#define SPEED_1_TIME            2000        //Tune increase and decrease change time.
-#define BRIGHT_SCREEN_TIMEOUT   50000       //Set time screen is bright after input.
-#define SETTING_REFRESH         1280000     //256 sec refresh rate for display setting.
+#define TIMER0_SCALING_TEST (5*8)
+
+//Values were scaled for the new Timer0 overflow period, roughly 5x slower.
+#define FIREMAN_SET_TIMEOUT     (50000/TIMER0_SCALING_TEST)       //10 sec timeout with TMR0 set for 200us interrupt.
+#define FACTORY_RESET_DELAY     (25000/TIMER0_SCALING_TEST)      //Button hold time (5 sec) for factory reset.
+#define FIREMAN_SET_DELAY       (10000/TIMER0_SCALING_TEST)      //button hold time (2 sec)for fireman set
+#define DEBOUNCE_CNT            1//(20/TIMER0_SCALING_TEST)      //Tune debounce sensitivity in main(). NOT TIMER_0 BASED.
+#define SPEED_1_TIME            (2000/TIMER0_SCALING_TEST)      //Tune increase and decrease change time.
+#define BRIGHT_SCREEN_TIMEOUT   (50000/TIMER0_SCALING_TEST)     //Set time screen is bright after input.
+#define SETTING_REFRESH         (1280000/TIMER0_SCALING_TEST)    //256 sec refresh rate for display setting.
 
 #define DIM 0x00                
 #define BRIGHT 0xFF //Contrast brightness control values range from 0-255,.
@@ -149,7 +152,7 @@ unsigned int fireman_set_debounce = FIREMAN_SET_DELAY;
 
 void ClearText(char* textToClear){
     for(int i = 0; i < TEXT_ARRAY_SIZE; i++){
-        textToClear[i] = ' ';
+        textToClear[i] = '\0';
     }
 }
 
@@ -245,11 +248,11 @@ void main(void)
             }
             
             //Fireman mode screen update.
-            UpdateScreen_Line(1);
-            UpdateScreen_Line(2);
-            UpdateScreen_Line(3);
-            UpdateScreen_Line(4);
-            //UpdateScreen();
+            Update_Line_Text();
+            for(int i=1;i<5;i++){
+                Update_Display_Line(i);
+            }
+//            UpdateScreen();                                                                                                                                                                                                                                                                                                                                                                                  
             
             unsigned int power_led_flash_counter = 0;
             while(FIREMAN_INPUT == 0){  //wait until FIREMAN mode turned off
@@ -549,12 +552,11 @@ void main(void)
         }
         
         //Normal operation screen update.
-        UpdateScreen_Line(1);
-        UpdateScreen_Line(2);
-        UpdateScreen_Line(3);
-        UpdateScreen_Line(4);
-        //UpdateScreen();
- 
+        Update_Line_Text();
+        for(char i=1;i<5;i++){
+            Update_Display_Line(i);
+        }
+//        UpdateScreen();
         //Single button recognition section.
         btn_count = 0;
         
@@ -692,7 +694,7 @@ void main(void)
             HEFLASH_readBlock(&mode, MODE, sizeof(mode)); //Read in mode from settings.
         }
 
-        if(!factory_reset_dec){
+        if(!factory_reset_dec){                        
             fireman_set = 0;
             fireman_inc = 0;
 

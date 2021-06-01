@@ -19510,10 +19510,10 @@ void TMR0_Initialize(void)
 
 
 
-    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0b00010010);
+    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0b00010111);
 
 
-    TMR0 = 0xC7;
+    TMR0 = 0xF9;
 
 
     timer0ReloadVal= 0xC7;

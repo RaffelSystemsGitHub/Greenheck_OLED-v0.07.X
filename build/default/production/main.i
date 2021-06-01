@@ -20337,14 +20337,14 @@ typedef struct _Current_Font_s
   uint8_t inverted;
 } Current_Font_s;
 
-char textLine1[16] = {"...............\0"};
-char textLine2[16] = {"...............\0"};
-char textLine3[16] = {"...............\0"};
-char textLine4[16] = {"...............\0"};
-char newTextLine1[16] = {"...............\0"};
-char newTextLine2[16] = {"...............\0"};
-char newTextLine3[16] = {"...............\0"};
-char newTextLine4[16] = {"...............\0"};
+char textLine1[16] = "...............\0";
+char textLine2[16] = "...............\0";
+char textLine3[16] = "...............\0";
+char textLine4[16] = "...............\0";
+char newTextLine1[16] = "...............\0";
+char newTextLine2[16] = "...............\0";
+char newTextLine3[16] = "...............\0";
+char newTextLine4[16] = "...............\0";
 char line_1_update_flag;
 char line_2_update_flag;
 char line_3_update_flag;
@@ -20366,18 +20366,19 @@ void OLED_SetFont( const uint8_t *font);
 void OLED_Write( int16_t x, int16_t y, char value );
 void OLED_Write_Text( int16_t x, int16_t y, char *text);
 void UpdateScreen(void);
-void UpdateScreen_Line(char line_number);
+void Update_Line_Text(void);
+void Update_Display_Line(char line_number);
 void DisplaySettingRefresh(void);
 # 58 "main.c" 2
-# 120 "main.c"
-volatile int decrement = 20;
-volatile int increase_btn_debounce = 20;
-volatile int decrease_btn_debounce = 20;
-volatile int mode_btn_debounce = 20;
-volatile int factory_reset_dec = 25000;
-volatile int fireman_inc = 50000;
-volatile int bright_screen_timer = 50000;
-volatile long setting_refresh_timer = 1280000;
+# 123 "main.c"
+volatile int decrement = 1;
+volatile int increase_btn_debounce = 1;
+volatile int decrease_btn_debounce = 1;
+volatile int mode_btn_debounce = 1;
+volatile int factory_reset_dec = (25000/(5*8));
+volatile int fireman_inc = (50000/(5*8));
+volatile int bright_screen_timer = (50000/(5*8));
+volatile long setting_refresh_timer = (1280000/(5*8));
 
 _Bool mode_change_flag = 0;
 _Bool fireman_set = 0;
@@ -20397,12 +20398,12 @@ unsigned char frmn_speed = 100;
 float ext_speed = 0;
 unsigned char speedChangeState = 0;
 unsigned int speedChangeTimer = 0;
-unsigned int fireman_set_debounce = 10000;
+unsigned int fireman_set_debounce = (10000/(5*8));
 
 
 void ClearText(char* textToClear){
     for(int i = 0; i < 16; i++){
-        textToClear[i] = ' ';
+        textToClear[i] = '\0';
     }
 }
 
@@ -20498,10 +20499,10 @@ void main(void)
             }
 
 
-            UpdateScreen_Line(1);
-            UpdateScreen_Line(2);
-            UpdateScreen_Line(3);
-            UpdateScreen_Line(4);
+            Update_Line_Text();
+            for(int i=1;i<5;i++){
+                Update_Display_Line(i);
+            }
 
 
             unsigned int power_led_flash_counter = 0;
@@ -20683,7 +20684,7 @@ void main(void)
 
 
                 if(!updateAutoRemoteDelay){
-                    updateAutoRemoteDelay = 20;
+                    updateAutoRemoteDelay = 1;
                     sprintf(newTextLine4,"READ:%d.%dV", integer, decimal);
 
                 }else{
@@ -20802,11 +20803,10 @@ void main(void)
         }
 
 
-        UpdateScreen_Line(1);
-        UpdateScreen_Line(2);
-        UpdateScreen_Line(3);
-        UpdateScreen_Line(4);
-
+        Update_Line_Text();
+        for(char i=1;i<5;i++){
+            Update_Display_Line(i);
+        }
 
 
         btn_count = 0;
@@ -20817,7 +20817,7 @@ void main(void)
                 increase_btn_debounce--;
             }
         }else{
-            increase_btn_debounce = 20;
+            increase_btn_debounce = 1;
         }
 
         if((!RB2)){
@@ -20826,7 +20826,7 @@ void main(void)
                 decrease_btn_debounce--;
             }
         }else{
-            decrease_btn_debounce = 20;
+            decrease_btn_debounce = 1;
         }
 
         if((!RB0)){
@@ -20835,7 +20835,7 @@ void main(void)
                 mode_btn_debounce--;
             }
         }else{
-            mode_btn_debounce = 20;
+            mode_btn_debounce = 1;
         }
 
 
@@ -20844,14 +20844,14 @@ void main(void)
                 decrement--;
             }else{
 
-                bright_screen_timer = 50000;
+                bright_screen_timer = (50000/(5*8));
 
                 if(!increase_btn_debounce){
                     if((RB5 == 1) && ((!RB2) != 1)){
                         if(!speedChangeTimer){
                             if(speedChangeState<4){
                                 speedChangeState++;
-                                speedChangeTimer = 2000;
+                                speedChangeTimer = (2000/(5*8));
                             }
 
                             if(fireman_set){
@@ -20878,7 +20878,7 @@ void main(void)
                         if(!speedChangeTimer){
                             if(speedChangeState<4){
                                 speedChangeState++;
-                                speedChangeTimer = 2000;
+                                speedChangeTimer = (2000/(5*8));
                             }
                             if(fireman_set)
                             {
@@ -20932,7 +20932,7 @@ void main(void)
                 }
             }
         }else{
-            decrement = 20;
+            decrement = 1;
         }
 
         if(updateAutoRemoteDelay){
@@ -20967,7 +20967,7 @@ void main(void)
     if(setting_refresh_flag){
        DisplaySettingRefresh();
        setting_refresh_flag = 0;
-       setting_refresh_timer = 1280000;
+       setting_refresh_timer = (1280000/(5*8));
     }
 }
 
@@ -20987,14 +20987,14 @@ void __attribute__((picinterrupt(("")))) __ISR(void){
             if(fireman_set_debounce){
                 fireman_set_debounce--;
                 if(!fireman_set_debounce){
-                    fireman_inc = 50000;
+                    fireman_inc = (50000/(5*8));
                     fireman_set = 1;
                     HEFLASH_writeBlock(0, &mode, sizeof(mode));
                     mode = 4;
                 }
             }
         }else{
-            fireman_set_debounce = 10000;
+            fireman_set_debounce = (10000/(5*8));
         }
 
         if(increase_btn_debounce && !(decrease_btn_debounce || mode_btn_debounce)){
@@ -21003,7 +21003,7 @@ void __attribute__((picinterrupt(("")))) __ISR(void){
             }
         }
         else{
-            factory_reset_dec = 25000;
+            factory_reset_dec = (25000/(5*8));
         }
 
         if(increase_btn_debounce && decrease_btn_debounce && mode_btn_debounce){

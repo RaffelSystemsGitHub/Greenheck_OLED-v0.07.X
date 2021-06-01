@@ -521,7 +521,7 @@ void OLED_Update(void) {
 //}
 
 void OLED_Update_Partial(char line) {
-    line = (line-1)*2;
+    uint8_t page = ((line-1)*2);
     uint16_t i = 0;
     uint8_t x = 0;
     ssd1306_command(SSD1306_SET_COLUMN_ADDR);
@@ -529,9 +529,9 @@ void OLED_Update_Partial(char line) {
     ssd1306_command(SSD1306_LCDWIDTH - 1); // Column end address (127 = reset)
 
     ssd1306_command(SSD1306_SET_PAGE_ADDR);
-    ssd1306_command(line); // Page start address (0 = reset)
+    ssd1306_command(page); // Page start address (0 = reset)
 #if SSD1306_LCDHEIGHT == 64
-    ssd1306_command(line + 1); // Page end address
+    ssd1306_command(page + 1); // Page end address
 #endif
 #if SSD1306_LCDHEIGHT == 32
     ssd1306_command(3); // Page end address
@@ -543,13 +543,13 @@ void OLED_Update_Partial(char line) {
     I2C_Start();
     I2C_Send(SSD1306_ADDR << 1);
     I2C_Send(0x40);
-    for (i = 0; i < BUFFER_SIZE; ) {
+    for (i = 0; i < BUFFER_SIZE; i++) {
 
         for (x = 0; x < 16; x++) {
             I2C_Send(buffer[i]);
             i++;
         }
-        
+        i--;
     }
 
     I2C_Stop();
@@ -948,7 +948,9 @@ void OLED_Write_Text(int16_t x, int16_t y, char *text) {
     uint8_t cnt;
     uint8_t length;
 
-    length = TEXT_ARRAY_SIZE;//strlen((const char*) text);
+    //strlen() doesn't work when modifying strings using sprintf() since it can 
+    //add the NULL character anywhere in the string. - Alex L.
+    length = TEXT_ARRAY_SIZE;//strlen((const char*) text); 
     if (x == RIGHT){
         x = 128 - (length * cfont.x_size);
     }
@@ -985,7 +987,7 @@ static void ssd1306_data(uint8_t value) {
     I2C_Send(SSD1306_ADDR << 1);
     I2C_Send(control);
     I2C_Send(value);
-    I2C_Stop();
+    I2C_Stop();                                                                                                                         
 }
 
 /**
@@ -1098,119 +1100,112 @@ void UpdateScreen(void){
     }
 }
 
-void UpdateScreen_Line(char line_number){ 
-    char numSpaces = 0;
+void Update_Line_Text(void){ 
+//    char numSpaces = 0;
+//    
+//    for(int i = 0;i < 16; i++){
+//        if((textLine1[i]!=newTextLine1[i]) || line_1_update_flag){
+//            OLED_Write((i*(cfont.x_size - 4))-(4*numSpaces),0,newTextLine1[i]);
+//            textLine1[i] = newTextLine1[i];
+//            line_1_update_flag = 1;
+//        }
+//        if(newTextLine1[i]==' '){
+//            numSpaces++;
+//        }
+//    }
+    
+    //Check if line text string changed from previous update.
+    for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
+        if(*(textLine1+i) != *(newTextLine1+i)){
+            
+            *(textLine1+i) = *(newTextLine1+i);
+            line_1_update_flag = 1;
+        }
+    }
+/******************************************************************************/   
+    for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
+        if(*(textLine2+i) != *(newTextLine2+i)){
+            
+            *(textLine2+i) = *(newTextLine2+i);
+            line_2_update_flag = 1;
+        }
+    }
+/******************************************************************************/ 
+    for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
+        if(*(textLine3+i) != *(newTextLine3+i)){
+            
+            *(textLine3+i) = *(newTextLine3+i);
+            line_3_update_flag = 1;
+        }
+    }
+/******************************************************************************/ 
+     for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
+        if(*(textLine4+i) != *(newTextLine4+i)){
+            
+            *(textLine4+i) = *(newTextLine4+i);
+            line_4_update_flag = 1;
+        }
+    }
+}
+
+void Update_Display_Line(char line_number){ 
     
     switch(line_number){
-    
-        case 1:
-            
-//            for(int i = 0;i < 16; i++){
-//                if((textLine1[i]!=newTextLine1[i]) || line_1_update_flag){
-//                    OLED_Write((i*(cfont.x_size - 4))-(4*numSpaces),0,newTextLine1[i]);
-//                    textLine1[i] = newTextLine1[i];
-//                    line_1_update_flag = 1;
-//                }
-//                if(newTextLine1[i]==' '){
-//                    numSpaces++;
-//                }
-//            }
+//    char numSpaces = 0;
+//
+//    for(int i = 0;i < 16; i++){
+//        if((textLine1[i]!=newTextLine1[i]) || line_1_update_flag){
+//            OLED_Write((i*(cfont.x_size - 4))-(4*numSpaces),0,newTextLine1[i]);
+//            textLine1[i] = newTextLine1[i];
+//            line_1_update_flag = 1;
+//        }
+//        if(newTextLine1[i]==' '){
+//            numSpaces++;
+//        }
+//    }
             //Check if line text string changed from previous update.
-            for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
-                if(*(textLine1+i) != *(newTextLine1+i)){
-                    line_1_update_flag = 1;
-                    break;
-                }
-            }
-            
+        case 1:
             if(line_1_update_flag){
-                
+
                 OLED_Write_Text(0,0,newTextLine1);
-                
-                for(int i=0;i<TEXT_ARRAY_SIZE;i++){
-                    *(textLine1+i) = *(newTextLine1+i);
-                }
-                
                 OLED_Update_Partial(line_number);
                 line_1_update_flag = 0;
             }
-            
         break;
         
         case 2:
-            
-            for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
-                if(*(textLine2+i) != *(newTextLine2+i)){
-                    line_2_update_flag = 1;
-                    break;
-                }
-            }
-            
             if(line_2_update_flag){
-                
+
                 OLED_Write_Text(0,0,newTextLine2);
-                
-                for(int i=0;i<TEXT_ARRAY_SIZE;i++){
-                    *(textLine2+i) = *(newTextLine2+i);
-                }
-                
                 OLED_Update_Partial(line_number);
                 line_2_update_flag = 0;
             }
-        
         break;
-
+        
         case 3:
-            
-            for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
-                if(*(textLine3+i) != *(newTextLine3+i)){
-                    line_3_update_flag = 1;
-                    break;
-                }
-            }
-            
             if(line_3_update_flag){
-                
+
                 OLED_Write_Text(0,0,newTextLine3);
-                
-                for(int i=0;i<TEXT_ARRAY_SIZE;i++){
-                    *(textLine3+i) = *(newTextLine3+i);
-                }
-                
                 OLED_Update_Partial(line_number);
                 line_3_update_flag = 0;
             }
-        
         break;
-
+        
         case 4:
-            
-             for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
-                if(*(textLine4+i) != *(newTextLine4+i)){
-                    line_4_update_flag = 1;
-                    break;
-                }
-            }
-            
             if(line_4_update_flag){
-                
+
                 OLED_Write_Text(0,0,newTextLine4);
-                
-                for(int i=0;i<TEXT_ARRAY_SIZE;i++){
-                    *(textLine4+i) = *(newTextLine4+i);
-                }
-                
                 OLED_Update_Partial(line_number);
                 line_4_update_flag = 0;
             }
-             
         break;
-
+        
         default:
-            //Do nothing.
-        break; 
+                //Do nothing.
+        break;
     }
 }
+
 
 
 //Refresh display settings. Useful for noisy environments or extended periods without power cycles. 

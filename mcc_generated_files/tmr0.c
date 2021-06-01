@@ -65,11 +65,11 @@ void TMR0_Initialize(void)
 {
     // Set TMR0 to the options selected in the User Interface
 	
-    // PSA assigned; PS 1:8; TMRSE Increment_hi_lo; mask the nWPUEN and INTEDG bits
-    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0b00010010); //1101 0011 & 0011 1111 -> 0001 0011
+    // PSA assigned; PS 1:256; TMRSE Increment_hi_lo; mask the nWPUEN and INTEDG bits
+    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0b00010111); //1101 0011 & 0011 1111 -> 0001 0011
 
-    // TMR0 199, roughly 200us process overflow 
-    TMR0 = 0xC7;
+    // TMR0 249, roughly 8ms process overflow 
+    TMR0 = 0xF9;//0xC7; 
 	
     // Load the TMR value to reload variable
     timer0ReloadVal= 0xC7;

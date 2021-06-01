@@ -1732,11 +1732,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TMR0_Initialize ]
 [f ]
 "69
-[; ;mcc_generated_files/tmr0.c: 69:     OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0b00010010);
-[e = _OPTION_REG -> | & -> _OPTION_REG `i -> 192 `i -> 18 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 69:     OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0b00010111);
+[e = _OPTION_REG -> | & -> _OPTION_REG `i -> 192 `i -> 23 `i `uc ]
 "72
-[; ;mcc_generated_files/tmr0.c: 72:     TMR0 = 0xC7;
-[e = _TMR0 -> -> 199 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 72:     TMR0 = 0xF9;
+[e = _TMR0 -> -> 249 `i `uc ]
 "75
 [; ;mcc_generated_files/tmr0.c: 75:     timer0ReloadVal= 0xC7;
 [e = _timer0ReloadVal -> -> 199 `i `uc ]
