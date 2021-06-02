@@ -8,11 +8,9 @@
     main.c
 
   Summary:
-    Greenheck HOA controller, utilizing SSD1306 0.96" OLED 128x64 display. Peripheral communication is I2C and non-volatile memory is
+    Greenheck HOA controller, utilizing SPD-0301 1.5" OLED 128x64 display. Peripheral communication is I2C and non-volatile memory is
     High-Endurance Flash memory.
- * 
- *  -Buffer size was reduced to fit in program memory, disables the bottom right corner of the OLED display.
- *  -Needs optimization and debugging for consistent button presses. Code is too bloated.
+
  
   Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
@@ -57,6 +55,8 @@
 #include "I2C.h"     //Non-standard files. 
 #include "OLED.h"    //
 
+
+#define VERSION ("V1.00")
 
 #define DRY_INPUT       RA3    //Input pin active on continuity.
 #define SPEED_INPUT     AN9    //ADC pin for external auto speed reference.
@@ -202,6 +202,28 @@ void main(void)
     {     
         //Main loop WDT clear.
         WDTclear();
+                
+        //Version checking function.
+        if(MODE_BUTTON && INCREASE_BUTTON){
+            
+            ClearText(newTextLine1);
+
+            ClearText(newTextLine2);
+            sprintf(newTextLine2,"   %s   ", VERSION );
+            
+            ClearText(newTextLine3);
+            
+            ClearText(newTextLine4);
+            
+            
+            UpdateScreen();        
+             
+            //Clear WDT while displaying version.
+            WDTclear();
+            
+            __delay_ms(3000);
+            
+        }
         
         //Fireman override loop.
         if(FIREMAN_INPUT == 0)
@@ -532,6 +554,8 @@ void main(void)
                 //RUN_STATUS_THRESHOLD goes low, set ports.
                 RUN_STATUS = 0;
                     
+                
+                
             break;
         } 
         

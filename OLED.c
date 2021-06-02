@@ -470,7 +470,7 @@ void OLED_Update(void) {
     I2C_Send(0x40);
     for (i = 0; i < (SSD1306_LCDWIDTH * SSD1306_LCDHEIGHT / 8); i++) {
 
-        for (x = 0; x < 16; x++) {
+        for (x = 0; x < TEXT_ARRAY_SIZE; x++) {
             I2C_Send(buffer[i]);
             i++;
         }
@@ -510,7 +510,7 @@ void OLED_Update_Partial(char page) {
     I2C_Send(0x40);
     for (i = page * SSD1306_LCDWIDTH; i < ((page+2) * SSD1306_LCDWIDTH); ) {
 
-        for (x = 0; x < 16; x++) {
+        for (x = 0; x < TEXT_ARRAY_SIZE; x++) {
             I2C_Send(buffer[i]);
             i++;
         }
@@ -999,7 +999,7 @@ static uint8_t height(void) {
 //TEXT_ARRAY_SIZE and line number as arguments?
 void UpdateScreen(){ 
     char numSpaces = 0;
-    for(int i = 0;i < 16; i++){
+    for(int i = 0;i < TEXT_ARRAY_SIZE; i++){
         if((textLine1[i]!=newTextLine1[i]) || line_1_update_flag){
             OLED_Write((i*(cfont.x_size - 4))-(4*numSpaces),0,newTextLine1[i]);
             textLine1[i] = newTextLine1[i];
@@ -1018,7 +1018,7 @@ void UpdateScreen(){
 //        }
 //    }
        
-    for(int i = 0;i < 16; i++){
+    for(int i = 0;i < TEXT_ARRAY_SIZE; i++){
         if(textLine2[i]!=newTextLine2[i]){
             OLED_Write(i*(cfont.x_size - 4),16,newTextLine2[i]);
             textLine2[i] = newTextLine2[i];
@@ -1026,7 +1026,7 @@ void UpdateScreen(){
         }
     }
        
-    for(int i = 0;i < 16; i++){
+    for(int i = 0;i < TEXT_ARRAY_SIZE; i++){
         if(textLine3[i]!=newTextLine3[i]){
             OLED_Write(i*(cfont.x_size - 4),32,newTextLine3[i]);
             textLine3[i] = newTextLine3[i];
@@ -1034,7 +1034,7 @@ void UpdateScreen(){
         }
     }
 
-    for(int i = 0;i < 16; i++){
+    for(int i = 0;i < TEXT_ARRAY_SIZE; i++){
         if(textLine4[i]!=newTextLine4[i]){
             OLED_Write(i*(cfont.x_size - 4),48,newTextLine4[i]);
             textLine4[i] = newTextLine4[i];
