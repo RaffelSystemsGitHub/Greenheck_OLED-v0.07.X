@@ -4,7 +4,7 @@
 # 288 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
+# 1 "C:/Users/aLogisz/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\common\\doprnt.c" 2
 
@@ -812,7 +812,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\common\\doprnt.c" 2
 
-# 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\inline.h" 1 3
+# 1 "C:/Users/aLogisz/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\inline.h" 1 3
 # 11 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\common\\doprnt.c" 2
 # 55 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\common\\doprnt.c"
 static int flags, prec, width;
@@ -890,6 +890,51 @@ static int dtoa(FILE *fp, long long d)
 
     return pad(fp, &dbuf[i], w);
 }
+# 568 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\common\\doprnt.c"
+static int stoa(FILE *fp, char *s)
+{
+    char *cp, nuls[] = "(null)";
+    int i, l, p, w;
+
+
+    cp = s;
+    if (!cp) {
+        cp = nuls;
+    }
+
+
+    l = (int)strlen(cp);
+    p = prec;
+    l = (!(p < 0) && (p < l)) ? p : l;
+    p = l;
+    w = width;
+
+
+    if (!(flags & (1 << 0))) {
+        while (l < w) {
+            fputc(' ', fp);
+            ++l;
+        }
+    }
+
+
+    i = 0;
+    while (i < p) {
+        fputc(*cp, fp);
+        ++cp;
+        ++i;
+    }
+
+
+    if (flags & (1 << 0)) {
+        while (l < w) {
+            fputc(' ', fp);
+            ++l;
+        }
+    }
+
+    return l;
+}
 # 692 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\common\\doprnt.c"
 static int vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
 {
@@ -913,6 +958,14 @@ static int vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
             ll = (long long)(*(int *)__va_arg(*(int **)ap, (int)0));
 
             return dtoa(fp, ll);
+        }
+# 1171 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\common\\doprnt.c"
+        if (*fmt[0] == 's') {
+
+            ++*fmt;
+            cp = (*(char * *)__va_arg(*(char * **)ap, (char *)0));
+
+            return stoa(fp, cp);
         }
 # 1372 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\common\\doprnt.c"
         if ((*fmt)[0] == '%') {

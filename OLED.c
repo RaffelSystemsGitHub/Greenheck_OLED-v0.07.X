@@ -323,8 +323,8 @@ static uint8_t buffer[BUFFER_SIZE/*SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH / 8*/] =
 
 
 /* Local Function Prototypes */
-static void ssd1306_command(uint8_t command);
-static void ssd1306_data(uint8_t value);
+void ssd1306_command(uint8_t command);
+void ssd1306_data(uint8_t value);
 static uint8_t width(void);
 static uint8_t height(void);
 //static void swap_num(uint16_t *a, uint16_t *b);
@@ -967,7 +967,7 @@ void OLED_Write_Text(int16_t x, int16_t y, char *text) {
  *
  * @param command: command to sent to Controller
  */
-static void ssd1306_command(uint8_t command) {
+void ssd1306_command(uint8_t command) {
     uint8_t control = 0x00; // Co=0, D/C=0
     I2C_Start();
     I2C_Send(SSD1306_ADDR << 1); //0b0011 1100 << 1 => 0b0111 1000 0x78
@@ -981,7 +981,7 @@ static void ssd1306_command(uint8_t command) {
  *
  * @param value: Send Data to OLED Controller
  */
-static void ssd1306_data(uint8_t value) {
+void ssd1306_data(uint8_t value) {
     uint8_t control = 0x40; // Co = 0, D/C = 1
     I2C_Start();
     I2C_Send(SSD1306_ADDR << 1);
@@ -1032,172 +1032,110 @@ static uint8_t height(void) {
     return retVal;
 }*/
 
-//In the future, may want to break down into modular parts. Utilize char array, 
-//TEXT_ARRAY_SIZE and line number as arguments?
-void UpdateScreen(void){ 
-    char numSpaces = 0;
-    for(int i = 0;i < 16; i++){
-        if((textLine1[i]!=newTextLine1[i]) || line_1_update_flag){
-            OLED_Write((i*(cfont.x_size - 4))-(4*numSpaces),0,newTextLine1[i]);
-            textLine1[i] = newTextLine1[i];
-            line_1_update_flag = 1;
-        }
-        if(newTextLine1[i]==' '){
-            numSpaces++;
-        }
-    }
-    
-//    for(int i = 0;i < 16; i++){
-//        if(textLine1[i]!=newTextLine1[i]){
-//            OLED_Write(i*(cfont.x_size - 4),0,newTextLine1[i]);
-//            textLine1[i] = newTextLine1[i];
-//            line_1_update_flag = 1;
-//        }
-//    }
-       
-    for(int i = 0;i < 16; i++){
-        if(textLine2[i]!=newTextLine2[i]){
-            OLED_Write(i*(cfont.x_size - 4),16,newTextLine2[i]);
-            textLine2[i] = newTextLine2[i];
-            line_2_update_flag = 1;
-        }
-    }
-       
-    for(int i = 0;i < 16; i++){
-        if(textLine3[i]!=newTextLine3[i]){
-            OLED_Write(i*(cfont.x_size - 4),32,newTextLine3[i]);
-            textLine3[i] = newTextLine3[i];
-            line_3_update_flag = 1;
-        }
-    }
-
-    for(int i = 0;i < 16; i++){
-        if(textLine4[i]!=newTextLine4[i]){
-            OLED_Write(i*(cfont.x_size - 4),48,newTextLine4[i]);
-            textLine4[i] = newTextLine4[i];
-            line_4_update_flag = 1;
-        }
-    }
-    
-    if(line_1_update_flag){
-        OLED_Update_Partial(1);
-        line_1_update_flag = 0;
-    }
-    
-    if(line_2_update_flag){
-        OLED_Update_Partial(2);
-        line_2_update_flag = 0;
-    }
-    
-    if(line_3_update_flag){
-        OLED_Update_Partial(3);
-        line_3_update_flag = 0;
-    }
-    
-    if(line_4_update_flag){
-        OLED_Update_Partial(4);
-        line_4_update_flag = 0;
-    }
-}
-
-void Update_Line_Text(void){ 
-//    char numSpaces = 0;
-//    
-//    for(int i = 0;i < 16; i++){
-//        if((textLine1[i]!=newTextLine1[i]) || line_1_update_flag){
-//            OLED_Write((i*(cfont.x_size - 4))-(4*numSpaces),0,newTextLine1[i]);
-//            textLine1[i] = newTextLine1[i];
-//            line_1_update_flag = 1;
-//        }
-//        if(newTextLine1[i]==' '){
-//            numSpaces++;
-//        }
-//    }
-    
-    //Check if line text string changed from previous update.
-    for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
-        if(*(textLine1+i) != *(newTextLine1+i)){
-            
-            *(textLine1+i) = *(newTextLine1+i);
-            line_1_update_flag = 1;
-        }
-    }
-/******************************************************************************/   
-    for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
-        if(*(textLine2+i) != *(newTextLine2+i)){
-            
-            *(textLine2+i) = *(newTextLine2+i);
-            line_2_update_flag = 1;
-        }
-    }
-/******************************************************************************/ 
-    for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
-        if(*(textLine3+i) != *(newTextLine3+i)){
-            
-            *(textLine3+i) = *(newTextLine3+i);
-            line_3_update_flag = 1;
-        }
-    }
-/******************************************************************************/ 
-     for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
-        if(*(textLine4+i) != *(newTextLine4+i)){
-            
-            *(textLine4+i) = *(newTextLine4+i);
-            line_4_update_flag = 1;
-        }
-    }
-}
-
 void Update_Display_Line(char line_number){ 
-    
+        
+    char numSpaces =0;  
+                        
     switch(line_number){
-//    char numSpaces = 0;
-//
-//    for(int i = 0;i < 16; i++){
-//        if((textLine1[i]!=newTextLine1[i]) || line_1_update_flag){
-//            OLED_Write((i*(cfont.x_size - 4))-(4*numSpaces),0,newTextLine1[i]);
-//            textLine1[i] = newTextLine1[i];
-//            line_1_update_flag = 1;
-//        }
-//        if(newTextLine1[i]==' '){
-//            numSpaces++;
-//        }
-//    }
-            //Check if line text string changed from previous update.
+//        OLED_Write(i*(cfont.x_size - 4)-(4*numSpaces),0,*(newTextLine4+i));
+        
         case 1:
-            if(line_1_update_flag){
 
-                OLED_Write_Text(0,0,newTextLine1);
-                OLED_Update_Partial(line_number);
-                line_1_update_flag = 0;
+            if(memcmp(textLine1,newTextLine1,TEXT_ARRAY_SIZE)){
+                
+                for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
+
+                    *(textLine1+i) = *(newTextLine1+i);
+ 
+                    
+                    
+                    if(*(currentText+i)!=*(newTextLine1+i)){
+
+                        OLED_Write(i*(cfont.x_size - 4)-(4*numSpaces),0,*(newTextLine1+i));
+
+                        *(currentText+i) = *(newTextLine1+i);
+
+                    }
+                    
+                    if(*(newTextLine1+i) == ' '){
+                        numSpaces++;
+                    }
             }
+            
+            OLED_Update_Partial(line_number);
+
+            }
+                
+
         break;
         
         case 2:
-            if(line_2_update_flag){
+            
+             if(memcmp(textLine2,newTextLine2,TEXT_ARRAY_SIZE)){
+                
+                for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
 
-                OLED_Write_Text(0,0,newTextLine2);
-                OLED_Update_Partial(line_number);
-                line_2_update_flag = 0;
+                    *(textLine2+i) = *(newTextLine2+i);
+ 
+                if(*(currentText+i)!=*(newTextLine2+i)){
+
+                    OLED_Write(i*(cfont.x_size - 4),0,*(newTextLine2+i));
+                    
+                    *(currentText+i) = *(newTextLine2+i);
+
+                }
             }
+            
+            OLED_Update_Partial(line_number);
+
+            }
+                
         break;
         
         case 3:
-            if(line_3_update_flag){
+            
+            if(memcmp(textLine3,newTextLine3,TEXT_ARRAY_SIZE)){
+                
+                for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
 
-                OLED_Write_Text(0,0,newTextLine3);
-                OLED_Update_Partial(line_number);
-                line_3_update_flag = 0;
+                    *(textLine3+i) = *(newTextLine3+i);
+ 
+                if(*(currentText+i)!=*(newTextLine3+i)){
+
+                    OLED_Write(i*(cfont.x_size - 4),0,*(newTextLine3+i));
+                    
+                    *(currentText+i) = *(newTextLine3+i);
+
+                }
             }
+            
+            OLED_Update_Partial(line_number);
+
+            }
+                
         break;
         
-        case 4:
-            if(line_4_update_flag){
+        case 4:     
+            
+            if(memcmp(textLine4,newTextLine4,TEXT_ARRAY_SIZE)){
+                
+                for(int i = 0;i<TEXT_ARRAY_SIZE;i++){
 
-                OLED_Write_Text(0,0,newTextLine4);
-                OLED_Update_Partial(line_number);
-                line_4_update_flag = 0;
+                    *(textLine4+i) = *(newTextLine4+i);
+ 
+                if(*(currentText+i)!=*(newTextLine4+i)){
+
+                    OLED_Write(i*(cfont.x_size - 4),0,*(newTextLine4+i));
+                    
+                    *(currentText+i) = *(newTextLine4+i);
+
+                }
             }
+            
+            OLED_Update_Partial(line_number);
+
+            }
+            
         break;
         
         default:
@@ -1213,7 +1151,7 @@ void DisplaySettingRefresh(void){
     
     ssd1306_command(SSD1306_DISPLAY_OFF);
     ssd1306_command(SSD1306_SET_DISPLAY_CLOCK_DIV_RATIO);
-    ssd1306_command(0xF0); //Set internal clock to max freq. (~540kHz). 0x80 Default. 
+    ssd1306_command(0xF0); //Set internal clock to max freq. 0x80 Default. 
     ssd1306_command(SSD1306_SET_MULTIPLEX_RATIO);
     ssd1306_command(SSD1306_LCDHEIGHT - 1);
     ssd1306_command(SSD1306_SET_DISPLAY_OFFSET);

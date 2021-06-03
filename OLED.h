@@ -89,7 +89,7 @@ extern "C"
 #define SSD1306_SET_VCOM_DESELECT                       0xDB    //
     
     
-#define TEXT_ARRAY_SIZE 16
+#define TEXT_ARRAY_SIZE 11
     
 extern const uint8_t SMALL_FONTS[];
 extern const uint8_t TINY_FONTS[];
@@ -105,20 +105,19 @@ typedef struct _Current_Font_s
   uint8_t inverted;
 } Current_Font_s;
 
-char textLine1[TEXT_ARRAY_SIZE] = "...............\0";
-char textLine2[TEXT_ARRAY_SIZE] = "...............\0";
-char textLine3[TEXT_ARRAY_SIZE] = "...............\0";
-char textLine4[TEXT_ARRAY_SIZE] = "...............\0";
-char newTextLine1[TEXT_ARRAY_SIZE] = "...............\0";
-char newTextLine2[TEXT_ARRAY_SIZE] = "...............\0";
-char newTextLine3[TEXT_ARRAY_SIZE] = "...............\0";
-char newTextLine4[TEXT_ARRAY_SIZE] = "...............\0";
-char line_1_update_flag;
-char line_2_update_flag; 
-char line_3_update_flag;
-char line_4_update_flag;
+char textLine1[TEXT_ARRAY_SIZE] = "..........\0";
+char textLine2[TEXT_ARRAY_SIZE] = "..........\0";
+char textLine3[TEXT_ARRAY_SIZE] = "..........\0";
+char textLine4[TEXT_ARRAY_SIZE] = "..........\0";
+char newTextLine1[TEXT_ARRAY_SIZE] = "..........\0";
+char newTextLine2[TEXT_ARRAY_SIZE] = "..........\0";
+char newTextLine3[TEXT_ARRAY_SIZE] = "..........\0";
+char newTextLine4[TEXT_ARRAY_SIZE] = "..........\0";
+char currentText[TEXT_ARRAY_SIZE]  = "..........\0";
 
 /*Function Prototypes*/
+void ssd1306_command(uint8_t command);
+void ssd1306_data(uint8_t value);
 void OLED_Init( void );
 uint8_t OLED_Width( void );
 uint8_t OLED_Height( void );

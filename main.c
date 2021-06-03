@@ -58,6 +58,8 @@
 #include "OLED.h"    //
 
 
+#define VERSION ("VX.YY")
+
 #define DRY_INPUT       RA3    //Input pin active on continuity.
 #define SPEED_INPUT     AN9    //ADC pin for external auto speed reference.
 #define MODE_BUTTON     (!RB0)    //Input pin to toggle mode.
@@ -81,12 +83,6 @@
 #define AUTO_LOCAL    2   //
 #define AUTO_REMOTE   3   //
 #define FIREMAN_SET   4   //Fireman "mode" state. Only set by ISR and used to display fireman speed reference.
-
-#define INCREASE_SPEED          0b0100
-#define DECREASE_SPEED          0b0010
-#define TOGGLE_MODE             0b0001 
-#define SET_FIREMAN_SPEED       0b0110
-#define FACTORY_RESET           0b0011
 
 #define AUX_HIGH                1.9
 #define AUX_THRESHOLD           1.85
@@ -117,7 +113,7 @@
 //Scaling 0.00488 up by 2.5 for hardware gives 0.0122V.
 #define EXTERNAL_SPEED_SCALER (2.5*5/1024)
 
-#define FILTER_SAMPLE_SIZE 50
+#define FILTER_SAMPLE_SIZE 10
 #define FILTER_ARRAY_INDEX (FILTER_SAMPLE_SIZE-1)
 
 volatile int decrement = DEBOUNCE_CNT;
@@ -129,25 +125,22 @@ volatile int fireman_inc = FIREMAN_SET_TIMEOUT;
 volatile int bright_screen_timer = BRIGHT_SCREEN_TIMEOUT;
 volatile long setting_refresh_timer = SETTING_REFRESH;
 
-bool mode_change_flag = 0;
-bool fireman_set = 0;
-bool factory_reset_enable = 0;
+volatile bool mode_change_flag = 0;
+volatile bool fireman_set = 0;
 bool press = 0;                 //Button debounce flag.
-bool setting_refresh_flag = 0;
-
-static char buttons = 0;               //State of all buttons.
-static char last_buttons = 0;               //State of all buttons.
+volatile bool setting_refresh_flag = 0;
+volatile bool blackout_screen_flag = 0;
 
 char btn_count = 0;
 char updateAutoRemoteDelay = 0;
 
-unsigned char mode = 0;        //OFF == 0/HAND == 1/AUTO_LOCAL == 2/AUTO_REMOTE == 3.
-unsigned char speed = 50;       //Range from 0-10 volts. (DAC range 0-100)
-unsigned char frmn_speed = 100;   //Range from 0-10 volts. (DAC range 0-100)
-float ext_speed = 0;    //Range from 0-10 volts. (Range 0-1024)
-unsigned char speedChangeState = 0;
-unsigned int speedChangeTimer = 0;
-unsigned int fireman_set_debounce = FIREMAN_SET_DELAY;
+volatile unsigned char mode = 0;          //OFF == 0/HAND == 1/AUTO_LOCAL == 2/AUTO_REMOTE == 3.
+unsigned char speed = 50;        //Range from 0-10 volts. (DAC range 0-100)
+unsigned char frmn_speed = 100;  //Range from 0-10 volts. (DAC range 0-100)
+float ext_speed = 0;             //Range from 0-10 volts. (Range 0-1024)
+volatile unsigned char speedChangeState = 0;
+volatile unsigned int speedChangeTimer = 0;
+volatile unsigned int fireman_set_debounce = FIREMAN_SET_DELAY;
 
 
 void ClearText(char* textToClear){
@@ -156,10 +149,10 @@ void ClearText(char* textToClear){
     }
 }
 
-//Used in main and fireman branches.
+//Used in main and fireman branches to reset watchdog timer.
 void WDTclear(void){
     __asm("CLRWDT");
-    WDTCON = 0x25; //00 10010 1
+    WDTCON = 0x25; //Reinitialize watchdog timer counter.
 }
 
 
@@ -188,11 +181,15 @@ void main(void)
     HEFLASH_readBlock(&mode, MODE, sizeof(mode)); //Read in mode from settings. 
     HEFLASH_readBlock(&speed, HAND_SPEED, sizeof(speed)); //Read in hand speed from settings. 
     HEFLASH_readBlock(&frmn_speed, FIREMAN_SPEED, sizeof(frmn_speed)); //Read in fireman speed from settings.
+    
+    //Initialize speed at 50%.
     if(speed > 100){
         speed = 50;
         HEFLASH_writeBlock(HAND_SPEED, &speed, sizeof(speed));
         HEFLASH_writeBlock(AUTO_LOCAL_SPEED, &speed, sizeof(speed));
     }
+    
+    //Initialize fireman speed at 100%.
     if(frmn_speed > 100){
         frmn_speed = 100;
         HEFLASH_writeBlock(FIREMAN_SPEED, &frmn_speed, sizeof(frmn_speed));
@@ -207,11 +204,45 @@ void main(void)
         //Main loop WDT clear.
         WDTclear();
         
+        if(INCREASE_BUTTON && MODE_BUTTON){
+            
+            ClearText(newTextLine1);
+
+            ClearText(newTextLine2);
+            sprintf(newTextLine2,"   %s   ",VERSION);
+            
+            ClearText(newTextLine3);
+
+            ClearText(newTextLine4);
+            
+            blackout_screen_flag = 1;
+            
+            //Turn off screen during mode change.
+            if(blackout_screen_flag){
+                ssd1306_command(SSD1306_DISPLAY_OFF);
+            }
+
+            //Version check operation screen update.
+            for(char i=1;i<5;i++){
+                Update_Display_Line(i);
+            }
+
+            //Turn on screen after mode change screen update.
+            if(blackout_screen_flag){
+                ssd1306_command(SSD1306_DISPLAY_ON);
+                blackout_screen_flag = 0;
+            } 
+            
+            __delay_ms(3000);
+            
+            blackout_screen_flag = 1;
+        }        
+        
         //Fireman override loop.
         if(FIREMAN_INPUT == 0)
         {
 
-            HEFLASH_readBlock(&frmn_speed, FIREMAN_SPEED, sizeof(frmn_speed)); //Read fireman_speed state from memory.
+            HEFLASH_readBlock(&frmn_speed, FIREMAN_SPEED, sizeof(frmn_speed));
 
             ClearText(newTextLine1);
             sprintf(newTextLine1,"FIREMAN");
@@ -247,23 +278,37 @@ void main(void)
                 RUN_STATUS = 0;
             }
             
-            //Fireman mode screen update.
-            Update_Line_Text();
-            for(int i=1;i<5;i++){
+            //Turn off screen during mode change.
+            if(blackout_screen_flag){
+                ssd1306_command(SSD1306_DISPLAY_OFF);
+            }
+
+            //Fireman operation screen update.
+            for(char i=1;i<5;i++){
                 Update_Display_Line(i);
             }
-//            UpdateScreen();                                                                                                                                                                                                                                                                                                                                                                                  
+
+            //Turn on screen after mode change screen update.
+            if(blackout_screen_flag){
+                ssd1306_command(SSD1306_DISPLAY_ON);
+                blackout_screen_flag = 0;
+            }                                                                                                                                                                                                                                                                                                                                                                             
             
             unsigned int power_led_flash_counter = 0;
+            
             while(FIREMAN_INPUT == 0){  //wait until FIREMAN mode turned off
+                
                 if(power_led_flash_counter){
                     power_led_flash_counter--;
-                }else{
+                }
+                else{
                     power_led_flash_counter = 1000;
                 }
+                
                 if(power_led_flash_counter>500){
                     POWER_LED = 0;
-                }else{
+                }
+                else{
                     POWER_LED = 1;
                 }
                 __delay_ms(1);
@@ -426,22 +471,20 @@ void main(void)
                         
                 //LINE 1                                                                
                 sprintf(newTextLine1,"AUTO REMOTE");                     
-                
-                //LINE 3
-                sprintf(newTextLine3," ");
-                    
+ 
                 //LINE 4
                 //only update displayed voltage periodically to prevent frequent screen updates from interfering with button press timing.
                 if(!updateAutoRemoteDelay){ 
                     updateAutoRemoteDelay = DEBOUNCE_CNT; 
                     sprintf(newTextLine4,"READ:%d.%dV", integer, decimal);
 
-                }else{
-                    //Keep previous text if text is not being updated
-                    for(int i = 0; i < TEXT_ARRAY_SIZE;i++){
-                        newTextLine4[i] = textLine4[i];
-                    }
                 }
+//                else{
+//                    //Keep previous text if text is not being updated
+//                    for(int i = 0; i < TEXT_ARRAY_SIZE;i++){
+//                        newTextLine4[i] = textLine4[i];
+//                    }
+//                }
                 
                 if( (WET_INPUT == 0) || (DRY_INPUT == 1) ){ //Read AUTO speed setting from ADC channel AN9 and display,
                     
@@ -531,6 +574,8 @@ void main(void)
                 
                 //Initialize mode.
                 sprintf(newTextLine1,"Press Mode");
+                
+                sprintf(newTextLine2,"%s",VERSION);
 
                 //Output speed control via DAC1.
                 DAC1_Load10bitInputData(0); //Set to zero/off.
@@ -544,19 +589,34 @@ void main(void)
         } 
         
         //Dim timeout feature.
-        if(bright_screen_timer){
-            OLED_SetContrast(BRIGHT);  
-        }
-        else{
-             OLED_SetContrast(DIM);
+//        if(bright_screen_timer){
+//            OLED_SetContrast(BRIGHT);  
+//        }
+//        else{
+//             OLED_SetContrast(DIM);
+//        }
+        
+        //Turn off screen during mode change.
+        if(blackout_screen_flag){
+            ssd1306_command(SSD1306_DISPLAY_OFF);
         }
         
         //Normal operation screen update.
-        Update_Line_Text();
         for(char i=1;i<5;i++){
             Update_Display_Line(i);
         }
-//        UpdateScreen();
+        
+        //Turn on screen after mode change screen update.
+        if(blackout_screen_flag){
+//            if(mode == FIREMAN_SET){
+//                __delay_ms(100);
+//            }
+            
+            ssd1306_command(SSD1306_DISPLAY_ON);
+            blackout_screen_flag = 0;
+        }
+        
+
         //Single button recognition section.
         btn_count = 0;
         
@@ -654,29 +714,30 @@ void main(void)
                 }
                 if(!mode_btn_debounce){
                     if(!mode_change_flag){  //only change mode once per button press
+                        
                         mode_change_flag = 1;
-                        if(fireman_set){        //kick out of fireman_set without changing the mode by ending the fireman_set timeout.
-                            fireman_inc = 0;
-                        }else{                        
-                            if((INCREASE_BUTTON != 1) && (DECREASE_BUTTON != 1)){
-                                //Toggle mode.
-                                if(mode == FIREMAN_SET){
-                                    //Reset fireman speed reference adjustment state.
-                                    fireman_set = 0;            
-                                    HEFLASH_readBlock(&mode, MODE, sizeof(mode)); //Read in mode from settings.
-                                }
-                                if(mode < 3)
-                                {
-                                    mode++;
-                                    HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Write current mode state to memory.
-                                }
-                                else
-                                {
-                                    mode = 0;
-                                    HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Write current mode state to memory.
-                                }
-                            } 
-                        }
+                            
+                        if((INCREASE_BUTTON != 1) && (DECREASE_BUTTON != 1)){
+
+                            //Toggle mode.
+                            blackout_screen_flag = 1; //Turns off screen during mode changes.
+
+                            if(mode == FIREMAN_SET){
+                                //Reset fireman speed reference adjustment state.
+                                fireman_set = 0;            
+                                HEFLASH_readBlock(&mode, MODE, sizeof(mode)); //Read in mode from settings.
+                            }
+
+                            else if(mode < 3){
+                                mode++;
+                                HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Write current mode state to memory.
+                            }
+
+                            else{
+                                mode = 0;
+                                HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Write current mode state to memory.
+                            }
+                        } 
                     }
                 }
             }
@@ -686,6 +747,14 @@ void main(void)
         
         if(updateAutoRemoteDelay){
             updateAutoRemoteDelay--;
+        }
+        
+        if(!fireman_set_debounce){
+            fireman_inc = FIREMAN_SET_TIMEOUT;
+            fireman_set = 1;
+            HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Write current mode state to memory.
+            mode = FIREMAN_SET; //Set display to show fireman speed reference adjustment. 
+            fireman_set_debounce = FIREMAN_SET_DELAY; 
         }
         
         if(!fireman_inc){
@@ -704,7 +773,7 @@ void main(void)
             speed = 50;       //Range from 0-10 volts. (DAC range 0-100)
             frmn_speed = 100;   //Range from 0-10 volts. (DAC range 0-100)
             ext_speed = 0;    //Range from 0-10 volts. (Range 0-1024)
-
+         
             HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Initialize speed in memory.
             HEFLASH_writeBlock(HAND_SPEED, &speed, sizeof(speed)); //Initialize hand speed in memory.
             HEFLASH_writeBlock(AUTO_LOCAL_SPEED, &speed, sizeof(speed)); //Initialize auto local speed in memory.
@@ -735,14 +804,9 @@ void __interrupt() __ISR(void){
         if(mode_btn_debounce && !(increase_btn_debounce || decrease_btn_debounce)){
             if(fireman_set_debounce){
                 fireman_set_debounce--;
-                if(!fireman_set_debounce){
-                    fireman_inc = FIREMAN_SET_TIMEOUT;
-                    fireman_set = 1;
-                    HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Write current mode state to memory.
-                    mode = FIREMAN_SET; //Set display to show fireman speed reference adjustment. 
-                }
             }
-        }else{
+        }
+        else{
             fireman_set_debounce = FIREMAN_SET_DELAY;
         }
         
