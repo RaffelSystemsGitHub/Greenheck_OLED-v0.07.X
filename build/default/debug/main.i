@@ -20388,13 +20388,13 @@ volatile _Bool blackout_screen_flag = 0;
 char btn_count = 0;
 char updateAutoRemoteDelay = 0;
 
-unsigned char mode = 0;
+volatile unsigned char mode = 0;
 unsigned char speed = 50;
 unsigned char frmn_speed = 100;
 float ext_speed = 0;
-unsigned char speedChangeState = 0;
-unsigned int speedChangeTimer = 0;
-unsigned int fireman_set_debounce = (10000/(5*8));
+volatile unsigned char speedChangeState = 0;
+volatile unsigned int speedChangeTimer = 0;
+volatile unsigned int fireman_set_debounce = (10000/(5*8));
 
 
 void ClearText(char* textToClear){
@@ -20463,7 +20463,7 @@ void main(void)
             ClearText(newTextLine1);
 
             ClearText(newTextLine2);
-            sprintf(newTextLine2,"   %s   ",("VX.YY"));
+            sprintf(newTextLine2,"  %s",("CHECK ME"));
 
             ClearText(newTextLine3);
 
@@ -20490,6 +20490,8 @@ void main(void)
             _delay((unsigned long)((3000)*((32000000)/4000.0)));
 
             blackout_screen_flag = 1;
+
+            WDTclear();
         }
 
 
@@ -20750,32 +20752,27 @@ void main(void)
 
 
 
-                    if((float)(avg*(2.5*5/1024)) > 1.9)
-                    {
+                    if((float)(avg*(2.5*5/1024)) > 1.9){
 
                         LATA0 = 1;
                     }
-                    else if ((float)(avg*(2.5*5/1024)) < 1.8)
-                    {
+                    else if ((float)(avg*(2.5*5/1024)) < 1.8){
 
                         LATA0 = 0;
                     }
 
 
 
-                    if((float)(avg*(2.5*5/1024)) > 2.05)
-                    {
+                    if((float)(avg*(2.5*5/1024)) > 2.05){
 
                         LATA1 = 1;
                     }
-                    else if((float)(avg*(2.5*5/1024)) < 1.95)
-                    {
+                    else if((float)(avg*(2.5*5/1024)) < 1.95){
 
                         LATA1 = 0;
                     }
                 }
-                else
-                {
+                else{
 
                     sprintf(newTextLine2,"Disabled");
 
@@ -20787,6 +20784,7 @@ void main(void)
 
                     LATA1 = 0;
                 }
+
             break;
 
             case 4 :
@@ -20800,24 +20798,20 @@ void main(void)
 
                 DAC1_Load10bitInputData(frmn_speed*(0.8*1023/100));
 
-                if((float)frmn_speed/10 > 1.85)
-                {
+                if((float)frmn_speed/10 > 1.85){
 
                     LATA0 = 1;
                 }
-                else
-                {
+                else{
 
                     LATA0 = 0;
                 }
 
-                if(frmn_speed/10 >= 2.0)
-                {
+                if(frmn_speed/10 >= 2.0){
 
                     LATA1 = 1;
                 }
-                else
-                {
+                else{
 
                     LATA1 = 0;
                 }
@@ -20829,7 +20823,7 @@ void main(void)
 
                 sprintf(newTextLine1,"Press Mode");
 
-                sprintf(newTextLine2,"%s",("VX.YY"));
+                sprintf(newTextLine2,"%s",("CHECK ME"));
 
 
                 DAC1_Load10bitInputData(0);
@@ -20841,14 +20835,20 @@ void main(void)
 
             break;
         }
-# 600 "main.c"
+# 594 "main.c"
         if(blackout_screen_flag){
             ssd1306_command(0xAE);
+            if(fireman_set == 1){
+                __nop();
+            }
         }
 
 
         for(char i=1;i<5;i++){
             Update_Display_Line(i);
+            if(fireman_set == 1){
+                __nop();
+            }
         }
 
 
@@ -20859,6 +20859,9 @@ void main(void)
 
             ssd1306_command(0xAF);
             blackout_screen_flag = 0;
+            if(fireman_set == 1){
+                __nop();
+            }
         }
 
 
@@ -20973,7 +20976,7 @@ void main(void)
                                 HEFLASH_readBlock(&mode, 0, sizeof(mode));
                             }
 
-                            if(mode < 3){
+                            else if(mode < 3){
                                 mode++;
                                 HEFLASH_writeBlock(0, &mode, sizeof(mode));
                             }
@@ -20992,6 +20995,14 @@ void main(void)
 
         if(updateAutoRemoteDelay){
             updateAutoRemoteDelay--;
+        }
+
+        if(!fireman_set_debounce){
+            fireman_inc = (50000/(5*8));
+            fireman_set = 1;
+            HEFLASH_writeBlock(0, &mode, sizeof(mode));
+            mode = 4;
+            fireman_set_debounce = (10000/(5*8));
         }
 
         if(!fireman_inc){
@@ -21041,15 +21052,9 @@ void __attribute__((picinterrupt(("")))) __ISR(void){
         if(mode_btn_debounce && !(increase_btn_debounce || decrease_btn_debounce)){
             if(fireman_set_debounce){
                 fireman_set_debounce--;
-                if(!fireman_set_debounce){
-                    blackout_screen_flag = 1;
-                    fireman_inc = (50000/(5*8));
-                    fireman_set = 1;
-                    HEFLASH_writeBlock(0, &mode, sizeof(mode));
-                    mode = 4;
-                }
             }
-        }else{
+        }
+        else{
             fireman_set_debounce = (10000/(5*8));
         }
 

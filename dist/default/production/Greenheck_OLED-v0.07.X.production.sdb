@@ -163,14 +163,18 @@ I2C_NULL 5
 [v _I2C_Wait I2C_Wait `(v  1 e 1 0 ]
 "110
 [v _I2C_Send I2C_Send `(v  1 e 1 0 ]
-"146 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+"147 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 [v _ClearText ClearText `(v  1 e 1 0 ]
-"153
+"154
 [v _WDTclear WDTclear `(v  1 e 1 0 ]
-"159
+"162
 [v _main main `(v  1 e 1 0 ]
-"793
+"405
 [v ___ISR __ISR `II(v  1 e 1 0 ]
+"459
+[v _modeFunction modeFunction `(v  1 e 1 0 ]
+"718
+[v _buttonFunction buttonFunction `(v  1 e 1 0 ]
 "67 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 "68 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/dac1.c
@@ -313,6 +317,8 @@ I2C_NULL 5
 [v _OLED_Update OLED_Update `(v  1 e 1 0 ]
 "523
 [v _OLED_Update_Partial OLED_Update_Partial `(v  1 e 1 0 ]
+"564
+[v _OLED_SetContrast OLED_SetContrast `(v  1 e 1 0 ]
 "609
 [v _OLED_DrawPixel OLED_DrawPixel `(v  1 e 1 0 ]
 "871
@@ -325,7 +331,7 @@ I2C_NULL 5
 [v _height height `(uc  1 s 1 height ]
 "1035
 [v _Update_Display_Line Update_Display_Line `(v  1 e 1 0 ]
-"1150
+"1162
 [v _DisplaySettingRefresh DisplaySettingRefresh `(v  1 e 1 0 ]
 "108 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X/OLED.h
 [v _textLine1 textLine1 `[11]uc  1 e 11 0 ]
@@ -651,7 +657,7 @@ I2C_NULL 5
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _flags flags `i  1 s 2 flags ]
 [v _prec prec `i  1 s 2 prec ]
-[v _width@doprnt$F1955 width `i  1 s 2 width ]
+[v _width@doprnt$F1972 width `i  1 s 2 width ]
 "66
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
@@ -715,43 +721,53 @@ I2C_NULL 5
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
 "138 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 [v _BIG_FONTS BIG_FONTS `DC[3044]uc  1 e 3044 0 ]
-[s S1452 _Current_Font_s 7 `*.25DCuc 1 font 2 0 `uc 1 x_size 1 2 `uc 1 y_size 1 3 `uc 1 offset 1 4 `uc 1 numchars 1 5 `uc 1 inverted 1 6 ]
+[s S1469 _Current_Font_s 7 `*.25DCuc 1 font 2 0 `uc 1 x_size 1 2 `uc 1 y_size 1 3 `uc 1 offset 1 4 `uc 1 numchars 1 5 `uc 1 inverted 1 6 ]
 "243
-[v _cfont cfont `S1452  1 s 7 cfont ]
+[v _cfont cfont `S1469  1 s 7 cfont ]
 "246
 [v _buffer buffer `[256]uc  1 s 256 buffer ]
-"159 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+"162 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"462
-[v main@i_1392 i `ui  1 a 2 25 ]
-"287
-[v main@i_1380 i `uc  1 a 1 23 ]
-"226
-[v main@i i `uc  1 a 1 22 ]
-"606
-[v main@i_1404 i `uc  1 a 1 24 ]
+"294
+[v main@i_1394 i `uc  1 a 1 34 ]
+"232
+[v main@i i `uc  1 a 1 33 ]
+"344
+[v main@i_1396 i `uc  1 a 1 35 ]
+"302
+[v main@power_led_flash_counter power_led_flash_counter `ui  1 a 2 31 ]
+"403
+} 0
+"459
+[v _modeFunction modeFunction `(v  1 e 1 0 ]
+{
+[v modeFunction@mode mode `uc  1 a 1 wreg ]
+"601
+[v modeFunction@i i `ui  1 a 2 21 ]
+"600
+[v modeFunction@avg avg `f  1 a 4 23 ]
+"609
+[v modeFunction@decimal decimal `ui  1 a 2 19 ]
+"608
+[v modeFunction@integer integer `ui  1 a 2 17 ]
+"459
+[v modeFunction@mode mode `uc  1 a 1 wreg ]
+"582
+[v modeFunction@index index `ui  1 s 2 index ]
+"583
+[v modeFunction@arr arr `[10]f  1 s 40 arr ]
 "461
-[v main@avg avg `f  1 a 4 27 ]
-"470
-[v main@decimal decimal `ui  1 a 2 18 ]
-"469
-[v main@integer integer `ui  1 a 2 16 ]
-"297
-[v main@power_led_flash_counter power_led_flash_counter `ui  1 a 2 20 ]
-"443
-[v main@index index `ui  1 s 2 index ]
-"444
-[v main@arr arr `[10]f  1 s 40 arr ]
-"791
+[v modeFunction@mode mode `uc  1 a 1 16 ]
+"715
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@s s `*.5uc  1 a 1 wreg ]
-[s S1899 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[s S1916 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
 "13
-[v sprintf@f f `S1899  1 a 5 1 ]
+[v sprintf@f f `S1916  1 a 5 1 ]
 "12
 [v sprintf@ap ap `[1]*.4v  1 a 1 0 ]
 "9
@@ -764,42 +780,42 @@ I2C_NULL 5
 "1390 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S1925 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S1925  1 a 1 wreg ]
+[s S1942 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S1942  1 a 1 wreg ]
 "1393
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 70 ]
 "1390
-[v vfprintf@fp fp `*.4S1925  1 a 1 wreg ]
+[v vfprintf@fp fp `*.4S1942  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.25DCuc  1 p 2 64 ]
 [v vfprintf@ap ap `*.4*.4v  1 p 1 66 ]
 "1395
 "1390
-[v vfprintf@fp fp `*.4S1925  1 a 1 69 ]
+[v vfprintf@fp fp `*.4S1942  1 a 1 69 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S1925 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S1925  1 a 1 wreg ]
+[s S1942 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S1942  1 a 1 wreg ]
 "696
 [v vfpfcnvrt@ll ll `o  1 a 8 53 ]
 "694
 [v vfpfcnvrt@cp cp `*.26uc  1 a 2 61 ]
 "692
-[v vfpfcnvrt@fp fp `*.4S1925  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.4S1942  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 46 ]
 [v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 47 ]
 "702
 "692
-[v vfpfcnvrt@fp fp `*.4S1925  1 a 1 63 ]
+[v vfpfcnvrt@fp fp `*.4S1942  1 a 1 63 ]
 "1387
 } 0
 "568
 [v _stoa stoa `(i  1 s 2 stoa ]
 {
-[s S1925 _IO_FILE 0 ]
-[v stoa@fp fp `*.4S1925  1 a 1 wreg ]
+[s S1942 _IO_FILE 0 ]
+[v stoa@fp fp `*.4S1942  1 a 1 wreg ]
 "570
 [v stoa@nuls nuls `[7]uc  1 a 7 3 ]
 "571
@@ -811,19 +827,19 @@ I2C_NULL 5
 [v stoa@w w `i  1 a 2 12 ]
 [v stoa@i i `i  1 a 2 10 ]
 "568
-[v stoa@fp fp `*.4S1925  1 a 1 wreg ]
+[v stoa@fp fp `*.4S1942  1 a 1 wreg ]
 [v stoa@s s `*.26uc  1 p 2 9 ]
 "570
 [v stoa@F1141 F1141 `[7]uc  1 s 7 F1141 ]
 "568
-[v stoa@fp fp `*.4S1925  1 a 1 14 ]
+[v stoa@fp fp `*.4S1942  1 a 1 14 ]
 "611
 } 0
 "287
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S1925 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S1925  1 a 1 wreg ]
+[s S1942 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S1942  1 a 1 wreg ]
 "290
 [v dtoa@n n `o  1 a 8 36 ]
 "289
@@ -832,28 +848,28 @@ I2C_NULL 5
 [v dtoa@w w `i  1 a 2 32 ]
 [v dtoa@p p `i  1 a 2 30 ]
 "287
-[v dtoa@fp fp `*.4S1925  1 a 1 wreg ]
+[v dtoa@fp fp `*.4S1942  1 a 1 wreg ]
 [v dtoa@d d `o  1 p 8 16 ]
 "293
 "287
-[v dtoa@fp fp `*.4S1925  1 a 1 27 ]
+[v dtoa@fp fp `*.4S1942  1 a 1 27 ]
 "328
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S1925 _IO_FILE 0 ]
-[v pad@fp fp `*.4S1925  1 a 1 wreg ]
+[s S1942 _IO_FILE 0 ]
+[v pad@fp fp `*.4S1942  1 a 1 wreg ]
 "74
 [v pad@w w `i  1 a 2 12 ]
 [v pad@i i `i  1 a 2 10 ]
 "72
-[v pad@fp fp `*.4S1925  1 a 1 wreg ]
+[v pad@fp fp `*.4S1942  1 a 1 wreg ]
 [v pad@buf buf `*.6uc  1 p 1 7 ]
 [v pad@p p `i  1 p 2 8 ]
 "77
 "72
-[v pad@fp fp `*.4S1925  1 a 1 14 ]
+[v pad@fp fp `*.4S1942  1 a 1 14 ]
 "95
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
@@ -875,8 +891,8 @@ I2C_NULL 5
 [v fputs@c c `uc  1 a 1 3 ]
 "8
 [v fputs@s s `*.6DCuc  1 a 1 wreg ]
-[s S1899 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.4S1899  1 p 1 9 ]
+[s S1916 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.4S1916  1 p 1 9 ]
 "13
 [v fputs@s s `*.6DCuc  1 a 1 6 ]
 "19
@@ -885,8 +901,8 @@ I2C_NULL 5
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 1 ]
-[s S1899 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.4S1899  1 p 1 3 ]
+[s S1916 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.4S1916  1 p 1 3 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
@@ -962,17 +978,17 @@ I2C_NULL 5
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1739 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1756 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1744 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S1747 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1739 1 fAsBytes 4 0 `S1744 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1747  1 a 4 34 ]
+[s S1761 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S1764 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1756 1 fAsBytes 4 0 `S1761 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1764  1 a 4 34 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 28 ]
-[s S1816 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1833 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1819 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1816 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1819  1 a 2 38 ]
+[u S1836 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1833 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1836  1 a 2 38 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 33 ]
 "11
@@ -1052,30 +1068,111 @@ I2C_NULL 5
 [v ___awmod@dividend dividend `i  1 p 2 3 ]
 "34
 } 0
-"153 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+"95 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/dac1.c
+[v _DAC1_Load10bitInputData DAC1_Load10bitInputData `(v  1 e 1 0 ]
+{
+[v DAC1_Load10bitInputData@input10BitData input10BitData `us  1 p 2 49 ]
+"106
+} 0
+"147 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+[v _ClearText ClearText `(v  1 e 1 0 ]
+{
+[v ClearText@textToClear textToClear `*.5uc  1 a 1 wreg ]
+"148
+[v ClearText@i i `i  1 a 2 2 ]
+"147
+[v ClearText@textToClear textToClear `*.5uc  1 a 1 wreg ]
+[v ClearText@textToClear textToClear `*.5uc  1 a 1 4 ]
+"151
+} 0
+"718
+[v _buttonFunction buttonFunction `(v  1 e 1 0 ]
+{
+"848
+} 0
+"15 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+[v _HEFLASH_writeBlock HEFLASH_writeBlock `(uc  1 e 1 0 ]
+{
+[v HEFLASH_writeBlock@radd radd `uc  1 a 1 wreg ]
+"18
+[v HEFLASH_writeBlock@add add `ui  1 a 2 1 ]
+"15
+[v HEFLASH_writeBlock@radd radd `uc  1 a 1 wreg ]
+[v HEFLASH_writeBlock@data data `*.4uc  1 p 1 7 ]
+[v HEFLASH_writeBlock@count count `uc  1 p 1 8 ]
+"18
+[v HEFLASH_writeBlock@radd radd `uc  1 a 1 0 ]
+"37
+} 0
+"71 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
+[v _FLASH_write FLASH_write `(v  1 e 1 0 ]
+{
+"74
+[v FLASH_write@temp temp `uc  1 a 1 6 ]
+"71
+[v FLASH_write@address address `ui  1 p 2 1 ]
+[v FLASH_write@data data `ui  1 p 2 3 ]
+[v FLASH_write@latch latch `uc  1 p 1 5 ]
+"88
+} 0
+"89
+[v _FLASH_erase FLASH_erase `(v  1 e 1 0 ]
+{
+"92
+[v FLASH_erase@temp temp `uc  1 a 1 3 ]
+"89
+[v FLASH_erase@address address `ui  1 p 2 1 ]
+"107
+} 0
+"47
+[v __unlock _unlock `(v  1 e 1 0 ]
+{
+"70
+} 0
+"39 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+[v _HEFLASH_readBlock HEFLASH_readBlock `(uc  1 e 1 0 ]
+{
+[v HEFLASH_readBlock@buffer buffer `*.4uc  1 a 1 wreg ]
+"42
+[v HEFLASH_readBlock@add add `ui  1 a 2 7 ]
+"39
+[v HEFLASH_readBlock@buffer buffer `*.4uc  1 a 1 wreg ]
+[v HEFLASH_readBlock@radd radd `uc  1 p 1 3 ]
+[v HEFLASH_readBlock@count count `uc  1 p 1 4 ]
+"42
+[v HEFLASH_readBlock@buffer buffer `*.4uc  1 a 1 9 ]
+"54
+} 0
+"25 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
+[v _FLASH_read FLASH_read `(ui  1 e 2 0 ]
+{
+[v FLASH_read@address address `ui  1 p 2 1 ]
+"35
+} 0
+"154 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 [v _WDTclear WDTclear `(v  1 e 1 0 ]
 {
-"156
+"157
 } 0
 "1035 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 [v _Update_Display_Line Update_Display_Line `(v  1 e 1 0 ]
 {
 [v Update_Display_Line@line_number line_number `uc  1 a 1 wreg ]
-"1122
-[v Update_Display_Line@i_1572 i `i  1 a 2 55 ]
-"1099
-[v Update_Display_Line@i_1571 i `i  1 a 2 53 ]
+"1130
+[v Update_Display_Line@i_1589 i `i  1 a 2 57 ]
+"1103
+[v Update_Display_Line@i_1588 i `i  1 a 2 55 ]
 "1076
-[v Update_Display_Line@i_1570 i `i  1 a 2 51 ]
+[v Update_Display_Line@i_1587 i `i  1 a 2 53 ]
 "1046
-[v Update_Display_Line@i i `i  1 a 2 57 ]
+[v Update_Display_Line@i i `i  1 a 2 51 ]
 "1037
-[v Update_Display_Line@numSpaces numSpaces `uc  1 a 1 47 ]
+[v Update_Display_Line@numSpaces numSpaces `uc  1 a 1 50 ]
 "1035
 [v Update_Display_Line@line_number line_number `uc  1 a 1 wreg ]
 "1037
-[v Update_Display_Line@line_number line_number `uc  1 a 1 50 ]
-"1145
+[v Update_Display_Line@line_number line_number `uc  1 a 1 49 ]
+"1157
 } 0
 "3 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
 [v _memcmp memcmp `(i  1 e 2 0 ]
@@ -1220,7 +1317,15 @@ I2C_NULL 5
 {
 "85
 } 0
-"343 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+"564 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+[v _OLED_SetContrast OLED_SetContrast `(v  1 e 1 0 ]
+{
+[v OLED_SetContrast@contrast contrast `uc  1 a 1 wreg ]
+[v OLED_SetContrast@contrast contrast `uc  1 a 1 wreg ]
+[v OLED_SetContrast@contrast contrast `uc  1 a 1 3 ]
+"567
+} 0
+"343
 [v _OLED_Init OLED_Init `(v  1 e 1 0 ]
 {
 "395
@@ -1243,69 +1348,10 @@ I2C_NULL 5
 [v I2C_Init@speed speed `uc  1 a 1 2 ]
 "53
 } 0
-"15 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-[v _HEFLASH_writeBlock HEFLASH_writeBlock `(uc  1 e 1 0 ]
-{
-[v HEFLASH_writeBlock@radd radd `uc  1 a 1 wreg ]
-"18
-[v HEFLASH_writeBlock@add add `ui  1 a 2 1 ]
-"15
-[v HEFLASH_writeBlock@radd radd `uc  1 a 1 wreg ]
-[v HEFLASH_writeBlock@data data `*.4uc  1 p 1 7 ]
-[v HEFLASH_writeBlock@count count `uc  1 p 1 8 ]
-"18
-[v HEFLASH_writeBlock@radd radd `uc  1 a 1 0 ]
-"37
-} 0
-"71 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
-[v _FLASH_write FLASH_write `(v  1 e 1 0 ]
-{
-"74
-[v FLASH_write@temp temp `uc  1 a 1 6 ]
-"71
-[v FLASH_write@address address `ui  1 p 2 1 ]
-[v FLASH_write@data data `ui  1 p 2 3 ]
-[v FLASH_write@latch latch `uc  1 p 1 5 ]
-"88
-} 0
-"89
-[v _FLASH_erase FLASH_erase `(v  1 e 1 0 ]
-{
-"92
-[v FLASH_erase@temp temp `uc  1 a 1 3 ]
-"89
-[v FLASH_erase@address address `ui  1 p 2 1 ]
-"107
-} 0
-"47
-[v __unlock _unlock `(v  1 e 1 0 ]
-{
-"70
-} 0
-"39 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-[v _HEFLASH_readBlock HEFLASH_readBlock `(uc  1 e 1 0 ]
-{
-[v HEFLASH_readBlock@buffer buffer `*.4uc  1 a 1 wreg ]
-"42
-[v HEFLASH_readBlock@add add `ui  1 a 2 7 ]
-"39
-[v HEFLASH_readBlock@buffer buffer `*.4uc  1 a 1 wreg ]
-[v HEFLASH_readBlock@radd radd `uc  1 p 1 3 ]
-[v HEFLASH_readBlock@count count `uc  1 p 1 4 ]
-"42
-[v HEFLASH_readBlock@buffer buffer `*.4uc  1 a 1 9 ]
-"54
-} 0
-"25 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
-[v _FLASH_read FLASH_read `(ui  1 e 2 0 ]
-{
-[v FLASH_read@address address `ui  1 p 2 1 ]
-"35
-} 0
-"1150 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+"1162 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 [v _DisplaySettingRefresh DisplaySettingRefresh `(v  1 e 1 0 ]
 {
-"1198
+"1210
 } 0
 "970
 [v _ssd1306_command ssd1306_command `(v  1 e 1 0 ]
@@ -1345,25 +1391,8 @@ I2C_NULL 5
 [v OLED_SetFont@font font `*.25DCuc  1 p 2 1 ]
 "429
 } 0
-"95 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/dac1.c
-[v _DAC1_Load10bitInputData DAC1_Load10bitInputData `(v  1 e 1 0 ]
-{
-[v DAC1_Load10bitInputData@input10BitData input10BitData `us  1 p 2 49 ]
-"106
-} 0
-"146 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-[v _ClearText ClearText `(v  1 e 1 0 ]
-{
-[v ClearText@textToClear textToClear `*.5uc  1 a 1 wreg ]
-"147
-[v ClearText@i i `i  1 a 2 2 ]
-"146
-[v ClearText@textToClear textToClear `*.5uc  1 a 1 wreg ]
-[v ClearText@textToClear textToClear `*.5uc  1 a 1 4 ]
-"150
-} 0
-"793
+"405 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 [v ___ISR __ISR `II(v  1 e 1 0 ]
 {
-"844
+"456
 } 0

@@ -20060,10 +20060,14 @@ void Update_Display_Line(char line_number){
 
                 if(*(currentText+i)!=*(newTextLine2+i)){
 
-                    OLED_Write(i*(cfont.x_size - 4),0,*(newTextLine2+i));
+                    OLED_Write(i*(cfont.x_size - 4)-(4*numSpaces),0,*(newTextLine2+i));
 
                     *(currentText+i) = *(newTextLine2+i);
 
+                }
+
+                if(*(newTextLine2+i) == ' '){
+                    numSpaces++;
                 }
             }
 
@@ -20083,10 +20087,14 @@ void Update_Display_Line(char line_number){
 
                 if(*(currentText+i)!=*(newTextLine3+i)){
 
-                    OLED_Write(i*(cfont.x_size - 4),0,*(newTextLine3+i));
+                    OLED_Write(i*(cfont.x_size - 4)-(4*numSpaces),0,*(newTextLine3+i));
 
                     *(currentText+i) = *(newTextLine3+i);
 
+                }
+
+                if(*(newTextLine3+i) == ' '){
+                    numSpaces++;
                 }
             }
 
@@ -20106,10 +20114,14 @@ void Update_Display_Line(char line_number){
 
                 if(*(currentText+i)!=*(newTextLine4+i)){
 
-                    OLED_Write(i*(cfont.x_size - 4),0,*(newTextLine4+i));
+                    OLED_Write(i*(cfont.x_size - 4)-(4*numSpaces),0,*(newTextLine4+i));
 
                     *(currentText+i) = *(newTextLine4+i);
 
+                }
+
+                if(*(newTextLine3+i) == ' '){
+                    numSpaces++;
                 }
             }
 
@@ -20146,7 +20158,7 @@ void DisplaySettingRefresh(void){
     ssd1306_command(0x00);
     ssd1306_command(0xA0 | 0x01);
     ssd1306_command(0xC8);
-# 1177 "OLED.c"
+# 1189 "OLED.c"
     ssd1306_command(0xDA);
     ssd1306_command(0x12);
     ssd1306_command(0x81);

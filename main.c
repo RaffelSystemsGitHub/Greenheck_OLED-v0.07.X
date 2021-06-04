@@ -58,7 +58,7 @@
 #include "OLED.h"    //
 
 
-#define VERSION ("VX.YY")
+#define VERSION ("V1.00")
 
 #define DRY_INPUT       RA3    //Input pin active on continuity.
 #define SPEED_INPUT     AN9    //ADC pin for external auto speed reference.
@@ -134,15 +134,16 @@ volatile bool blackout_screen_flag = 0;
 char btn_count = 0;
 char updateAutoRemoteDelay = 0;
 
-volatile unsigned char mode = 0;          //OFF == 0/HAND == 1/AUTO_LOCAL == 2/AUTO_REMOTE == 3.
-unsigned char speed = 50;        //Range from 0-10 volts. (DAC range 0-100)
-unsigned char frmn_speed = 100;  //Range from 0-10 volts. (DAC range 0-100)
-float ext_speed = 0;             //Range from 0-10 volts. (Range 0-1024)
+volatile unsigned char mode = 0;      //OFF == 0/HAND == 1/AUTO_LOCAL == 2/AUTO_REMOTE == 3.
+unsigned char speed = 50;             //Range from 0-10 volts. (DAC range 0-100)
+unsigned char frmn_speed = 100;       //Range from 0-10 volts. (DAC range 0-100)
+float ext_speed = 0;                  //Range from 0-10 volts. (Range 0-1024)
 volatile unsigned char speedChangeState = 0;
 volatile unsigned int speedChangeTimer = 0;
 volatile unsigned int fireman_set_debounce = FIREMAN_SET_DELAY;
 
-
+//Fill strings with "NULL" character...
+//Prevent string size check functions from overflowing to the adjacent addresses.
 void ClearText(char* textToClear){
     for(int i = 0; i < TEXT_ARRAY_SIZE; i++){
         textToClear[i] = '\0';
@@ -155,6 +156,8 @@ void WDTclear(void){
     WDTCON = 0x25; //Reinitialize watchdog timer counter.
 }
 
+void modeFunction(unsigned char mode);
+void buttonFunction(void);
 
 void main(void)
 {   
@@ -196,6 +199,7 @@ void main(void)
     }
     
     OLED_Init();
+    blackout_screen_flag = 1; //Allow blackout function for initial screen write.
     __delay_ms(100);
     
         
@@ -204,12 +208,14 @@ void main(void)
         //Main loop WDT clear.
         WDTclear();
         
+        POWER_LED = 1;
+        
         if(INCREASE_BUTTON && MODE_BUTTON){
             
             ClearText(newTextLine1);
 
             ClearText(newTextLine2);
-            sprintf(newTextLine2,"   %s   ",VERSION);
+            sprintf(newTextLine2,"    %s",VERSION);
             
             ClearText(newTextLine3);
 
@@ -218,7 +224,7 @@ void main(void)
             blackout_screen_flag = 1;
             
             //Turn off screen during mode change.
-            if(blackout_screen_flag){
+            if(blackout_screen_flag == 1){
                 ssd1306_command(SSD1306_DISPLAY_OFF);
             }
 
@@ -228,7 +234,7 @@ void main(void)
             }
 
             //Turn on screen after mode change screen update.
-            if(blackout_screen_flag){
+            if(blackout_screen_flag == 1){
                 ssd1306_command(SSD1306_DISPLAY_ON);
                 blackout_screen_flag = 0;
             } 
@@ -236,6 +242,8 @@ void main(void)
             __delay_ms(3000);
             
             blackout_screen_flag = 1;
+            
+            WDTclear();
         }        
         
         //Fireman override loop.
@@ -279,9 +287,8 @@ void main(void)
             }
             
             //Turn off screen during mode change.
-            if(blackout_screen_flag){
-                ssd1306_command(SSD1306_DISPLAY_OFF);
-            }
+            ssd1306_command(SSD1306_DISPLAY_OFF);
+
 
             //Fireman operation screen update.
             for(char i=1;i<5;i++){
@@ -289,10 +296,9 @@ void main(void)
             }
 
             //Turn on screen after mode change screen update.
-            if(blackout_screen_flag){
-                ssd1306_command(SSD1306_DISPLAY_ON);
-                blackout_screen_flag = 0;
-            }                                                                                                                                                                                                                                                                                                                                                                             
+            ssd1306_command(SSD1306_DISPLAY_ON);    
+            //Maintain bright screen during FIREMAN mode.
+            OLED_SetContrast(BRIGHT); 
             
             unsigned int power_led_flash_counter = 0;
             
@@ -316,288 +322,22 @@ void main(void)
                 //Clear WDT while in Fireman's mode.
                 WDTclear();
             }
+            blackout_screen_flag = 1;
         }
-        POWER_LED = 1; 
-
-        ClearText(newTextLine1);
-        ClearText(newTextLine2);
-        ClearText(newTextLine3);
-        ClearText(newTextLine4);
         
-        //Screen and Output Updates
-        switch(mode) 
-        {
-            case OFF :
-                
-                //Pull down SPEED_OUTPUT and display.
-  
-                sprintf(newTextLine1,"OFF");
-                
-                //Output speed control via DAC1.
-                DAC1_Load10bitInputData(0); //Set to zero/off.
-    
-                //AUX_CONTACT goes low, set ports.
-                AUX_CONTACT = 0;
-                //RUN_STATUS_THRESHOLD goes low, set ports.
-                RUN_STATUS = 0;
-                                
-            break;
-            
-            case HAND :
-
-                HEFLASH_readBlock(&speed, HAND_SPEED, sizeof(speed)); //Read speed state from memory.
-                
-                //LINE 1
-                sprintf(newTextLine1,"HAND");
-                
-                //LINE 4
-                sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
-                
-                //Output speed control via DAC1.
-                DAC1_Load10bitInputData(speed*INTERNAL_SPEED_SCALER); //Scaled based on variable range of 0-100.
-                
-                if((float)speed/10 > AUX_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
-                {
-                    //AUX_CONTACT closes, set ports.
-                    AUX_CONTACT = 1;
-                }
-                else    //ext_speed range: 0-1023 / speed range : 0-100 
-                {
-                    //AUX_CONTACT opens, set ports.
-                    AUX_CONTACT = 0;
-                }
-
-                if(speed/10 >= RUN_STATUS_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
-                {
-                    //RUN_STATUS provides continuity, set ports.
-                    RUN_STATUS = 1;
-                }
-                else    //ext_speed range: 0-1023 / speed range : 0-100 
-                {
-                    //RUN_STATUS provides continuity, set ports.
-                    RUN_STATUS = 0;
-                }
-                
-            break;
-            
-            case AUTO_LOCAL :
-     
-                HEFLASH_readBlock(&speed, AUTO_LOCAL_SPEED, sizeof(speed)); //Read speed state from memory.  
-                //LINE 1
-                sprintf(newTextLine1,"AUTO LOCAL");
-  
-                //LINE 4
-                sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
- 
-                if( (WET_INPUT == 0) || (DRY_INPUT == 1) )                                                                                                                                                                                                                                                
-                {
-                    //Read AUTO LOCAL speed setting from memory and display.
-                    //LINE 2
-                    sprintf(newTextLine2,"Enabled");   
-
-                    //Output speed control via DAC1.
-                    DAC1_Load10bitInputData(speed*INTERNAL_SPEED_SCALER); //Scaled based on variable range of 0-100.
-
-                    if((float)speed/10 > AUX_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
-                    {
-                        //AUX_CONTACT closes, set ports.
-                        AUX_CONTACT = 1;
-                    }
-                    else    //ext_speed range: 0-1023 / speed range : 0-100 
-                    {
-                        //AUX_CONTACT opens, set ports.
-                        AUX_CONTACT = 0;
-                    }
-
-                    if(speed/10 >= RUN_STATUS_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
-                    {
-                        //RUN_STATUS provides continuity, set ports.
-                        RUN_STATUS = 1;
-                    }
-                    else    //ext_speed range: 0-1023 / speed range : 0-100 
-                    {
-                        //RUN_STATUS provides continuity, set ports.
-                        RUN_STATUS = 0;
-                    }
-                }
-                else
-                {
-                    //LINE 2
-                    sprintf(newTextLine2,"Disabled");
-
-                    //Output speed control via DAC1.
-                    DAC1_Load10bitInputData(0); //Set to zero/off.
-
-                    //AUX_CONTACT goes low, set ports.
-                    AUX_CONTACT = 0;
-                    //RUN_STATUS_THRESHOLD goes low, set ports.
-                    RUN_STATUS = 0;
-                    
-                }
-                        
-            break;    
-            
-            case AUTO_REMOTE :
-                ext_speed = (float)((uint16_t)(ADRESH<<8) + (uint16_t)ADRESL);  //For right-justified setting. Hardware range limited from 0-1000.
-
-                static unsigned int index = 0;
-                static float arr[FILTER_SAMPLE_SIZE];
-                
-                //Rolling averaging filter.
-                if(index < FILTER_ARRAY_INDEX){
-                    
-                    arr[index] = ext_speed;
-                    index++;
-                    
-                }
-                else{
-                    
-                    arr[index] = ext_speed;
-                    index = 0;
-                    
-                }    
-                
-                //Reset average every new sample.
-                float avg = 0;
-                for(unsigned int i =0; i<FILTER_SAMPLE_SIZE; i++){
-                    avg += arr[i];
-                    if(i == FILTER_ARRAY_INDEX){
-                        avg = avg/FILTER_SAMPLE_SIZE;
-                    }
-                }
-                
-                unsigned int integer = (avg*EXTERNAL_SPEED_SCALER);               
-                unsigned int decimal = (unsigned long)(avg*EXTERNAL_SPEED_SCALER*10) % 10;  
-                        
-                //LINE 1                                                                
-                sprintf(newTextLine1,"AUTO REMOTE");                     
- 
-                //LINE 4
-                //only update displayed voltage periodically to prevent frequent screen updates from interfering with button press timing.
-                if(!updateAutoRemoteDelay){ 
-                    updateAutoRemoteDelay = DEBOUNCE_CNT; 
-                    sprintf(newTextLine4,"READ:%d.%dV", integer, decimal);
-
-                }
-//                else{
-//                    //Keep previous text if text is not being updated
-//                    for(int i = 0; i < TEXT_ARRAY_SIZE;i++){
-//                        newTextLine4[i] = textLine4[i];
-//                    }
-//                }
-                
-                if( (WET_INPUT == 0) || (DRY_INPUT == 1) ){ //Read AUTO speed setting from ADC channel AN9 and display,
-                    
-                    //LINE 2
-                    sprintf(newTextLine2,"Enabled");
-                    
-                    //Output speed control via DAC1.
-                    DAC1_Load10bitInputData(ext_speed); //Scaled based on hardware input range of 0-1000.
-                    
-                    //Hysteresis added using checks against AUX_HIGH and AUX_LOW to prevent relay chatter near threshold
-                    //This is only needed for AUTO_REMOTE because the remote voltage control is analog and may have noise
-                    if((float)(avg*EXTERNAL_SPEED_SCALER) > AUX_HIGH) //ext_speed range: 0-1023 / speed range : 0-100 
-                    {
-                        //AUX_CONTACT closes, set ports.
-                        AUX_CONTACT = 1;
-                    }
-                    else if ((float)(avg*EXTERNAL_SPEED_SCALER) < AUX_LOW)//ext_speed range: 0-1023 / speed range : 0-100 
-                    {
-                        //AUX_CONTACT opens, set ports.
-                        AUX_CONTACT = 0;
-                    }
-               
-                    //Hysteresis added using checks against HIGH and LOW thresholds to prevent OPTO from turning on and off repeatedly near threshold
-                    //This is only needed for AUTO_REMOTE because the remote voltage control is analog and may have noise
-                    if((float)(avg*EXTERNAL_SPEED_SCALER) > RUN_STATUS_HIGH) //ext_speed range: 0-1023 / speed range : 0-100 
-                    {
-                        //RUN_STATUS provides continuity, set ports.
-                        RUN_STATUS = 1;
-                    }
-                    else if((float)(avg*EXTERNAL_SPEED_SCALER) < RUN_STATUS_LOW) //ext_speed range: 0-1023 / speed range : 0-100 
-                    {
-                        //RUN_STATUS provides continuity, set ports.
-                        RUN_STATUS = 0;
-                    }
-                }
-                else
-                {   
-                    //LINE 2
-                    sprintf(newTextLine2,"Disabled");
-
-                    //Output speed control via DAC1.
-                    DAC1_Load10bitInputData(0); //Set to zero/off.
-
-                    //AUX_CONTACT goes low, set ports.
-                    AUX_CONTACT = 0;
-                    //RUN_STATUS_THRESHOLD goes low, set ports.
-                    RUN_STATUS = 0;
-                }    
-            break;
-                                   
-            case FIREMAN_SET :
-
-                HEFLASH_readBlock(&frmn_speed, FIREMAN_SPEED, sizeof(frmn_speed)); //Read speed state from memory. 
-
-                sprintf(newTextLine1,"FIREMANSET");
-
-                sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
-                
-                //Output speed control via DAC1.
-                DAC1_Load10bitInputData(frmn_speed*INTERNAL_SPEED_SCALER); //Scaled based on variable range of 0-100.
-                                                                                                                                                          
-                if((float)frmn_speed/10 > AUX_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
-                {
-                    //AUX_CONTACT closes, set ports.
-                    AUX_CONTACT = 1;
-                }
-                else    //ext_speed range: 0-1023 / speed range : 0-100 
-                {
-                    //AUX_CONTACT opens, set ports.
-                    AUX_CONTACT = 0;
-                }
-
-                if(frmn_speed/10 >= RUN_STATUS_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
-                {
-                    //RUN_STATUS provides continuity, set ports.
-                    RUN_STATUS = 1;
-                }
-                else    //ext_speed range: 0-1023 / speed range : 0-100 
-                {
-                    //RUN_STATUS provides continuity, set ports.
-                    RUN_STATUS = 0;
-                }
-
-            break;
-            
-            default :
-                
-                //Initialize mode.
-                sprintf(newTextLine1,"Press Mode");
-                
-                sprintf(newTextLine2,"%s",VERSION);
-
-                //Output speed control via DAC1.
-                DAC1_Load10bitInputData(0); //Set to zero/off.
-                
-                //AUX_CONTACT goes low, set ports.
-                AUX_CONTACT = 0;
-                //RUN_STATUS_THRESHOLD goes low, set ports.
-                RUN_STATUS = 0;
-                    
-            break;
-        } 
+        //Calculate mode state and associated variables.
+        modeFunction(mode);
         
         //Dim timeout feature.
-//        if(bright_screen_timer){
-//            OLED_SetContrast(BRIGHT);  
-//        }
-//        else{
-//             OLED_SetContrast(DIM);
-//        }
+        if(bright_screen_timer){
+            OLED_SetContrast(BRIGHT);  
+        }
+        else{
+            OLED_SetContrast(DIM);
+        }
         
         //Turn off screen during mode change.
-        if(blackout_screen_flag){
+        if(blackout_screen_flag == 1){
             ssd1306_command(SSD1306_DISPLAY_OFF);
         }
         
@@ -607,143 +347,13 @@ void main(void)
         }
         
         //Turn on screen after mode change screen update.
-        if(blackout_screen_flag){
-//            if(mode == FIREMAN_SET){
-//                __delay_ms(100);
-//            }
-            
+        if(blackout_screen_flag == 1){         
             ssd1306_command(SSD1306_DISPLAY_ON);
             blackout_screen_flag = 0;
         }
         
-
-        //Single button recognition section.
-        btn_count = 0;
-        
-        if(INCREASE_BUTTON){
-            btn_count++;
-            if(increase_btn_debounce){
-                increase_btn_debounce--;
-            }
-        }else{
-            increase_btn_debounce = DEBOUNCE_CNT;
-        }
-        
-        if(DECREASE_BUTTON){
-            btn_count++;
-            if(decrease_btn_debounce){
-                decrease_btn_debounce--;
-            }
-        }else{
-            decrease_btn_debounce = DEBOUNCE_CNT;
-        }
-        
-        if(MODE_BUTTON){
-            btn_count++;
-            if(mode_btn_debounce){
-                mode_btn_debounce--;
-            }
-        }else{
-            mode_btn_debounce = DEBOUNCE_CNT;
-        }
-        
-        //Buttons Inputs
-        if(btn_count==1){
-            if(decrement){
-                decrement--;
-            }else{
-                
-                bright_screen_timer = BRIGHT_SCREEN_TIMEOUT;
-                
-                if(!increase_btn_debounce){                             //if increase button is pressed
-                    if((FIREMAN_INPUT == 1) && (DECREASE_BUTTON != 1)){ //ignore press if fireman input or decrease button are active
-                        if(!speedChangeTimer){                          //check whether speed is ready to increment
-                            if(speedChangeState<4){                     //make the first few increments happen slowly
-                                speedChangeState++;
-                                speedChangeTimer = SPEED_1_TIME;
-                            }
-                            //Increase based on state and updated the speed in memory
-                            if(fireman_set){
-                                if(frmn_speed < 100){                
-                                    frmn_speed += 1;
-                                    HEFLASH_writeBlock(FIREMAN_SPEED, &frmn_speed, sizeof(frmn_speed)); //Write speed state to memory.
-                                }                  
-                            }else{   
-                                if((speed < 100)){ 
-                                    if(mode == HAND){
-                                        speed += 1;
-                                        HEFLASH_writeBlock(HAND_SPEED, &speed, sizeof(speed)); //Write speed state to memory.
-                                    }else if(mode==AUTO_LOCAL){
-                                        speed += 1;
-                                        HEFLASH_writeBlock(AUTO_LOCAL_SPEED, &speed, sizeof(speed)); //Write speed state to memory.
-                                    }
-                                }
-                            }
-                        }
-                    } 
-                }
-                if(!decrease_btn_debounce){//see increase_button comments
-                    if((FIREMAN_INPUT == 1) && (INCREASE_BUTTON != 1)){
-                        if(!speedChangeTimer){
-                            if(speedChangeState<4){
-                                speedChangeState++;
-                                speedChangeTimer = SPEED_1_TIME;
-                            }
-                            if(fireman_set)
-                            {
-                                if(frmn_speed > 0)
-                                {
-                                    frmn_speed -= 1;
-                                    HEFLASH_writeBlock(FIREMAN_SPEED, &frmn_speed, sizeof(frmn_speed)); //Write speed state to memory.
-                                }
-                            }
-                            else
-                            {
-                                if((speed > 0)){
-                                    if(mode == HAND){
-                                        speed -= 1;
-                                        HEFLASH_writeBlock(HAND_SPEED, &speed, sizeof(speed)); //Write speed state to memory.
-                                    }else if(mode==AUTO_LOCAL){
-                                        speed -= 1;
-                                        HEFLASH_writeBlock(AUTO_LOCAL_SPEED, &speed, sizeof(speed)); //Write speed state to memory.
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if(!mode_btn_debounce){
-                    if(!mode_change_flag){  //only change mode once per button press
-                        
-                        mode_change_flag = 1;
-                            
-                        if((INCREASE_BUTTON != 1) && (DECREASE_BUTTON != 1)){
-
-                            //Toggle mode.
-                            blackout_screen_flag = 1; //Turns off screen during mode changes.
-
-                            if(mode == FIREMAN_SET){
-                                //Reset fireman speed reference adjustment state.
-                                fireman_set = 0;            
-                                HEFLASH_readBlock(&mode, MODE, sizeof(mode)); //Read in mode from settings.
-                            }
-
-                            else if(mode < 3){
-                                mode++;
-                                HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Write current mode state to memory.
-                            }
-
-                            else{
-                                mode = 0;
-                                HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Write current mode state to memory.
-                            }
-                        } 
-                    }
-                }
-            }
-        }else{
-            decrement = DEBOUNCE_CNT;
-        }
+        //Debounce and check current button states.
+        buttonFunction();
         
         if(updateAutoRemoteDelay){
             updateAutoRemoteDelay--;
@@ -755,6 +365,8 @@ void main(void)
             HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Write current mode state to memory.
             mode = FIREMAN_SET; //Set display to show fireman speed reference adjustment. 
             fireman_set_debounce = FIREMAN_SET_DELAY; 
+            
+            blackout_screen_flag = 1; //Turns off screen during mode changes.
         }
         
         if(!fireman_inc){
@@ -767,26 +379,28 @@ void main(void)
             fireman_set = 0;
             fireman_inc = 0;
 
-            press = 0;                 //Button debounce flag.
+            press = 0;          //Button debounce flag.
 
-            mode = 5;        //OFF == 0/HAND == 1/AUTO_LOCAL == 2/AUTO_REMOTE == 3/FACTORY_RESET == 5
-            speed = 50;       //Range from 0-10 volts. (DAC range 0-100)
+            mode = 5;           //OFF == 0/HAND == 1/AUTO_LOCAL == 2/AUTO_REMOTE == 3/FACTORY_RESET == 5
+            speed = 50;         //Range from 0-10 volts. (DAC range 0-100)
             frmn_speed = 100;   //Range from 0-10 volts. (DAC range 0-100)
-            ext_speed = 0;    //Range from 0-10 volts. (Range 0-1024)
+            ext_speed = 0;      //Range from 0-10 volts. (Range 0-1024)
          
             HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Initialize speed in memory.
             HEFLASH_writeBlock(HAND_SPEED, &speed, sizeof(speed)); //Initialize hand speed in memory.
             HEFLASH_writeBlock(AUTO_LOCAL_SPEED, &speed, sizeof(speed)); //Initialize auto local speed in memory.
             HEFLASH_writeBlock(FIREMAN_SPEED, &frmn_speed, sizeof(frmn_speed)); //Initialize speed in memory.
+            
+            blackout_screen_flag = 1; //Allow blackout function on reset.
         }
-    }
-
-    //Display setting refresh.
-    if(setting_refresh_flag){
-       DisplaySettingRefresh();
-       setting_refresh_flag = 0;
-       setting_refresh_timer = SETTING_REFRESH;
-    }   
+        
+        //Display setting refresh.
+        if(setting_refresh_flag){
+            DisplaySettingRefresh();
+            setting_refresh_flag = 0;
+            setting_refresh_timer = SETTING_REFRESH;
+        }   
+    }  
 }
     
 void __interrupt() __ISR(void){ 
@@ -839,6 +453,398 @@ void __interrupt() __ISR(void){
         else{
             setting_refresh_flag = 1;
         }
+    }
+}
+
+//Wrapper for mode state machine.
+void modeFunction(unsigned char mode){
+    
+    ClearText(newTextLine1);
+    ClearText(newTextLine2);
+    ClearText(newTextLine3);
+    ClearText(newTextLine4);
+
+    //Screen and Output Updates
+    switch(mode) 
+    {
+        case OFF :
+
+            //Pull down SPEED_OUTPUT and display.
+
+            sprintf(newTextLine1,"OFF");
+
+            //Output speed control via DAC1.
+            DAC1_Load10bitInputData(0); //Set to zero/off.
+
+            //AUX_CONTACT goes low, set ports.
+            AUX_CONTACT = 0;
+            //RUN_STATUS_THRESHOLD goes low, set ports.
+            RUN_STATUS = 0;
+
+        break;
+
+        case HAND :
+
+            HEFLASH_readBlock(&speed, HAND_SPEED, sizeof(speed)); //Read speed state from memory.
+
+            //LINE 1
+            sprintf(newTextLine1,"HAND");
+
+            //LINE 4
+            sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
+
+            //Output speed control via DAC1.
+            DAC1_Load10bitInputData(speed*INTERNAL_SPEED_SCALER); //Scaled based on variable range of 0-100.
+
+            if((float)speed/10 > AUX_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
+            {
+                //AUX_CONTACT closes, set ports.
+                AUX_CONTACT = 1;
+            }
+            else    //ext_speed range: 0-1023 / speed range : 0-100 
+            {
+                //AUX_CONTACT opens, set ports.
+                AUX_CONTACT = 0;
+            }
+
+            if(speed/10 >= RUN_STATUS_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
+            {
+                //RUN_STATUS provides continuity, set ports.
+                RUN_STATUS = 1;
+            }
+            else    //ext_speed range: 0-1023 / speed range : 0-100 
+            {
+                //RUN_STATUS provides continuity, set ports.
+                RUN_STATUS = 0;
+            }
+
+        break;
+
+        case AUTO_LOCAL :
+
+            HEFLASH_readBlock(&speed, AUTO_LOCAL_SPEED, sizeof(speed)); //Read speed state from memory.  
+            //LINE 1
+            sprintf(newTextLine1,"AUTO LOCAL");
+
+            //LINE 4
+            sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
+
+            if( (WET_INPUT == 0) || (DRY_INPUT == 1) )                                                                                                                                                                                                                                                
+            {
+                //Read AUTO LOCAL speed setting from memory and display.
+                //LINE 2
+                sprintf(newTextLine2,"Enabled");   
+
+                //Output speed control via DAC1.
+                DAC1_Load10bitInputData(speed*INTERNAL_SPEED_SCALER); //Scaled based on variable range of 0-100.
+
+                if((float)speed/10 > AUX_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
+                {
+                    //AUX_CONTACT closes, set ports.
+                    AUX_CONTACT = 1;
+                }
+                else    //ext_speed range: 0-1023 / speed range : 0-100 
+                {
+                    //AUX_CONTACT opens, set ports.
+                    AUX_CONTACT = 0;
+                }
+
+                if(speed/10 >= RUN_STATUS_THRESHOLD) //ext_speed range: 0-1023 / speed range : 0-100 
+                {
+                    //RUN_STATUS provides continuity, set ports.
+                    RUN_STATUS = 1;
+                }
+                else    //ext_speed range: 0-1023 / speed range : 0-100 
+                {
+                    //RUN_STATUS provides continuity, set ports.
+                    RUN_STATUS = 0;
+                }
+            }
+            else
+            {
+                //LINE 2
+                sprintf(newTextLine2,"Disabled");
+
+                //Output speed control via DAC1.
+                DAC1_Load10bitInputData(0); //Set to zero/off.
+
+                //AUX_CONTACT goes low, set ports.
+                AUX_CONTACT = 0;
+                //RUN_STATUS_THRESHOLD goes low, set ports.
+                RUN_STATUS = 0;
+
+            }
+
+        break;    
+
+        case AUTO_REMOTE :
+            ext_speed = (float)((uint16_t)(ADRESH<<8) + (uint16_t)ADRESL);  //For right-justified setting. Hardware range limited from 0-1000.
+
+            static unsigned int index = 0;
+            static float arr[FILTER_SAMPLE_SIZE];
+
+            //Rolling averaging filter.
+            if(index < FILTER_ARRAY_INDEX){
+
+                arr[index] = ext_speed;
+                index++;
+
+            }
+            else{
+
+                arr[index] = ext_speed;
+                index = 0;
+
+            }    
+
+            //Reset average every new sample.
+            float avg = 0;
+            for(unsigned int i =0; i<FILTER_SAMPLE_SIZE; i++){
+                avg += arr[i];
+                if(i == FILTER_ARRAY_INDEX){
+                    avg = avg/FILTER_SAMPLE_SIZE;
+                }
+            }
+
+            unsigned int integer = (avg*EXTERNAL_SPEED_SCALER);               
+            unsigned int decimal = (unsigned long)(avg*EXTERNAL_SPEED_SCALER*10) % 10;  
+
+            //LINE 1                                                                
+            sprintf(newTextLine1,"AUTO REMOTE");                     
+
+            //LINE 4
+            //only update displayed voltage periodically to prevent frequent screen updates from interfering with button press timing.
+            if(!updateAutoRemoteDelay){ 
+                updateAutoRemoteDelay = DEBOUNCE_CNT; 
+                sprintf(newTextLine4,"READ:%d.%dV", integer, decimal);
+
+            }
+
+            if( (WET_INPUT == 0) || (DRY_INPUT == 1) ){ //Read AUTO speed setting from ADC channel AN9 and display,
+
+                //LINE 2
+                sprintf(newTextLine2,"Enabled");
+
+                //Output speed control via DAC1.
+                DAC1_Load10bitInputData(ext_speed); //Scaled based on hardware input range of 0-1000.
+
+                //Hysteresis added using checks against AUX_HIGH and AUX_LOW to prevent relay chatter near threshold
+                //This is only needed for AUTO_REMOTE because the remote voltage control is analog and may have noise
+                if((float)(avg*EXTERNAL_SPEED_SCALER) > AUX_HIGH){ //ext_speed range: 0-1023 / speed range : 0-100 
+                    //AUX_CONTACT closes, set ports.
+                    AUX_CONTACT = 1;
+                }
+                else if ((float)(avg*EXTERNAL_SPEED_SCALER) < AUX_LOW){//ext_speed range: 0-1023 / speed range : 0-100 
+                    //AUX_CONTACT opens, set ports.
+                    AUX_CONTACT = 0;
+                }
+
+                //Hysteresis added using checks against HIGH and LOW thresholds to prevent OPTO from turning on and off repeatedly near threshold
+                //This is only needed for AUTO_REMOTE because the remote voltage control is analog and may have noise
+                if((float)(avg*EXTERNAL_SPEED_SCALER) > RUN_STATUS_HIGH){ //ext_speed range: 0-1023 / speed range : 0-100 
+                    //RUN_STATUS provides continuity, set ports.
+                    RUN_STATUS = 1;
+                }
+                else if((float)(avg*EXTERNAL_SPEED_SCALER) < RUN_STATUS_LOW){ //ext_speed range: 0-1023 / speed range : 0-100 
+                    //RUN_STATUS provides continuity, set ports.
+                    RUN_STATUS = 0;
+                }
+            }
+            else{   
+                //LINE 2
+                sprintf(newTextLine2,"Disabled");
+
+                //Output speed control via DAC1.
+                DAC1_Load10bitInputData(0); //Set to zero/off.
+
+                //AUX_CONTACT goes low, set ports.
+                AUX_CONTACT = 0;
+                //RUN_STATUS_THRESHOLD goes low, set ports.
+                RUN_STATUS = 0;
+            } 
+
+        break;
+
+        case FIREMAN_SET :
+
+            HEFLASH_readBlock(&frmn_speed, FIREMAN_SPEED, sizeof(frmn_speed)); //Read speed state from memory. 
+
+            sprintf(newTextLine1,"FIREMANSET");
+
+            sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
+
+            //Output speed control via DAC1.
+            DAC1_Load10bitInputData(frmn_speed*INTERNAL_SPEED_SCALER); //Scaled based on variable range of 0-100.
+
+            if((float)frmn_speed/10 > AUX_THRESHOLD){ //ext_speed range: 0-1023 / speed range : 0-100 
+                //AUX_CONTACT closes, set ports.
+                AUX_CONTACT = 1;
+            }
+            else{    //ext_speed range: 0-1023 / speed range : 0-100 
+                //AUX_CONTACT opens, set ports.
+                AUX_CONTACT = 0;
+            }
+
+            if(frmn_speed/10 >= RUN_STATUS_THRESHOLD){ //ext_speed range: 0-1023 / speed range : 0-100 
+                //RUN_STATUS provides continuity, set ports.
+                RUN_STATUS = 1;
+            }
+            else{    //ext_speed range: 0-1023 / speed range : 0-100 
+                //RUN_STATUS provides continuity, set ports.
+                RUN_STATUS = 0;
+            }
+
+        break;
+
+        default :
+
+            //Initialize mode.
+            sprintf(newTextLine1,"Press Mode");
+
+            sprintf(newTextLine2,"%s",VERSION);
+
+            //Output speed control via DAC1.
+            DAC1_Load10bitInputData(0); //Set to zero/off.
+
+            //AUX_CONTACT goes low, set ports.
+            AUX_CONTACT = 0;
+            //RUN_STATUS_THRESHOLD goes low, set ports.
+            RUN_STATUS = 0;
+            
+        break;
+    }
+}
+
+//Wrapper for button state check.
+void buttonFunction(void){
+    
+    //Single button recognition section.
+    btn_count = 0;
+
+    if(INCREASE_BUTTON){
+        btn_count++;
+        if(increase_btn_debounce){
+            increase_btn_debounce--;
+        }
+    }else{
+        increase_btn_debounce = DEBOUNCE_CNT;
+    }
+
+    if(DECREASE_BUTTON){
+        btn_count++;
+        if(decrease_btn_debounce){
+            decrease_btn_debounce--;
+        }
+    }else{
+        decrease_btn_debounce = DEBOUNCE_CNT;
+    }
+
+    if(MODE_BUTTON){
+        btn_count++;
+        if(mode_btn_debounce){
+            mode_btn_debounce--;
+        }
+    }else{
+        mode_btn_debounce = DEBOUNCE_CNT;
+    }
+
+    //Buttons Inputs
+    if(btn_count==1){
+        if(decrement){
+            decrement--;
+        }else{
+
+            bright_screen_timer = BRIGHT_SCREEN_TIMEOUT;
+
+            if(!increase_btn_debounce){                             //if increase button is pressed
+                if((FIREMAN_INPUT == 1) && (DECREASE_BUTTON != 1)){ //ignore press if fireman input or decrease button are active
+                    if(!speedChangeTimer){                          //check whether speed is ready to increment
+                        if(speedChangeState<4){                     //make the first few increments happen slowly
+                            speedChangeState++;
+                            speedChangeTimer = SPEED_1_TIME;
+                        }
+                        //Increase based on state and updated the speed in memory
+                        if(fireman_set){
+                            if(frmn_speed < 100){                
+                                frmn_speed += 1;
+                                HEFLASH_writeBlock(FIREMAN_SPEED, &frmn_speed, sizeof(frmn_speed)); //Write speed state to memory.
+                            }                  
+                        }else{   
+                            if((speed < 100)){ 
+                                if(mode == HAND){
+                                    speed += 1;
+                                    HEFLASH_writeBlock(HAND_SPEED, &speed, sizeof(speed)); //Write speed state to memory.
+                                }else if(mode==AUTO_LOCAL){
+                                    speed += 1;
+                                    HEFLASH_writeBlock(AUTO_LOCAL_SPEED, &speed, sizeof(speed)); //Write speed state to memory.
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+            if(!decrease_btn_debounce){//see increase_button comments
+                if((FIREMAN_INPUT == 1) && (INCREASE_BUTTON != 1)){
+                    if(!speedChangeTimer){
+                        if(speedChangeState<4){
+                            speedChangeState++;
+                            speedChangeTimer = SPEED_1_TIME;
+                        }
+                        if(fireman_set)
+                        {
+                            if(frmn_speed > 0)
+                            {
+                                frmn_speed -= 1;
+                                HEFLASH_writeBlock(FIREMAN_SPEED, &frmn_speed, sizeof(frmn_speed)); //Write speed state to memory.
+                            }
+                        }
+                        else
+                        {
+                            if((speed > 0)){
+                                if(mode == HAND){
+                                    speed -= 1;
+                                    HEFLASH_writeBlock(HAND_SPEED, &speed, sizeof(speed)); //Write speed state to memory.
+                                }else if(mode==AUTO_LOCAL){
+                                    speed -= 1;
+                                    HEFLASH_writeBlock(AUTO_LOCAL_SPEED, &speed, sizeof(speed)); //Write speed state to memory.
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if(!mode_btn_debounce){
+                if(!mode_change_flag){  //only change mode once per button press
+
+                    mode_change_flag = 1;
+
+                    if((INCREASE_BUTTON != 1) && (DECREASE_BUTTON != 1)){
+
+                        //Toggle mode.
+                        blackout_screen_flag = 1; //Turns off screen during mode changes.
+
+                        if(mode == FIREMAN_SET){
+                            //Reset fireman speed reference adjustment state.
+                            fireman_set = 0;            
+                            HEFLASH_readBlock(&mode, MODE, sizeof(mode)); //Read in mode from settings.
+                        }
+
+                        else if(mode < 3){
+                            mode++;
+                            HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Write current mode state to memory.
+                        }
+
+                        else{
+                            mode = 0;
+                            HEFLASH_writeBlock(MODE, &mode, sizeof(mode)); //Write current mode state to memory.
+                        }
+                    } 
+                }
+            }
+        }
+    }
+    else{
+        decrement = DEBOUNCE_CNT;
     }
 }
 

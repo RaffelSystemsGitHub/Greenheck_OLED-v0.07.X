@@ -1079,10 +1079,14 @@ void Update_Display_Line(char line_number){
  
                 if(*(currentText+i)!=*(newTextLine2+i)){
 
-                    OLED_Write(i*(cfont.x_size - 4),0,*(newTextLine2+i));
+                    OLED_Write(i*(cfont.x_size - 4)-(4*numSpaces),0,*(newTextLine2+i));
                     
                     *(currentText+i) = *(newTextLine2+i);
 
+                }
+                    
+                if(*(newTextLine2+i) == ' '){
+                    numSpaces++;
                 }
             }
             
@@ -1102,10 +1106,14 @@ void Update_Display_Line(char line_number){
  
                 if(*(currentText+i)!=*(newTextLine3+i)){
 
-                    OLED_Write(i*(cfont.x_size - 4),0,*(newTextLine3+i));
+                    OLED_Write(i*(cfont.x_size - 4)-(4*numSpaces),0,*(newTextLine3+i));
                     
                     *(currentText+i) = *(newTextLine3+i);
 
+                }
+                    
+                if(*(newTextLine3+i) == ' '){
+                    numSpaces++;
                 }
             }
             
@@ -1125,10 +1133,14 @@ void Update_Display_Line(char line_number){
  
                 if(*(currentText+i)!=*(newTextLine4+i)){
 
-                    OLED_Write(i*(cfont.x_size - 4),0,*(newTextLine4+i));
+                    OLED_Write(i*(cfont.x_size - 4)-(4*numSpaces),0,*(newTextLine4+i));
                     
                     *(currentText+i) = *(newTextLine4+i);
 
+                }
+                    
+                if(*(newTextLine3+i) == ' '){
+                    numSpaces++;
                 }
             }
             

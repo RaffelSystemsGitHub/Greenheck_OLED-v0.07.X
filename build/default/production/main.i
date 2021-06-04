@@ -20397,6 +20397,7 @@ volatile unsigned int speedChangeTimer = 0;
 volatile unsigned int fireman_set_debounce = (10000/(5*8));
 
 
+
 void ClearText(char* textToClear){
     for(int i = 0; i < 11; i++){
         textToClear[i] = '\0';
@@ -20409,6 +20410,8 @@ void WDTclear(void){
     WDTCON = 0x25;
 }
 
+void modeFunction(unsigned char mode);
+void buttonFunction(void);
 
 void main(void)
 {
@@ -20450,6 +20453,7 @@ void main(void)
     }
 
     OLED_Init();
+    blackout_screen_flag = 1;
     _delay((unsigned long)((100)*((32000000)/4000.0)));
 
 
@@ -20458,12 +20462,14 @@ void main(void)
 
         WDTclear();
 
+        LATA6 = 1;
+
         if((!RB1) && (!RB0)){
 
             ClearText(newTextLine1);
 
             ClearText(newTextLine2);
-            sprintf(newTextLine2,"   %s   ",("VX.YY"));
+            sprintf(newTextLine2,"    %s",("V1.00"));
 
             ClearText(newTextLine3);
 
@@ -20472,7 +20478,7 @@ void main(void)
             blackout_screen_flag = 1;
 
 
-            if(blackout_screen_flag){
+            if(blackout_screen_flag == 1){
                 ssd1306_command(0xAE);
             }
 
@@ -20482,7 +20488,7 @@ void main(void)
             }
 
 
-            if(blackout_screen_flag){
+            if(blackout_screen_flag == 1){
                 ssd1306_command(0xAF);
                 blackout_screen_flag = 0;
             }
@@ -20490,6 +20496,8 @@ void main(void)
             _delay((unsigned long)((3000)*((32000000)/4000.0)));
 
             blackout_screen_flag = 1;
+
+            WDTclear();
         }
 
 
@@ -20533,9 +20541,8 @@ void main(void)
             }
 
 
-            if(blackout_screen_flag){
-                ssd1306_command(0xAE);
-            }
+            ssd1306_command(0xAE);
+
 
 
             for(char i=1;i<5;i++){
@@ -20543,10 +20550,8 @@ void main(void)
             }
 
 
-            if(blackout_screen_flag){
-                ssd1306_command(0xAF);
-                blackout_screen_flag = 0;
-            }
+            ssd1306_command(0xAF);
+            OLED_SetContrast(0xFF);
 
             unsigned int power_led_flash_counter = 0;
 
@@ -20570,281 +20575,23 @@ void main(void)
 
                 WDTclear();
             }
+            blackout_screen_flag = 1;
         }
-        LATA6 = 1;
 
-        ClearText(newTextLine1);
-        ClearText(newTextLine2);
-        ClearText(newTextLine3);
-        ClearText(newTextLine4);
 
+        modeFunction(mode);
 
-        switch(mode)
-        {
-            case 1 :
 
-
-
-                sprintf(newTextLine1,"OFF");
-
-
-                DAC1_Load10bitInputData(0);
-
-
-                LATA0 = 0;
-
-                LATA1 = 0;
-
-            break;
-
-            case 0 :
-
-                HEFLASH_readBlock(&speed, 1, sizeof(speed));
-
-
-                sprintf(newTextLine1,"HAND");
-
-
-                sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
-
-
-                DAC1_Load10bitInputData(speed*(0.8*1023/100));
-
-                if((float)speed/10 > 1.85)
-                {
-
-                    LATA0 = 1;
-                }
-                else
-                {
-
-                    LATA0 = 0;
-                }
-
-                if(speed/10 >= 2.0)
-                {
-
-                    LATA1 = 1;
-                }
-                else
-                {
-
-                    LATA1 = 0;
-                }
-
-            break;
-
-            case 2 :
-
-                HEFLASH_readBlock(&speed, 3, sizeof(speed));
-
-                sprintf(newTextLine1,"AUTO LOCAL");
-
-
-                sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
-
-                if( (RB4 == 0) || (RA3 == 1) )
-                {
-
-
-                    sprintf(newTextLine2,"Enabled");
-
-
-                    DAC1_Load10bitInputData(speed*(0.8*1023/100));
-
-                    if((float)speed/10 > 1.85)
-                    {
-
-                        LATA0 = 1;
-                    }
-                    else
-                    {
-
-                        LATA0 = 0;
-                    }
-
-                    if(speed/10 >= 2.0)
-                    {
-
-                        LATA1 = 1;
-                    }
-                    else
-                    {
-
-                        LATA1 = 0;
-                    }
-                }
-                else
-                {
-
-                    sprintf(newTextLine2,"Disabled");
-
-
-                    DAC1_Load10bitInputData(0);
-
-
-                    LATA0 = 0;
-
-                    LATA1 = 0;
-
-                }
-
-            break;
-
-            case 3 :
-                ext_speed = (float)((uint16_t)(ADRESH<<8) + (uint16_t)ADRESL);
-
-                static unsigned int index = 0;
-                static float arr[10];
-
-
-                if(index < (10 -1)){
-
-                    arr[index] = ext_speed;
-                    index++;
-
-                }
-                else{
-
-                    arr[index] = ext_speed;
-                    index = 0;
-
-                }
-
-
-                float avg = 0;
-                for(unsigned int i =0; i<10; i++){
-                    avg += arr[i];
-                    if(i == (10 -1)){
-                        avg = avg/10;
-                    }
-                }
-
-                unsigned int integer = (avg*(2.5*5/1024));
-                unsigned int decimal = (unsigned long)(avg*(2.5*5/1024)*10) % 10;
-
-
-                sprintf(newTextLine1,"AUTO REMOTE");
-
-
-
-                if(!updateAutoRemoteDelay){
-                    updateAutoRemoteDelay = 1;
-                    sprintf(newTextLine4,"READ:%d.%dV", integer, decimal);
-
-                }
-
-
-
-
-
-
-
-                if( (RB4 == 0) || (RA3 == 1) ){
-
-
-                    sprintf(newTextLine2,"Enabled");
-
-
-                    DAC1_Load10bitInputData(ext_speed);
-
-
-
-                    if((float)(avg*(2.5*5/1024)) > 1.9)
-                    {
-
-                        LATA0 = 1;
-                    }
-                    else if ((float)(avg*(2.5*5/1024)) < 1.8)
-                    {
-
-                        LATA0 = 0;
-                    }
-
-
-
-                    if((float)(avg*(2.5*5/1024)) > 2.05)
-                    {
-
-                        LATA1 = 1;
-                    }
-                    else if((float)(avg*(2.5*5/1024)) < 1.95)
-                    {
-
-                        LATA1 = 0;
-                    }
-                }
-                else
-                {
-
-                    sprintf(newTextLine2,"Disabled");
-
-
-                    DAC1_Load10bitInputData(0);
-
-
-                    LATA0 = 0;
-
-                    LATA1 = 0;
-                }
-            break;
-
-            case 4 :
-
-                HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
-
-                sprintf(newTextLine1,"FIREMANSET");
-
-                sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
-
-
-                DAC1_Load10bitInputData(frmn_speed*(0.8*1023/100));
-
-                if((float)frmn_speed/10 > 1.85)
-                {
-
-                    LATA0 = 1;
-                }
-                else
-                {
-
-                    LATA0 = 0;
-                }
-
-                if(frmn_speed/10 >= 2.0)
-                {
-
-                    LATA1 = 1;
-                }
-                else
-                {
-
-                    LATA1 = 0;
-                }
-
-            break;
-
-            default :
-
-
-                sprintf(newTextLine1,"Press Mode");
-
-                sprintf(newTextLine2,"%s",("VX.YY"));
-
-
-                DAC1_Load10bitInputData(0);
-
-
-                LATA0 = 0;
-
-                LATA1 = 0;
-
-            break;
+        if(bright_screen_timer){
+            OLED_SetContrast(0xFF);
         }
-# 600 "main.c"
-        if(blackout_screen_flag){
+        else{
+             OLED_SetContrast(0x00);
+        }
+
+
+        if(blackout_screen_flag == 1){
             ssd1306_command(0xAE);
-            _delay((unsigned long)((1)*((32000000)/4000.0)));
         }
 
 
@@ -20853,143 +20600,13 @@ void main(void)
         }
 
 
-        if(blackout_screen_flag){
-
-
-
-
+        if(blackout_screen_flag == 1){
             ssd1306_command(0xAF);
             blackout_screen_flag = 0;
         }
 
 
-
-        btn_count = 0;
-
-        if((!RB1)){
-            btn_count++;
-            if(increase_btn_debounce){
-                increase_btn_debounce--;
-            }
-        }else{
-            increase_btn_debounce = 1;
-        }
-
-        if((!RB2)){
-            btn_count++;
-            if(decrease_btn_debounce){
-                decrease_btn_debounce--;
-            }
-        }else{
-            decrease_btn_debounce = 1;
-        }
-
-        if((!RB0)){
-            btn_count++;
-            if(mode_btn_debounce){
-                mode_btn_debounce--;
-            }
-        }else{
-            mode_btn_debounce = 1;
-        }
-
-
-        if(btn_count==1){
-            if(decrement){
-                decrement--;
-            }else{
-
-                bright_screen_timer = (50000/(5*8));
-
-                if(!increase_btn_debounce){
-                    if((RB5 == 1) && ((!RB2) != 1)){
-                        if(!speedChangeTimer){
-                            if(speedChangeState<4){
-                                speedChangeState++;
-                                speedChangeTimer = (2000/(5*8));
-                            }
-
-                            if(fireman_set){
-                                if(frmn_speed < 100){
-                                    frmn_speed += 1;
-                                    HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
-                                }
-                            }else{
-                                if((speed < 100)){
-                                    if(mode == 0){
-                                        speed += 1;
-                                        HEFLASH_writeBlock(1, &speed, sizeof(speed));
-                                    }else if(mode==2){
-                                        speed += 1;
-                                        HEFLASH_writeBlock(3, &speed, sizeof(speed));
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if(!decrease_btn_debounce){
-                    if((RB5 == 1) && ((!RB1) != 1)){
-                        if(!speedChangeTimer){
-                            if(speedChangeState<4){
-                                speedChangeState++;
-                                speedChangeTimer = (2000/(5*8));
-                            }
-                            if(fireman_set)
-                            {
-                                if(frmn_speed > 0)
-                                {
-                                    frmn_speed -= 1;
-                                    HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
-                                }
-                            }
-                            else
-                            {
-                                if((speed > 0)){
-                                    if(mode == 0){
-                                        speed -= 1;
-                                        HEFLASH_writeBlock(1, &speed, sizeof(speed));
-                                    }else if(mode==2){
-                                        speed -= 1;
-                                        HEFLASH_writeBlock(3, &speed, sizeof(speed));
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if(!mode_btn_debounce){
-                    if(!mode_change_flag){
-
-                        mode_change_flag = 1;
-
-                        if(((!RB1) != 1) && ((!RB2) != 1)){
-
-
-                            blackout_screen_flag = 1;
-
-                            if(mode == 4){
-
-                                fireman_set = 0;
-                                HEFLASH_readBlock(&mode, 0, sizeof(mode));
-                            }
-
-                            else if(mode < 3){
-                                mode++;
-                                HEFLASH_writeBlock(0, &mode, sizeof(mode));
-                            }
-
-                            else{
-                                mode = 0;
-                                HEFLASH_writeBlock(0, &mode, sizeof(mode));
-                            }
-                        }
-                    }
-                }
-            }
-        }else{
-            decrement = 1;
-        }
+        buttonFunction();
 
         if(updateAutoRemoteDelay){
             updateAutoRemoteDelay--;
@@ -21001,6 +20618,8 @@ void main(void)
             HEFLASH_writeBlock(0, &mode, sizeof(mode));
             mode = 4;
             fireman_set_debounce = (10000/(5*8));
+
+            blackout_screen_flag = 1;
         }
 
         if(!fireman_inc){
@@ -21024,14 +20643,16 @@ void main(void)
             HEFLASH_writeBlock(1, &speed, sizeof(speed));
             HEFLASH_writeBlock(3, &speed, sizeof(speed));
             HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
+
+            blackout_screen_flag = 1;
         }
-    }
 
 
-    if(setting_refresh_flag){
-       DisplaySettingRefresh();
-       setting_refresh_flag = 0;
-       setting_refresh_timer = (1280000/(5*8));
+        if(setting_refresh_flag){
+            DisplaySettingRefresh();
+            setting_refresh_flag = 0;
+            setting_refresh_timer = (1280000/(5*8));
+        }
     }
 }
 
@@ -21085,5 +20706,397 @@ void __attribute__((picinterrupt(("")))) __ISR(void){
         else{
             setting_refresh_flag = 1;
         }
+    }
+}
+
+
+void modeFunction(unsigned char mode){
+
+    ClearText(newTextLine1);
+    ClearText(newTextLine2);
+    ClearText(newTextLine3);
+    ClearText(newTextLine4);
+
+
+    switch(mode)
+    {
+        case 1 :
+
+
+
+            sprintf(newTextLine1,"OFF");
+
+
+            DAC1_Load10bitInputData(0);
+
+
+            LATA0 = 0;
+
+            LATA1 = 0;
+
+        break;
+
+        case 0 :
+
+            HEFLASH_readBlock(&speed, 1, sizeof(speed));
+
+
+            sprintf(newTextLine1,"HAND");
+
+
+            sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
+
+
+            DAC1_Load10bitInputData(speed*(0.8*1023/100));
+
+            if((float)speed/10 > 1.85)
+            {
+
+                LATA0 = 1;
+            }
+            else
+            {
+
+                LATA0 = 0;
+            }
+
+            if(speed/10 >= 2.0)
+            {
+
+                LATA1 = 1;
+            }
+            else
+            {
+
+                LATA1 = 0;
+            }
+
+        break;
+
+        case 2 :
+
+            HEFLASH_readBlock(&speed, 3, sizeof(speed));
+
+            sprintf(newTextLine1,"AUTO LOCAL");
+
+
+            sprintf(newTextLine4,"SET:%d.%dV", speed/10, (speed%10));
+
+            if( (RB4 == 0) || (RA3 == 1) )
+            {
+
+
+                sprintf(newTextLine2,"Enabled");
+
+
+                DAC1_Load10bitInputData(speed*(0.8*1023/100));
+
+                if((float)speed/10 > 1.85)
+                {
+
+                    LATA0 = 1;
+                }
+                else
+                {
+
+                    LATA0 = 0;
+                }
+
+                if(speed/10 >= 2.0)
+                {
+
+                    LATA1 = 1;
+                }
+                else
+                {
+
+                    LATA1 = 0;
+                }
+            }
+            else
+            {
+
+                sprintf(newTextLine2,"Disabled");
+
+
+                DAC1_Load10bitInputData(0);
+
+
+                LATA0 = 0;
+
+                LATA1 = 0;
+
+            }
+
+        break;
+
+        case 3 :
+            ext_speed = (float)((uint16_t)(ADRESH<<8) + (uint16_t)ADRESL);
+
+            static unsigned int index = 0;
+            static float arr[10];
+
+
+            if(index < (10 -1)){
+
+                arr[index] = ext_speed;
+                index++;
+
+            }
+            else{
+
+                arr[index] = ext_speed;
+                index = 0;
+
+            }
+
+
+            float avg = 0;
+            for(unsigned int i =0; i<10; i++){
+                avg += arr[i];
+                if(i == (10 -1)){
+                    avg = avg/10;
+                }
+            }
+
+            unsigned int integer = (avg*(2.5*5/1024));
+            unsigned int decimal = (unsigned long)(avg*(2.5*5/1024)*10) % 10;
+
+
+            sprintf(newTextLine1,"AUTO REMOTE");
+
+
+
+            if(!updateAutoRemoteDelay){
+                updateAutoRemoteDelay = 1;
+                sprintf(newTextLine4,"READ:%d.%dV", integer, decimal);
+
+            }
+
+            if( (RB4 == 0) || (RA3 == 1) ){
+
+
+                sprintf(newTextLine2,"Enabled");
+
+
+                DAC1_Load10bitInputData(ext_speed);
+
+
+
+                if((float)(avg*(2.5*5/1024)) > 1.9){
+
+                    LATA0 = 1;
+                }
+                else if ((float)(avg*(2.5*5/1024)) < 1.8){
+
+                    LATA0 = 0;
+                }
+
+
+
+                if((float)(avg*(2.5*5/1024)) > 2.05){
+
+                    LATA1 = 1;
+                }
+                else if((float)(avg*(2.5*5/1024)) < 1.95){
+
+                    LATA1 = 0;
+                }
+            }
+            else{
+
+                sprintf(newTextLine2,"Disabled");
+
+
+                DAC1_Load10bitInputData(0);
+
+
+                LATA0 = 0;
+
+                LATA1 = 0;
+            }
+
+        break;
+
+        case 4 :
+
+            HEFLASH_readBlock(&frmn_speed, 2, sizeof(frmn_speed));
+
+            sprintf(newTextLine1,"FIREMANSET");
+
+            sprintf(newTextLine4,"SET:%d.%dV", frmn_speed/10, (frmn_speed%10));
+
+
+            DAC1_Load10bitInputData(frmn_speed*(0.8*1023/100));
+
+            if((float)frmn_speed/10 > 1.85){
+
+                LATA0 = 1;
+            }
+            else{
+
+                LATA0 = 0;
+            }
+
+            if(frmn_speed/10 >= 2.0){
+
+                LATA1 = 1;
+            }
+            else{
+
+                LATA1 = 0;
+            }
+
+        break;
+
+        default :
+
+
+            sprintf(newTextLine1,"Press Mode");
+
+            sprintf(newTextLine2,"%s",("V1.00"));
+
+
+            DAC1_Load10bitInputData(0);
+
+
+            LATA0 = 0;
+
+            LATA1 = 0;
+
+        break;
+    }
+}
+
+
+void buttonFunction(void){
+
+
+    btn_count = 0;
+
+    if((!RB1)){
+        btn_count++;
+        if(increase_btn_debounce){
+            increase_btn_debounce--;
+        }
+    }else{
+        increase_btn_debounce = 1;
+    }
+
+    if((!RB2)){
+        btn_count++;
+        if(decrease_btn_debounce){
+            decrease_btn_debounce--;
+        }
+    }else{
+        decrease_btn_debounce = 1;
+    }
+
+    if((!RB0)){
+        btn_count++;
+        if(mode_btn_debounce){
+            mode_btn_debounce--;
+        }
+    }else{
+        mode_btn_debounce = 1;
+    }
+
+
+    if(btn_count==1){
+        if(decrement){
+            decrement--;
+        }else{
+
+            bright_screen_timer = (50000/(5*8));
+
+            if(!increase_btn_debounce){
+                if((RB5 == 1) && ((!RB2) != 1)){
+                    if(!speedChangeTimer){
+                        if(speedChangeState<4){
+                            speedChangeState++;
+                            speedChangeTimer = (2000/(5*8));
+                        }
+
+                        if(fireman_set){
+                            if(frmn_speed < 100){
+                                frmn_speed += 1;
+                                HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
+                            }
+                        }else{
+                            if((speed < 100)){
+                                if(mode == 0){
+                                    speed += 1;
+                                    HEFLASH_writeBlock(1, &speed, sizeof(speed));
+                                }else if(mode==2){
+                                    speed += 1;
+                                    HEFLASH_writeBlock(3, &speed, sizeof(speed));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if(!decrease_btn_debounce){
+                if((RB5 == 1) && ((!RB1) != 1)){
+                    if(!speedChangeTimer){
+                        if(speedChangeState<4){
+                            speedChangeState++;
+                            speedChangeTimer = (2000/(5*8));
+                        }
+                        if(fireman_set)
+                        {
+                            if(frmn_speed > 0)
+                            {
+                                frmn_speed -= 1;
+                                HEFLASH_writeBlock(2, &frmn_speed, sizeof(frmn_speed));
+                            }
+                        }
+                        else
+                        {
+                            if((speed > 0)){
+                                if(mode == 0){
+                                    speed -= 1;
+                                    HEFLASH_writeBlock(1, &speed, sizeof(speed));
+                                }else if(mode==2){
+                                    speed -= 1;
+                                    HEFLASH_writeBlock(3, &speed, sizeof(speed));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if(!mode_btn_debounce){
+                if(!mode_change_flag){
+
+                    mode_change_flag = 1;
+
+                    if(((!RB1) != 1) && ((!RB2) != 1)){
+
+
+                        blackout_screen_flag = 1;
+
+                        if(mode == 4){
+
+                            fireman_set = 0;
+                            HEFLASH_readBlock(&mode, 0, sizeof(mode));
+                        }
+
+                        else if(mode < 3){
+                            mode++;
+                            HEFLASH_writeBlock(0, &mode, sizeof(mode));
+                        }
+
+                        else{
+                            mode = 0;
+                            HEFLASH_writeBlock(0, &mode, sizeof(mode));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    else{
+        decrement = 1;
     }
 }
