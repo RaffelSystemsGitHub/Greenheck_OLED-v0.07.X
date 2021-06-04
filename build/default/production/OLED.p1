@@ -6071,8 +6071,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;OLED.c: 1048:                     *(textLine1+i) = *(newTextLine1+i);
 [e = *U + &U _textLine1 * -> _i `x -> -> # *U &U _textLine1 `i `x *U + &U _newTextLine1 * -> _i `x -> -> # *U &U _newTextLine1 `i `x ]
 "1052
-[; ;OLED.c: 1052:                     if(*(currentText+i)!=*(newTextLine1+i)){
-[e $ ! != -> *U + &U _currentText * -> _i `x -> -> # *U &U _currentText `i `x `i -> *U + &U _newTextLine1 * -> _i `x -> -> # *U &U _newTextLine1 `i `x `i 1812  ]
+[; ;OLED.c: 1052:                     if(*(currentText+i)!=*(newTextLine1+i) || (numSpaces != 0)){
+[e $ ! || != -> *U + &U _currentText * -> _i `x -> -> # *U &U _currentText `i `x `i -> *U + &U _newTextLine1 * -> _i `x -> -> # *U &U _newTextLine1 `i `x `i != -> _numSpaces `i -> 0 `i 1812  ]
 {
 "1054
 [; ;OLED.c: 1054:                         OLED_Write(i*(cfont.x_size - 4)-(4*numSpaces),0,*(newTextLine1+i));

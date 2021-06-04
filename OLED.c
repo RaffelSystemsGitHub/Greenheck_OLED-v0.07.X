@@ -1049,7 +1049,7 @@ void Update_Display_Line(char line_number){
  
                     
                     
-                    if(*(currentText+i)!=*(newTextLine1+i)){
+                    if(*(currentText+i)!=*(newTextLine1+i) || (numSpaces != 0)){
 
                         OLED_Write(i*(cfont.x_size - 4)-(4*numSpaces),0,*(newTextLine1+i));
 

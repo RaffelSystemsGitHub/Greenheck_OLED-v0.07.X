@@ -11,56 +11,56 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
+$C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 A7 A7 2 2
 config CONFIG 4 8007 8007 2 2
 $dist/default/production\Greenheck_OLED-v0.07.X.production.o
 cinit CODE 0 A9 A9 5C 2
 text1 CODE 0 11CB 11CB 635 2
-text2 CODE 0 2807 2807 2A 2
+text2 CODE 0 2800 2800 2A 2
 text3 CODE 0 1806 1806 31 2
 text4 CODE 0 21CA 21CA 10E 2
 text5 CODE 0 2D61 2D61 D7 2
 text6 CODE 0 22D8 22D8 170 2
-text7 CODE 0 2A78 2A78 5C 2
+text7 CODE 0 2A71 2A71 5C 2
 text8 CODE 0 36C7 36C7 19 2
 text9 CODE 0 379F 379F 29 2
-text10 CODE 0 297D 297D 50 2
-text11 CODE 0 35DB 35DB 1 2
+text10 CODE 0 2976 2976 50 2
+text11 CODE 0 35D6 35D6 1 2
 text12 CODE 0 36E0 36E0 1A 2
 text13 CODE 0 2F16 2F16 EA 2
 text14 CODE 0 20C9 20C9 101 2
 text15 CODE 0 201C 201C AD 2
-text16 CODE 0 2932 2932 4B 2
-text17 CODE 0 2C61 2C61 75 2
+text16 CODE 0 292B 292B 4B 2
+text17 CODE 0 2C5A 2C5A 75 2
 text18 CODE 0 1A6F 1A6F 257 2
 text19 CODE 0 3757 3757 23 2
-text20 CODE 0 2CD6 2CD6 8B 2
+text20 CODE 0 CED CED 8B 2
 text21 CODE 0 1017 1017 1B4 2
 text22 CODE 0 1837 1837 238 2
-text23 CODE 0 29CD 29CD 53 2
+text23 CODE 0 29C6 29C6 53 2
 text24 CODE 0 3625 3625 C 2
 text25 CODE 0 36FA 36FA 1D 2
 text26 CODE 0 2448 2448 192 2
-text27 CODE 0 2B91 2B91 60 2
+text27 CODE 0 2B8A 2B8A 60 2
 text28 CODE 0 3737 3737 20 2
 text29 CODE 0 36AE 36AE 19 2
 text30 CODE 0 3606 3606 9 2
-text31 CODE 0 2831 2831 3A 2
+text31 CODE 0 282A 282A 3A 2
 text32 CODE 0 3663 3663 F 2
-text33 CODE 0 35E0 35E0 5 2
-text34 CODE 0 D7D D7D 283 2
-text35 CODE 0 28A7 28A7 42 2
+text33 CODE 0 35D9 35D9 5 2
+text34 CODE 0 D78 D78 288 2
+text35 CODE 0 28A0 28A0 42 2
 text36 CODE 0 25DA 25DA 226 2
 text37 CODE 0 3717 3717 20 2
 text38 CODE 0 2E38 2E38 DE 2
 text39 CODE 0 2 2 2 2
-text40 CODE 0 CE9 CE9 2 2
-text41 CODE 0 2B32 2B32 5F 2
-text42 CODE 0 2AD4 2AD4 5E 2
+text40 CODE 0 35D7 35D7 2 2
+text41 CODE 0 2B2B 2B2B 5F 2
+text42 CODE 0 2ACD 2ACD 5E 2
 text43 CODE 0 3698 3698 16 2
-text44 CODE 0 35DC 35DC 4 2
+text44 CODE 0 CE9 CE9 4 2
 text45 CODE 0 1000 1000 17 2
 text46 CODE 0 1800 1800 6 2
 text47 CODE 0 37C8 37C8 38 2
@@ -69,16 +69,16 @@ text49 CODE 0 35FD 35FD 9 2
 text50 CODE 0 35F4 35F4 9 2
 text51 CODE 0 3656 3656 D 2
 text52 CODE 0 360F 360F A 2
-text53 CODE 0 CEB CEB 92 2
-text54 CODE 0 2A20 2A20 58 2
+text53 CODE 0 2CCF 2CCF 92 2
+text54 CODE 0 2A19 2A19 58 2
 text55 CODE 0 2000 2000 1C 2
-text56 CODE 0 2BF1 2BF1 70 2
+text56 CODE 0 2BEA 2BEA 70 2
 text57 CODE 0 3684 3684 14 2
-text58 CODE 0 2800 2800 7 2
+text58 CODE 0 35E5 35E5 7 2
 text59 CODE 0 3619 3619 C 2
 text60 CODE 0 3649 3649 D 2
-text61 CODE 0 35E5 35E5 7 2
-text62 CODE 0 286B 286B 3C 2
+text61 CODE 0 35DE 35DE 7 2
+text62 CODE 0 2864 2864 3C 2
 nvBANK1 BANK1 1 EE EE 1 1
 nvBANK2 BANK2 1 16A 16A 2 1
 maintext CODE 0 1CC6 1CC6 33A 2
@@ -102,7 +102,7 @@ bssBANK2 BANK2 1 120 120 25 1
 bssBANK4 BANK4 1 220 220 48 1
 idataBANK1 CODE 0 3672 3672 12 2
 idataBANK2 CODE 0 377A 377A 25 2
-idataBANK3 CODE 0 28E9 28E9 49 2
+idataBANK3 CODE 0 28E2 28E2 49 2
 dataBANK1 BANK1 1 DC DC 12 1
 dataBANK2 BANK2 1 145 145 25 1
 dataBANK3 BANK3 1 1A0 1A0 49 1
@@ -152,9 +152,9 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 3000-35DA 2
+CONST 3000-35D5 2
 CONST 3893-3FFF 2
-ENTRY 3000-35DA 2
+ENTRY 3000-35D5 2
 ENTRY 3893-3FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
@@ -180,7 +180,7 @@ SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2410-26EF 1
-CODE 3000-35DA 2
+CODE 3000-35D5 2
 CODE 3893-3FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -208,9 +208,9 @@ BANK22 B20-B2F 1
 BIGRAM 2000-23EF 1
 BIGRAM 2410-27EF 1
 COMMON 7D-7D 1
-STRCODE 3000-35DA 2
+STRCODE 3000-35D5 2
 STRCODE 3893-3FFF 2
-STRING 3000-35DA 2
+STRING 3000-35D5 2
 STRING 3893-3FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -226,131 +226,131 @@ STRING 3893-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Greenheck_OLED-v0.07.X.production.o
-A9 cinit CODE >17514:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-A9 cinit CODE >17517:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-A9 cinit CODE >17750:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-AA cinit CODE >17751:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-AB cinit CODE >17752:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-AC cinit CODE >17753:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-AD cinit CODE >17754:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-AE cinit CODE >17755:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-AF cinit CODE >17756:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-B0 cinit CODE >17757:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-B1 cinit CODE >17758:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-B2 cinit CODE >17759:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-B3 cinit CODE >17760:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-B4 cinit CODE >17761:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-B7 cinit CODE >17765:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-B8 cinit CODE >17766:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-B9 cinit CODE >17767:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-BA cinit CODE >17768:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-BB cinit CODE >17769:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-BC cinit CODE >17770:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-BD cinit CODE >17771:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-BE cinit CODE >17772:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-BF cinit CODE >17773:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-C0 cinit CODE >17774:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-C1 cinit CODE >17775:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-C2 cinit CODE >17776:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-C5 cinit CODE >17780:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-C6 cinit CODE >17781:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-C7 cinit CODE >17782:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-C8 cinit CODE >17783:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-C9 cinit CODE >17784:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-CA cinit CODE >17785:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-CB cinit CODE >17786:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-CC cinit CODE >17787:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-CD cinit CODE >17788:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-CE cinit CODE >17789:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-CF cinit CODE >17790:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-D0 cinit CODE >17791:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-D3 cinit CODE >17814:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-D4 cinit CODE >17815:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-D5 cinit CODE >17816:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-D6 cinit CODE >17817:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-D7 cinit CODE >17818:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-D8 cinit CODE >17819:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-D9 cinit CODE >17820:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-DA cinit CODE >17821:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-DB cinit CODE >17822:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-DE cinit CODE >17826:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-DF cinit CODE >17830:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-E0 cinit CODE >17834:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-E1 cinit CODE >17835:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-E2 cinit CODE >17836:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-E3 cinit CODE >17837:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-E4 cinit CODE >17838:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-E5 cinit CODE >17839:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-E6 cinit CODE >17840:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-E7 cinit CODE >17841:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-E8 cinit CODE >17842:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-EB cinit CODE >17846:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-EC cinit CODE >17847:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-ED cinit CODE >17848:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-EE cinit CODE >17849:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-EF cinit CODE >17850:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-F0 cinit CODE >17851:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-F1 cinit CODE >17852:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-F2 cinit CODE >17853:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-F3 cinit CODE >17854:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-F6 cinit CODE >17858:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-F7 cinit CODE >17859:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-F8 cinit CODE >17860:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-F9 cinit CODE >17861:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-FA cinit CODE >17862:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-FB cinit CODE >17863:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-FC cinit CODE >17864:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-FD cinit CODE >17865:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-FE cinit CODE >17866:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-101 cinit CODE >17872:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-101 cinit CODE >17874:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-102 cinit CODE >17875:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-103 cinit CODE >17876:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-4 intentry CODE >405:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-6 intentry CODE >406:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-E intentry CODE >409:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-F intentry CODE >411:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-14 intentry CODE >412:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1B intentry CODE >413:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F intentry CODE >417:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-32 intentry CODE >418:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-38 intentry CODE >419:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-3D intentry CODE >423:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-41 intentry CODE >426:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-53 intentry CODE >427:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-59 intentry CODE >428:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-5E intentry CODE >432:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-62 intentry CODE >435:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-74 intentry CODE >436:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-76 intentry CODE >437:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-78 intentry CODE >438:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-7A intentry CODE >441:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-80 intentry CODE >442:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-84 intentry CODE >445:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-8A intentry CODE >446:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-8E intentry CODE >447:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-8E intentry CODE >449:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-93 intentry CODE >449:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-97 intentry CODE >450:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-9F intentry CODE >451:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-A0 intentry CODE >453:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-A5 intentry CODE >456:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-286B text62 CODE >422:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-286B text62 CODE >423:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2870 text62 CODE >424:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2878 text62 CODE >425:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2880 text62 CODE >425:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2887 text62 CODE >426:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-288F text62 CODE >426:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2896 text62 CODE >427:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-289E text62 CODE >427:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-28A5 text62 CODE >428:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-28A6 text62 CODE >429:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-35E5 text61 CODE >83:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
-35E5 text61 CODE >86:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
-35E7 text61 CODE >87:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
-35E7 text61 CODE >88:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
-35EB text61 CODE >89:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
+A9 cinit CODE >17514:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+A9 cinit CODE >17517:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+A9 cinit CODE >17750:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+AA cinit CODE >17751:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+AB cinit CODE >17752:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+AC cinit CODE >17753:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+AD cinit CODE >17754:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+AE cinit CODE >17755:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+AF cinit CODE >17756:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+B0 cinit CODE >17757:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+B1 cinit CODE >17758:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+B2 cinit CODE >17759:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+B3 cinit CODE >17760:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+B4 cinit CODE >17761:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+B7 cinit CODE >17765:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+B8 cinit CODE >17766:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+B9 cinit CODE >17767:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+BA cinit CODE >17768:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+BB cinit CODE >17769:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+BC cinit CODE >17770:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+BD cinit CODE >17771:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+BE cinit CODE >17772:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+BF cinit CODE >17773:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+C0 cinit CODE >17774:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+C1 cinit CODE >17775:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+C2 cinit CODE >17776:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+C5 cinit CODE >17780:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+C6 cinit CODE >17781:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+C7 cinit CODE >17782:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+C8 cinit CODE >17783:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+C9 cinit CODE >17784:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+CA cinit CODE >17785:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+CB cinit CODE >17786:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+CC cinit CODE >17787:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+CD cinit CODE >17788:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+CE cinit CODE >17789:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+CF cinit CODE >17790:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+D0 cinit CODE >17791:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+D3 cinit CODE >17814:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+D4 cinit CODE >17815:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+D5 cinit CODE >17816:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+D6 cinit CODE >17817:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+D7 cinit CODE >17818:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+D8 cinit CODE >17819:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+D9 cinit CODE >17820:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+DA cinit CODE >17821:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+DB cinit CODE >17822:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+DE cinit CODE >17826:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+DF cinit CODE >17830:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+E0 cinit CODE >17834:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+E1 cinit CODE >17835:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+E2 cinit CODE >17836:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+E3 cinit CODE >17837:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+E4 cinit CODE >17838:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+E5 cinit CODE >17839:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+E6 cinit CODE >17840:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+E7 cinit CODE >17841:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+E8 cinit CODE >17842:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+EB cinit CODE >17846:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+EC cinit CODE >17847:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+ED cinit CODE >17848:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+EE cinit CODE >17849:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+EF cinit CODE >17850:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+F0 cinit CODE >17851:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+F1 cinit CODE >17852:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+F2 cinit CODE >17853:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+F3 cinit CODE >17854:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+F6 cinit CODE >17858:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+F7 cinit CODE >17859:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+F8 cinit CODE >17860:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+F9 cinit CODE >17861:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+FA cinit CODE >17862:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+FB cinit CODE >17863:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+FC cinit CODE >17864:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+FD cinit CODE >17865:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+FE cinit CODE >17866:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+101 cinit CODE >17872:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+101 cinit CODE >17874:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+102 cinit CODE >17875:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+103 cinit CODE >17876:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+4 intentry CODE >406:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+6 intentry CODE >407:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+E intentry CODE >410:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+F intentry CODE >412:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+14 intentry CODE >413:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1B intentry CODE >414:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F intentry CODE >418:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+32 intentry CODE >419:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+38 intentry CODE >420:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+3D intentry CODE >424:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+41 intentry CODE >427:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+53 intentry CODE >428:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+59 intentry CODE >429:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+5E intentry CODE >433:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+62 intentry CODE >436:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+74 intentry CODE >437:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+76 intentry CODE >438:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+78 intentry CODE >439:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+7A intentry CODE >442:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+80 intentry CODE >443:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+84 intentry CODE >446:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+8A intentry CODE >447:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+8E intentry CODE >448:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+8E intentry CODE >450:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+93 intentry CODE >450:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+97 intentry CODE >451:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+9F intentry CODE >452:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+A0 intentry CODE >454:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+A5 intentry CODE >457:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2864 text62 CODE >422:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2864 text62 CODE >423:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2869 text62 CODE >424:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2871 text62 CODE >425:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2879 text62 CODE >425:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2880 text62 CODE >426:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2888 text62 CODE >426:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+288F text62 CODE >427:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2897 text62 CODE >427:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+289E text62 CODE >428:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+289F text62 CODE >429:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+35DE text61 CODE >83:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
+35DE text61 CODE >86:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
+35E0 text61 CODE >87:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
+35E0 text61 CODE >88:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
+35E4 text61 CODE >89:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
 3649 text60 CODE >94:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
 3649 text60 CODE >97:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
 3649 text60 CODE >98:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
@@ -362,11 +362,11 @@ A5 intentry CODE >456:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mai
 361D text59 CODE >113:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
 3621 text59 CODE >114:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
 3624 text59 CODE >115:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
-2800 text58 CODE >58:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
-2800 text58 CODE >61:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
-2802 text58 CODE >63:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
-2802 text58 CODE >65:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
-2806 text58 CODE >66:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
+35E5 text58 CODE >58:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
+35E5 text58 CODE >61:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
+35E7 text58 CODE >63:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
+35E7 text58 CODE >65:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
+35EB text58 CODE >66:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
 3684 text57 CODE >970:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 3685 text57 CODE >971:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 3685 text57 CODE >972:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
@@ -375,35 +375,35 @@ A5 intentry CODE >456:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mai
 3690 text57 CODE >975:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 3694 text57 CODE >976:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 3697 text57 CODE >977:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2BF1 text56 CODE >1162:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2BF1 text56 CODE >1164:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2BF5 text56 CODE >1165:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2BF9 text56 CODE >1166:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2BFD text56 CODE >1167:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C01 text56 CODE >1168:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C05 text56 CODE >1169:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C09 text56 CODE >1170:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C0D text56 CODE >1171:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C11 text56 CODE >1172:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C15 text56 CODE >1175:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C19 text56 CODE >1176:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C1D text56 CODE >1177:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C21 text56 CODE >1178:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C25 text56 CODE >1179:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C29 text56 CODE >1189:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C2D text56 CODE >1190:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C31 text56 CODE >1191:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C35 text56 CODE >1193:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C39 text56 CODE >1196:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C3D text56 CODE >1198:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C41 text56 CODE >1199:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C45 text56 CODE >1200:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C49 text56 CODE >1201:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C4D text56 CODE >1202:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C51 text56 CODE >1203:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C55 text56 CODE >1204:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C59 text56 CODE >1208:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2C60 text56 CODE >1210:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2BEA text56 CODE >1162:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2BEA text56 CODE >1164:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2BEE text56 CODE >1165:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2BF2 text56 CODE >1166:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2BF6 text56 CODE >1167:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2BFA text56 CODE >1168:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2BFE text56 CODE >1169:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C02 text56 CODE >1170:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C06 text56 CODE >1171:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C0A text56 CODE >1172:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C0E text56 CODE >1175:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C12 text56 CODE >1176:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C16 text56 CODE >1177:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C1A text56 CODE >1178:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C1E text56 CODE >1179:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C22 text56 CODE >1189:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C26 text56 CODE >1190:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C2A text56 CODE >1191:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C2E text56 CODE >1193:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C32 text56 CODE >1196:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C36 text56 CODE >1198:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C3A text56 CODE >1199:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C3E text56 CODE >1200:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C42 text56 CODE >1201:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C46 text56 CODE >1202:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C4A text56 CODE >1203:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C4E text56 CODE >1204:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C52 text56 CODE >1208:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2C59 text56 CODE >1210:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 2000 text55 CODE >26:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
 2001 text55 CODE >33:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
 2006 text55 CODE >35:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
@@ -414,64 +414,64 @@ A5 intentry CODE >456:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mai
 2015 text55 CODE >51:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
 2017 text55 CODE >52:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
 201B text55 CODE >53:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\I2C.c
-2A20 text54 CODE >449:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A20 text54 CODE >450:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A20 text54 CODE >451:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A21 text54 CODE >452:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A25 text54 CODE >453:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A29 text54 CODE >454:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A2D text54 CODE >456:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A31 text54 CODE >457:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A35 text54 CODE >459:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A39 text54 CODE >468:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A3C text54 CODE >469:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A40 text54 CODE >470:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A44 text54 CODE >471:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A46 text54 CODE >473:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A47 text54 CODE >474:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A55 text54 CODE >475:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A59 text54 CODE >476:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A5F text54 CODE >476:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A63 text54 CODE >477:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A19 text54 CODE >449:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A19 text54 CODE >450:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A19 text54 CODE >451:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A1A text54 CODE >452:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A1E text54 CODE >453:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A22 text54 CODE >454:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A26 text54 CODE >456:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A2A text54 CODE >457:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A2E text54 CODE >459:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A32 text54 CODE >468:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A35 text54 CODE >469:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A39 text54 CODE >470:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A3D text54 CODE >471:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A3F text54 CODE >473:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A40 text54 CODE >474:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A4E text54 CODE >475:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A52 text54 CODE >476:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A58 text54 CODE >476:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A5C text54 CODE >477:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A60 text54 CODE >478:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 2A67 text54 CODE >478:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A6E text54 CODE >478:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A70 text54 CODE >478:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A74 text54 CODE >480:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2A77 text54 CODE >481:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-CEB text53 CODE >343:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-CEB text53 CODE >344:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-CEF text53 CODE >345:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-CF2 text53 CODE >346:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-CFE text53 CODE >348:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D02 text53 CODE >349:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D06 text53 CODE >350:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D0A text53 CODE >351:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D0E text53 CODE >352:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D12 text53 CODE >353:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D16 text53 CODE >354:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D1A text53 CODE >355:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D1E text53 CODE >356:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D22 text53 CODE >359:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D26 text53 CODE >360:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D2A text53 CODE >361:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D2E text53 CODE >362:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D32 text53 CODE >363:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D36 text53 CODE >373:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D3A text53 CODE >374:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D3E text53 CODE >375:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D42 text53 CODE >377:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D46 text53 CODE >380:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D4A text53 CODE >382:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D4E text53 CODE >383:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D52 text53 CODE >384:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D56 text53 CODE >385:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D5A text53 CODE >386:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D5E text53 CODE >387:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D62 text53 CODE >388:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D66 text53 CODE >392:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D6D text53 CODE >393:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D79 text53 CODE >394:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D7C text53 CODE >395:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A69 text54 CODE >478:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A6D text54 CODE >480:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2A70 text54 CODE >481:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CCF text53 CODE >343:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CCF text53 CODE >344:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CD3 text53 CODE >345:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CD6 text53 CODE >346:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CE2 text53 CODE >348:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CE6 text53 CODE >349:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CEA text53 CODE >350:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CEE text53 CODE >351:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CF2 text53 CODE >352:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CF6 text53 CODE >353:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CFA text53 CODE >354:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2CFE text53 CODE >355:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D02 text53 CODE >356:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D06 text53 CODE >359:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D0A text53 CODE >360:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D0E text53 CODE >361:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D12 text53 CODE >362:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D16 text53 CODE >363:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D1A text53 CODE >373:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D1E text53 CODE >374:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D22 text53 CODE >375:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D26 text53 CODE >377:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D2A text53 CODE >380:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D2E text53 CODE >382:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D32 text53 CODE >383:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D36 text53 CODE >384:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D3A text53 CODE >385:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D3E text53 CODE >386:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D42 text53 CODE >387:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D46 text53 CODE >388:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D4A text53 CODE >392:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D51 text53 CODE >393:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D5D text53 CODE >394:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2D60 text53 CODE >395:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 360F text52 CODE >564:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 3610 text52 CODE >565:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 3614 text52 CODE >566:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
@@ -544,9 +544,9 @@ D7C text53 CODE >395:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED
 100E text45 CODE >81:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/tmr0.c
 100F text45 CODE >84:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/tmr0.c
 1016 text45 CODE >85:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/tmr0.c
-35DC text44 CODE >73:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
-35DC text44 CODE >76:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
-35DF text44 CODE >77:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
+CE9 text44 CODE >73:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
+CE9 text44 CODE >76:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
+CEC text44 CODE >77:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
 3698 text43 CODE >50:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
 3698 text43 CODE >52:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
 369B text43 CODE >53:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
@@ -556,64 +556,64 @@ D7C text53 CODE >395:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED
 36A7 text43 CODE >57:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
 36AA text43 CODE >58:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
 36AD text43 CODE >59:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/mcc.c
-2AD4 text42 CODE >523:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2AD5 text42 CODE >524:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2ADA text42 CODE >525:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2ADA text42 CODE >526:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2ADA text42 CODE >527:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2ADE text42 CODE >528:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2AE2 text42 CODE >529:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2AE6 text42 CODE >531:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2AEA text42 CODE >532:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2AEE text42 CODE >534:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2AF3 text42 CODE >543:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2AF6 text42 CODE >544:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2AFA text42 CODE >545:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2AFE text42 CODE >546:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2B00 text42 CODE >548:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2B01 text42 CODE >549:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2B0F text42 CODE >550:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2B13 text42 CODE >551:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2B19 text42 CODE >551:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2B1D text42 CODE >552:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2ACD text42 CODE >523:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2ACE text42 CODE >524:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AD3 text42 CODE >525:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AD3 text42 CODE >526:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AD3 text42 CODE >527:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AD7 text42 CODE >528:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2ADB text42 CODE >529:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2ADF text42 CODE >531:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AE3 text42 CODE >532:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AE7 text42 CODE >534:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AEC text42 CODE >543:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AEF text42 CODE >544:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AF3 text42 CODE >545:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AF7 text42 CODE >546:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AF9 text42 CODE >548:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2AFA text42 CODE >549:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2B08 text42 CODE >550:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2B0C text42 CODE >551:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2B12 text42 CODE >551:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2B16 text42 CODE >552:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2B1A text42 CODE >553:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 2B21 text42 CODE >553:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2B28 text42 CODE >553:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2B2A text42 CODE >553:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2B2E text42 CODE >555:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2B31 text42 CODE >556:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-2B32 text41 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B32 text41 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B33 text41 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B37 text41 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B3A text41 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B3C text41 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B3E text41 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B42 text41 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B45 text41 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B47 text41 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B4B text41 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B4D text41 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B53 text41 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B55 text41 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B56 text41 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B5B text41 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B5F text41 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B63 text41 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B68 text41 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B6A text41 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B6E text41 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B72 text41 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B76 text41 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B77 text41 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B7C text41 CODE >36:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B82 text41 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B87 text41 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B8A text41 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B8C text41 CODE >40:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-2B90 text41 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-CE9 text40 CODE >1007:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-CE9 text40 CODE >1008:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-CEA text40 CODE >1009:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2B23 text42 CODE >553:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2B27 text42 CODE >555:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2B2A text42 CODE >556:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+2B2B text41 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B2B text41 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B2C text41 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B30 text41 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B33 text41 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B35 text41 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B37 text41 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B3B text41 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B3E text41 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B40 text41 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B44 text41 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B46 text41 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B4C text41 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B4E text41 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B4F text41 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B54 text41 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B58 text41 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B5C text41 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B61 text41 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B63 text41 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B67 text41 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B6B text41 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B6F text41 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B70 text41 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B75 text41 CODE >36:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B7B text41 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B80 text41 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B83 text41 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B85 text41 CODE >40:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+2B89 text41 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+35D7 text40 CODE >1007:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+35D7 text40 CODE >1008:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+35D8 text40 CODE >1009:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 2 text39 CODE >998:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 2 text39 CODE >999:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 3 text39 CODE >1000:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
@@ -695,21 +695,21 @@ CEA text40 CODE >1009:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLE
 27F5 text36 CODE >934:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 27FB text36 CODE >934:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 27FF text36 CODE >936:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-28A7 text35 CODE >3:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
-28A8 text35 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
-28B0 text35 CODE >6:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
-28CD text35 CODE >6:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
-28D1 text35 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
-28E6 text35 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
-28E8 text35 CODE >8:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
-D7D text34 CODE >1035:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D7F text34 CODE >1037:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D80 text34 CODE >1039:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D81 text34 CODE >1044:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D93 text34 CODE >1046:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-D96 text34 CODE >1048:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-DA5 text34 CODE >1052:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-DB1 text34 CODE >1052:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+28A0 text35 CODE >3:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
+28A1 text35 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
+28A9 text35 CODE >6:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
+28C6 text35 CODE >6:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
+28CA text35 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
+28DF text35 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
+28E1 text35 CODE >8:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcmp.c
+D78 text34 CODE >1035:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+D7A text34 CODE >1037:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+D7B text34 CODE >1039:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+D7C text34 CODE >1044:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+D8E text34 CODE >1046:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+D91 text34 CODE >1048:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+DA0 text34 CODE >1052:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
+DAC text34 CODE >1052:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 DB5 text34 CODE >1054:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 DC2 text34 CODE >1054:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 DE6 text34 CODE >1056:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
@@ -768,10 +768,10 @@ FF6 text34 CODE >1156:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLE
 FF9 text34 CODE >1156:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 FFC text34 CODE >1156:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
 FFF text34 CODE >1157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLED.c
-35E0 text33 CODE >154:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-35E0 text33 CODE >155:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-35E1 text33 CODE >156:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-35E4 text33 CODE >157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+35D9 text33 CODE >154:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+35D9 text33 CODE >155:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+35DA text33 CODE >156:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+35DD text33 CODE >157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 3663 text32 CODE >25:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
 3663 text32 CODE >28:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
 3668 text32 CODE >29:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
@@ -780,15 +780,15 @@ FFF text34 CODE >1157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLE
 366B text32 CODE >32:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
 366C text32 CODE >34:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
 3671 text32 CODE >35:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
-2831 text31 CODE >39:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2832 text31 CODE >42:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2840 text31 CODE >44:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2842 text31 CODE >44:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2848 text31 CODE >44:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-284D text31 CODE >49:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2863 text31 CODE >50:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2865 text31 CODE >47:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-286A text31 CODE >54:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+282A text31 CODE >39:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+282B text31 CODE >42:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2839 text31 CODE >44:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+283B text31 CODE >44:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2841 text31 CODE >44:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2846 text31 CODE >49:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+285C text31 CODE >50:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+285E text31 CODE >47:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2863 text31 CODE >54:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
 3606 text30 CODE >47:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
 3606 text30 CODE >51:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
 3607 text30 CODE >52:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
@@ -826,100 +826,100 @@ FFF text34 CODE >1157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLE
 3750 text28 CODE >86:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
 3755 text28 CODE >87:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
 3756 text28 CODE >88:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\Flash.c
-2B91 text27 CODE >15:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2B93 text27 CODE >18:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BA1 text27 CODE >20:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BA3 text27 CODE >20:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BA9 text27 CODE >20:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BAE text27 CODE >23:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BB5 text27 CODE >25:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BB6 text27 CODE >28:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BD3 text27 CODE >29:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BD5 text27 CODE >25:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BD7 text27 CODE >25:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BDB text27 CODE >33:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BEE text27 CODE >36:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2BF0 text27 CODE >37:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
-2448 text26 CODE >718:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2448 text26 CODE >721:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-244A text26 CODE >723:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-244F text26 CODE >724:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2454 text26 CODE >725:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-245A text26 CODE >726:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-245F text26 CODE >729:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2464 text26 CODE >732:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2469 text26 CODE >733:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-246E text26 CODE >734:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2474 text26 CODE >735:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2479 text26 CODE >738:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-247E text26 CODE >741:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2483 text26 CODE >742:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2488 text26 CODE >743:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-248E text26 CODE >744:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2493 text26 CODE >747:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2498 text26 CODE >751:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-249D text26 CODE >752:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24A3 text26 CODE >753:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24A7 text26 CODE >754:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24A8 text26 CODE >756:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24AC text26 CODE >758:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24B2 text26 CODE >759:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24BB text26 CODE >760:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24C2 text26 CODE >761:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24C5 text26 CODE >761:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24C9 text26 CODE >762:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24CD text26 CODE >763:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24D2 text26 CODE >766:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24D7 text26 CODE >767:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24DA text26 CODE >767:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24DE text26 CODE >768:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24E2 text26 CODE >769:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24ED text26 CODE >772:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24F0 text26 CODE >772:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24F4 text26 CODE >773:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24F9 text26 CODE >774:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-24FD text26 CODE >775:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2507 text26 CODE >776:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-250E text26 CODE >777:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2512 text26 CODE >778:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-251D text26 CODE >782:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-251D text26 CODE >785:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2524 text26 CODE >786:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-252D text26 CODE >787:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2534 text26 CODE >788:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2537 text26 CODE >788:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-253B text26 CODE >789:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-253F text26 CODE >790:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2544 text26 CODE >792:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2549 text26 CODE >794:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-254F text26 CODE >796:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2551 text26 CODE >797:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-255C text26 CODE >802:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2562 text26 CODE >803:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2567 text26 CODE >804:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2569 text26 CODE >805:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2573 text26 CODE >806:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-257A text26 CODE >807:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-257C text26 CODE >808:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2587 text26 CODE >812:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2587 text26 CODE >815:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-258E text26 CODE >816:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2593 text26 CODE >818:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-2597 text26 CODE >820:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25A0 text26 CODE >823:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25A5 text26 CODE >825:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25AB text26 CODE >827:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25AC text26 CODE >828:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25B3 text26 CODE >829:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25B4 text26 CODE >831:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25B6 text26 CODE >831:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25BA text26 CODE >832:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25BE text26 CODE >833:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25C8 text26 CODE >834:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25C9 text26 CODE >837:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25CA text26 CODE >838:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25D5 text26 CODE >846:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-25D9 text26 CODE >848:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2B8A text27 CODE >15:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2B8C text27 CODE >18:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2B9A text27 CODE >20:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2B9C text27 CODE >20:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2BA2 text27 CODE >20:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2BA7 text27 CODE >23:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2BAE text27 CODE >25:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2BAF text27 CODE >28:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2BCC text27 CODE >29:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2BCE text27 CODE >25:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2BD0 text27 CODE >25:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2BD4 text27 CODE >33:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2BE7 text27 CODE >36:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2BE9 text27 CODE >37:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
+2448 text26 CODE >719:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2448 text26 CODE >722:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+244A text26 CODE >724:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+244F text26 CODE >725:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2454 text26 CODE >726:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+245A text26 CODE >727:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+245F text26 CODE >730:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2464 text26 CODE >733:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2469 text26 CODE >734:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+246E text26 CODE >735:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2474 text26 CODE >736:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2479 text26 CODE >739:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+247E text26 CODE >742:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2483 text26 CODE >743:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2488 text26 CODE >744:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+248E text26 CODE >745:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2493 text26 CODE >748:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2498 text26 CODE >752:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+249D text26 CODE >753:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24A3 text26 CODE >754:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24A7 text26 CODE >755:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24A8 text26 CODE >757:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24AC text26 CODE >759:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24B2 text26 CODE >760:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24BB text26 CODE >761:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24C2 text26 CODE >762:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24C5 text26 CODE >762:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24C9 text26 CODE >763:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24CD text26 CODE >764:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24D2 text26 CODE >767:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24D7 text26 CODE >768:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24DA text26 CODE >768:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24DE text26 CODE >769:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24E2 text26 CODE >770:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24ED text26 CODE >773:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24F0 text26 CODE >773:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24F4 text26 CODE >774:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24F9 text26 CODE >775:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+24FD text26 CODE >776:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2507 text26 CODE >777:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+250E text26 CODE >778:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2512 text26 CODE >779:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+251D text26 CODE >783:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+251D text26 CODE >786:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2524 text26 CODE >787:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+252D text26 CODE >788:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2534 text26 CODE >789:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2537 text26 CODE >789:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+253B text26 CODE >790:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+253F text26 CODE >791:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2544 text26 CODE >793:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2549 text26 CODE >795:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+254F text26 CODE >797:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2551 text26 CODE >798:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+255C text26 CODE >803:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2562 text26 CODE >804:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2567 text26 CODE >805:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2569 text26 CODE >806:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2573 text26 CODE >807:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+257A text26 CODE >808:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+257C text26 CODE >809:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2587 text26 CODE >813:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2587 text26 CODE >816:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+258E text26 CODE >817:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2593 text26 CODE >819:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2597 text26 CODE >821:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25A0 text26 CODE >824:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25A5 text26 CODE >826:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25AB text26 CODE >828:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25AC text26 CODE >829:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25B3 text26 CODE >830:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25B4 text26 CODE >832:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25B6 text26 CODE >832:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25BA text26 CODE >833:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25BE text26 CODE >834:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25C8 text26 CODE >835:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25C9 text26 CODE >838:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25CA text26 CODE >839:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25D5 text26 CODE >847:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+25D9 text26 CODE >849:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 36FA text25 CODE >147:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 36FB text25 CODE >148:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 36FD text25 CODE >149:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
@@ -933,32 +933,32 @@ FFF text34 CODE >1157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLE
 362B text24 CODE >103:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/dac1.c
 362F text24 CODE >105:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/dac1.c
 3630 text24 CODE >106:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/dac1.c
-29CD text23 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29CD text23 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29CE text23 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29D2 text23 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29D5 text23 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29D7 text23 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29D9 text23 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29DD text23 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29E0 text23 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29E2 text23 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29E8 text23 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29EA text23 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29EB text23 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29F0 text23 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29F4 text23 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29F8 text23 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29FA text23 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-29FE text23 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-2A02 text23 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-2A06 text23 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-2A0B text23 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-2A11 text23 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-2A16 text23 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-2A19 text23 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-2A1B text23 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-2A1F text23 CODE >34:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29C6 text23 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29C6 text23 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29C7 text23 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29CB text23 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29CE text23 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29D0 text23 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29D2 text23 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29D6 text23 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29D9 text23 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29DB text23 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29E1 text23 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29E3 text23 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29E4 text23 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29E9 text23 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29ED text23 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29F1 text23 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29F3 text23 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29F7 text23 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29FB text23 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+29FF text23 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+2A04 text23 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+2A0A text23 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+2A0F text23 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+2A12 text23 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+2A14 text23 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+2A18 text23 CODE >34:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
 1837 text22 CODE >10:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 1837 text22 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 183D text22 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
@@ -1194,27 +1194,27 @@ FFF text34 CODE >1157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLE
 11C1 text21 CODE >182:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
 11C5 text21 CODE >183:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
 11CA text21 CODE >185:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
-2CD6 text20 CODE >4:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2CD6 text20 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2CE7 text20 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2CEB text20 CODE >8:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2CF3 text20 CODE >9:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D03 text20 CODE >9:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D07 text20 CODE >10:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D0F text20 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D13 text20 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D2B text20 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D2F text20 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D47 text20 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D49 text20 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D4B text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D4D text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D51 text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D55 text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D59 text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D5D text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D5F text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
-2D60 text20 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+CED text20 CODE >4:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+CED text20 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+CFE text20 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D02 text20 CODE >8:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D0A text20 CODE >9:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D1A text20 CODE >9:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D1E text20 CODE >10:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D26 text20 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D2A text20 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D42 text20 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D46 text20 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D5E text20 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D60 text20 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D62 text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D64 text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D68 text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D6C text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D70 text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D74 text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D76 text20 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+D77 text20 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
 3757 text19 CODE >4:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
 3758 text19 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
 375A text19 CODE >6:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
@@ -1315,47 +1315,47 @@ FFF text34 CODE >1157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLE
 1CB9 text18 CODE >201:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
 1CBD text18 CODE >203:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
 1CC5 text18 CODE >205:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
-2C61 text17 CODE >43:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2C61 text17 CODE >47:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2C6D text17 CODE >48:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2C76 text17 CODE >49:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2C89 text17 CODE >50:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2C8A text17 CODE >51:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2C92 text17 CODE >52:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2C94 text17 CODE >53:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2C98 text17 CODE >54:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2C9B text17 CODE >54:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CA0 text17 CODE >57:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CB0 text17 CODE >60:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CB2 text17 CODE >60:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CB7 text17 CODE >63:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CBE text17 CODE >64:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CC0 text17 CODE >62:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CC0 text17 CODE >65:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CC5 text17 CODE >67:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2C5A text17 CODE >43:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2C5A text17 CODE >47:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2C66 text17 CODE >48:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2C6F text17 CODE >49:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2C82 text17 CODE >50:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2C83 text17 CODE >51:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2C8B text17 CODE >52:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2C8D text17 CODE >53:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2C91 text17 CODE >54:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2C94 text17 CODE >54:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2C99 text17 CODE >57:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2CA9 text17 CODE >60:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2CAB text17 CODE >60:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2CB0 text17 CODE >63:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2CB7 text17 CODE >64:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2CB9 text17 CODE >62:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2CB9 text17 CODE >65:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2CBE text17 CODE >67:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2CC3 text17 CODE >68:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2CC8 text17 CODE >68:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
 2CCA text17 CODE >68:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CCF text17 CODE >68:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CD1 text17 CODE >68:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CD3 text17 CODE >68:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2CD5 text17 CODE >70:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-2932 text16 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-2932 text16 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-2937 text16 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-293B text16 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-293D text16 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-293E text16 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-2945 text16 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-2949 text16 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-294D text16 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-294F text16 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-2953 text16 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-2957 text16 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-295B text16 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-295F text16 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-2967 text16 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-296E text16 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-2974 text16 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
-297C text16 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2CCC text17 CODE >68:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+2CCE text17 CODE >70:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+292B text16 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+292B text16 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2930 text16 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2934 text16 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2936 text16 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2937 text16 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+293E text16 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2942 text16 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2946 text16 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2948 text16 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+294C text16 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2950 text16 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2954 text16 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2958 text16 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2960 text16 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2967 text16 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+296D text16 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
+2975 text16 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\llmod.c
 201C text15 CODE >10:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
 201E text15 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
 2027 text15 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
@@ -1502,19 +1502,19 @@ FFF text34 CODE >1157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLE
 36E9 text12 CODE >3:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
 36F2 text12 CODE >3:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
 36F9 text12 CODE >4:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
-35DB text11 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
-35DB text11 CODE >9:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
-297D text10 CODE >8:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-297D text10 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-2987 text10 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-298B text10 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-298C text10 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-29AB text10 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-29AF text10 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-29B3 text10 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-29C4 text10 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-29CA text10 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-29CC text10 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+35D6 text11 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
+35D6 text11 CODE >9:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
+2976 text10 CODE >8:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+2976 text10 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+2980 text10 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+2984 text10 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+2985 text10 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+29A4 text10 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+29A8 text10 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+29AC text10 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+29BD text10 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+29C3 text10 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+29C5 text10 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
 379F text9 CODE >8:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputs.c
 37A1 text9 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputs.c
 37A3 text9 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputs.c
@@ -1529,21 +1529,21 @@ FFF text34 CODE >1157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLE
 36D0 text8 CODE >8:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
 36D9 text8 CODE >11:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
 36DF text8 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
-2A78 text7 CODE >72:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2A7A text7 CODE >77:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2A7F text7 CODE >78:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2A88 text7 CODE >82:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2A94 text7 CODE >83:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2A96 text7 CODE >84:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2A97 text7 CODE >85:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2AA3 text7 CODE >86:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2AA8 text7 CODE >84:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2AAE text7 CODE >84:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2AB2 text7 CODE >84:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2AB6 text7 CODE >90:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2ABB text7 CODE >91:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2AC4 text7 CODE >94:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2AD3 text7 CODE >95:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2A71 text7 CODE >72:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2A73 text7 CODE >77:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2A78 text7 CODE >78:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2A81 text7 CODE >82:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2A8D text7 CODE >83:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2A8F text7 CODE >84:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2A90 text7 CODE >85:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2A9C text7 CODE >86:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2AA1 text7 CODE >84:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2AA7 text7 CODE >84:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2AAB text7 CODE >84:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2AAF text7 CODE >90:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2AB4 text7 CODE >91:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2ABD text7 CODE >94:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+2ACC text7 CODE >95:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 22D8 text6 CODE >287:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 22DA text6 CODE >293:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 22EA text6 CODE >294:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
@@ -1659,107 +1659,107 @@ FFF text34 CODE >1157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLE
 1824 text3 CODE >1397:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 182E text3 CODE >1400:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 1836 text3 CODE >1404:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-2807 text2 CODE >9:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
-2809 text2 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
-280F text2 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
-2815 text2 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
-2817 text2 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
-2819 text2 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
-2826 text2 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
-2830 text2 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
-11CB text1 CODE >459:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11CD text1 CODE >461:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11D1 text1 CODE >462:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11D5 text1 CODE >463:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11D9 text1 CODE >464:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11DD text1 CODE >467:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11DE text1 CODE >473:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11E7 text1 CODE >476:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11EE text1 CODE >479:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11F0 text1 CODE >481:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11F2 text1 CODE >483:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11F3 text1 CODE >487:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-11FB text1 CODE >490:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1204 text1 CODE >493:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1235 text1 CODE >496:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1276 text1 CODE >498:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-12BC text1 CODE >501:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-12BE text1 CODE >502:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-12BF text1 CODE >503:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-12BF text1 CODE >506:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-12C1 text1 CODE >509:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-12F6 text1 CODE >512:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-12F8 text1 CODE >513:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-12F9 text1 CODE >524:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1303 text1 CODE >526:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-130C text1 CODE >529:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-133D text1 CODE >531:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1346 text1 CODE >535:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-134E text1 CODE >538:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-138F text1 CODE >540:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-13D5 text1 CODE >543:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-13D7 text1 CODE >544:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-13D8 text1 CODE >545:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-13D8 text1 CODE >548:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-13DA text1 CODE >551:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1410 text1 CODE >565:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1419 text1 CODE >580:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1445 text1 CODE >586:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1449 text1 CODE >586:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-144B text1 CODE >586:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-144F text1 CODE >588:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1454 text1 CODE >588:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1464 text1 CODE >589:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1469 text1 CODE >591:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-146A text1 CODE >594:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-146F text1 CODE >594:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-147F text1 CODE >595:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1482 text1 CODE >600:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-148A text1 CODE >601:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-148F text1 CODE >601:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1491 text1 CODE >601:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1496 text1 CODE >602:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-149B text1 CODE >602:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-14BE text1 CODE >603:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-14C5 text1 CODE >604:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-14F1 text1 CODE >606:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-14F6 text1 CODE >608:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1524 text1 CODE >609:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1592 text1 CODE >612:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-159B text1 CODE >616:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-15A1 text1 CODE >617:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-15A3 text1 CODE >618:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-15BC text1 CODE >622:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-15C5 text1 CODE >625:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-15CD text1 CODE >628:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-15E8 text1 CODE >632:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-161C text1 CODE >634:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-161E text1 CODE >635:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-161F text1 CODE >636:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1653 text1 CODE >638:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1655 text1 CODE >643:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-168A text1 CODE >647:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-16BF text1 CODE >654:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-16C8 text1 CODE >669:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-16D2 text1 CODE >671:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-16DB text1 CODE >673:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-170C text1 CODE >676:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-174D text1 CODE >678:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1793 text1 CODE >680:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1795 text1 CODE >681:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1796 text1 CODE >682:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1796 text1 CODE >684:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1798 text1 CODE >687:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-17CE text1 CODE >701:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-17D7 text1 CODE >703:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-17E5 text1 CODE >714:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-17EB text1 CODE >714:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-17F0 text1 CODE >714:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-17F3 text1 CODE >714:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-17F6 text1 CODE >714:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-17F9 text1 CODE >714:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-17FC text1 CODE >714:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-17FF text1 CODE >715:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+2800 text2 CODE >9:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+2802 text2 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+2808 text2 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+280E text2 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+2810 text2 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+2812 text2 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+281F text2 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+2829 text2 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+11CB text1 CODE >460:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11CD text1 CODE >462:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11D1 text1 CODE >463:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11D5 text1 CODE >464:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11D9 text1 CODE >465:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11DD text1 CODE >468:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11DE text1 CODE >474:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11E7 text1 CODE >477:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11EE text1 CODE >480:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11F0 text1 CODE >482:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11F2 text1 CODE >484:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11F3 text1 CODE >488:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+11FB text1 CODE >491:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1204 text1 CODE >494:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1235 text1 CODE >497:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1276 text1 CODE >499:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+12BC text1 CODE >502:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+12BE text1 CODE >503:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+12BF text1 CODE >504:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+12BF text1 CODE >507:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+12C1 text1 CODE >510:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+12F6 text1 CODE >513:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+12F8 text1 CODE >514:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+12F9 text1 CODE >525:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1303 text1 CODE >527:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+130C text1 CODE >530:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+133D text1 CODE >532:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1346 text1 CODE >536:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+134E text1 CODE >539:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+138F text1 CODE >541:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+13D5 text1 CODE >544:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+13D7 text1 CODE >545:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+13D8 text1 CODE >546:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+13D8 text1 CODE >549:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+13DA text1 CODE >552:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1410 text1 CODE >566:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1419 text1 CODE >581:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1445 text1 CODE >587:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1449 text1 CODE >587:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+144B text1 CODE >587:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+144F text1 CODE >589:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1454 text1 CODE >589:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1464 text1 CODE >590:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1469 text1 CODE >592:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+146A text1 CODE >595:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+146F text1 CODE >595:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+147F text1 CODE >596:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1482 text1 CODE >601:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+148A text1 CODE >602:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+148F text1 CODE >602:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1491 text1 CODE >602:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1496 text1 CODE >603:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+149B text1 CODE >603:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+14BE text1 CODE >604:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+14C5 text1 CODE >605:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+14F1 text1 CODE >607:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+14F6 text1 CODE >609:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1524 text1 CODE >610:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1592 text1 CODE >613:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+159B text1 CODE >617:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+15A1 text1 CODE >618:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+15A3 text1 CODE >619:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+15BC text1 CODE >623:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+15C5 text1 CODE >626:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+15CD text1 CODE >629:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+15E8 text1 CODE >633:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+161C text1 CODE >635:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+161E text1 CODE >636:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+161F text1 CODE >637:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1653 text1 CODE >639:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1655 text1 CODE >644:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+168A text1 CODE >648:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+16BF text1 CODE >655:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+16C8 text1 CODE >670:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+16D2 text1 CODE >672:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+16DB text1 CODE >674:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+170C text1 CODE >677:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+174D text1 CODE >679:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1793 text1 CODE >681:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1795 text1 CODE >682:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1796 text1 CODE >683:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1796 text1 CODE >685:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1798 text1 CODE >688:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+17CE text1 CODE >702:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+17D7 text1 CODE >704:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+17E5 text1 CODE >715:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+17EB text1 CODE >715:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+17F0 text1 CODE >715:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+17F3 text1 CODE >715:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+17F6 text1 CODE >715:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+17F9 text1 CODE >715:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+17FC text1 CODE >715:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+17FF text1 CODE >716:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 1CC6 maintext CODE >162:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 1CC6 maintext CODE >166:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 1CC9 maintext CODE >172:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
@@ -1827,98 +1827,98 @@ FFF text34 CODE >1157:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\OLE
 1ED3 maintext CODE >295:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 1ED7 maintext CODE >296:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 1EDD maintext CODE >299:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1EE1 maintext CODE >300:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1EE5 maintext CODE >302:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1EE8 maintext CODE >304:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1EE9 maintext CODE >306:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1EF0 maintext CODE >307:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1EF4 maintext CODE >308:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1EF5 maintext CODE >310:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1EF9 maintext CODE >311:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1EF9 maintext CODE >313:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1EFC maintext CODE >313:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1EFE maintext CODE >313:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F02 maintext CODE >314:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F04 maintext CODE >315:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F05 maintext CODE >316:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1EE1 maintext CODE >301:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1EE5 maintext CODE >303:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1EE8 maintext CODE >305:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1EE9 maintext CODE >307:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1EF0 maintext CODE >308:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1EF4 maintext CODE >309:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1EF5 maintext CODE >311:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1EF9 maintext CODE >312:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1EF9 maintext CODE >314:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1EFC maintext CODE >314:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1EFE maintext CODE >314:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F02 maintext CODE >315:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F04 maintext CODE >316:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 1F05 maintext CODE >317:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F07 maintext CODE >319:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F10 maintext CODE >322:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F13 maintext CODE >304:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F18 maintext CODE >324:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F1D maintext CODE >328:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F22 maintext CODE >331:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F29 maintext CODE >332:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F2D maintext CODE >333:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F2E maintext CODE >335:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F32 maintext CODE >339:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F38 maintext CODE >340:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F3C maintext CODE >344:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F41 maintext CODE >344:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F46 maintext CODE >345:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F4A maintext CODE >346:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F50 maintext CODE >349:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F55 maintext CODE >350:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F59 maintext CODE >351:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F5B maintext CODE >355:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F5E maintext CODE >357:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F64 maintext CODE >358:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F66 maintext CODE >359:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F66 maintext CODE >361:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F6C maintext CODE >362:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F70 maintext CODE >363:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F74 maintext CODE >364:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F7E maintext CODE >365:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F83 maintext CODE >366:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F87 maintext CODE >368:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F8B maintext CODE >371:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F91 maintext CODE >373:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F92 maintext CODE >374:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1F99 maintext CODE >377:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FA0 maintext CODE >378:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FA1 maintext CODE >379:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FA3 maintext CODE >381:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FA4 maintext CODE >383:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FA8 maintext CODE >384:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FAC maintext CODE >385:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FB0 maintext CODE >386:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FB9 maintext CODE >388:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FC4 maintext CODE >389:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FCF maintext CODE >390:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FDA maintext CODE >391:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FE5 maintext CODE >393:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FEA maintext CODE >397:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FEF maintext CODE >398:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FF2 maintext CODE >399:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-1FF4 maintext CODE >400:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
-3631 clrtext CODE >17797:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3631 clrtext CODE >17798:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3632 clrtext CODE >17799:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3632 clrtext CODE >17800:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3633 clrtext CODE >17801:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3634 clrtext CODE >17802:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3635 clrtext CODE >17803:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3636 clrtext CODE >17804:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3637 clrtext CODE >17805:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3638 clrtext CODE >17806:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3639 clrtext CODE >17807:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-363A clrtext CODE >17808:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-363B clrtext CODE >17809:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-363C clrtext CODE >17810:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-363D inittext CODE >17733:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-363D inittext CODE >17734:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-363E inittext CODE >17735:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-363E inittext CODE >17736:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-363F inittext CODE >17737:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3640 inittext CODE >17738:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3641 inittext CODE >17739:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3642 inittext CODE >17740:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3643 inittext CODE >17741:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3644 inittext CODE >17742:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3645 inittext CODE >17743:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3646 inittext CODE >17744:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3647 inittext CODE >17745:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
-3648 inittext CODE >17746:C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.s
+1F05 maintext CODE >318:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F07 maintext CODE >320:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F10 maintext CODE >323:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F13 maintext CODE >305:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F18 maintext CODE >325:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F1D maintext CODE >329:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F22 maintext CODE >332:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F29 maintext CODE >333:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F2D maintext CODE >334:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F2E maintext CODE >336:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F32 maintext CODE >340:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F38 maintext CODE >341:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F3C maintext CODE >345:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F41 maintext CODE >345:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F46 maintext CODE >346:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F4A maintext CODE >347:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F50 maintext CODE >350:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F55 maintext CODE >351:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F59 maintext CODE >352:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F5B maintext CODE >356:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F5E maintext CODE >358:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F64 maintext CODE >359:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F66 maintext CODE >360:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F66 maintext CODE >362:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F6C maintext CODE >363:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F70 maintext CODE >364:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F74 maintext CODE >365:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F7E maintext CODE >366:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F83 maintext CODE >367:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F87 maintext CODE >369:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F8B maintext CODE >372:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F91 maintext CODE >374:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F92 maintext CODE >375:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1F99 maintext CODE >378:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FA0 maintext CODE >379:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FA1 maintext CODE >380:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FA3 maintext CODE >382:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FA4 maintext CODE >384:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FA8 maintext CODE >385:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FAC maintext CODE >386:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FB0 maintext CODE >387:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FB9 maintext CODE >389:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FC4 maintext CODE >390:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FCF maintext CODE >391:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FDA maintext CODE >392:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FE5 maintext CODE >394:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FEA maintext CODE >398:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FEF maintext CODE >399:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FF2 maintext CODE >400:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+1FF4 maintext CODE >401:C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+3631 clrtext CODE >17797:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3631 clrtext CODE >17798:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3632 clrtext CODE >17799:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3632 clrtext CODE >17800:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3633 clrtext CODE >17801:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3634 clrtext CODE >17802:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3635 clrtext CODE >17803:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3636 clrtext CODE >17804:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3637 clrtext CODE >17805:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3638 clrtext CODE >17806:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3639 clrtext CODE >17807:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+363A clrtext CODE >17808:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+363B clrtext CODE >17809:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+363C clrtext CODE >17810:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+363D inittext CODE >17733:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+363D inittext CODE >17734:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+363E inittext CODE >17735:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+363E inittext CODE >17736:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+363F inittext CODE >17737:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3640 inittext CODE >17738:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3641 inittext CODE >17739:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3642 inittext CODE >17740:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3643 inittext CODE >17741:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3644 inittext CODE >17742:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3645 inittext CODE >17743:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3646 inittext CODE >17744:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3647 inittext CODE >17745:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
+3648 inittext CODE >17746:C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1958,8 +1958,8 @@ _PMCON1bits 195 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.product
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 ?_abs 74 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ?_pad 27 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_I2C_Start 500E 0 CODE 0 text58 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_WDT_Initialize 6BC0 0 CODE 0 text44 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_I2C_Start 6BD8 0 CODE 0 text58 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_WDT_Initialize 19DA 0 CODE 0 text44 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _I2C_CallbackReturnStop 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 main@i C1 0 BANK1 1 cstackBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __Hstrings 0 0 ABS 0 strings -
@@ -1974,7 +1974,7 @@ _WPUA 20C 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _WPUC 20E 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _WPUE 210 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
+___sp 0 0 STACK 2 stack C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
 _dbuf 248 0 BANK4 1 bssBANK4 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _dtoa 45B0 0 CODE 0 text6 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _main 398C 0 CODE 0 maintext dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -1991,7 +1991,7 @@ FLASH_write@temp 76 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OL
 pad@i 2A 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 pad@p 28 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 pad@w 2C 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-start 14E 0 CODE 0 init C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
+start 14E 0 CODE 0 init C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
 ___aomod@counter 72 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___flmul@aexp 40 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___flmul@bexp 41 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2045,7 +2045,7 @@ __LidataBANK3 0 0 ABS 0 idataBANK3 -
 _I2C_DO_RX 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _I2C_DO_TX 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_ClearText 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_I2C_Start 5000 0 CODE 0 text58 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_I2C_Start 6BCA 0 CODE 0 text58 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 _I2C_DO_TX_EMPTY 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 stoa@i 2A 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2065,13 +2065,13 @@ HEFLASH_writeBlock@data 77 0 COMMON 1 cstackCOMMON dist/default/production\Green
 HEFLASH_writeBlock@radd 20 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_OLED_DrawPixel 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_DAC1_Load10bitInputData 6C62 0 CODE 0 text24 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_OLED_Init 1AFA 0 CODE 0 text53 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
+__end_of_OLED_Init 5AC2 0 CODE 0 text53 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
 OLED_Write@cbyte 3C 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 HEFLASH_readBlock@count 74 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -2095,14 +2095,14 @@ __end_of_DAC1_Initialize 6BFA 0 CODE 0 text50 dist/default/production\Greenheck_
 __size_of_ssd1306_command 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _rd2RegCompleteHandler@i2c_master_example$F146 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___wmul@multiplicand 22 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_OLED_Init 19D6 0 CODE 0 text53 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_OLED_Init 599E 0 CODE 0 text53 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _ext_speed 13D 0 BANK2 1 bssBANK2 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _ADCON0 490 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _ADCON1 491 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _ADCON2 492 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _ADRESH 48F 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _ADRESL 48E 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_OLED_SetFont 50D6 0 CODE 0 text62 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_OLED_SetFont 50C8 0 CODE 0 text62 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _rdBlkRegCompleteHandler 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _ANSELA 18C 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _ANSELB 18D 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2117,9 +2117,9 @@ __size_of__Umul8_16 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.p
 _factory_reset_dec E2 0 BANK1 1 dataBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _I2C_Init 4000 0 CODE 0 text55 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _I2C_Send 6C32 0 CODE 0 text59 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_I2C_Stop 6BCA 0 CODE 0 text61 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_I2C_Stop 6BBC 0 CODE 0 text61 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _I2C_Wait 6C92 0 CODE 0 text60 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of___flge 5AC2 0 CODE 0 text20 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of___flge 1AF0 0 CODE 0 text20 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of___wmul 6E6E 0 CODE 0 text37 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _I2C_DO_RX_NACK_RESTART 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 DAC1_Load10bitInputData@input10BitData 51 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2131,22 +2131,22 @@ ___fldiv@sign 3F 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0
 _FVRCON 9E 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_I2C_Init 4038 0 CODE 0 text55 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_I2C_Send 6C4A 0 CODE 0 text59 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_I2C_Stop 6BD8 0 CODE 0 text61 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_I2C_Stop 6BCA 0 CODE 0 text61 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_I2C_Wait 6CAC 0 CODE 0 text60 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __LnvBANK1 0 0 ABS 0 nvBANK1 -
 __LnvBANK2 0 0 ABS 0 nvBANK2 -
 ___awdiv@divisor 71 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of___aodiv 4394 0 CODE 0 text14 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of___aomod 6000 0 CODE 0 text13 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of___awdiv 5722 0 CODE 0 text41 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of___awmod 5440 0 CODE 0 text23 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of___awdiv 5714 0 CODE 0 text41 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of___awmod 5432 0 CODE 0 text23 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __Umul8_16 6EAE 0 CODE 0 text19 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of___fladd 34DE 0 CODE 0 text22 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of___fldiv 2396 0 CODE 0 text21 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of___flmul 398C 0 CODE 0 text18 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of___fltol 59AC 0 CODE 0 text17 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of___fltol 599E 0 CODE 0 text17 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _OLED_Write 4BB4 0 CODE 0 text36 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of___llmod 52FA 0 CODE 0 text16 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of___llmod 52EC 0 CODE 0 text16 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 OLED_Write@cx 44 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 OLED_Write@cy 46 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _decrement EA 0 BANK1 1 dataBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2159,8 +2159,8 @@ __size_of__unlock 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.pro
 __Umul8_16@multiplicand 71 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _OPTION_REG 97 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 HEFLASH_writeBlock@count 78 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
-___stackhi 26EF 0 ABS 0 - C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
-___stacklo 2410 0 ABS 0 - C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
+___stackhi 26EF 0 ABS 0 - C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
+___stacklo 2410 0 ABS 0 - C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
 Update_Display_Line@i 53 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _blackout_screen_flag D7 0 BANK1 1 bssBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _OLED_SetContrast 6C1E 0 CODE 0 text52 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2182,7 +2182,7 @@ __end_of_FLASH_erase 6D8E 0 CODE 0 text29 dist/default/production\Greenheck_OLED
 __size_of_width 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_FLASH_write 6EAE 0 CODE 0 text28 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _i2c_fsmStateTable 7000 0 STRCODE 0 stringtext1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_height 19D6 0 CODE 0 text40 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_height 6BB2 0 CODE 0 text40 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _PIN_MANAGER_Initialize 6F90 0 CODE 0 text47 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __Lstringtext10 0 0 ABS 0 stringtext10 -
 __Lstringtext11 0 0 ABS 0 stringtext11 -
@@ -2204,11 +2204,11 @@ Update_Display_Line@i_1589 59 0 BANK0 1 cstackBANK0 dist/default/production\Gree
 _BIG_FONTS 20A 0 STRCODE 0 stringtext2 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _RC3PPS EA3 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _RC4PPS EA4 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_memcmp 51D2 0 CODE 0 text35 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_memcmp 51C4 0 CODE 0 text35 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_HEFLASH_readBlock 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 I2C_Init@speed 72 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_SYSTEM_Initialize 6D5C 0 CODE 0 text43 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_OLED_SetFont 514E 0 CODE 0 text62 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_OLED_SetFont 5140 0 CODE 0 text62 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 clear_ram0 6C62 0 CODE 0 clrtext dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2217,11 +2217,11 @@ OLED_SetFont@font 71 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_O
 _buttonFunction 4890 0 CODE 0 text26 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _I2C_DO_SEND_RESTART 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_OLED_Write 5000 0 CODE 0 text36 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_OLED_Update 5440 0 CODE 0 text54 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_OLED_Update 5432 0 CODE 0 text54 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _WDTCON 99 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 fputc@fp 73 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 fputs@fp 79 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
+___int_sp 0 0 STACK 2 stack C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
 _Update_Display_Line$2367 4F 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _rd2RegCompleteHandler 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -2295,7 +2295,7 @@ ___xxtofl@arg 2A 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0
 ___xxtofl@exp 29 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___xxtofl@val 20 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 modeFunction@index D1 0 BANK1 1 bssBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_sprintf 5062 0 CODE 0 text2 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_sprintf 5054 0 CODE 0 text2 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 OLED_Write@cbit 40 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 OLED_Write@temp 3A 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _rd1RegCompleteHandler@i2c_master_example$F135 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2406,7 +2406,7 @@ __pstringtext13 7108 0 STRCODE 0 stringtext13 dist/default/production\Greenheck_
 __pstringtext14 7114 0 STRCODE 0 stringtext14 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __pstringtext15 711E 0 STRCODE 0 stringtext15 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __pstringtext16 0 0 STRCODE 0 stringtext16 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-___flge 59AC 0 CODE 0 text20 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+___flge 19DA 0 CODE 0 text20 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___wmul 6E2E 0 CODE 0 text37 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 HEFLASH_readBlock@buffer 79 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___aomod@sign 73 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2428,7 +2428,7 @@ __S0 3893 0 ABS 0 - -
 __S1 268 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 _abs 6DC0 0 CODE 0 text12 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_pad 54F0 0 CODE 0 text7 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_pad 54E2 0 CODE 0 text7 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_buttonFunction 4BB4 0 CODE 0 text26 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _DACLDbits 58D 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _I2C_DO_SEND_STOP 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2441,17 +2441,17 @@ _SYSTEM_Initialize 6D30 0 CODE 0 text43 dist/default/production\Greenheck_OLED-v
 _dtoa$1989 3C 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___xxtofl 4038 0 CODE 0 text15 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_abs 6DF4 0 CODE 0 text12 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_pad 55A8 0 CODE 0 text7 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_Update_Display_Line 1AFA 0 CODE 0 text34 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_pad 559A 0 CODE 0 text7 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_Update_Display_Line 1AF0 0 CODE 0 text34 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 HEFLASH_readBlock@radd 73 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __HnvBANK1 0 0 ABS 0 nvBANK1 -
 __HnvBANK2 0 0 ABS 0 nvBANK2 -
 __Lintentry 8 0 CODE 0 intentry -
-_height 19D2 0 CODE 0 text40 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\aLogisz\AppData\Local\Temp\xcAsim8.o
+_height 6BAE 0 CODE 0 text40 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\aLogisz\AppData\Local\Temp\xcAs6as.o
 strlen@a 74 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 strlen@s 71 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_OLED_Update_Partial 55A8 0 CODE 0 text42 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_OLED_Update_Partial 559A 0 CODE 0 text42 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_FLASH_erase 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of___xxtofl 4192 0 CODE 0 text15 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _I2C_DO_RESET 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2461,7 +2461,7 @@ __pdataBANK2 145 0 BANK2 1 dataBANK2 dist/default/production\Greenheck_OLED-v0.0
 __pdataBANK3 1A0 0 BANK3 1 dataBANK3 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of___flge 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of___wmul 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_HEFLASH_readBlock 50D6 0 CODE 0 text31 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_HEFLASH_readBlock 50C8 0 CODE 0 text31 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 __LbssBANK2 0 0 ABS 0 bssBANK2 -
@@ -2483,46 +2483,46 @@ ___awmod@counter 76 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OL
 _PIE1bits 91 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 OLED_Write@rowcnt 48 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _rdBlkRegCompleteHandler@i2c_master_example$F169 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_memcmp 514E 0 CODE 0 text35 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_memcmp 5140 0 CODE 0 text35 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 pad@buf 27 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 stoa@nuls 23 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___fladd@signs 28 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_HEFLASH_writeBlock 57E2 0 CODE 0 text27 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext10 52FA 0 CODE 0 text10 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext11 6BB6 0 CODE 0 text11 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_HEFLASH_writeBlock 57D4 0 CODE 0 text27 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext10 52EC 0 CODE 0 text10 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext11 6BAC 0 CODE 0 text11 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext12 6DC0 0 CODE 0 text12 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext13 5E2C 0 CODE 0 text13 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext14 4192 0 CODE 0 text14 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext15 4038 0 CODE 0 text15 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext16 5264 0 CODE 0 text16 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext17 58C2 0 CODE 0 text17 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext16 5256 0 CODE 0 text16 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext17 58B4 0 CODE 0 text17 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext18 34DE 0 CODE 0 text18 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext19 6EAE 0 CODE 0 text19 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext20 59AC 0 CODE 0 text20 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext20 19DA 0 CODE 0 text20 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext21 202E 0 CODE 0 text21 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext22 306E 0 CODE 0 text22 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext23 539A 0 CODE 0 text23 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext23 538C 0 CODE 0 text23 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext24 6C4A 0 CODE 0 text24 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext25 6DF4 0 CODE 0 text25 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext26 4890 0 CODE 0 text26 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext27 5722 0 CODE 0 text27 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext27 5714 0 CODE 0 text27 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext28 6E6E 0 CODE 0 text28 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext29 6D5C 0 CODE 0 text29 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext30 6C0C 0 CODE 0 text30 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext31 5062 0 CODE 0 text31 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext31 5054 0 CODE 0 text31 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext32 6CC6 0 CODE 0 text32 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext33 6BC0 0 CODE 0 text33 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext34 1AFA 0 CODE 0 text34 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext35 514E 0 CODE 0 text35 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext33 6BB2 0 CODE 0 text33 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext34 1AF0 0 CODE 0 text34 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext35 5140 0 CODE 0 text35 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext36 4BB4 0 CODE 0 text36 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext37 6E2E 0 CODE 0 text37 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext38 5C70 0 CODE 0 text38 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext39 4 0 CODE 0 text39 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext40 19D2 0 CODE 0 text40 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext41 5664 0 CODE 0 text41 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext42 55A8 0 CODE 0 text42 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext40 6BAE 0 CODE 0 text40 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext41 5656 0 CODE 0 text41 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext42 559A 0 CODE 0 text42 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext43 6D30 0 CODE 0 text43 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext44 6BB8 0 CODE 0 text44 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext44 19D2 0 CODE 0 text44 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext45 2000 0 CODE 0 text45 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext46 3000 0 CODE 0 text46 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext47 6F90 0 CODE 0 text47 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2531,28 +2531,28 @@ __ptext49 6BFA 0 CODE 0 text49 dist/default/production\Greenheck_OLED-v0.07.X.pr
 __ptext50 6BE8 0 CODE 0 text50 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext51 6CAC 0 CODE 0 text51 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext52 6C1E 0 CODE 0 text52 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext53 19D6 0 CODE 0 text53 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext54 5440 0 CODE 0 text54 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext53 599E 0 CODE 0 text53 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext54 5432 0 CODE 0 text54 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext55 4000 0 CODE 0 text55 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext56 57E2 0 CODE 0 text56 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext56 57D4 0 CODE 0 text56 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext57 6D08 0 CODE 0 text57 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext58 5000 0 CODE 0 text58 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext58 6BCA 0 CODE 0 text58 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext59 6C32 0 CODE 0 text59 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext60 6C92 0 CODE 0 text60 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext61 6BCA 0 CODE 0 text61 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext62 50D6 0 CODE 0 text62 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext61 6BBC 0 CODE 0 text61 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext62 50C8 0 CODE 0 text62 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_DAC1_Load10bitInputData 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_PIN_MANAGER_Initialize 7000 0 CODE 0 text47 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___aodiv 4192 0 CODE 0 text14 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___aomod 5E2C 0 CODE 0 text13 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-___awdiv 5664 0 CODE 0 text41 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-___awmod 539A 0 CODE 0 text23 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+___awdiv 5656 0 CODE 0 text41 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+___awmod 538C 0 CODE 0 text23 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_TMR0_Initialize 202E 0 CODE 0 text45 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___fladd 306E 0 CODE 0 text22 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___fldiv 202E 0 CODE 0 text21 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___flmul 34DE 0 CODE 0 text18 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-___fltol 58C2 0 CODE 0 text17 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-___llmod 5264 0 CODE 0 text16 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+___fltol 58B4 0 CODE 0 text17 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+___llmod 5256 0 CODE 0 text16 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -2605,7 +2605,7 @@ OLED_Update_Partial@x 77 0 COMMON 1 cstackCOMMON dist/default/production\Greenhe
 _I2C_CallbackReturnReset 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _ADCON0bits 490 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___fladd@grs 2B 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_HEFLASH_writeBlock 5722 0 CODE 0 text27 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_HEFLASH_writeBlock 5714 0 CODE 0 text27 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_OLED_DrawPixel 5E2C 0 CODE 0 text38 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_OLED_Write 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _increase_btn_debounce E8 0 BANK1 1 dataBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2616,7 +2616,7 @@ __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-_WDTclear 6BC0 0 CODE 0 text33 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_WDTclear 6BB2 0 CODE 0 text33 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __pbssCOMMON 7C 0 COMMON 1 bssCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_memcmp 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_ADC_Initialize 6CC6 0 CODE 0 text51 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2636,7 +2636,7 @@ __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 ___fltol@exp1 7B 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _FLASH_read 6CC6 0 CODE 0 text32 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 end_of_initialization 202 0 CODE 0 cinit dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_WDTclear 6BCA 0 CODE 0 text33 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_WDTclear 6BBC 0 CODE 0 text33 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _TMR0_Initialize 2000 0 CODE 0 text45 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __Hintentry 14E 0 CODE 0 intentry -
 _width@doprnt$F1972 CB 0 BANK1 1 bssBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2669,8 +2669,8 @@ __HbssBANK2 0 0 ABS 0 bssBANK2 -
 __HbssBANK4 0 0 ABS 0 bssBANK4 -
 ___awmod@dividend 73 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _SSPCLKPPS E3A 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_HEFLASH_readBlock 5062 0 CODE 0 text31 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_OLED_Update_Partial 5664 0 CODE 0 text42 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_HEFLASH_readBlock 5054 0 CODE 0 text31 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_OLED_Update_Partial 5656 0 CODE 0 text42 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_strlen 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _SSPDATPPS E3B 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _I2C_DO_RX_NACK_STOP 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2680,20 +2680,20 @@ vfpfcnvrt@cp 5D 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.
 vfpfcnvrt@fp 5F 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 vfpfcnvrt@ll 55 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext1 2396 0 CODE 0 text1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext2 500E 0 CODE 0 text2 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext2 5000 0 CODE 0 text2 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext3 300C 0 CODE 0 text3 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext4 4394 0 CODE 0 text4 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext5 5AC2 0 CODE 0 text5 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext6 45B0 0 CODE 0 text6 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__ptext7 54F0 0 CODE 0 text7 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__ptext7 54E2 0 CODE 0 text7 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext8 6D8E 0 CODE 0 text8 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __ptext9 6F3E 0 CODE 0 text9 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 vfprintf@ap 62 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 vfprintf@fp 65 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 vfprintf@cfmt 66 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ?__Umul8_16 71 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_OLED_Update 54F0 0 CODE 0 text54 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_sprintf 500E 0 CODE 0 text2 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_OLED_Update 54E2 0 CODE 0 text54 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_sprintf 5000 0 CODE 0 text2 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _vfprintf 300C 0 CODE 0 text3 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 ?___xxtofl 20 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2733,7 +2733,7 @@ _timer0ReloadVal EE 0 BANK1 1 nvBANK1 dist/default/production\Greenheck_OLED-v0.
 _setting_refresh_timer 145 0 BANK2 1 dataBANK2 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __pidataBANK1 6CE4 0 CODE 0 idataBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __pidataBANK2 6EF4 0 CODE 0 idataBANK2 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__pidataBANK3 51D2 0 CODE 0 idataBANK3 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__pidataBANK3 51C4 0 CODE 0 idataBANK3 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_FLASH_read 6CE4 0 CODE 0 text32 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 _SSP1CON1bits 215 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2764,7 +2764,7 @@ __end_of_main 4000 0 CODE 0 maintext dist/default/production\Greenheck_OLED-v0.0
 __end_of_stoa 5C70 0 CODE 0 text5 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 OLED_SetContrast@contrast 73 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of___ISR 14E 0 CODE 0 intentry dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_fputc 539A 0 CODE 0 text10 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_fputc 538C 0 CODE 0 text10 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_fputs 6F90 0 CODE 0 text9 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _LATA0 860 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _LATA1 861 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2776,7 +2776,7 @@ _TRISA 8C 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _TRISB 8D 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _TRISC 8E 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _TRISE 90 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
-__end_of_putch 6BB8 0 CODE 0 text11 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_putch 6BAE 0 CODE 0 text11 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_TMR0_Initialize 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_width 8 0 CODE 0 text39 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __Hram 0 0 ABS 0 ram -
@@ -2784,15 +2784,15 @@ __Lram 0 0 ABS 0 ram -
 ___ISR 8 0 CODE 0 intentry dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _cfont C4 0 BANK1 1 bssBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _flags CF 0 BANK1 1 bssBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_fputc 52FA 0 CODE 0 text10 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_fputc 52EC 0 CODE 0 text10 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _fputs 6F3E 0 CODE 0 text9 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_buttonFunction 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _press D9 0 BANK1 1 bssBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_putch 6BB6 0 CODE 0 text11 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_putch 6BAC 0 CODE 0 text11 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _speed ED 0 BANK1 1 dataBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _width 4 0 CODE 0 text39 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_WDT_Initialize 6BB8 0 CODE 0 text44 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_WDT_Initialize 19D2 0 CODE 0 text44 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _decrease_btn_debounce E6 0 BANK1 1 dataBANK1 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_abs 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2800,7 +2800,7 @@ __size_of_pad 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.product
 __HdataBANK1 0 0 ABS 0 dataBANK1 -
 __HdataBANK2 0 0 ABS 0 dataBANK2 -
 __HdataBANK3 0 0 ABS 0 dataBANK3 -
-__end_of_DisplaySettingRefresh 58C2 0 CODE 0 text56 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+__end_of_DisplaySettingRefresh 58B4 0 CODE 0 text56 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __end_of_OSCILLATOR_Initialize 6BE8 0 CODE 0 text48 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __initialization 152 0 CODE 0 cinit dist/default/production\Greenheck_OLED-v0.07.X.production.o
 ___xxtofl@sign 28 0 BANK0 1 cstackBANK0 dist/default/production\Greenheck_OLED-v0.07.X.production.o
@@ -2825,7 +2825,7 @@ modeFunction@avg B7 0 BANK1 1 cstackBANK1 dist/default/production\Greenheck_OLED
 FLASH_erase@address 71 0 COMMON 1 cstackCOMMON dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _ssd1306_command 6D08 0 CODE 0 text57 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 __size_of_modeFunction 0 0 ABS 0 - dist/default/production\Greenheck_OLED-v0.07.X.production.o
-_DisplaySettingRefresh 57E2 0 CODE 0 text56 dist/default/production\Greenheck_OLED-v0.07.X.production.o
+_DisplaySettingRefresh 57D4 0 CODE 0 text56 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 _OSCILLATOR_Initialize 6BD8 0 CODE 0 text48 dist/default/production\Greenheck_OLED-v0.07.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
@@ -2858,62 +2858,62 @@ _buffer 1 26F0 0
 # All other numeric quantities are in decimal.
 %SEGMENTS
 text1 0 11CB 2396 63B 2
-text2 0 2807 500E 2A 2
 text3 0 1806 300C 31 2
 text4 0 21CA 4394 10E 2
 text5 0 2D61 5AC2 D7 2
 text6 0 22D8 45B0 170 2
-text7 0 2A78 54F0 5C 2
+text7 0 2A71 54E2 5C 2
 text8 0 36C7 6D8E 19 2
 text9 0 379F 6F3E 29 2
-text10 0 297D 52FA 50 2
-text11 0 35DB 6BB6 1 2
+text10 0 2976 52EC 50 2
+text11 0 35D6 6BAC 1 2
 text12 0 36E0 6DC0 1A 2
 text13 0 2F16 5E2C EA 2
 text14 0 20C9 4192 101 2
 text15 0 201C 4038 AD 2
-text16 0 2932 5264 4B 2
-text17 0 2C61 58C2 75 2
+text16 0 292B 5256 4B 2
+text17 0 2C5A 58B4 75 2
 text18 0 1A6F 34DE 257 2
 text19 0 3757 6EAE 23 2
-text20 0 2CD6 59AC 8B 2
+text20 0 CED 19DA 8B 2
 text21 0 1017 202E 1B4 2
 text22 0 1837 306E 238 2
-text23 0 29CD 539A 53 2
+text23 0 29C6 538C 53 2
 text24 0 3625 6C4A C 2
 text25 0 36FA 6DF4 1D 2
 text26 0 2448 4890 192 2
-text27 0 2B91 5722 60 2
+text27 0 2B8A 5714 60 2
 text28 0 3737 6E6E 20 2
 text29 0 36AE 6D5C 19 2
 text30 0 3606 6C0C 9 2
-text31 0 2831 5062 3A 2
+text31 0 282A 5054 3A 2
 text32 0 3663 6CC6 F 2
-text33 0 35E0 6BC0 5 2
-text34 0 D7D 1AFA 29A 2
-text35 0 28A7 514E 42 2
-text36 0 25DA 4BB4 22D 2
+text33 0 35D9 6BB2 5 2
+text34 0 D78 1AF0 29F 2
+text35 0 28A0 5140 42 2
+text36 0 25DA 4BB4 250 2
 text37 0 3717 6E2E 20 2
 text38 0 2E38 5C70 DE 2
-text40 0 CE9 19D2 2 2
-text41 0 2B32 5664 5F 2
-text42 0 2AD4 55A8 5E 2
+text40 0 35D7 6BAE 2 2
+text41 0 2B2B 5656 5F 2
+text42 0 2ACD 559A 5E 2
 text43 0 3698 6D30 16 2
-text44 0 35DC 6BB8 4 2
+text44 0 CE9 19D2 4 2
 text47 0 37C8 6F90 38 2
 text48 0 35EC 6BD8 8 2
 text49 0 35FD 6BFA 9 2
 text50 0 35F4 6BE8 9 2
 text51 0 3656 6CAC D 2
 text52 0 360F 6C1E A 2
-text53 0 CEB 19D6 92 2
-text54 0 2A20 5440 58 2
-text56 0 2BF1 57E2 70 2
+text53 0 2CCF 599E 92 2
+text54 0 2A19 5432 58 2
+text56 0 2BEA 57D4 70 2
 text57 0 3684 6D08 14 2
+text58 0 35E5 6BCA 7 2
 text59 0 3619 6C32 C 2
 text60 0 3649 6C92 D 2
-text61 0 35E5 6BCA 7 2
-text62 0 286B 50D6 3C 2
+text61 0 35DE 6BBC 7 2
+text62 0 2864 50C8 3C 2
 maintext 0 1CC6 398C 356 2
 cstackCOMMON 1 70 70 D 1
 cstackBANK0 1 20 20 50 1
@@ -2927,7 +2927,7 @@ bssBANK2 1 120 120 4C 1
 bssBANK4 1 220 220 48 1
 idataBANK1 0 3672 6CE4 12 2
 idataBANK2 0 377A 6EF4 25 2
-idataBANK3 0 28E9 51D2 49 2
+idataBANK3 0 28E2 51C4 49 2
 dataBANK3 1 1A0 1A0 49 1
 clrtext 0 3631 6C62 C 2
 # %NOTES Section

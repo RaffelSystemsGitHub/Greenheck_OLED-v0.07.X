@@ -20551,6 +20551,7 @@ void main(void)
 
 
             ssd1306_command(0xAF);
+
             OLED_SetContrast(0xFF);
 
             unsigned int power_led_flash_counter = 0;
@@ -20586,7 +20587,7 @@ void main(void)
             OLED_SetContrast(0xFF);
         }
         else{
-             OLED_SetContrast(0x00);
+            OLED_SetContrast(0x00);
         }
 
 

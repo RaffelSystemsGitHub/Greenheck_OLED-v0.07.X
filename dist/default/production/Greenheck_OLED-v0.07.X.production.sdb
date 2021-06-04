@@ -169,11 +169,11 @@ I2C_NULL 5
 [v _WDTclear WDTclear `(v  1 e 1 0 ]
 "162
 [v _main main `(v  1 e 1 0 ]
-"405
+"406
 [v ___ISR __ISR `II(v  1 e 1 0 ]
-"459
+"460
 [v _modeFunction modeFunction `(v  1 e 1 0 ]
-"718
+"719
 [v _buttonFunction buttonFunction `(v  1 e 1 0 ]
 "67 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -733,33 +733,33 @@ I2C_NULL 5
 [v main@i_1394 i `uc  1 a 1 34 ]
 "232
 [v main@i i `uc  1 a 1 33 ]
-"344
+"345
 [v main@i_1396 i `uc  1 a 1 35 ]
-"302
+"303
 [v main@power_led_flash_counter power_led_flash_counter `ui  1 a 2 31 ]
-"403
+"404
 } 0
-"459
+"460
 [v _modeFunction modeFunction `(v  1 e 1 0 ]
 {
 [v modeFunction@mode mode `uc  1 a 1 wreg ]
-"601
+"602
 [v modeFunction@i i `ui  1 a 2 21 ]
-"600
+"601
 [v modeFunction@avg avg `f  1 a 4 23 ]
-"609
+"610
 [v modeFunction@decimal decimal `ui  1 a 2 19 ]
-"608
+"609
 [v modeFunction@integer integer `ui  1 a 2 17 ]
-"459
+"460
 [v modeFunction@mode mode `uc  1 a 1 wreg ]
-"582
-[v modeFunction@index index `ui  1 s 2 index ]
 "583
+[v modeFunction@index index `ui  1 s 2 index ]
+"584
 [v modeFunction@arr arr `[10]f  1 s 40 arr ]
-"461
+"462
 [v modeFunction@mode mode `uc  1 a 1 16 ]
-"715
+"716
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -1085,10 +1085,10 @@ I2C_NULL 5
 [v ClearText@textToClear textToClear `*.5uc  1 a 1 4 ]
 "151
 } 0
-"718
+"719
 [v _buttonFunction buttonFunction `(v  1 e 1 0 ]
 {
-"848
+"849
 } 0
 "15 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\HEFlash.c
 [v _HEFLASH_writeBlock HEFLASH_writeBlock `(uc  1 e 1 0 ]
@@ -1391,8 +1391,8 @@ I2C_NULL 5
 [v OLED_SetFont@font font `*.25DCuc  1 p 2 1 ]
 "429
 } 0
-"405 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
+"406 C:\Users\aLogisz\MPLABXProjects\Greenheck_OLED-v0.07.X\main.c
 [v ___ISR __ISR `II(v  1 e 1 0 ]
 {
-"456
+"457
 } 0
